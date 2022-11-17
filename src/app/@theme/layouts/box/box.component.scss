@@ -1,0 +1,105 @@
+@import '../../themes.scss';
+@import '../../styles/pages.scss';
+
+@include nb-install-component() {
+
+    .box {
+        min-width: 100%;
+
+        border: 1px solid #434561;
+        border-radius: 0 0 3px 3px;
+    
+        font-family: roboto;
+        font-size: 0.7rem;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .boxWithFooter {
+        height: calc(100% - 27px) !important;
+    }
+
+    .header {
+        padding: 3px 9px 3px 9px;
+        border-bottom: 1px solid #434561;
+        background-color: #222b45;
+        overflow-wrap: normal;
+        width: 100%;
+    }
+
+    .body {
+        padding: 0px 9px 9px 9px;
+        overflow-wrap: normal;        
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .scrollbar {
+        overflow: auto;
+    }
+
+    .footer {
+        width: 100%;
+        min-height: 27px;
+
+        padding: 0 9px;
+        align-items: center;
+        justify-content: flex-end;
+        display: flex;
+
+        border-top: 1px solid #434561;
+        background-color: #222b45;
+        overflow-x: auto;
+    }
+
+    .front, .back {
+        background: #222b45;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .dropright .dropdown-toggle-split::after {
+        position: absolute;
+        color: nb-theme(color-60) !important;
+        right: 6px !important;
+        top: 10px;
+        border-top: .4em solid transparent !important;
+        border-right: 0 !important;
+        border-bottom: .4em solid transparent !important;
+        border-left: .4em solid !important;    
+    }
+
+    .noPadding {
+        padding: 0 !important;
+    }
+   
+    .fullHeightButton {
+        height: calc(100% - 16px);
+    }
+    
+    .fullHeightMargin {
+        height: calc(100% - 9px);
+    }
+
+    .middleHeightMargin {
+        height: calc(50% - 9px);
+    }
+
+    .padding {
+        padding: 12px 9px 11px !important;
+        line-height: normal !important;
+    }
+
+    .minPadding {
+        padding: 4px 3px !important;
+        line-height: normal !important;
+    }
+
+    .noBorder{
+        border: 0px !important;
+    }
+
+}

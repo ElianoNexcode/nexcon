@@ -1,0 +1,137 @@
+<div *ngIf="!type" class="comboBox" [ngClass]="class" [ngStyle]="{'display': ( display == true )? 'flex': 'none', 'margin-top.px': marginTop }">
+    <div class="labelBox" *ngIf="label" [ngStyle]="{'max-width.px': labelMaxWidth, 'min-width.px': labelMinWidth}">
+        {{label}}
+    </div>
+    <div class="select">
+        <div [id]="options.name" class="combo custom-select">
+            <div *ngIf="itemSelected" class="select-selected"  [ngClass]="{'disabled': options?.disabled == true, 'select-arrow-active': optionsVisible == true}" (click)="onOptions_Click()">
+                <input [id]="options.name + '_Input'" #inputRef [(ngModel)]="options.itemSelected.text" [ngStyle]="{'text-align': options.textAlign}" class="comboInput" [disabled]="options?.disabled" (keyup)="onKeyUp($event)" (focusout)="onFocusOut($event)" readonly /> 
+            </div>
+            <div [id]="'itens_' + options.name" [ngStyle]="{'max-height.px': ((options.scrollFrom * 20) + 2)}" class="select-items" [ngClass]="{'select-hide': optionsVisible == false}">
+                <div *ngFor="let option of options.itens; let i = index" (mousedown)="onOptions_Select(i)" (mouseover)="onOptions_Over(i)" [ngClass]="{'disabled': (option.disabled == true), 'itemSelectHover': (option.id == itemSelectID), 'itemSelected': (option.id == options.itemSelected.id)}">
+                    {{option.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="type == 'input'" class="comboBox" [ngStyle]="{'display': ( display == true )? 'flex': 'none', 'margin-top.px': marginTop}">
+    <div class="labelBox" [ngStyle]="{'max-width.px': labelMaxWidth, 'min-width.px': labelMinWidth}">
+        {{label}}
+    </div>
+    <div class="select">
+        <div [id]="options.name" class="combo custom-select">
+            <div class="select-selected"  [ngClass]="{'disabled': options?.disabled == true, 'select-arrow-active': optionsVisible == true}" (click)="onOptions_Click()">
+                <div *ngIf="itemSelected" (click)="onOptions_Click()">
+                    <div class="completeText" #completeRef></div>
+                    <input #inputRef
+                           class="comboInput completeInput"
+                           autocomplete="none"
+                           [id]="options.name + '_Input'"
+                           [disabled]="options?.disabled"
+                           [maxlength]="options.maxLength"
+                           [placeholder]="placeholder"
+                           [case]="'upper'"
+                           [(ngModel)]="itemSelected.text"                           
+                           (keyup)="onKeyUp($event)"
+                           (focus)="onFocus($event)"
+                           (focusout)="onFocusOut($event)" /> 
+                </div>
+            </div>
+            <div [id]="'itens_' + options.name" [ngStyle]="{'max-height.px': ((options.scrollFrom * 20) + 2) }" class="select-items" [ngClass]="{'select-hide': optionsVisible == false}">
+                <div *ngFor="let option of options.itens; let i = index" (mousedown)="onOptions_Select(i)" (mouseover)="onOptions_Over(i)" [ngClass]="{'disabled': option.disabled == true, 'itemSelectHover': option.id == itemSelectID, 'itemSelected': (option.id == options.itemSelected.id)}">
+                    {{option.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="type == 'filter'" class="comboBox filter" [ngStyle]="{'display': ( display == true )? 'flex': 'none', 'margin-top.px': marginTop}">
+    <div class="select select-filter" style="border-right: 1px solid #434561 !important;" [ngStyle]="{'max-width.px': labelMaxWidth, 'min-width.px': labelMinWidth}">
+        <div id="customFilter" class="combo custom-select">
+            <div *ngIf="itemSelected" class="select-selected custom-filter-select" [ngClass]="{'disabled': options?.disabled == true, 'select-arrow-active': optionsVisible == true}" (click)="onOptions_Click()">
+                {{itemSelected.text}}
+            </div>
+            <div class="select-items" [ngStyle]="{'max-height.px': ((options.scrollFrom * 20) + 2)}" [ngClass]="{'select-hide': optionsVisible == false}">
+                <div *ngFor="let option of options.itens; let i = index" (mousedown)="onOptions_Select(i)" (mouseover)="onOptions_Over(i)" [ngClass]="{'itemSelectHover': option.id == itemSelectID}">
+                    {{option.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inputbox">
+        <input [(ngModel)]="options.text" [placeholder]="placeholder" [case]="'upper'" [regex]="'noFilter'" type="text" autocomplete="none" (keyup)="onTextInput_Keyup($event)" />
+    </div>
+    <div class="icon" (click)="onFilter_Find()">
+        <svg class="bi bi-search" width="13px" height="13px" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd" />
+        </svg>                            
+    </div>
+</div>
+
+<div *ngIf="type == 'doc'" class="comboBox find" [ngStyle]="{'display': ( display == true )? 'flex': 'none', 'margin-top.px': marginTop}">
+    <div class="select select-filter labelBox" [ngStyle]="{'max-width.px': labelMaxWidth, 'min-width.px': labelMinWidth}">
+        <div id="customFilter" class="combo custom-select">
+            <div *ngIf="itemSelected" class="select-selected custom-find-select" [ngClass]="{'disabled': options?.disabled == true, 'select-arrow-active': optionsVisible == true}" (click)="onOptions_Click()">
+                {{itemSelected.text}}
+            </div>
+            <div [ngStyle]="{'max-height.px': ((options.scrollFrom * 20) + 2)}" class="select-items" [ngClass]="{'select-hide': optionsVisible == false}">
+                <div *ngFor="let option of options.itens; let i = index" (mousedown)="onOptions_Select(i)" (mouseover)="onOptions_Over(i)" (click)="onOptions_Select(i)" [ngClass]="{'itemSelectHover': option.id == itemSelectID, 'itemSelected': (option.id == options.itemSelected.id)}">
+                    {{option.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inputbox container" *ngIf="inputLabel">
+        <nex-input-label [input]="inputLabel" [class]="'inputInBox'" (eventChange)="onTextInput_Change($event)" (eventFocusOut)="onInputLabel_FocusOut()" (eventMouseOut)="onInputLabel_MouseOut()" (onKeyEnter)="onInputLabel_KeyEnter()"></nex-input-label>
+    </div>
+    <div class="icon" *ngIf="showIcon == true" (click)="onFilter_Change()" [ngClass]="{'disabled': options?.disabled == true}">
+        <svg class="bi bi-search" width="13px" height="13px" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd" />
+        </svg>                            
+    </div>
+</div>
+
+<div *ngIf="type == 'find'" class="comboBox find" [ngStyle]="{'display': ( display == true )? 'flex': 'none', 'margin-top.px': marginTop}">
+    <div class="select select-filter" [ngStyle]="{'max-width.px': labelMaxWidth, 'min-width.px': labelMinWidth}">
+        <div id="customFilter" class="combo custom-select labelBox">
+            <div *ngIf="itemSelected" class="select-selected custom-find-select" [ngClass]="{'select-arrow-active': optionsVisible == true}" (click)="onOptions_Click()">
+                {{itemSelected.text}}
+            </div>
+            <div [ngStyle]="{'max-height.px': ((options.scrollFrom * 20) + 2)}" class="select-items" [ngClass]="{'select-hide': optionsVisible == false}">
+                <div *ngFor="let option of options.itens; let i = index" (click)="onOptions_Select(i)">{{option.text}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="inputbox">
+        <input [id]="options.name + '_Input'" [placeholder]="placeholder" [disabled]="options?.disabled && itemSelected?.type != 2" [(ngModel)]="options.text" [ngClass]="{'disabled': options.disabled == true && itemSelected?.disabled != false}" [case]="'upper'" type="text" (keyup)="onTextInput_Keyup($event)" autocomplete="none" />
+    </div>    
+    <div *ngIf="itemSelected?.type == 3 || itemSelected?.type == 0" class="icon" (click)="onFilter_Change()">
+        <svg *ngIf="findIcon == 'find'" class="bi bi-search" width="13px" height="13px" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd" />
+        </svg>
+        <i *ngIf="findIcon == 'plus'" class="fa fa-plus" aria-hidden="true"></i>
+    </div>
+</div>
+
+<div *ngIf="type == 'no-label'" class="comboBox no-margin" [ngStyle]="{'display': ( display == true )? 'flex': 'none', 'margin-top.px': marginTop}">
+    <div class="select">
+        <div [id]="options.name" class="combo custom-select">
+            <div *ngIf="options.itemSelected" [id]="options.name + '_Select'" class="select-selected" [ngClass]="{'disabled': options?.disabled == true, 'select-arrow-active': optionsVisible == true}" (click)="onOptions_Click()">
+                <span *ngIf="options.itemSelected.icon" class='fas fa-{{options.itemSelected.icon}}' style='margin-right: 4px;font-size: 15px;'></span>
+                <div class="optionText">{{options.itemSelected.text}}</div>
+            </div>
+            <div *ngIf="options?.itens?.length > 1" [ngStyle]="{'max-height.px': ((options.scrollFrom * 20) + 2) }" class="select-items" [ngClass]="{'select-hide': optionsVisible == false}">
+                <div style="display: flex;align-items: center;" *ngFor="let option of options.itens; let i = index" (mousedown)="onOptions_Select(i)" (mouseover)="onOptions_Over(i)" [ngClass]="{'itemSelectHover': option.id == itemSelectID, 'disabled': option.disabled == true}">
+                    <span *ngIf="option.icon" class='fas fa-{{option.icon}}' style='font-size: 13px;'></span>
+                    <div style="border: none">{{option.text}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

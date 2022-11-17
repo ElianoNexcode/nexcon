@@ -1,0 +1,51 @@
+@import '../../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+    .player {
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transition: all 150ms;
+        transition: all 150ms;
+        z-index: 20;
+        height: 100%;
+    }
+    
+    .player div {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    .player .back {
+        position: absolute;
+        top: 0;
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+    
+    .player.voted {
+        transform: rotateX(180deg);
+        -webkit-transform: rotateX(180deg);
+    }
+
+    .maxHeight {
+        height: calc(100% - 9px);
+
+        .row {
+            height: 100%;
+        }
+    }
+
+    .maxNivel {
+        height: calc(100% - 84px);
+    }
+
+    .maxRecursos {
+        height: calc(100% - 96px);
+    }
+
+    .noPadding {
+        padding: 0 !important;
+    }
+
+}

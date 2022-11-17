@@ -1,0 +1,155 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<nex-pessoa-externa-modal [title]="'Pesquisa de Condutor'" [filter]="filterPessoaExterna" [pessoaModal]="pessoaCondutorModalService" (eventSelect)="pessoaCondutorModalSelect($event)"></nex-pessoa-externa-modal>
+<div class="modulo player" id="player" [class.voted]="actionbuttomService.flipped">
+    <div id="grid" class="grid front">
+        <nex-listview [params]="listView_VeiculoExterno" [avatar]="'carAvatar'" (eventCheck)="onlistView_Change($event)" (eventFilter)="onListView_Filter($event)"></nex-listview>
+    </div>
+    <div id="form" class="formFull back">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                <div>
+                    Cadastro de Veículo Externo
+                </div>
+                <nex-card-tabs [options]="cardTabs_Options" (eventClick)="onCardTabs_Click($event)" ></nex-card-tabs>
+            </div>
+            <div class="card-body displayFlex" 
+                 [nbSpinner]="showSpinner"
+                 nbSpinnerMessage="Aguarde..."
+                 nbSpinnerStatus="basic"
+                 nbSpinnerSize="giant"
+                 id="veiculoExternoComponent_Panel"
+                 *ngIf="cardTabs_Options?.selectCard.id == 1">
+                <div class="panel">
+                    <nex-form-group [name]="'veiculoExternoDados'">
+                        <div class="row">
+                            <div class="col-1 col-avatar-1">
+                                <nex-avatar [name]="'veiculoExternoForm'" [marginTop]="0" [size]="'large'" [background]="'carAvatar'"></nex-avatar>
+                            </div>
+                            <div class="col-11 col-avatar-11">
+                                <div class="row">
+                                    <div class="col row"> 
+                                        <div class="col">
+                                            <nex-combobox [label]="'Tipo'" [options]="tipoVeiculo_Options" [marginTop]="0"></nex-combobox>
+                                        </div>
+                                        <div class="col">
+                                            <nex-input-label [text]="'ID'" [labelMinWidth]="30" [input]="idVeiculo_Text" [marginTop]="0"></nex-input-label>
+                                        </div>
+                                    </div>
+                                    <div class="col row">
+                                        <div class="width_1">
+                                            <nex-combobox [label]="'Modelo'" [options]="modeloVeiculo_Options" [marginTop]="0" [type]="'input'"></nex-combobox>
+                                        </div>
+                                        <div class="width_2">
+                                            <nex-combobox [label]="'Cor'" [labelMinWidth]="40" [options]="corVeiculo_Options" [marginTop]="0"></nex-combobox>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <nex-combobox [label]="'Grupo'" [options]="grupoVeiculo_Options"></nex-combobox>
+                                    </div>
+                                    <div class="col">
+                                        <nex-input-label [text]="'Característica'" [input]="caracteristicaVeiculo_Text"></nex-input-label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-full">
+                                        <nex-input-label [text]="'Observação'" [input]="observacaoVeiculo_Text" ></nex-input-label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nex-form-group>
+                </div>
+                <div class="panel fullHeight">
+                    <div class="row fullHeight">
+                        <div class="col col-6 display-flex">
+                            <nex-tabs-card [fullWidth]="true" [tabsOptions]="tabsConfiguracao_Options" [name]="'tabsConfiguracaoVeiculo'" [largeHeight]="true"  [marginTop]="0">
+                                <nex-tab [tabComponent]="tabsConfiguracao_Options.tabs[0]">
+                                    <nex-form-group [name]="'veiculoExternoIdentificacao'">
+                                        <div class="row">
+                                            <div class="col-full">
+                                                <nex-input-label [text]="'Peso'" [input]="pesoVeiculo_Text"></nex-input-label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-full">
+                                                <nex-combobox [label]="'Empresa'" [options]="empresa_Text" [type]="'input'"></nex-combobox>
+                                            </div>
+                                        </div>
+                                    </nex-form-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsConfiguracao_Options.tabs[1]">
+                                    <nex-form-group [name]="'veiculoExternoComplemento'">
+                                        <nex-input-label [text]="'Complemento 1'" [input]="complemento1_Text" ></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 2'" [input]="complemento2_Text" ></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 3'" [input]="complemento3_Text" ></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 4'" [input]="complemento4_Text" ></nex-input-label>        
+                                    </nex-form-group>
+                                </nex-tab>
+                            </nex-tabs-card>
+                        </div>
+                        <div class="col col-6 display-flex">
+                            <nex-tabs-card [fullWidth]="true" [tabsOptions]="tabsValidade_Options" [name]="'tabsOptions'" [largeHeight]="true"  [marginTop]="0">
+                                <nex-tab  [tabComponent]="tabsValidade_Options.tabs[0]">
+                                    <nex-form-group [name]="'veiculosExternoValidade'">
+                                        <nex-combobox [label]="'Status'" [options]="validadeEstado_Options"></nex-combobox>
+                                    </nex-form-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsValidade_Options.tabs[1]">
+                                    <nex-form-group [name]="'veiculosExternoEstacionamento'">
+                                        <nex-input-label [text]="'Vaga'" [input]="vaga_Text"></nex-input-label>
+                                        <nex-input-label [text]="'Estacionamento'" [input]="estacionamento_Text"></nex-input-label>
+                                        <nex-input-label [text]="'Site'" [input]="site_Text"></nex-input-label>
+                                    </nex-form-group>
+                                </nex-tab>
+                            </nex-tabs-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" [ngStyle]="{'display': cardTabs_Options?.selectCard.id == 2? 'block': 'none'}">
+                <div class="panel fullHeight">
+                    <nex-box class="fullHeight"
+                        [marginTop]="0"
+                        [fullHeight]="true" 
+                        [showFooter]="true" 
+                        [boxPanel]="boxButton" 
+                        [background]="'#192038'"
+                        (eventButtonClick)="onButton_Click($event)" >
+                        <nex-listview [params]='listView_VeiculoCondutor' 
+                            [classHeader]="'minPadding'" 
+                            [class]="'displayInBox'" 
+                            [editable]="editable"
+                            (eventCheck)="onlistViewVeiculoCondutor_Change($event)"></nex-listview>
+                    </nex-box>
+                </div>
+            </div>
+            <div class="card-body" *ngIf="cardTabs_Options?.selectCard.id == 3">
+                <div class="panel fullHeight">
+                    <div class="row abordagemRow">
+                        <nex-textarea-label [label]="'Informativa'" [name]="'txtAbordagemInformativa'" [textarea]="abordagemInformativa_Text" [editable]="editable" [marginTop]="0" [fullHeight]="true" [color]="'#30b833'" [fontWeight]="'500'"></nex-textarea-label>
+                    </div>
+                    <div class="row abordagemRow">
+                        <nex-textarea-label [label]="'Advertida'" [name]="'txtAbordagemAdvertida'" [textarea]="abordagemAdvertida_Text" [editable]="editable" [fullHeight]="true" [color]="'#ded77c'" [fontWeight]="'500'"></nex-textarea-label>
+                    </div>
+                    <div class="row abordagemRow">
+                        <nex-textarea-label [label]="'Restritiva'" [name]="'txtAbordagemRestritiva'" [textarea]="abordagemRestritiva_Text" [editable]="editable" [fullHeight]="true" [color]="'#e04350'" [fontWeight]="'500'"></nex-textarea-label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div style="padding: 0 !important; text-align: right;">
+                    <div >
+                        <div class="optionsButtons">
+                            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()" >Salvar</button>
+                            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"   (click)="onClose_Click()">Cancelar</button>
+                            <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"(click)="onClose_Click()">Fechar</button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

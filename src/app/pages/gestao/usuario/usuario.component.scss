@@ -1,0 +1,37 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+  
+  .fullWidth {
+    padding: 0 0 9px;
+  }
+
+  .tabFiltro {
+    overflow: auto;
+    padding: 0px !important;
+  }
+
+  .tabFiltroEmpresa {
+    height: 290px;
+    padding: 0px !important;
+  }
+
+  .tabFiltroArea {
+    height: 318px;
+    padding: 0px !important;
+  }
+
+  .tabScroll {
+    padding: 0 0 0 9px !important;
+  }
+
+  nex-radio{
+    display: flex;
+    justify-content: center;
+  }
+
+  .noHeight{
+    height: 100% !important;
+}
+  
+}

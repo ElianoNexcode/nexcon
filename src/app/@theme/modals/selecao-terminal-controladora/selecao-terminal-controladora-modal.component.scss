@@ -1,0 +1,45 @@
+@import '../../styles/pages.scss';
+
+@include nb-install-component() {
+
+    .modalForm {
+
+        visibility: hidden;
+
+        position: absolute;
+        top: -350px;
+        left: calc(50% - 187.5px);
+        width: 495px;
+        
+        border: 1px solid #151a30;
+        border-top: none !important;
+        border-radius: 0 0 5px 5px;
+        z-index: 201;
+
+        animation: hideModal 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    .card {
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0px 22px 40px black;
+    }
+
+    .modalForm.voted {
+        visibility: visible;
+        animation: showModal 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    .panel {
+        padding: 9px 9px 9px 9px;
+        margin: 0;
+        border-top: 1px solid #434561;
+        height: 96px;
+
+        .title {
+            font-size: 0.7rem;
+        }
+    }
+
+}

@@ -1,0 +1,237 @@
+@import '../../themes.scss';
+
+@include nb-install-component() {
+    .container {
+        min-height: 475px;
+        max-height: calc(100vh - 222px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden;
+        padding: 0 !important;
+    }
+
+    .treeview {
+        display: flex;
+        flex-direction: column;
+        max-width: 164px !important;
+        min-width: 164px !important;
+        height: 100%;
+        padding: 0 !important;
+
+        background-color: nb-theme(background-treeview-color);
+        border-left: nb-theme(border-left);
+
+        .top-title {
+            width: 100%;
+            min-height: 29px;
+
+            font-family: roboto !important;
+            font-size: 0.7rem !important;
+
+            margin: 0 auto !important;
+            padding: 0 !important;
+
+            background-color: nb-theme(background-top-title-color);
+            border-bottom: nb-theme(border-bottom);
+            color: #CCCCCC !important;
+
+            display: -webkit-flex !important;
+            display: flex !important;
+            -webkit-align-items: center !important;
+            align-items: center !important;
+            -webkit-justify-content: center !important;
+            justify-content: center !important;
+        }
+    }
+
+    .itens {
+        width: 100%;
+    }
+
+    .itens:first-child {
+        border-top: none;
+        margin-top: -2px;
+    }
+
+    .tv-itens {
+        width: 100%;
+
+        .leftPad {
+            min-height: 38px !important;
+            padding-left: 8px !important;
+
+            img {
+                width: 0.8rem;
+                height: auto;
+                margin-right: 6px;
+            }
+        }
+
+        .item-label {
+            flex: 0 0 83%;
+            max-width: 109px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .leftPad2x {
+            min-height: 35px !important;
+            padding-left: 18px !important;
+            border: none !important;
+
+            img {
+                width: 0.8rem;
+                height: auto;
+                margin-right: 6px;
+            }
+        }
+
+        .leftPad4x {
+            min-height: 35px !important;
+            padding-left: 32px !important;
+            border: none !important;
+
+            img {
+                width: 0.9rem;
+                height: auto;
+                margin-right: 6px;
+            }
+        }
+
+    }
+
+    .div-top {
+        border-bottom: nb-theme(border-bottom);
+        text-align: center;
+        min-height: 50px !important;
+        max-height: 50px !important;
+        padding: 10px 4px !important;
+
+        .custom-select {
+            border-radius: 5px !important;
+        }
+    }
+
+    .endTreeView {
+        border-top: nb-theme(border-top);
+        height: 1px !important;
+        width: 100%;
+    }
+
+    .actived {
+        text-decoration: none;
+        background-color: #0d54a1 !important;
+    }
+
+    .condensed {
+        font-size: 0.6rem !important;
+    }
+
+    .btn {
+        border: 0;
+        border-radius: 0 !important;
+        text-align: left !important;
+        line-height: 1rem !important;
+        box-shadow: none !important;
+    }
+
+    .btn-link {
+        margin: 0 auto !important;
+        display: -webkit-flex !important;
+        display: flex !important;
+        -webkit-align-items: center !important;
+        align-items: center !important;
+        -webkit-justify-content: center !important;
+        justify-content: left !important;
+        width: 100%;
+        font-family: roboto !important;
+        font-size: 10px !important;
+        color: nb-theme(color-60) !important;
+        border-top: nb-theme(border-top);
+    }
+
+    .btn-link:hover {
+        text-decoration: none !important;
+        background-color: nb-theme(background-btt-hover) !important;
+    }
+
+    .btn-link.active:hover {
+        text-decoration: none !important;
+        background-color: nb-theme(background-btt-hover) !important;
+    }
+
+    .btn-link.active {
+        background-color: #222b45;
+    }
+
+    .combo {
+        font-size: 0.7rem !important;
+        color: nb-theme(color-60);
+        border-radius: 5px !important;
+        border: 1px solid #0F1429 !important;
+        border-top: 0 !important;
+        min-width: 139px !important;
+        padding: 4px !important;
+    }
+
+    .dropright .dropdown-toggle-split::after {
+        position: relative;
+        color: nb-theme(color-60) !important;
+        border-top: .4em solid transparent !important;
+        border-right: 0 !important;
+        border-bottom: .4em solid transparent !important;
+        border-left: .4em solid !important;
+    }
+
+    .dropleft .dropdown-toggle::before {
+        position: absolute;
+        color: nb-theme(color-60) !important;
+        right: 6px !important;
+        border-top: .4em solid transparent !important;
+        border-left: 0 !important;
+        border-bottom: .4em solid transparent !important;
+        border-right: .4em solid !important;
+    }
+
+    .dropdown-toggle-split::after {
+        position: relative;
+        color: nb-theme(color-60) !important;
+        left: 0px !important;
+        border-top: .4em solid !important;
+        border-right: .4em solid transparent !important;
+        border-left: .4em solid transparent !important;
+    }
+
+    .dropdown-toggle-split-flip::after {
+        position: relative;
+        left: 27px !important
+    }
+
+    .player {
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transition: all 600ms;
+        transition: all 600ms;
+        z-index: 20;
+        height: 100%;
+    }
+
+    .player div {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .player .back {
+        position: absolute;
+        top: 0;
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+    .player.voted {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+    }
+
+}

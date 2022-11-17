@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="29.9989mm" height="30.1475mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1739 1747"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="722" font-variant="normal" style="fill-rule:nonzero" font-weight="700">
+	<font-face 
+		font-family="Arial">
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="7" horiz-adv-x="556"><path d="M42.0034 580.003l0 126.994 469.995 0 0 -99.9948c-38.831,-38.1655 -78.1649,-92.8365 -118.334,-164.168 -39.9994,-71.3319 -70.6664,-147.167 -91.6607,-227.499 -21.0017,-80.3316 -31.3399,-152.166 -30.9997,-215.334l-132 0c2.32942,99.1666 22.6656,200.33 61.1638,303.497 38.6683,103.005 89.9968,195.338 154.503,276.505l-312.667 0z"/></glyph>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";src:url("#FontID0") format(svg)}
+    .fil0 {fill:#BDBFC1}
+    .fnt0 {font-weight:bold;font-size:783.763;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Camada_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1052107808">
+   <path class="fil0" d="M1652 674l0 922c0,36 -28,64 -64,64l-1437 0c-35,0 -64,-29 -64,-64l0 -922 -87 0 0 923c0,83 67,151 151,151l1437 0c83,0 151,-67 151,-151l0 -923 -87 0z"/>
+   <path class="fil0" d="M1588 203l-186 0 0 79c30,26 49,64 49,106 0,77 -63,140 -140,140 -77,0 -140,-63 -140,-140 0,-38 15,-73 40,-98l0 -87 -100 0 0 80c29,26 47,63 47,105 0,77 -63,140 -140,140 -77,0 -140,-63 -140,-140 0,-39 16,-74 42,-100l0 -85 -100 0 0 82c28,26 46,62 46,104 0,77 -63,140 -140,140 -77,0 -140,-63 -140,-140 0,-40 17,-75 43,-101l0 -84 -100 0 0 83c27,26 45,62 45,102 0,77 -63,140 -140,140 -77,0 -140,-63 -140,-140 0,-40 17,-77 45,-102l0 -83 -186 0c-83,0 -151,67 -151,151l0 251 1739 0 0 -251c0,-83 -67,-151 -151,-151z"/>
+   <path class="fil0" d="M433 0c-34,0 -61,27 -61,61l0 325c0,34 27,61 61,61 34,0 61,-27 61,-61l0 -325c0,-34 -27,-61 -61,-61zm291 0c-34,0 -61,27 -61,61l0 325c0,34 27,61 61,61 34,0 61,-27 61,-61l0 -325c0,-34 -27,-61 -61,-61zm291 0c-34,0 -61,27 -61,61l0 325c0,34 27,61 61,61 34,0 61,-27 61,-61l0 -325c0,-34 -27,-61 -61,-61zm291 0c-34,0 -61,27 -61,61l0 325c0,34 27,61 61,61 34,0 61,-27 61,-61l0 -325c0,-34 -27,-61 -61,-61z"/>
+   <g transform="matrix(1.00002 0 0 1 2141.46 1482.84)">
+    <text x="-1500" y="-70"  class="fil0 fnt0">7</text>
+   </g>
+  </g>
+ </g>
+</svg>

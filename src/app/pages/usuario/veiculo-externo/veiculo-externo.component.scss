@@ -1,0 +1,18 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+
+    .width_1{
+        width: 60% ;
+        margin-right: 2%;        
+    }
+    
+    .width_2{
+        width: 38% ; 
+    }    
+
+    .abordagemRow {
+        height: 33.33% !important;
+    }
+}
+

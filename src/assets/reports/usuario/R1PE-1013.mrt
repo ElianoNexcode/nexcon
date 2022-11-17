@@ -1,0 +1,1599 @@
+{
+  "ReportGuid": "3b09702d7ddd6d050dbba0590cf10c0d",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "R1PE-1013.mrt",
+  "ReportCreated": "/Date(1618180532000-0300)/",
+  "ReportChanged": "/Date(1666039385000-0300)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "Resources": {
+      "0": {
+        "Name": "R1PE-1013",
+        "Alias": "R1PE-1013",
+        "Type": "Json",
+        "Image": "IDH6I0DxyYVqabaVWgPpPbW2h80MEynZu4Yk0snQ7WYZE9ktQmufeFXtV8PXlCcnXAIifUC8CgD/9eQcBevHhpSMjGFKAhLlRbyum0ZCiRKUCzVMzCoYUcVBIbSv8+8rDv3RwO4tAZhrcaXEXfmqY0q+xwVR/C6I9oLzp4DdXDBQA/L0ebEUtjaMWkdQ7KllvckKsRHThvyUYFQ8XiyBuI/6cFPOAUgsHSUbBFfdWK0M1eQ/uCh8vp+x/Jaoxi/s9reyoMNCLN0GuIDx+TFYA6KbdOOm72fiRcsK9tyarh+aOnhvZgr4Z7xOXJEpznSF1bh5UO6dAJdJYvZIbwaZVimVUg01HxVK6+9x4k6TUrCtZ6DiVNzijqJ5nrerDjvxlzimcdEKyc6f5GGRERIPqqRM8sq85LeM9Uw6h4NW6d2xxMyAshzdZt0HGQSZJJjNhBn9/ChGvTaxH1ycKlGupMGc/EBw86MggTEeC3ctlaHSNCSSJzI8FpU6TDHuB7uT1G6fDjO5uj6Xv22uR/pXQjJKkcnS5+1Inc97OAS0bMSBaleDqdVeFmmzF9VWdG/TTcuSDdG079mQblGUzZjIVzSy+I3+J/ICqTYHkziillkA52V+mHJMmySLwKhBHARSrR2mNe2sg6tf+Mfy5Pu1aECaJJ91y5RmoqfFwy/L/Fu3TI2NREQ9UpWRhV8czljPVNXXy9Mz7rbbwES7tPjHulZVXb3oprr+KKFHJbDNrMeJ4umCrJOzGL2yhUEYbDKSV1bNiYom0L8V5UJTLkVoYs+uI8XoB6tjESB8AcPtlVH7MJx6gzfjwXsMe8t4EifpdzHkaXDC323clCgBdiLCYOIiWtaSD3+z1WPZi+8YyRfUSsEpURjg2fBLMSVYtq1FbrZwxDIspQQJw+rRj3W6MyubZiTZTS2BuimJNkuknY3YE0o2VIcLjCTPPAupK1Js26h7Dpvo3cciZ9DZLsIuWlDgySj7AyO0QE3mtipGGLugaWiruqkUngfaWO+pDkopY3eeQn/HairFpqNJ54LIK6c2xOnhPsln4C87MGsSW5h0PSev73oqg8zwtxo+TrOWaPZZayDdq77vr2Nr1iQLVxU0QqARtZRc4rJI8VJRVPph5mdpudb7UoCyEGNN+YFRc7AccqxpmExomzPoPn3Lec3hqA5DLl2d1mYlZpkcN1zW31Q6p4YrF0dEdOMmnjxOQbhVvvBRO9TsEJgr2/ug2nRgHJWRvWqPP0WIFC49vW4eKfcvpBhOi1oHMxPbaOIRu4qFqZQBBjNYbluApgSgzHefZcYHYAkalsr1wbntAVMXketk4mIyCpUCvxIujnErePEcgqGpqd74opYiRzwh6Bqv176CdYOAcudjoAlaSSwmJBATaAdglhOHLOq7qrzixcVdGcRotXjk2U1nqRhZpteIstuk30f2zKXSN+6ICf9dW5m8FNoN6qkJLVd7eIJ+oUAs3SXy4F/6Z6dm8kqYupmc56E0pf76YjuBW9luEKHFjIhShPiO2OAy/91/DtPE0yUF78pn5WmRRL2dv0vrr0Txa93is6zMZLq7MOe4hjcczifixoOp8KY5jUmEo5Mnsp6DT9zsiCUz/VRBcPqmwX3ABU0uPGTbMVkNmF2ICr3Otoz51XE="
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioPessoaExterna",
+        "Alias": "data_usuarioPessoaExterna",
+        "Columns": {
+          "0": {
+            "Name": "nodes",
+            "Index": -1,
+            "NameInSource": "nodes",
+            "Alias": "nodes",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioPessoaExterna"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioPessoaExterna_nodes",
+        "Alias": "data_usuarioPessoaExterna_nodes",
+        "Columns": {
+          "0": {
+            "Name": "abordagem",
+            "Index": -1,
+            "NameInSource": "abordagem",
+            "Alias": "abordagem",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "entidadeNome",
+            "Index": -1,
+            "NameInSource": "entidadeNome",
+            "Alias": "entidadeNome",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "grupo",
+            "Index": -1,
+            "NameInSource": "grupo",
+            "Alias": "grupo",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "grupoId",
+            "Index": -1,
+            "NameInSource": "grupoId",
+            "Alias": "grupoId",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "nome",
+            "Index": -1,
+            "NameInSource": "nome",
+            "Alias": "nome",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioPessoaExterna_nodes"
+      },
+      "2": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioPessoaExterna_nodes_abordagem",
+        "Alias": "data_usuarioPessoaExterna_nodes_abordagem",
+        "Columns": {
+          "0": {
+            "Name": "mensagemAdvertida",
+            "Index": -1,
+            "NameInSource": "mensagemAdvertida",
+            "Alias": "mensagemAdvertida",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "mensagemInformativa",
+            "Index": -1,
+            "NameInSource": "mensagemInformativa",
+            "Alias": "mensagemInformativa",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "mensagemRestritiva",
+            "Index": -1,
+            "NameInSource": "mensagemRestritiva",
+            "Alias": "mensagemRestritiva",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "pessoaId",
+            "Index": -1,
+            "NameInSource": "pessoaId",
+            "Alias": "pessoaId",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioPessoaExterna_nodes_abordagem"
+      },
+      "3": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioPessoaExterna_nodes_grupo",
+        "Alias": "data_usuarioPessoaExterna_nodes_grupo",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "pessoaGrupo",
+            "Index": -1,
+            "NameInSource": "pessoaGrupo",
+            "Alias": "pessoaGrupo",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioPessoaExterna_nodes_grupo"
+      },
+      "4": {
+        "Ident": "StiDataTableSource",
+        "Name": "header",
+        "Alias": "header",
+        "Columns": {
+          "0": {
+            "Name": "contador",
+            "Index": -1,
+            "NameInSource": "contador",
+            "Alias": "contador",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "logoAplicacao",
+            "Index": -1,
+            "NameInSource": "logoAplicacao",
+            "Alias": "logoAplicacao",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "logoOrganizacao",
+            "Index": -1,
+            "NameInSource": "logoOrganizacao",
+            "Alias": "logoOrganizacao",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "organizacao",
+            "Index": -1,
+            "NameInSource": "organizacao",
+            "Alias": "organizacao",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "periodo",
+            "Index": -1,
+            "NameInSource": "periodo",
+            "Alias": "periodo",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "subtitulo",
+            "Index": -1,
+            "NameInSource": "subtitulo",
+            "Alias": "subtitulo",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "titulo",
+            "Index": -1,
+            "NameInSource": "titulo",
+            "Alias": "titulo",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.header"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "JSON",
+        "Alias": "JSON",
+        "PathData": "resource://R1PE-1013"
+      }
+    },
+    "Relations": {
+      "0": {
+        "Name": "data_usuarioPessoaExterna",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "nodes"
+        },
+        "NameInSource": "data_usuarioPessoaExterna_nodes",
+        "Alias": "data_usuarioPessoaExterna",
+        "ParentSource": "data_usuarioPessoaExterna",
+        "ChildSource": "data_usuarioPessoaExterna_nodes"
+      },
+      "1": {
+        "Name": "data_usuarioPessoaExterna_nodes",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "abordagem"
+        },
+        "NameInSource": "data_usuarioPessoaExterna_nodes_abordagem",
+        "Alias": "data_usuarioPessoaExterna_nodes",
+        "ParentSource": "data_usuarioPessoaExterna_nodes",
+        "ChildSource": "data_usuarioPessoaExterna_nodes_abordagem"
+      },
+      "2": {
+        "Name": "data_usuarioPessoaExterna_nodes",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "grupo"
+        },
+        "NameInSource": "data_usuarioPessoaExterna_nodes_grupo",
+        "Alias": "data_usuarioPessoaExterna_nodes",
+        "ParentSource": "data_usuarioPessoaExterna_nodes",
+        "ChildSource": "data_usuarioPessoaExterna_nodes_grupo"
+      },
+      "3": {
+        "Name": "RelationGrupo",
+        "ChildColumns": {
+          "0": "grupoId"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "RelationGrupo",
+        "Alias": "RelationGrupo",
+        "ParentSource": "data_usuarioPessoaExterna_nodes_grupo",
+        "ChildSource": "data_usuarioPessoaExterna_nodes"
+      },
+      "4": {
+        "Name": "RelationAbordagem",
+        "ChildColumns": {
+          "0": "id"
+        },
+        "ParentColumns": {
+          "0": "pessoaId"
+        },
+        "NameInSource": "RelationAbordagem",
+        "Alias": "RelationAbordagem",
+        "ParentSource": "data_usuarioPessoaExterna_nodes_abordagem",
+        "ChildSource": "data_usuarioPessoaExterna_nodes"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Relatório_de_Pessoa_Externa_R1PE_1013",
+      "Guid": "a040926935fa3f2242ac54a98973e977",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiPageHeaderBand",
+          "Name": "PageHeaderBand1",
+          "PrintOn": "OnlyFirstPage",
+          "ClientRectangle": "0,0.4,27.7,2",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "5be8cfc4f60cf48905ad8c221ce554a0",
+              "ClientRectangle": "3.14,0.38,21.4,0.81",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.titulo}"
+              },
+              "HorAlignment": "Center",
+              "Font": ";18;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "b5dbbcb4c9542479b0f4e50c439d06ec",
+              "CanGrow": true,
+              "ClientRectangle": "3.14,1.32,21.4,0.41",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.contador}"
+              },
+              "HorAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiImage",
+              "Name": "Image1",
+              "ClientRectangle": "0,0,3,1.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Stretch": true,
+              "DataColumn": "header.logoAplicacao",
+              "ImageBytes": ""
+            },
+            "3": {
+              "Ident": "StiImage",
+              "Name": "Image2",
+              "Guid": "1a328abba58f899ff63e34855d43472b",
+              "ClientRectangle": "24.7,0,3,1.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Stretch": true,
+              "DataColumn": "header.logoOrganizacao",
+              "ImageBytes": ""
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiPageFooterBand",
+          "Name": "PageFooterBand1",
+          "ClientRectangle": "0,18.55,27.7,0.45",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "Top;;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "43f8ce914896b1fd063601178dac35cb",
+              "PrintOn": "OnlyFirstPage",
+              "CanGrow": true,
+              "ClientRectangle": "0.04,0.05,25.33,0.35",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.subtitulo}"
+              },
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "CanGrow": true,
+              "ClientRectangle": "25.6,0.05,2,0.35",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{PageNofM}"
+              },
+              "HorAlignment": "Right",
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0"
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand1",
+          "PrintOn": "OnlyFirstPage",
+          "ClientRectangle": "0,3.2,27.7,0.58",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "Top;;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "5fb8f1a0a8d1dd7db1e0908bd51ea63b",
+              "ClientRectangle": "15.6,0.11,12.08,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.periodo}"
+              },
+              "HorAlignment": "Right",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "3": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand2",
+          "ClientRectangle": "0,4.58,27.7,0.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "All;;;;;;;solid:0,0,0",
+          "Brush": "solid:237,237,237",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "5698fe5e43c6e99b248dfc4f1802fa20",
+              "ClientRectangle": "0.05,0.11,9.49,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Nome"
+              },
+              "Font": ";8.25;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "Guid": "64718115f97690467f5fcdd0041606bd",
+              "ClientRectangle": "9.75,0.11,3.78,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Grupo"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "Guid": "50f02b990f38fdd20ff2eafc96691796",
+              "ClientRectangle": "13.78,0.11,5.7,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Empresa"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "3785db96c251e63eac9dee6fb0a4b7ae",
+              "ClientRectangle": "19.69,0.11,6.56,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Abordagens"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "4": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,5.98,27.7,0.45",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "33bfcf5aa9a13ce61b2cadd62a222b28",
+              "CanGrow": true,
+              "ClientRectangle": "0.05,0.05,9.49,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaExterna_nodes.nome}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "Guid": "89f3897b188d9eddffdbfcafadc2187d",
+              "CanGrow": true,
+              "ClientRectangle": "9.75,0.05,3.78,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaExterna_nodes.RelationGrupo.pessoaGrupo}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "4a344cd9f364e6971b1f6fbe0e89063a",
+              "CanGrow": true,
+              "ClientRectangle": "13.78,0.05,5.7,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaExterna_nodes.entidadeNome}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "e4640a06925f72343936d5dea24dc9c1",
+              "CanGrow": true,
+              "ClientRectangle": "19.7,0.05,1.95,0.4",
+              "Conditions": {
+                "0": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "A",
+                  "Expression": {
+                    "Value": "{data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa}"
+                  },
+                  "TextColor": "0,0,0",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "1": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "B",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "2": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "C",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "3": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "D",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "4": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "E",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "5": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "F",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "6": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "G",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "7": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "H",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "8": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "I",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "9": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "J",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "10": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "K",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "11": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "L",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "12": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "M",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "13": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "N",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "14": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "O",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "15": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "P",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "16": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "Q",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "17": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "R",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "18": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "S",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "19": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "T",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "20": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "U",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "21": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "V",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "22": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "W",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "23": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "X",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "24": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "Y",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "25": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa",
+                  "Value1": "Z",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"INFORMATIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                }
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "Guid": "5521168b7bd49b3b4a669ef8ddcedcbf",
+              "CanGrow": true,
+              "ClientRectangle": "21.7,0.05,0.25,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "-"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "632ec6f4d6831f26b8dc669f9a81a529",
+              "CanGrow": true,
+              "ClientRectangle": "23.8,0.05,0.25,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "-"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "07e6e58055cede14d625a5c4e97937d1",
+              "CanGrow": true,
+              "ClientRectangle": "22,0.05,1.75,0.4",
+              "Conditions": {
+                "0": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "A",
+                  "Value2": "A",
+                  "Expression": {
+                    "Value": "{data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa}"
+                  },
+                  "TextColor": "0,0,0",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "1": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "B",
+                  "Value2": "B",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "2": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "C",
+                  "Value2": "C",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "3": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "D",
+                  "Value2": "D",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "4": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "E",
+                  "Value2": "E",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "5": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "F",
+                  "Value2": "F",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "6": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "G",
+                  "Value2": "G",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "7": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "H",
+                  "Value2": "H",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "8": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "I",
+                  "Value2": "I",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "9": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "J",
+                  "Value2": "J",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "10": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "K",
+                  "Value2": "K",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "11": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "L",
+                  "Value2": "L",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "12": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "M",
+                  "Value2": "M",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "13": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "N",
+                  "Value2": "N",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "14": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "O",
+                  "Value2": "O",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "15": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "P",
+                  "Value2": "P",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "16": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "Q",
+                  "Value2": "Q",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "17": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "R",
+                  "Value2": "R",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "18": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "S",
+                  "Value2": "S",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "19": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "T",
+                  "Value2": "T",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "20": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "U",
+                  "Value2": "U",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "21": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "V",
+                  "Value2": "V",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "22": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "W",
+                  "Value2": "W",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "23": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "X",
+                  "Value2": "X",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "24": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "Y",
+                  "Value2": "Y",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "25": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida",
+                  "Value1": "Z",
+                  "Value2": "Z",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"ADVERTIDA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                }
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemAdvertida}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "6371f5a228b81663548f69a72a08ad69",
+              "CanGrow": true,
+              "ClientRectangle": "24.1,0.05,1.95,0.4",
+              "Conditions": {
+                "0": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "A",
+                  "Value2": "A",
+                  "Expression": {
+                    "Value": "{data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemInformativa}"
+                  },
+                  "TextColor": "0,0,0",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "1": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "B",
+                  "Value2": "B",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "2": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "C",
+                  "Value2": "C",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "3": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "D",
+                  "Value2": "D",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "4": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "E",
+                  "Value2": "E",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "5": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "F",
+                  "Value2": "F",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "6": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "G",
+                  "Value2": "G",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "7": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "H",
+                  "Value2": "H",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "8": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "I",
+                  "Value2": "I",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "9": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "J",
+                  "Value2": "J",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "10": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "K",
+                  "Value2": "K",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "11": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "L",
+                  "Value2": "L",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "12": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "M",
+                  "Value2": "M",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "13": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "N",
+                  "Value2": "N",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "14": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "O",
+                  "Value2": "O",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "15": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "P",
+                  "Value2": "P",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "16": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "Q",
+                  "Value2": "Q",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "17": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "R",
+                  "Value2": "R",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "18": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "S",
+                  "Value2": "S",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "19": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "T",
+                  "Value2": "T",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "20": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "U",
+                  "Value2": "U",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "21": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "V",
+                  "Value2": "V",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "22": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "W",
+                  "Value2": "W",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "23": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "X",
+                  "Value2": "X",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "24": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "Y",
+                  "Value2": "Y",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                },
+                "25": {
+                  "Ident": "StiCondition",
+                  "Condition": "Containing",
+                  "Column": "data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva",
+                  "Value1": "Z",
+                  "Value2": "Z",
+                  "CanAssignExpression": true,
+                  "AssignExpression": "\"RESTRITIVA\"",
+                  "Style": "##Normal##",
+                  "BorderSides": "None"
+                }
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaExterna_nodes.RelationAbordagem.mensagemRestritiva}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "data_usuarioPessoaExterna_nodes"
+        }
+      },
+      "PaperSize": "A4",
+      "Orientation": "Landscape",
+      "PageWidth": 29.7,
+      "PageHeight": 21,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

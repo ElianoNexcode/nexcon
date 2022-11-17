@@ -1,0 +1,9 @@
+<div class="row card-footer-question" >
+    <div class="col">
+        {{ question | translate }}
+    </div>    
+    <div class="col card-footer-buttons">
+        <button type="button" class="btn btn-dark bt-card greenBorder2"(click)="onClick('yes')">Sim</button>
+        <button type="button" class="btn btn-dark bt-card redBorder2" style="margin-right: 5px;" (click)="onClick('no')">Não</button>
+    </div>
+</div>

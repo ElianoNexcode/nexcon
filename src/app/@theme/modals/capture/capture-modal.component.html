@@ -1,0 +1,81 @@
+<canvas #canvasReal id="canvas" style="display: none;"></canvas>
+<div #square class="square" (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp($event)" (mousemove)="onMouseMove($event)" [class.voted]="captureModal.showSquare" ></div>
+<div class="modalForm noselect" id="modalForm" [class.voted]="captureModal.showModal">
+        <div id="gridModal" class="grid">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="captureCol">
+                            <nex-box *ngIf="!type || type == 'Pessoa'" class="autoHeight" [title]="'Pessoa'" [noPadding]="true">
+                                <div class="pictureBox">
+                                    <canvas #canvas id="canvas"></canvas>
+                                </div>
+                            </nex-box>
+                            <nex-box *ngIf="!type || type =='Veículo'" class="autoHeight" [title]="'Veículo'" [marginTop]="11" [noPadding]="true">
+                                <div class="pictureBox"></div>
+                            </nex-box> 
+                        </div>
+                        <div [@video]="captureSettings? 'right' : 'left'" class="videoCol">
+                            <nex-box class="autoHeight" [title]="'Imagem em Tempo Real'" [noPadding]="true" [fullHeightMargin]="true">
+                                <video #video id="video" [width]="480" [height]="340" class="videoBox" (click)="onVideo_Click($event)"></video>
+                            </nex-box>
+                        </div>
+                        <div [@perfil]="captureSettings? 'right' : 'left'" class="settingsCol">
+                            <nex-box class="autoHeight" [title]="'Terminal de Identificação'">
+                                <nex-combobox [options]="terminal_Option" (eventChange)="onTerminal_Change($event)"></nex-combobox>
+                            </nex-box>
+                            <nex-box class="autoHeight" [title]="'Opções de Captura'" *ngIf="!type">
+                                <nex-radio [display]="'block'" [marginTop]="9" [background]="'transparent'" [options]="opcoesCaptura"></nex-radio>
+                            </nex-box>
+                            <nex-box class="autoHeight" [title]="'Quadro de Captura'">
+                                <nex-radio [display]="'block'" [marginTop]="9" [background]="'transparent'" [options]="quadroCaptura" (eventChange)="quadroCaptura_Change()"></nex-radio>
+                            </nex-box>
+                        </div>
+                        <div [@config]="!captureSettings? 'top' : 'bottom'" class="configCol">
+                            <nex-box [title]="'Configurações'" [background]="'#212a47'">
+                                <nex-tabs-card [tabsOptions]="tabConfiguracao" [name]="'tabsConfiguracaoOperador'" [fullWidth]="true">
+                                    <nex-tab [tabComponent]="tabConfiguracao.tabs[0]">
+                                        <nex-form-group [name]="'tabLocal'">
+                                            <nex-combobox [label]="'Pessoa'" [options]="pessoaLocal_Options"></nex-combobox>
+                                            <nex-combobox [label]="'Veículo'" [options]="veiculoLocal_Options"></nex-combobox>
+                                        </nex-form-group>
+                                    </nex-tab> 
+                                    <nex-tab [tabComponent]="tabConfiguracao.tabs[1]">
+                                        <nex-form-group [name]="'tabRemoto1'">
+                                            <nex-combobox [label]="'Pessoa'" [options]="pessoaRemoto1_Options"></nex-combobox>
+                                            <nex-combobox [label]="'Veículo'" [options]="veiculoRemoto1_Options"></nex-combobox>
+                                        </nex-form-group>
+                                    </nex-tab>
+                                    <nex-tab [tabComponent]="tabConfiguracao.tabs[2]">
+                                        <nex-form-group [name]="'tabRemoto2'">
+                                            <nex-combobox [label]="'Pessoa'" [options]="pessoaRemoto2_Options"></nex-combobox>
+                                            <nex-combobox [label]="'Veículo'" [options]="veiculoRemoto2_Options"></nex-combobox>
+                                        </nex-form-group>
+                                    </nex-tab>
+                                    <nex-tab [tabComponent]="tabConfiguracao.tabs[3]">
+                                        <nex-form-group [name]="'tabRemoto3'">
+                                            <nex-combobox [label]="'Pessoa'" [options]="pessoaRemoto3_Options"></nex-combobox>
+                                            <nex-combobox [label]="'Veículo'" [options]="veiculoRemoto3_Options"></nex-combobox>
+                                        </nex-form-group>
+                                    </nex-tab>
+                                </nex-tabs-card>
+                                <div style="padding: 0 !important;text-align: right;width: 100%;margin-top: 9px">
+                                    <button type="button" class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()" [disabled]="!captureModal.captured && terminal_Option.itens.length > 0">Aplicar</button>
+                                    <button type="button" class="btn btn-dark bt-card redBorder" (click)="onConfig_Close_Click()">Cancelar</button>
+                                </div>            
+                            </nex-box>
+                        </div>    
+                    </div>
+                </div>
+                <div class="card-footer" style="display: flex;">
+                    <div style="padding: 0 !important;text-align: left;width: 50%;" [ngStyle]="{'visibility': (settingButton == true)? 'visible': 'hidden'}">
+                        <button type="button" class="btn btn-dark bt-card orangeBorder settingButton" (click)="onConfigurar_Click()">Configurar</button>
+                    </div>
+                    <div style="padding: 0 !important;text-align: right;width: 50%;">
+                        <button type="button" class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()" [disabled]="!captureModal.captured && terminal_Option.itens.length > 0">OK</button>
+                        <button type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

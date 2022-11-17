@@ -1,0 +1,67 @@
+<nex-selecao-bloqueio-controladora-modal [title]="'Seleção Bloqueio'" [selecaoModal]="selecaoBloqueioControladoraModalService" (eventSelect)="onBloqueioSelect($event)" ></nex-selecao-bloqueio-controladora-modal>
+<nex-selecao-elevador-controladora-modal [title]="'Seleção Elevador'" [selecaoElevadorModal]="selecaoElevadorControladoraModalService" (eventSelect)="onElevadorSelect($event)"></nex-selecao-elevador-controladora-modal>
+<nex-selecao-terminal-controladora-modal [title]="'Seleção Terminal'" [selecaoTerminalModal]="selecaoTerminalControladoraModalService" (eventSelect)="onTerminalSelect($event)"></nex-selecao-terminal-controladora-modal>
+<div class="modalForm noselect" id="modalForm" [class.voted]="leitorModal.showModal">
+    <div class="card-form" class="card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{ title }}
+        </div>
+        <div class="card-body">
+            <div class="panel">
+                <nex-tabs-card [fullWidth]="true" [tabsOptions]="tabsControladoraModal_Option" [name]="'tabsControladoraModal'">
+                    <nex-tab [tabComponent]="tabsControladoraModal_Option.tabs[0]">
+                        <nex-form-group [name]="'icontrole'">
+                            <nex-combobox [label]="'Controle'" [options]="controleModal_Option"></nex-combobox>
+                            <nex-combobox [label]="'Validação +'" [options]="validacaoModal_Option" (click)="onValidacao_Selected()"></nex-combobox>
+                            <nex-input-label [text]="'Releitura'" [input]="releituraModal_Text" [sufixo]="'Tempo em segundos'"></nex-input-label>
+                            <nex-combobox  [options]="bloqueioModal_Option" [type]="'find'" [findIcon]="'plus'" (eventChange)="onBloqueio_Click($event)"></nex-combobox>
+                            <nex-input-label [text]="'Terminal'" [input]="terminalModal_Text" [findIcon]="'plus'" (click)="onTerminal_Click($event)" ></nex-input-label>
+                        </nex-form-group>
+                    </nex-tab>
+                    <nex-tab [tabComponent]="tabsControladoraModal_Option.tabs[1]">
+                        <nex-form-group [name]="'iprotocolos'">
+                            <nex-combobox [label]="'Protocolo'" [options]="protocoloModal_Option"></nex-combobox>
+                            <nex-combobox [label]="'Botão CR'" [options]="botaoCrModal_Option"></nex-combobox>
+                            <nex-combobox [label]="'Gerar Evento'" [options]="gerarEventoModal_Option"></nex-combobox>
+                            <nex-combobox [label]="'Buzzer'" [options]="buzzerModal_Option"></nex-combobox>
+                            <nex-select-group [text]="'Cofre'" [options]="cofreModal_Options"></nex-select-group>
+                        </nex-form-group>
+                    </nex-tab>
+                     <nex-tab [tabComponent]="tabsControladoraModal_Option.tabs[2]">
+                        <nex-form-group [name]="'iprogramacao'">
+                            <nex-combobox [label]="'Atuar'" [options]="atuarModal_Option"></nex-combobox>
+                            <nex-input-multi-label [text]= "'Hora'"[inputLeft]="inicial_Mult" [inputRight]="final_Mult"></nex-input-multi-label>
+                            <nex-box [title]="'Intertravamento'" [titleAlign]="'left'">
+                                <nex-form-group [name]="'intertravamentos'">
+                            <div class="row">   
+                                 <div class="col-6 div_Ed">
+                                     <nex-combobox [label]="'ED 1'" [options]="eD1_Option" ></nex-combobox> 
+                                </div> 
+
+                                <div class="col-6 div_Ed">
+                                    <nex-combobox [label]="'ED 3'" [options]="eD2_Option"></nex-combobox> 
+                                </div>
+
+                                <div class="col-6 div_Ed div_Ed_Inferior">
+                                    <nex-combobox [label]="'ED 2'" [options]="eD3_Option" [marginTop]="0" ></nex-combobox> 
+                               </div> 
+
+                               <div class="col-6 div_Ed div_Ed_Inferior">
+                                   <nex-combobox [label]="'ED 4'" [options]="eD4_Option" [marginTop]="0"></nex-combobox> 
+                               </div>
+                            </div>
+                                </nex-form-group>
+                            </nex-box>
+                        </nex-form-group>
+                    </nex-tab>
+                </nex-tabs-card>   
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="buttons"style="text-align: right;">
+                <button type="button" class="btn btn-dark bt-card greenBorder" (click)="onOK_Click()">OK</button>
+                <button type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

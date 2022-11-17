@@ -1,0 +1,932 @@
+{
+  "ReportGuid": "548b3c69920335d4e6e4d10667d0bece",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "R1PI-1004.mrt",
+  "ReportCreated": "/Date(1618180532000-0300)/",
+  "ReportChanged": "/Date(1665426402000-0300)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "Resources": {
+      "0": {
+        "Name": "R1PI-1004",
+        "Alias": "R1PI-1004",
+        "Type": "Json",
+        "Image": "twI9SkwT4fnNoSp8bB36C1roOfcDQfX1tBXWF2MLX81kB4DISxMKIHJvMfu/OHvbEdUW+uBqy1ltACqXa5DtByO3r6hc+7IJHby1dZ/gUgQl/+BzNgUFy5sgu8nsqAjjUITKWOsbyHzmKBZolPmeCm8+wgUGFkV1Jw6sA1PI1esrOkxvvVmr7OTM9hsnY8NJy4WfSA9QFIYsEemtfElN2kCsby4bKbHwMP5Oyd8A4Ty/LoOo4N8HtK1UIO4Wg1hTY2wSYK7wIdZdLcVHKbMbSL5KAk0/bVBXQzyYT7T3GSjOSkkhOrpE+EGF3efOCZ2vj7akw65ioIyZ2YVUtubx6+1CyjoU8IkcsdGJrOhgOstGzTU8tNTPL+0NSBSkzKFP094Lqxl8rX8d4m8NqtUnlIuLUEl8QoG0cqUsd3Wshuw7aJS+9mqHS3/s4sV2JN5JKRV7Qi5oaYkzIQQVNCZ2yHuvYLCs5RXZHcFQscSmjTMd7FAHgsFhWORIWfRBD7JXvxC23dKWHji6bERFZyo7aBDy51+FESNcZw9gHakB2qijIq8GqUspaEH4lnBbXNtrzd2wIeJgpvVwrrwQ8usdJBH4bsJ6Tz/iqpGD2FJ8tme4345KgxHcWKgtyOc5IZxtvHY4nyFEESMM6fyrw9wBVcFa1wtCXUayzyKTLLbWo+KN54+pIESx5xdts4OrG89dunrDIIhyzg19wlqP0LTcuk6Vx/+n081CqWt0avPi1VlxrYUD7asX9HCS6rbbP0fDigS8FSbiZ6S9z1j9ZxssRycUzeTxXOaSL7QD/woV16RDUexhxNhUr1NC7PLhQTx5G69qoiPqgDlixV88afUkK2999tGLyxtVmpFIPQ+CEJEbcKnyoi4EOQGLGYReX40ap1RlyZceMmLoemFjHmDc463nPAOOpPArYxY+5niXvNTKVUoa5L6U/trVeMnyX9wGgywvolOZqqAdzowX/WKLqQBsWNGXFAanYpVN7NWjuFGKF6GbZ9PyethoprV49/8G6y6Wt9YhDIPmP2K08k/O/i/98lZW4vvGDK0U65wbzsf/4f8Fsg1kz+6QNysrmL76UN9KzkYK/4i46QIf0/b2llmB8wyl8qL7DHmHcnNl8MtVBFvtsnxyY4wqWmjdHObDhHFxfkfrGL2XNLmiQw+k7FOvQx1/AXhzKbxcJYBr4X1WalNBnVGH73l2XFbmcpPFOr5+75AiE9et/mCMXWAh71hgPOt0s1IbBV1Fn88agxxLCMKRrGJPUmy67w1KzrV7lQ75fw8HTDkxBadMFyWTjRV8uo0J7cgXuBhG9tWFRZa9ti6y6Nf1poD4RlZRCa31DM5pMX6mUyT8EW7ZqR7OX4/ZPeKej8ywSMNKhfOLGdSlwz55VrkorZFYP5rh5EfoTYwdb+TglC7TajyzhmzzbZWSPBIwpuGUvAb7cQMrLPvzUJIXYRh6WNDJ2ufOAo6sMSZo4NPwnCENx3GKc7ARh4IqoLh0yFx/MBmgqkx3X5syiAtXMI4P/F2818ujby9Kzuk5SIc9d393AnPwt2ChbC0E1NA5hFdraf2s"
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioPessoaInterna",
+        "Alias": "data_usuarioPessoaInterna",
+        "Columns": {
+          "0": {
+            "Name": "nodes",
+            "Index": -1,
+            "NameInSource": "nodes",
+            "Alias": "nodes",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioPessoaInterna"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioPessoaInterna_nodes",
+        "Alias": "data_usuarioPessoaInterna_nodes",
+        "Columns": {
+          "0": {
+            "Name": "area",
+            "Index": -1,
+            "NameInSource": "area",
+            "Alias": "area",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "areaId",
+            "Index": -1,
+            "NameInSource": "areaId",
+            "Alias": "areaId",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "grupo",
+            "Index": -1,
+            "NameInSource": "grupo",
+            "Alias": "grupo",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "grupoId",
+            "Index": -1,
+            "NameInSource": "grupoId",
+            "Alias": "grupoId",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "nome",
+            "Index": -1,
+            "NameInSource": "nome",
+            "Alias": "nome",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "supervisor",
+            "Index": -1,
+            "NameInSource": "supervisor",
+            "Alias": "supervisor",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "supervisorId",
+            "Index": -1,
+            "NameInSource": "supervisorId",
+            "Alias": "supervisorId",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioPessoaInterna_nodes"
+      },
+      "2": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioPessoaInterna_nodes_area",
+        "Alias": "data_usuarioPessoaInterna_nodes_area",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "nome",
+            "Index": -1,
+            "NameInSource": "nome",
+            "Alias": "nome",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "setor",
+            "Index": -1,
+            "NameInSource": "setor",
+            "Alias": "setor",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "setorId",
+            "Index": -1,
+            "NameInSource": "setorId",
+            "Alias": "setorId",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioPessoaInterna_nodes_area"
+      },
+      "3": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioPessoaInterna_nodes_area_setor",
+        "Alias": "data_usuarioPessoaInterna_nodes_area_setor",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "nome",
+            "Index": -1,
+            "NameInSource": "nome",
+            "Alias": "nome",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "site",
+            "Index": -1,
+            "NameInSource": "site",
+            "Alias": "site",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "siteId",
+            "Index": -1,
+            "NameInSource": "siteId",
+            "Alias": "siteId",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioPessoaInterna_nodes_area_setor"
+      },
+      "4": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioPessoaInterna_nodes_area_setor_site",
+        "Alias": "data_usuarioPessoaInterna_nodes_area_setor_site",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "nome",
+            "Index": -1,
+            "NameInSource": "nome",
+            "Alias": "nome",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioPessoaInterna_nodes_area_setor_site"
+      },
+      "5": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioPessoaInterna_nodes_grupo",
+        "Alias": "data_usuarioPessoaInterna_nodes_grupo",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "pessoaGrupo",
+            "Index": -1,
+            "NameInSource": "pessoaGrupo",
+            "Alias": "pessoaGrupo",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioPessoaInterna_nodes_grupo"
+      },
+      "6": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioPessoaInterna_nodes_supervisor",
+        "Alias": "data_usuarioPessoaInterna_nodes_supervisor",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "nome",
+            "Index": -1,
+            "NameInSource": "nome",
+            "Alias": "nome",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioPessoaInterna_nodes_supervisor"
+      },
+      "7": {
+        "Ident": "StiDataTableSource",
+        "Name": "header",
+        "Alias": "header",
+        "Columns": {
+          "0": {
+            "Name": "contador",
+            "Index": -1,
+            "NameInSource": "contador",
+            "Alias": "contador",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "logoAplicacao",
+            "Index": -1,
+            "NameInSource": "logoAplicacao",
+            "Alias": "logoAplicacao",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "logoOrganizacao",
+            "Index": -1,
+            "NameInSource": "logoOrganizacao",
+            "Alias": "logoOrganizacao",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "organizacao",
+            "Index": -1,
+            "NameInSource": "organizacao",
+            "Alias": "organizacao",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "periodo",
+            "Index": -1,
+            "NameInSource": "periodo",
+            "Alias": "periodo",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "subtitulo",
+            "Index": -1,
+            "NameInSource": "subtitulo",
+            "Alias": "subtitulo",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "titulo",
+            "Index": -1,
+            "NameInSource": "titulo",
+            "Alias": "titulo",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.header"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "JSON",
+        "Alias": "JSON",
+        "PathData": "resource://R1PI-1004"
+      }
+    },
+    "Relations": {
+      "0": {
+        "Name": "data_usuarioPessoaInterna",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "nodes"
+        },
+        "NameInSource": "data_usuarioPessoaInterna_nodes",
+        "Alias": "data_usuarioPessoaInterna",
+        "ParentSource": "data_usuarioPessoaInterna",
+        "ChildSource": "data_usuarioPessoaInterna_nodes"
+      },
+      "1": {
+        "Name": "data_usuarioPessoaInterna_nodes",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "area"
+        },
+        "NameInSource": "data_usuarioPessoaInterna_nodes_area",
+        "Alias": "data_usuarioPessoaInterna_nodes",
+        "ParentSource": "data_usuarioPessoaInterna_nodes",
+        "ChildSource": "data_usuarioPessoaInterna_nodes_area"
+      },
+      "2": {
+        "Name": "data_usuarioPessoaInterna_nodes_area",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "setor"
+        },
+        "NameInSource": "data_usuarioPessoaInterna_nodes_area_setor",
+        "Alias": "data_usuarioPessoaInterna_nodes_area",
+        "ParentSource": "data_usuarioPessoaInterna_nodes_area",
+        "ChildSource": "data_usuarioPessoaInterna_nodes_area_setor"
+      },
+      "3": {
+        "Name": "data_usuarioPessoaInterna_nodes_area_setor",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "site"
+        },
+        "NameInSource": "data_usuarioPessoaInterna_nodes_area_setor_site",
+        "Alias": "data_usuarioPessoaInterna_nodes_area_setor",
+        "ParentSource": "data_usuarioPessoaInterna_nodes_area_setor",
+        "ChildSource": "data_usuarioPessoaInterna_nodes_area_setor_site"
+      },
+      "4": {
+        "Name": "data_usuarioPessoaInterna_nodes",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "grupo"
+        },
+        "NameInSource": "data_usuarioPessoaInterna_nodes_grupo",
+        "Alias": "data_usuarioPessoaInterna_nodes",
+        "ParentSource": "data_usuarioPessoaInterna_nodes",
+        "ChildSource": "data_usuarioPessoaInterna_nodes_grupo"
+      },
+      "5": {
+        "Name": "data_usuarioPessoaInterna_nodes",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "supervisor"
+        },
+        "NameInSource": "data_usuarioPessoaInterna_nodes_supervisor",
+        "Alias": "data_usuarioPessoaInterna_nodes",
+        "ParentSource": "data_usuarioPessoaInterna_nodes",
+        "ChildSource": "data_usuarioPessoaInterna_nodes_supervisor"
+      },
+      "6": {
+        "Name": "RelationArea",
+        "ChildColumns": {
+          "0": "areaId"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "RelationArea",
+        "Alias": "RelationArea",
+        "ParentSource": "data_usuarioPessoaInterna_nodes_area",
+        "ChildSource": "data_usuarioPessoaInterna_nodes"
+      },
+      "7": {
+        "Name": "RelationGrupo",
+        "ChildColumns": {
+          "0": "grupoId"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "RelationGrupo",
+        "Alias": "RelationGrupo",
+        "ParentSource": "data_usuarioPessoaInterna_nodes_grupo",
+        "ChildSource": "data_usuarioPessoaInterna_nodes"
+      },
+      "8": {
+        "Name": "RelationSupervisor",
+        "ChildColumns": {
+          "0": "supervisorId"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "RelationSupervisor",
+        "Alias": "RelationSupervisor",
+        "ParentSource": "data_usuarioPessoaInterna_nodes_supervisor",
+        "ChildSource": "data_usuarioPessoaInterna_nodes"
+      },
+      "9": {
+        "Name": "RelationSetor",
+        "ChildColumns": {
+          "0": "setorId"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "RelationSetor",
+        "Alias": "RelationSetor",
+        "ParentSource": "data_usuarioPessoaInterna_nodes_area_setor",
+        "ChildSource": "data_usuarioPessoaInterna_nodes_area"
+      },
+      "10": {
+        "Name": "RelationSite",
+        "ChildColumns": {
+          "0": "siteId"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "RelationSite",
+        "Alias": "RelationSite",
+        "ParentSource": "data_usuarioPessoaInterna_nodes_area_setor_site",
+        "ChildSource": "data_usuarioPessoaInterna_nodes_area_setor"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Relatório_de_Pessoa_Interna_R1PI_1004",
+      "Guid": "a040926935fa3f2242ac54a98973e977",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiPageHeaderBand",
+          "Name": "PageHeaderBand1",
+          "PrintOn": "OnlyFirstPage",
+          "ClientRectangle": "0,0.4,27.7,2",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "5be8cfc4f60cf48905ad8c221ce554a0",
+              "ClientRectangle": "3.14,0.38,21.4,0.81",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.titulo}"
+              },
+              "HorAlignment": "Center",
+              "Font": ";18;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "b5dbbcb4c9542479b0f4e50c439d06ec",
+              "CanGrow": true,
+              "ClientRectangle": "3.14,1.32,21.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.contador}"
+              },
+              "HorAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiImage",
+              "Name": "Image1",
+              "ClientRectangle": "0,0,3,1.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Stretch": true,
+              "DataColumn": "header.logoAplicacao",
+              "ImageBytes": ""
+            },
+            "3": {
+              "Ident": "StiImage",
+              "Name": "Image2",
+              "Guid": "a89eaff725aaf6c41f53aa3410d714fc",
+              "ClientRectangle": "24.7,0,3,1.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Stretch": true,
+              "DataColumn": "header.logoOrganizacao",
+              "ImageBytes": ""
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiPageFooterBand",
+          "Name": "PageFooterBand1",
+          "ClientRectangle": "0,18.55,27.7,0.45",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "Top;;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "43f8ce914896b1fd063601178dac35cb",
+              "PrintOn": "OnlyFirstPage",
+              "CanGrow": true,
+              "ClientRectangle": "0.04,0.05,25.33,0.35",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.subtitulo}"
+              },
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "CanGrow": true,
+              "ClientRectangle": "25.6,0.05,2,0.35",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{PageNofM}"
+              },
+              "HorAlignment": "Right",
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0"
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand1",
+          "PrintOn": "OnlyFirstPage",
+          "ClientRectangle": "0,3.2,27.7,0.58",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "Top;;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "5fb8f1a0a8d1dd7db1e0908bd51ea63b",
+              "ClientRectangle": "15.6,0.11,12.08,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.periodo}"
+              },
+              "HorAlignment": "Right",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "3": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand2",
+          "ClientRectangle": "0,4.58,27.7,0.58",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "All;;;;;;;solid:0,0,0",
+          "Brush": "solid:237,237,237",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "5698fe5e43c6e99b248dfc4f1802fa20",
+              "ClientRectangle": "0.03,0.11,8.5,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Nome"
+              },
+              "Font": ";8.25;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "Guid": "50f02b990f38fdd20ff2eafc96691796",
+              "ClientRectangle": "8.62,0.11,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Grupo"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "Guid": "64718115f97690467f5fcdd0041606bd",
+              "ClientRectangle": "11.72,0.11,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Área"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "Guid": "591267e78c63ad9f625af0b95cd37d98",
+              "ClientRectangle": "14.82,0.11,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Setor"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "5ee5e335b8e15bbbf58d8adf9178eb86",
+              "ClientRectangle": "17.92,0.11,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Site"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "9fe40e8894c99644af7ddc737a7ff69c",
+              "ClientRectangle": "21,0.11,6.65,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Supervisor"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "4": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,5.96,27.7,0.45",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "33bfcf5aa9a13ce61b2cadd62a222b28",
+              "CanGrow": true,
+              "ClientRectangle": "0.03,0.05,8.5,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaInterna_nodes.nome}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "4a344cd9f364e6971b1f6fbe0e89063a",
+              "CanGrow": true,
+              "ClientRectangle": "8.62,0.05,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaInterna_nodes.RelationGrupo.pessoaGrupo}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "6fdfc62b46f9758bf2270b9c37df47be",
+              "CanGrow": true,
+              "ClientRectangle": "14.82,0.05,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaInterna_nodes.RelationArea.RelationSetor.nome}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text24",
+              "Guid": "49364ed3083f13693d77130131d036fc",
+              "CanGrow": true,
+              "ClientRectangle": "11.72,0.05,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaInterna_nodes.RelationArea.nome}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "048523dded1d736f07c5048aa94b7c14",
+              "CanGrow": true,
+              "ClientRectangle": "17.92,0.05,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaInterna_nodes.RelationArea.RelationSetor.RelationSite.nome}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "353f5adb7618ffdf7005f97afe1811e6",
+              "CanGrow": true,
+              "ClientRectangle": "21,0.05,6.65,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioPessoaInterna_nodes.RelationSupervisor.nome}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextFormat": {
+                "Ident": "StiDateFormatService"
+              },
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "data_usuarioPessoaInterna_nodes"
+        }
+      },
+      "PaperSize": "A4",
+      "Orientation": "Landscape",
+      "PageWidth": 29.7,
+      "PageHeight": 21,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

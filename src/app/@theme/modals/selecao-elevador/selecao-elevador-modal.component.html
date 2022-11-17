@@ -1,0 +1,21 @@
+<div class="modalForm noselect" id="modalForm" [class.voted]="selecaoElevadorModal.showModal">
+    <div class="card-form card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="panel">
+                <nex-combobox [marginTop]="0" [label]="'Elevador'" [options]="elevador_Option" (eventChange)="onElevador_Change()"></nex-combobox>
+                <nex-box [noPadding]="true"   [fullHeight]="true" [background]="'#192038'"  >
+                    <nex-select-group [options]="andares_Option" [border]="'none'" [displayInTab]="true"></nex-select-group>
+                </nex-box>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="card-footer-buttons">
+                <button type="button" class="btn btn-dark bt-card greenBorder" (click)="onAplicar_Click()">Aplicar</button>
+                <button type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

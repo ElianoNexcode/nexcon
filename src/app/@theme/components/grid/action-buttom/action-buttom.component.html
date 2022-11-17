@@ -1,0 +1,7 @@
+<div class="top-buttons">
+    <div class="nav row">
+        <div [id]="actionButtom?.text" class="col-3 btn btn-link actionButtom" *ngFor="let actionButtom of actionButtomService.top_action_buttons; let i = index" (click)="onEvent($event, i)" [ngClass]="{'disabled': !actionButtom?.enabled, 'hidden': actionButtom?.visibled == false}">
+            {{actionButtom?.text | translate}}
+        </div>
+    </div>
+</div>

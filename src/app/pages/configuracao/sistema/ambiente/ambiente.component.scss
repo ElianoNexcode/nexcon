@@ -1,0 +1,68 @@
+@import '../../../../@theme/styles/pages.scss';
+
+@include nb-install-component() { 
+    .texto-adm {
+        height: calc(90% - 9px);
+        width: 100%;
+        border-bottom: 1px solid #434561;
+        border-left: 1px solid #434561;
+        border-right: 1px solid #434561;
+        background: #222b45;
+        padding: 9px;
+        white-space: normal !important;
+
+        font-family: roboto;
+        font-size: 0.8rem;
+        line-height: normal;
+        color: #A9ABAE;
+
+        .title-adm {
+            text-align: center;
+        }
+
+        .noMarginBottom {
+            margin-bottom: 0;
+        }
+
+        p {
+            font-family: roboto;
+            font-size: 0.75rem;
+            line-height: normal;
+            color: #A9ABAE;
+        }
+
+        .p_1{
+            margin-bottom: 0.7rem;
+        }
+
+        .p_2{
+            margin-bottom: 0.7rem;
+            padding-right: 4px;
+        }
+        
+    }
+
+    .changePass {
+        margin-top: 9px;
+        text-align: end;
+        min-height: 9px;
+    }
+
+    .width_1{
+        width:80% ;
+    }
+
+    .width_2{
+        width:20% ;
+    }
+
+    .imagemPanel {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .box{
+        margin-top: 9px;
+    }
+}

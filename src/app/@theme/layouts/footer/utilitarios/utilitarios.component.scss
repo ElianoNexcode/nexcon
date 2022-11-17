@@ -1,0 +1,49 @@
+@import "../../../../@theme/themes";
+
+@include nb-install-component() {
+    .btt-treeview {
+        max-width: 164px !important;
+        min-width: 164px !important;
+
+        .row {
+            max-height: 48px !important;
+            height: 48px !important;
+        }
+
+        .bt-tv {
+            max-width: 41px !important;
+    
+            padding: 0 !important;
+            margin: 0 auto !important;    
+    
+            display: -webkit-flex; /* Safari */  
+            display: flex;
+            -webkit-align-items: center; /* Safari 7.0+ */
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+    
+            border-left: nb-theme(border-left);
+            color: nb-theme(color-20);
+    
+            img {
+                width: 1.2rem;
+                height: auto;
+            }
+        }
+    
+    }
+    
+    .bt-tv:hover {
+        background-color: nb-theme(background-btt-hover) !important;
+    }
+
+    .utilitario {
+        cursor: pointer;
+    }
+
+    .disabled {
+        opacity: 0.6; 
+    }
+
+}

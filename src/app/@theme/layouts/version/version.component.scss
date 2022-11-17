@@ -1,0 +1,24 @@
+@import "../../themes.scss";
+
+@include nb-install-component {
+    .versionPanel {
+        border: nb-theme(border);
+        min-height: 29px !important;
+        background-color: nb-theme(background-version-color);
+        font-size: 0.7rem;
+        line-height: 1rem;
+        color: #7a7d86 ;
+        display: flex;
+    }
+    
+    .versionPanel .col {
+        padding: 0 8px;
+        align-self: center;
+        font-family: roboto !important;
+    }   
+    
+    .dataHora {
+        font-size: 0.7rem;
+    }
+}
+

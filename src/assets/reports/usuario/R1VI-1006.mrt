@@ -1,0 +1,958 @@
+{
+  "ReportGuid": "39fe31f5145367c3b55bcd45abd34853",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "R1VI-1006.mrt",
+  "ReportCreated": "/Date(1618180532000-0300)/",
+  "ReportChanged": "/Date(1665682994000-0300)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "Resources": {
+      "0": {
+        "Name": "R1VI-1006",
+        "Alias": "R1VI-1006",
+        "Type": "Json",
+        "Image": "QHSm6Fh2SEu7ZSMaXc63PpqDElOd+yuw1HoPvsr0mMdctvUrG6UGcqrzjf6l9GogCTRDZyQRfeMD+5cIzTKjb7OyceB5UG+oQcyy2JrZAhaf2yNeMMwVXhVZunXRwBQcCg/h53icOb0xTsp+ElvoMvo1+F56Ah8sUS98YZkgvMOJiXK3zI97sbr9YQSCdLpWp932LrK7GQgSCFMGUWVYU3IEwkpiZ/ZElutNI+98ErLZaHctPL/o9pmypGGARvjVeuisx1Xn37FcuviA5U4VAS0+E8eSLVrku0Q0piw1QC7zaD12+yJt54WLsQI37sPtuJTf0jCpOptXrdhyYb7rneGOBOACzM8JbHwVD/dXvwfZe9UTn9p5EX2NYU0uXFvhPgshZMAsHvcFyE1D2blhz1l0KiGoGmXATCRHCxZKvhPPA6M4fvQlKHP1Xz0gwKQDgsD89LTcIlvOCOabq+Tik+l4iMhun4ujKV9jbQexGf/AjYFedT0QAy4SI2Mz08z2pneORzytBFZKn5mfyRo/FCPxHeQ+zrRtI+2SH3RGDk8OB1G19qcxDlpgMEeh6L6hG3lbmVKvuzAWqGP6XK6E+wpiCqklcc/WRNDHpCpIXvJp0iHhKErb549ChwvjrmgWCYLUVnHDaZOosvb0GA+71j3WUYAlXWqXW9Vs1J86JTCvv1ImIkSpMudpmW2xhKgrggxRDIxo0a91fN6N7KodjyB4R4CCPC0LPHVi30Jgz3BbtDWa2dv59O/ckczEqPOa5l0/b6CI1t2h0PU3F8l52YrmjYA/C140L9YTdZ4KSTESBqvcE2R/EwxscPwtyZPIEdXARJcTtYcVB42S14WVFqvqkY2FSsKsIx2lkgv5eRGHi3i7DZWtA6MjV7iHNVRZX4EM1zIa3v5zgwfBle5hqhgG8HBNP5T/SgazFVgaL3JmifgeT4tSs6MMw2J3egZQIOma3NJhPSoNOl87Wd2rQzg8RMVRSwSqyA=="
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioVeiculoInterno",
+        "Alias": "data_usuarioVeiculoInterno",
+        "Columns": {
+          "0": {
+            "Name": "nodes",
+            "Index": -1,
+            "NameInSource": "nodes",
+            "Alias": "nodes",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioVeiculoInterno"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioVeiculoInterno_nodes",
+        "Alias": "data_usuarioVeiculoInterno_nodes",
+        "Columns": {
+          "0": {
+            "Name": "acessoCartao",
+            "Index": -1,
+            "NameInSource": "acessoCartao",
+            "Alias": "acessoCartao",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "area",
+            "Index": -1,
+            "NameInSource": "area",
+            "Alias": "area",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "areaId",
+            "Index": -1,
+            "NameInSource": "areaId",
+            "Alias": "areaId",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "cor",
+            "Index": -1,
+            "NameInSource": "cor",
+            "Alias": "cor",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "modelo",
+            "Index": -1,
+            "NameInSource": "modelo",
+            "Alias": "modelo",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "modeloId",
+            "Index": -1,
+            "NameInSource": "modeloId",
+            "Alias": "modeloId",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "placa",
+            "Index": -1,
+            "NameInSource": "placa",
+            "Alias": "placa",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "tipo",
+            "Index": -1,
+            "NameInSource": "tipo",
+            "Alias": "tipo",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioVeiculoInterno_nodes"
+      },
+      "2": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioVeiculoInterno_nodes_area",
+        "Alias": "data_usuarioVeiculoInterno_nodes_area",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "nome",
+            "Index": -1,
+            "NameInSource": "nome",
+            "Alias": "nome",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "setor",
+            "Index": -1,
+            "NameInSource": "setor",
+            "Alias": "setor",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "setorId",
+            "Index": -1,
+            "NameInSource": "setorId",
+            "Alias": "setorId",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioVeiculoInterno_nodes_area"
+      },
+      "3": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioVeiculoInterno_nodes_area_setor",
+        "Alias": "data_usuarioVeiculoInterno_nodes_area_setor",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "nome",
+            "Index": -1,
+            "NameInSource": "nome",
+            "Alias": "nome",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "site",
+            "Index": -1,
+            "NameInSource": "site",
+            "Alias": "site",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "siteId",
+            "Index": -1,
+            "NameInSource": "siteId",
+            "Alias": "siteId",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioVeiculoInterno_nodes_area_setor"
+      },
+      "4": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioVeiculoInterno_nodes_area_setor_site",
+        "Alias": "data_usuarioVeiculoInterno_nodes_area_setor_site",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "nome",
+            "Index": -1,
+            "NameInSource": "nome",
+            "Alias": "nome",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioVeiculoInterno_nodes_area_setor_site"
+      },
+      "5": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_usuarioVeiculoInterno_nodes_modelo",
+        "Alias": "data_usuarioVeiculoInterno_nodes_modelo",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "veiculoModelo",
+            "Index": -1,
+            "NameInSource": "veiculoModelo",
+            "Alias": "veiculoModelo",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_usuarioVeiculoInterno_nodes_modelo"
+      },
+      "6": {
+        "Ident": "StiDataTableSource",
+        "Name": "header",
+        "Alias": "header",
+        "Columns": {
+          "0": {
+            "Name": "contador",
+            "Index": -1,
+            "NameInSource": "contador",
+            "Alias": "contador",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "logoAplicacao",
+            "Index": -1,
+            "NameInSource": "logoAplicacao",
+            "Alias": "logoAplicacao",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "logoOrganizacao",
+            "Index": -1,
+            "NameInSource": "logoOrganizacao",
+            "Alias": "logoOrganizacao",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "organizacao",
+            "Index": -1,
+            "NameInSource": "organizacao",
+            "Alias": "organizacao",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "periodo",
+            "Index": -1,
+            "NameInSource": "periodo",
+            "Alias": "periodo",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "subtitulo",
+            "Index": -1,
+            "NameInSource": "subtitulo",
+            "Alias": "subtitulo",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "titulo",
+            "Index": -1,
+            "NameInSource": "titulo",
+            "Alias": "titulo",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.header"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "JSON",
+        "Alias": "JSON",
+        "PathData": "resource://R1VI-1006"
+      }
+    },
+    "Relations": {
+      "0": {
+        "Name": "data_usuarioVeiculoInterno",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "nodes"
+        },
+        "NameInSource": "data_usuarioVeiculoInterno_nodes",
+        "Alias": "data_usuarioVeiculoInterno",
+        "ParentSource": "data_usuarioVeiculoInterno",
+        "ChildSource": "data_usuarioVeiculoInterno_nodes"
+      },
+      "1": {
+        "Name": "data_usuarioVeiculoInterno_nodes",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "area"
+        },
+        "NameInSource": "data_usuarioVeiculoInterno_nodes_area",
+        "Alias": "data_usuarioVeiculoInterno_nodes",
+        "ParentSource": "data_usuarioVeiculoInterno_nodes",
+        "ChildSource": "data_usuarioVeiculoInterno_nodes_area"
+      },
+      "2": {
+        "Name": "data_usuarioVeiculoInterno_nodes_area",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "setor"
+        },
+        "NameInSource": "data_usuarioVeiculoInterno_nodes_area_setor",
+        "Alias": "data_usuarioVeiculoInterno_nodes_area",
+        "ParentSource": "data_usuarioVeiculoInterno_nodes_area",
+        "ChildSource": "data_usuarioVeiculoInterno_nodes_area_setor"
+      },
+      "3": {
+        "Name": "data_usuarioVeiculoInterno_nodes_area_setor",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "site"
+        },
+        "NameInSource": "data_usuarioVeiculoInterno_nodes_area_setor_site",
+        "Alias": "data_usuarioVeiculoInterno_nodes_area_setor",
+        "ParentSource": "data_usuarioVeiculoInterno_nodes_area_setor",
+        "ChildSource": "data_usuarioVeiculoInterno_nodes_area_setor_site"
+      },
+      "4": {
+        "Name": "data_usuarioVeiculoInterno_nodes",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "modelo"
+        },
+        "NameInSource": "data_usuarioVeiculoInterno_nodes_modelo",
+        "Alias": "data_usuarioVeiculoInterno_nodes",
+        "ParentSource": "data_usuarioVeiculoInterno_nodes",
+        "ChildSource": "data_usuarioVeiculoInterno_nodes_modelo"
+      },
+      "5": {
+        "Name": "RelationArea",
+        "ChildColumns": {
+          "0": "areaId"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "RelationArea",
+        "Alias": "RelationArea",
+        "ParentSource": "data_usuarioVeiculoInterno_nodes_area",
+        "ChildSource": "data_usuarioVeiculoInterno_nodes"
+      },
+      "6": {
+        "Name": "RelationModelo",
+        "ChildColumns": {
+          "0": "modeloId"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "RelationModelo",
+        "Alias": "RelationModelo",
+        "ParentSource": "data_usuarioVeiculoInterno_nodes_modelo",
+        "ChildSource": "data_usuarioVeiculoInterno_nodes"
+      },
+      "7": {
+        "Name": "RelationSetor",
+        "ChildColumns": {
+          "0": "setorId"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "RelationSetor",
+        "Alias": "RelationSetor",
+        "ParentSource": "data_usuarioVeiculoInterno_nodes_area_setor",
+        "ChildSource": "data_usuarioVeiculoInterno_nodes_area"
+      },
+      "8": {
+        "Name": "RelationSite",
+        "ChildColumns": {
+          "0": "siteId"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "RelationSite",
+        "Alias": "RelationSite",
+        "ParentSource": "data_usuarioVeiculoInterno_nodes_area_setor_site",
+        "ChildSource": "data_usuarioVeiculoInterno_nodes_area_setor"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Relatório_de_Veículo_Interno_R1VI_1006",
+      "Guid": "a040926935fa3f2242ac54a98973e977",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiPageHeaderBand",
+          "Name": "PageHeaderBand1",
+          "PrintOn": "OnlyFirstPage",
+          "ClientRectangle": "0,0.4,27.7,2",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "5be8cfc4f60cf48905ad8c221ce554a0",
+              "ClientRectangle": "3.14,0.38,21.4,0.81",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.titulo}"
+              },
+              "HorAlignment": "Center",
+              "Font": ";18;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "b5dbbcb4c9542479b0f4e50c439d06ec",
+              "CanGrow": true,
+              "ClientRectangle": "3.14,1.32,21.4,0.41",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.contador}"
+              },
+              "HorAlignment": "Center",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiImage",
+              "Name": "Image1",
+              "ClientRectangle": "0,0,3,1.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Stretch": true,
+              "DataColumn": "header.logoAplicacao",
+              "ImageBytes": ""
+            },
+            "3": {
+              "Ident": "StiImage",
+              "Name": "Image2",
+              "Guid": "1a328abba58f899ff63e34855d43472b",
+              "ClientRectangle": "24.7,0,3,1.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Stretch": true,
+              "DataColumn": "header.logoOrganizacao",
+              "ImageBytes": ""
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiPageFooterBand",
+          "Name": "PageFooterBand1",
+          "ClientRectangle": "0,18.55,27.7,0.45",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "Top;;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "43f8ce914896b1fd063601178dac35cb",
+              "PrintOn": "OnlyFirstPage",
+              "CanGrow": true,
+              "ClientRectangle": "0.04,0.05,25.33,0.35",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.subtitulo}"
+              },
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "CanGrow": true,
+              "ClientRectangle": "25.6,0.05,2,0.35",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{PageNofM}"
+              },
+              "HorAlignment": "Right",
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand1",
+          "PrintOn": "OnlyFirstPage",
+          "ClientRectangle": "0,3.2,27.7,0.58",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "Top;;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "5fb8f1a0a8d1dd7db1e0908bd51ea63b",
+              "ClientRectangle": "15.6,0.11,12.08,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.periodo}"
+              },
+              "HorAlignment": "Right",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "3": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand2",
+          "ClientRectangle": "0,4.58,27.7,0.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "All;;;;;;;solid:0,0,0",
+          "Brush": "solid:237,237,237",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "67f202f2ae146d0be6a530b2a0b71405",
+              "ClientRectangle": "0.15,0.11,2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Veículo ID"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "Guid": "609d34161dd2ae8440f307f6975a812f",
+              "ClientRectangle": "4.61,0.11,4.09,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Modelo"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "679c41055c01348e139df975c3320235",
+              "ClientRectangle": "8.94,0.11,2.5,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Cor"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "Guid": "c43e0afce5569562f780e441a0f3518b",
+              "ClientRectangle": "19.96,0.11,3.78,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Setor"
+              },
+              "Font": ";8.25;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "Guid": "fc6eb2afdff974af77b4959352839b3c",
+              "ClientRectangle": "2.37,0.11,2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Tipo"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text18",
+              "Guid": "bd4724c35ebcd807eafec6ec7efbe306",
+              "ClientRectangle": "23.92,0.11,3.78,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Site"
+              },
+              "Font": ";8.25;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "7797abc1f43c8ac123fda0bb9928de08",
+              "ClientRectangle": "16,0.11,3.78,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Área"
+              },
+              "Font": ";8.25;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text20",
+              "Guid": "677e6f6543da2576fd03ad91292532a6",
+              "ClientRectangle": "11.64,0.11,4.15,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Tag"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "4": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,5.98,27.7,0.45",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "0ce73359bdcd8842fb41789568757b91",
+              "CanGrow": true,
+              "ClientRectangle": "8.94,0.05,2.5,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioVeiculoInterno_nodes.cor}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "936d88437808946227c5c611c8f44f44",
+              "CanGrow": true,
+              "ClientRectangle": "0.15,0.05,2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioVeiculoInterno_nodes.placa}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "Guid": "14851fab02991840a6e29200f7fcf4f0",
+              "CanGrow": true,
+              "ClientRectangle": "4.61,0.05,4.09,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioVeiculoInterno_nodes.RelationModelo.veiculoModelo}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "1da7335e3d0a87124d1b02bf7bfb0d97",
+              "CanGrow": true,
+              "ClientRectangle": "19.96,0.05,3.78,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioVeiculoInterno_nodes.RelationArea.RelationSetor.nome}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "eadc06a0e6f512c153c2dc2445f297e7",
+              "CanGrow": true,
+              "ClientRectangle": "2.37,0.05,2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioVeiculoInterno_nodes.tipo}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text19",
+              "Guid": "23bd30e2b6392c052607a84556116761",
+              "CanGrow": true,
+              "ClientRectangle": "23.92,0.05,3.78,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioVeiculoInterno_nodes_area.RelationSetor.RelationSite.nome}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "c06d353cd447be43dcbf6c665b01e9cd",
+              "CanGrow": true,
+              "ClientRectangle": "16,0.05,3.78,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioVeiculoInterno_nodes.RelationArea.nome}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text21",
+              "Guid": "16ac29cf0f20b353b42ec391e643a53b",
+              "CanGrow": true,
+              "ClientRectangle": "11.64,0.05,4.15,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{data_usuarioVeiculoInterno_nodes.acessoCartao}"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "data_usuarioVeiculoInterno_nodes"
+        }
+      },
+      "PaperSize": "A4",
+      "Orientation": "Landscape",
+      "PageWidth": 29.7,
+      "PageHeight": 21,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

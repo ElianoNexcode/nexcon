@@ -1,13 +1,93 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Nexcon</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>NEXCODE CONTROLS</title>
+    <base href="/">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> -->
+  </head>
+  <body class="container-fluid">
+    <app-root></app-root>
+    
+    <script type="text/javascript" src="./assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript" src="./assets//js/popper.min.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" >
+
+        var elem = document.documentElement;
+
+        function openFullscreen() {
+          var x = document.getElementById("fullScreen");
+          var y = document.getElementById("restScreen");
+          x.style.display = "none";
+          y.style.display = "flex";
+
+          if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+          } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+          }
+        }
+        
+        function closeFullscreen() {
+          var x = document.getElementById("fullScreen");
+          var y = document.getElementById("restScreen");
+          y.style.display = "none";
+          x.style.display = "flex";
+
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          }
+        }
+
+        function menuClick() {
+            var x = document.getElementById("dropdownMenu");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        };
+
+        function subMenuClick(menuItem) {
+            var x = document.getElementById(menuItem);
+            if (x.style.display === "flex") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "flex";
+            }
+        };
+
+        function comboClick() {
+            var x = document.getElementById("dropdownCombo");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+    </script>
+
+  </body>
 </html>

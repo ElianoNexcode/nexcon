@@ -1,0 +1,88 @@
+@import '../../../themes.scss';
+
+@include nb-install-component() {
+    .inputGroup {
+        display: flex;
+
+        width: 100%;
+        height: 29px !important;
+        border: 1px solid #434561 !important;
+        border-radius: 3px !important;
+        margin-top: 9px;
+
+        .labelBox {
+            height: 27px;
+            background-color: #222b45 !important;
+
+            margin: 0;
+            padding: 9px;
+
+            font-size: 0.7rem;
+            white-space: nowrap;
+            line-height: 10px;
+
+            border-right: 1px solid #434561 !important;
+            border-radius: 3px 0 0 3px;
+
+        }
+
+        .labelIn {
+            padding: 8px 9px 8px 9px;
+            white-space: nowrap;
+            line-height: 9px;
+            font-size: 0.7rem;
+            background: #1d2642;
+            border-right: 1px solid #434561 !important;
+            border-left: 1px solid #434561;
+        }
+
+        .labelIn.left {
+            border-left: none !important;
+        }
+
+        .inputbox {
+
+            width: 100%;
+            margin: 0;
+            background-color: nb-theme(background-input-color);
+
+            input {
+                width: 100%;
+                height: 100%;
+
+                margin: 0;
+                padding: 6px 5px 5px;
+                background: transparent;
+
+                border: none;
+                line-height: 1rem;
+                font-size: 0.7rem;
+
+                color: nb-theme(input-color);
+            }
+
+            textbox:focus,
+            input:focus {
+                color: nb-theme(input-focus-color);
+                background: nb-theme(background-input-focus-color);
+                outline: none;
+            }
+        }
+
+    }
+
+    ::selection {
+        color: yellow;
+        background: transparent;
+    }
+
+    .error {
+        background-color: #3f1a32 !important;
+    }
+
+    .disabled {
+        background-color: #29354c !important;
+        color: #a9abaE;
+    }
+
+}

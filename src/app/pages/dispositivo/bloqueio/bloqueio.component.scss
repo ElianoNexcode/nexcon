@@ -1,0 +1,16 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+
+    .border {
+        border: 0 !important;
+        border-bottom: 1px solid #434561 !important;
+        padding: 6px 6px 6px 9px !important;
+
+        width: auto !important;
+        color: #8C909A;
+
+   
+    }
+    
+}

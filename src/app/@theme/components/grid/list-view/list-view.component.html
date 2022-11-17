@@ -1,0 +1,81 @@
+<div class="lv-container" *ngIf="params" [ngClass]="{'card': (params?.gridOnly == false)}">
+    <div class="card-header row" *ngIf="params.gridOnly == false">
+        <div class="col-7 keyControl">
+            <input #keyControl [value]="params.title" type="text" readonly (keyup)="onKeyControl_Keyup()" />
+        </div>
+        <div id="gridFilter" class="col-5 align-right" *ngIf="showFilter == true && showGrid == true">
+            <nex-combobox [options]="filterOption" [type]="'filter'" (eventFindClick)="onFilter_Find($event)" (eventChange)="onFilter_Change($event)"></nex-combobox>
+        </div>            
+    </div>
+    <div class="lv-grid" [nbSpinner]="params?.showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant" [id]="'lv_' + params?.name" [ngClass]="{'container': (params?.gridOnly == false),'card-body': (params?.gridOnly == false), 'gridScroll': (gridScroll == true)}" *ngIf="showGrid == true">
+        <div [ngStyle]="{'overflow': (gridScroll == true)? 'inherit': 'hidden'}">
+            <div *ngIf="!noHeader" [style.width.%]="maxWidth" class="gridHeader" [ngClass]="{'noBorderTop': (params.noBorder == true), 'gridHeaderScroll': (gridScroll == true)}">
+                <div class="row" [ngClass]="classHeader">
+                    <div class="col" *ngFor="let grid of params.grid; let i = index" [ngClass]="{'avatar': grid.type == 'image', 'checkCol': grid.type == 'check'}" [ngStyle]="{'display': (grid.visible==false?'none':'block')}" [style.textAlign]="grid.align" [style.Width.%]="grid.width" [style.maxWidth.%]="grid.width" >
+                        {{grid.header}}
+                    </div>
+                </div>
+            </div>
+            <div [style.width.%]="maxWidth" [ngStyle]="{'height.px': params?.maxHeight, 'maxHeight.px': params?.maxHeight}" class="{{class}}" [ngClass]="{'overflowY': (gridVerticalScroll == true)}">
+                <div class="row bt btn-link grid-row {{params.name}} editable" [class.voted]="!editable"
+                     *ngFor="let itens of dataGrid;let i = index" 
+                     [ngClass]="{'noBorderBottom': (params.noBorder == true), 'rowDisabled': itens[params.status] == 0, 'noBorderTop': (params.noBorder == true)}" 
+                     [id]="(itens.id)? params.name + '_' + itens.id: (itens.identificador)? params.name + '_' + itens.identificador: params.name + '_' + i" 
+                     (click)="selectRow(i, (itens.id)? itens.id: itens.identificador? itens.identificador: i)"
+                     [style.color]="itens[params.colorEntity]? condicao(itens[params.colorField], params.colorEnum, itens[params.colorEntity][params.colorField]): condicao(itens[params.colorField], params.colorEnum)">
+                     <div class="col grid-Cell" *ngFor="let grid of params.grid; let i = index" [ngClass]="{'avatar': grid.type == 'image', 'checkCol': grid.type == 'check', 'noPadding': grid.type == 'icon'}" [ngStyle]="{'display': (grid.visible==false?'none':'block')}" [style.textAlign]="grid.align" [style.maxWidth.%]="grid.width">
+                        <ng-container [ngSwitch]="grid.type">
+                            <div *ngSwitchCase="'check'">
+                                <mat-checkbox (change)="itens['checked'][grid.index] = !itens['checked'][grid.index];onCheckBox_Change()" [(checked)]="itens['checked'][grid.index]"></mat-checkbox>
+                            </div>    
+                            <span *ngSwitchCase="'image'">
+                                <nex-avatar *ngIf="itens[grid.entity] != null" [image]="itens[grid.entity][grid.field]" [name]="'lstviewAvatar_' + itens.id" [background]="avatar" [size]="'mini'" [round]="true" [noMargin]="true"></nex-avatar>
+                                <nex-avatar *ngIf="itens[grid.entity] == null" [image]="itens[grid.field]" [name]="'lstviewAvatar_' + itens.id" [background]="avatar" [size]="'mini'" [round]="true" [noMargin]="true"></nex-avatar>
+                            </span>
+                            <span *ngSwitchCase="'icon'">
+                                <i *ngIf="itens[grid.field] == true" class="iconType fa fa-{{grid.icon}}"></i>
+                            </span>
+                            <span *ngSwitchCase="'textValue'">
+                                <span *ngFor="let textValue of itens[grid.field]" class="textValue" [ngClass]="{'active': textValue.value == true}">
+                                    {{textValue.text}}
+                                </span>
+                            </span>
+                            <ng-container *ngSwitchCase="undefined">
+                                <span *ngIf="grid.value">
+                                    {{grid.value}}
+                                </span>
+                                <span *ngIf="grid.enum">
+                                    {{condicao((grid.entity && itens[grid.entity] != null)?
+                                               itens[grid.entity][grid.field]:
+                                               itens[grid.field], grid.enum)}}
+                                </span>
+                                <span *ngIf="grid.pipe">
+                                    {{condicao((grid.entity && itens[grid.entity] != null)?
+                                                itens[grid.entity][grid.field]:
+                                                itens[grid.field]) | date: grid.pipe}}
+                                </span>        
+                                <ng-container [ngSwitch]="!_array.isArray(grid.entity)" *ngIf="!grid.value && !grid.enum && !grid.pipe">
+                                    <span *ngSwitchCase="true">
+                                        {{condicao((grid.entity && itens[grid.entity] != null)?
+                                                    itens[grid.entity][grid.field]:
+                                                    itens[grid.field], null, null, itens, grid)}}
+                                    </span>
+                                    <span *ngSwitchCase="false">
+                                        {{condicao((grid.entity && itens[grid.entity[0]] != null && [grid.entity[1]] != null)?
+                                                    itens[grid.entity[0]][grid.entity[1]][grid.field]:
+                                                    itens[grid.field], null, null, itens, grid)}}
+                                    </span>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+                     </div>
+                </div>    
+            </div>    
+        </div>
+        <div class="endGrid" *ngIf="params.gridOnly != true"></div>
+    </div>
+    <div class="card-footer" *ngIf="params.gridOnly != true && showGrid == true">        
+        <div id="cardQuestion" *ngIf="actionbuttomService.innerQuestion == true"><nex-card-question [question]="actionbuttomService.top_action_buttons[actionbuttomService.indice].question" (eventClick)="onCardQuestion_Click($event)"></nex-card-question></div>
+        <nex-paging *ngIf="params.noPaging == false" [paging]= "pagingService" [ngClass]="{'showPaging': (pagesVisibility == 'hidden') || (actionbuttomService.innerQuestion == true)}" (eventChange)="onPaging_Change($event)"></nex-paging>
+    </div>  
+</div>

@@ -1,0 +1,15 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+    .ip-porta{
+        padding: 0px !important;
+    }
+
+    .card-body{
+        height: 0px !important;
+    }
+
+    .fps{
+        padding-left: 0 !important;
+    }
+}

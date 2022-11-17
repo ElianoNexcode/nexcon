@@ -1,0 +1,22 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+
+    .width_1{
+        width:40% ;
+    }
+
+    .width_2{
+        width:60% ;
+    }
+
+    .border {
+        border: 0 !important;
+        border-bottom: 1px solid #434561 !important;
+        padding: 6px 6px 6px 9px !important;
+        height: 24px;
+        width: auto !important;
+        color: #8C909A;
+    }
+
+}

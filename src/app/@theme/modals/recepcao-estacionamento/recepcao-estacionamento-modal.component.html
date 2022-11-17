@@ -1,0 +1,28 @@
+<div class="modalForm noselect" id="modalForm" [class.voted]="estacionamentoModal.showModal">
+    <div class="card-form card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="panel">
+                    <nex-box   [marginTop]="0"   
+                               [noPadding]="true"   
+                               [fullHeight]="true" 
+                               [background]="'#192038'" >
+                        <nex-listview [params]='listView_Estacionamento' 
+                                      [gridScroll]="true" 
+                                      [showFilter]="false" 
+                                      [classHeader]="'minPadding'" 
+                                      [class]="'displayInBox'"
+                                      (eventSelectGroup)="onRecepcaoEstacionamentoSelectGroup($event)"></nex-listview>
+                    </nex-box> 
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="card-footer-buttons">
+                <button type="button" class="btn btn-dark bt-card greenBorder" (click)="onAplicar_Click()">OK</button>
+                <button type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

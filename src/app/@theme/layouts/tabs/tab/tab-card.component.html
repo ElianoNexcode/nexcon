@@ -1,0 +1,3 @@
+<div [id]="tabComponent.name" class="pane" [ngClass]="{'displayFlex': true, 'tabScroll': tabScroll == true, 'noPadding': noPadding == true , 'maxWidth': maxWidth == true}" [ngStyle]="{'visibility': (tabComponent.active && (tabComponentParent == undefined || tabComponentParent?.active))? 'visible':'hidden', 'background': tabComponent.background }">
+    <ng-content></ng-content>
+</div>

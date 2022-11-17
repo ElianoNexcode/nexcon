@@ -1,0 +1,25 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+  
+  .fullWidth {
+    margin-top: 9px;
+    padding: 0 0 9px;
+  }
+
+  .tabFiltro {
+    max-height: calc(46vh - 3px);
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 0px !important;
+  }
+
+  .tabScroll {
+    padding: 0 0 0 9px !important;
+  }
+
+  nex-radio{
+    display: flex;
+    justify-content: center;
+  }
+}

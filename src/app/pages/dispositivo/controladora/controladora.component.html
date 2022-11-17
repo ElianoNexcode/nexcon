@@ -1,0 +1,103 @@
+<nex-leitor-modal  [title]="configLeitor" [leitorModal]="leitorModalService" ></nex-leitor-modal>
+<nex-ed-modal [title]="'Configuração do ED - 1'" [edModal]="edModalService"></nex-ed-modal>
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]="listView_Controladora" [showGrid]="filter != undefined" (eventCheck)="onListView_Change($event)" (eventFilter)="onFilter_Change($event)"></nex-listview>
+    </div>    
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Controladora
+            </div>
+            <div class="card-body">
+                <div class="panel">
+                    <nex-tabs-card [fullWidth]="true" [tabsOptions]="tabsControladora_Option" [marginTop]="0" [name]="'tabsControladora'">
+                        <nex-tab [tabComponent]="tabsControladora_Option.tabs[0]">
+                            <nex-form-group [name]="'conexao'">
+                                <nex-input-label  [text]="'Nome'" [input]="nome_Text"  (eventChange)="onSaved_Condition()"></nex-input-label>
+                                <nex-combobox [label]="'Tipo'" [options]="tipo_Option" (eventChange)="onBloqueioTipo_Selected()"></nex-combobox>
+                                <nex-input-label  [text]="'Local'" [input]="local_Text"  (eventChange)="onSaved_Condition()"></nex-input-label>
+                                <nex-input-label  [text]="'IP'" [input]="ip_Text"  (eventChange)="onSaved_Condition()"></nex-input-label>
+                                <nex-input-label  [text]="'Mascara'" [input]="mascara_Text"  (eventChange)="onSaved_Condition()"></nex-input-label>
+                                <nex-input-label  [text]="'Gateway'" [input]="gateway_Text"  (eventChange)="onSaved_Condition()"></nex-input-label>
+                                <nex-input-multi-label [text]="'Login'" [inputLeft]="login_Mult" [inputRight]="senha_Mult" (eventChange)="onSaved_Condition()"></nex-input-multi-label>
+                                <nex-radio [text]="'Status'" [options]="estado_Options"  (eventChange)="onStatus_Change($event)"></nex-radio>
+                            </nex-form-group>
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabsControladora_Option.tabs[1]">
+                            <!-- controle -->
+                            <nex-form-group [name]="'controles'" >
+                                <nex-combobox [labelMinWidth]="87" [label]="'Bloqueio Tipo'" [options]="bloqueioTipo_Option" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                <nex-combobox [labelMinWidth]="87" [label]="'Orientação'" [options]="orientacao_Option" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                <nex-combobox [labelMinWidth]="87" [label]="'Validação'" [options]="validacao_Option" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                <nex-select-group [labelMinWidth]="87" [text]="'Biocheck'" [options]="biocheck_Options" (eventChange)="onSaved_Condition()"></nex-select-group>
+                                <nex-combobox [labelMinWidth]="87" [label]="'Autenticar'" [options]="autenticar_Option" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                <nex-combobox [labelMinWidth]="87" [label]="'Display Idioma'" [options]="displayIdioma_Option" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                <nex-input-label [labelMinWidth]="87" [text]="'Display Msg'" [input]="displayMsg_Text"  (eventChange)="onSaved_Condition()"></nex-input-label>
+                                <nex-input-label [labelMinWidth]="87" [text]="'Relê'" [input]="rele_Text" [sufixo]="'Tempo em milessegundos'" (eventChange)="onSaved_Condition()"></nex-input-label>
+                            </nex-form-group>
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabsControladora_Option.tabs[2]">
+                            <!-- leitor -->
+                            
+                                <div class="row row-conexao-header">
+                                    <div class="col-3 header_Leitor">Leitor</div>
+                                    <div class="col-9 header_Controle">Controle</div>
+                                </div>
+
+                                <div class="row row-conexao-body">
+                                    <div class="row col-12" *ngFor="let Item of tipoLeitores">
+                                        <div class="div_Leitor_ED">{{Item.leitor}}</div>
+                                        <div class="div_Controle"></div>
+                                        <div class="div_Botao"><nex-mini-button [noBorder]= "true" [type]="'insert'"  [mediumButton]="true" (eventClick)="onLeitor_Click(Item.id)"></nex-mini-button></div>
+                                    </div>
+                                </div>   
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabsControladora_Option.tabs[3]">
+                            <!-- ed -->
+                            
+                                <div class="row row-conexao_2">
+                                    <div class="col-3 header_Leitor">ED</div>
+                                    <div class="col-9 header_Controle">Controle</div>
+ 
+                                    <div class="div_Leitor_ED" style="text-align: center;">1</div>
+                                    <div class="div_Controle"></div>
+                                    <div class="div_Botao"><nex-mini-button [noBorder]= "true" [type]="'insert'"  [mediumButton]="true" (eventClick)="onEd_Click($event)"></nex-mini-button></div>
+
+                                    <div class="div_Leitor_ED" style="text-align: center;">2</div>
+                                    <div class="div_Controle"></div>
+                                    <div class="div_Botao"><nex-mini-button [noBorder]= "true" [type]="'insert'"  [mediumButton]="true"></nex-mini-button></div>
+
+                                    <div class="div_Leitor_ED" style="text-align: center;">3</div>
+                                    <div class="div_Controle"></div>
+                                    <div class="div_Botao"><nex-mini-button [noBorder]= "true" [type]="'insert'"  [mediumButton]="true"></nex-mini-button></div>
+
+                                    <div class="div_Leitor_ED" style="text-align: center;">4</div>
+                                    <div class="div_Controle"></div>
+                                    <div class="div_Botao"><nex-mini-button [noBorder]= "true" [type]="'insert'"  [mediumButton]="true"></nex-mini-button></div>
+                                    
+                                </div>    
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabsControladora_Option.tabs[4]">
+                            <!-- observacao -->
+                            
+                            <nex-form-group [name]="'observacao'">
+                                <nex-textarea-label [name]="'observacao'" [height]="61" [label]="'Observação'" [textarea]="observacao_Text" [editable]="editable" (eventChange)="onSaved_Condition()"></nex-textarea-label>
+                            </nex-form-group>
+                        </nex-tab>
+                    </nex-tabs-card>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>

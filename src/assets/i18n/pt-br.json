@@ -1,0 +1,22 @@
+{
+    "forms": {
+        "questions": {
+            "delete": "Deseja excluir esse registro?",
+            "suspend": "Deseja suspender esse registro?",
+            "cancel": "Deseja cancelar esse registro?",
+            "end": "Deseja encerrar esse registro?"
+        },
+        "buttons": {
+            "create": "Incluir",
+              "read": "Visualizar",
+            "update": "Alterar",
+            "delete": "Excluir",
+              "save": "Salvar",
+            "cancel": "Cancelar",
+             "close": "Fechar",
+           "suspend": "Suspender",
+               "end": "Encerrar",
+             "issue": "Emitir"
+        }
+    }
+}

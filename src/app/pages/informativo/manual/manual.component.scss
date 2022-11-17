@@ -1,0 +1,15 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+    .card-body{
+        display: flex;
+        background-color: #222b45 !important;
+    }
+
+    .card {
+        margin: 6px 6px 0 0px !important;
+        overflow: hidden;
+    }
+
+
+}

@@ -1,0 +1,6 @@
+{
+    "protocol": "https",
+    "address": "nexcode.ddns.net",
+    "port": "5443",
+    "path": "api/graphql"
+}

@@ -1,0 +1,44 @@
+<nex-estacao-camera-modal [title]="'Pesquisa Câmera'" [estacaoCameraModal]="estacaoCameraModalService" (eventCheck)="onListView_Change_Modal($event)"></nex-estacao-camera-modal>
+<nex-estacao-impressora-modal [title]="'Pesquisa Impressora'" [estacaoImpressoraModal]="estacaoImpressoraModalService"></nex-estacao-impressora-modal>
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]="listView_Estacao" [showGrid]="filter != undefined" (eventCheck)="onListView_Change($event)" (eventFilter)="onListView_Filter($event)"></nex-listview>
+    </div>
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Estação
+            </div>
+            <div class="card-body">
+                <div class="panel">
+                    <nex-form-group [name]="'estacao'">
+                        <nex-input-label [text]="'Nome'" [input]="nome_Text" (eventChange)="onSaved_Condition()" [marginTop]="0"></nex-input-label>
+                        <nex-radio [text]="'Tipo'" [options]="tipo_Options" (eventChange)="onSaved_Condition()" (eventChange)="onTipoEstacao_Change()" ></nex-radio>
+                        <nex-combobox [label]="'Recepção'" [options]="recepcao_Options" (eventChange)="onSaved_Condition()"></nex-combobox>
+                        <nex-input-label [text]="'IP'" [input]="ip_Text" (eventChange)="onSaved_Condition()"></nex-input-label>
+                        <nex-input-label [text]="'Câmera P'" 
+                                         [input]="cameraP_Text" 
+                                         [findButton]="true" (onFindClick)="onCameraP_Click($event)" (eventChange)="onSaved_Condition()"
+                                         [clearButton]="true" (onClearClick)="onCameraP_Clear_Click($event)"></nex-input-label>
+                        <nex-input-label [text]="'Câmera V'" 
+                                         [input]="cameraV_Text" 
+                                         [findButton]="true" (onFindClick)="onCameraV_Click($event)" (eventChange)="onSaved_Condition()"
+                                         [clearButton]="true" (onClearClick)="onCameraV_Clear_Click($event)"></nex-input-label>
+                        <nex-input-label [text]="'Impressora'" [input]="impressora_Text" [findButton]="true" (click)="onImpressora_Click($event)" (eventChange)="onSaved_Condition()"></nex-input-label>
+                        <nex-textarea-label [name]="'observacao'" [height]="44"  [label]="'Observação'" [textarea]="observacao_Text" (eventChange)="onSaved_Condition()" [editable]="editable"></nex-textarea-label>
+                        <nex-radio [text]="'Status'" [options]="estado_Options" (eventChange)="onSaved_Condition()" ></nex-radio>
+                        </nex-form-group>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

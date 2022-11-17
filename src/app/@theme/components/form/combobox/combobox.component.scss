@@ -1,0 +1,253 @@
+@import '../../../themes.scss';
+
+@include nb-install-component() {
+    .comboBox {
+        display: flex;
+        width: 100%;
+        height: 29px;
+        border:1px solid #434561;
+        border-radius: 3px;
+
+        margin-top: 9px;
+        
+        .labelBox {
+            height: 27px;
+
+            margin: 0;
+            padding: 9px;
+
+            font-family: roboto !important;
+            font-size: 0.7rem !important;
+            line-height: 10px !important;
+            white-space: nowrap;
+            color: #A9ABAE !important;
+
+            border-right: 1px solid #434561 !important;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .select {
+            width: 100%;
+
+            margin: 0;
+            padding: 0;
+
+            font-size: 0.7rem;
+
+            background-color: #212b43;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .icon {
+            height: 27px;
+            margin: 0;
+            padding: 2px 6px;
+            max-width: 30px;
+
+            text-align: center;
+            border-left: 1px solid #434561;
+            background-color: #1D2642;
+            border-radius: 0 5px 5px 0;
+
+            cursor: pointer;
+        }
+
+        .itemSelectHover {
+            background: nb-theme(background-btt-hover);
+        }
+
+        .itemSelected {
+            background: #0d54a1;
+        }
+    }
+
+    .no-margin {
+        margin: 0 !important;
+        border-radius: 10px !important;
+
+        .select, .custom-select, .select-selected  {
+            border-radius: 10px !important;
+        }
+
+        .select-selected {
+            display: flex;
+            align-items: center; 
+        }
+    }
+
+    .container {
+        padding: 0 !important;
+    }
+
+    .comboInput {
+        background: transparent;
+        color: #A9ABAE;
+        height: calc(100% + 6px);
+        width: calc(100% + 22px);
+        margin: -3px 0 0 -6px;
+        padding: 1px 24px 0 7px;
+        border: none !important;
+        border-radius: 0 !important;
+        outline: none;
+        cursor: pointer;
+    }
+
+    ::selection {
+        color: yellow;
+        background: transparent;
+    }
+
+    textbox:focus, input:focus {
+        color: nb-theme(input-focus-color);
+        background: nb-theme(background-input-focus-color);
+        outline: none;
+        border-radius: 0 3px 3px 0;
+    }
+
+    .filter {
+        margin-top: 0px !important;
+        width: 300px !important;
+    }
+
+    .find {
+        margin-top: 9px;
+        width: 100% !important;
+    }
+
+    .select-filter {
+        max-width: 35%;
+        border-radius: 0 !important;
+    }
+
+    .inputbox {            
+        width: 100%;    
+        margin: 0;
+        background-color: nb-theme(background-input-color);
+        border-radius: 0 3px 3px 0;
+        
+        input {
+            width: 100%;
+            height: 27px;
+
+            margin: 0;
+            padding: 6px 5px 4px;
+            background: transparent;
+
+            border: none;
+            font-size: 0.7rem;
+            line-height: 1rem;
+            color: nb-theme(input-color);
+        }
+
+        textbox:focus, input:focus{
+            color: nb-theme(input-focus-color);
+            background: nb-theme(background-input-focus-color);
+            outline: none;
+            border-radius: 0 3px 3px 0;
+        }
+    }
+
+    .custom-select {
+
+        position: relative !important;
+        height: 27px !important;
+
+        padding: 0 !important;
+
+        font-family: roboto;
+        font-size: 0.55rem;
+        line-height: 0.8rem;
+        color: #CCCCCC;
+
+        border: none !important;
+        border-radius: 0 5px 5px 0;    
+    }
+
+    .custom-filter-select {
+        background-color: #222b45 !important;
+        font-size: 0.7rem !important;
+        padding-top: 8px !important;
+    }
+    
+
+    .custom-find-select {
+        background-color: #222b45 !important;
+        padding: 8px 16px 3px 9px !important;
+
+    }
+    
+    .filtroGroup {
+        display: flex;
+        width: 300px;
+        height: 28px;
+        border:1px solid #434561;
+        border-radius: 3px;
+
+        .select {
+            margin: 0; 
+            padding: 0;
+
+            font-size: 0.7rem;
+            background-color: #212b43;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .icon {
+            margin: 0;
+            padding: 2px 9px;
+
+            text-align: center;
+            border-left: 1px solid #434561;
+            background-color: #1D2642;
+            border-radius: 0 5px 5px 0;
+
+            cursor: pointer;
+        }
+    }
+
+    .disabled {
+        background-color: #202840 !important;
+        color: #a9abaE;
+    }
+    
+    .completeInput, .completeText {
+        width: 100%;
+        height: 27px;
+        margin: 0 auto;
+    }
+
+    .completeInput {
+        color: nb-theme(input-color);
+        background-color: transparent;
+    }
+    
+    .completeText {
+        color: #999;
+        padding: 6px 20px 6px 7px;
+        background-color: #193760;
+        visibility: hidden;
+        overflow: hidden;
+    }
+
+    .completeInput:focus {
+        outline: none;
+        border-color: #aaa;
+        background-color: transparent !important;
+    }
+
+    .completeInput, .completeText {
+        position: absolute;
+        font-size: 0.7rem;
+        top: 0px;
+        right: 0;
+        padding: 7px 20px 8px 6px;
+        border: none !important;
+        cursor: text;
+    }
+
+    .optionText {
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,392 @@
+@import '../../../../@theme/themes';
+
+@include keyframes(flash-new){
+     0%	{ background-color: #1a365e;}
+    25%	{ background-color: #1a365e;}
+    50%	{ background-color: #192038;}
+    75%	{ background-color: #192038;}
+   100%	{ background-color: #1a365e;}
+}
+
+@include keyframes(flash-del){
+    0%	{ background-color: #192038;}
+   25%	{ background-color: #192038;}
+   50%	{ background-color: #492539;}
+   75%	{ background-color: #492539;}
+  100%	{ background-color: #192038;}
+}
+
+@include nb-install-component() {
+
+    font-family: roboto !important;
+
+    .flash {
+        animation-name: flash-new;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+
+    .flashDel {
+        animation-name: flash-del;
+        animation-duration: 500ms;
+        animation-iteration-count: 2;        
+    }
+
+    .lv-container {
+        height: 100%
+    }
+
+    .lv-grid {
+        height: 100%;
+    }
+
+   .grid {
+        padding: 0 !important;
+        width: auto !important;
+        margin: 6px !important;
+
+        .divider {
+            margin: 0 !important;
+            background-color: #141a30;
+
+            .title {
+                margin: 0 !important;
+                padding: 5px;
+                font-size: 0.7rem;
+                width: 100%;
+                background-color: #141a30;
+                color: #8B9E93 !important;
+                border-top: 1px solid #797575;
+                border-left: 1px solid #797575;
+                border-right: 1px solid #797575;
+                border-bottom: 1px solid #000000;
+            }
+        }
+
+        .border {
+            border: 0 !important;
+            border-left: 1px solid #797575 !important;
+            border-right: 1px solid #797575 !important;
+            border-bottom: 1px solid #797575 !important;
+            padding: 3px 8px !important;
+        }
+
+        .input-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            padding: 0.4rem 0.4rem;
+            margin: 2px 0;
+
+            background-color: #4B4B4D;
+            border: 1px solid #797575 !important;
+            border-radius: 5px !important;
+            font-size: 0.7rem;
+            line-height: 1rem;
+
+            input {
+                width: 100% !important;
+
+                color: #CE8F64 !important;
+                border: 3px solid #171718;
+                background-color: #171718 !important;
+            }
+
+            p {
+                margin: 0 10px 0 0 !important;
+            }
+        }
+        
+    }
+
+    .card {
+        height: calc(100% - 14px) !important;        
+        
+        margin: 6px 6px 0 0px !important;
+        overflow: hidden;
+
+        color: #CCCCCC !important;
+        background-color: nb-theme(background-card-color);
+    }
+
+    .card-header {
+        min-height: 43px !important;
+        max-height: 43px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 13px;
+        color: nb-theme(color-30);
+
+        border-bottom: nb-theme(border-bottom);
+    }
+
+    .card-body {
+        height: calc(100% - 98px);
+        max-height: calc(100vh - 272px);
+        min-height: 425px;
+        min-width: 100%;
+
+        margin: 0;
+        padding: 9px 12px;
+
+        overflow: hidden;
+
+        font-size: 0.7rem;
+
+        font-size: 0.7rem;
+        color: nb-theme(color-40);
+    }
+
+    .card-footer {
+        max-height: 43px !important;
+        min-height: 43px !important;
+        padding: 0.45rem 12px !important;
+        border-top: nb-theme(border-top);        
+    }
+
+    .col-1 {
+        align-self: center;
+        text-align: center;
+    }
+
+    .col-5, .col-7 {
+        align-self: center;
+    }
+
+    .align-right {
+        text-align: right !important;
+        text-align: -webkit-right !important;
+    };
+
+    .gridHeader {
+        min-width: 67vw;
+        border-top: 1px solid #434561;
+        border-bottom: 1px solid #434561;
+        max-height: 33px;
+        background-color: #222b45;
+        font-weight: 500;
+        font-size: 0.7rem;
+
+        .row {
+            padding: 6px 0;
+            margin: 0;
+        }
+
+        .minPadding {
+            padding: 4px 0 3px !important;
+        }
+
+    }
+
+    .noBorderTop {
+        border-top: 0 !important;
+        min-width: 100% !important;
+    }
+
+    .grid-row {
+        height: 32px;
+        max-height: 35px;
+        min-width: 67vw;     
+        margin:0;
+        align-items: center;
+        font-size: 0.7rem;
+        background-color: nb-theme(background-grid-color);
+        border-bottom: 1px solid nb-theme(border-grid-color) !important;        
+    }
+
+    .avatar {
+        max-width: 36px !important;
+        padding: 0 0 0 9px !important;
+    }
+
+    .noBorderBottom:last-child {
+        border-bottom: 0 !important;
+    }
+
+    .grid-Cell {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .gridOption {
+        align-self: center !important;
+
+        .mat-checkbox {
+            position: initial !important; 
+            margin: 0 0 0 13px !important;
+        }
+    }
+
+    .overflowY {
+        overflow-y: overlay;
+        pointer-events: all !important;
+    }
+
+    .actived {
+        background-color: #0d54a1;
+        color: #8c909a !important;
+    }
+
+    .col {
+        padding-left: 9px;
+        padding-right: 5px;
+    }
+
+    .inputbox {            
+        width: 100%;    
+        margin: 0;
+        background-color: nb-theme(background-input-color);
+        
+        input {
+            width: 100%;
+            height: 100%;
+            
+            margin: 0;
+            padding: 7px; background: transparent;
+            border: none;
+            font-size: 0.7rem;
+            color: nb-theme(input-color);
+            text-transform: uppercase;
+        }
+
+        textbox:focus, input:focus{
+            color: nb-theme(input-focus-color);
+            background: nb-theme(background-input-focus-color);
+            outline: none;
+        }
+    }
+    
+    .mat-checkbox {
+        position: relative;
+        margin: 0 15px 0 5px;
+        top: 3px;
+    }
+
+    .bt-card {
+        padding: 5px !important;
+        min-width: 93px !important;
+        text-align: center !important;
+        border-radius: 3px !important;
+        border: 2px solid #313452!important;
+        margin-right: 18px;
+        color: #BDBFC1 !important;
+        font-size: 0.9rem !important;
+        background-color: #263152 !important;
+    }
+    
+    .btn-link {
+        margin: 0 auto !important;
+        display: -webkit-flex !important;
+        display: flex !important;
+        align-items: left !important;
+        -webkit-align-items: left !important;
+        -webkit-justify-content: left !important;
+        justify-content: left !important;
+        width: 100%;
+        font-family: roboto !important;
+        font-size: 0.7rem !important;
+        line-height: 1rem;
+        color: #8C909A;
+    }
+    
+    .btn-link:hover {
+        text-decoration: none !important;
+        background-color: nb-theme(background-btt-hover) !important;
+    }
+    
+    .btn-link.active:hover {
+        text-decoration: none !important;
+        background-color: #0d54a1 !important;
+    }
+    
+    .btn {
+        background-color: #222b45;
+        border: 0;
+        border-radius: 0;
+        text-align: center !important;
+        line-height: 1rem !important;
+        max-width: 95px !important;
+    }
+    
+    .btn-link.active {
+        background-color: #222b45;
+    }
+    
+    .dropdown-toggle-split::after {
+        color: #8C909A !important;
+        margin-left: 1em !important;
+    }
+
+    .endGrid {
+        width: 100%;
+        height: 1px;
+        margin-top: 9px;
+        border-bottom: 1px solid #434561;
+    }
+
+    .hidePaging {
+        visibility: hidden;
+    }
+
+    .keyControl {
+        pointer-events: none;
+
+        input {
+            width: 100%;
+            color: #CCCCCC !important;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border: none;
+        }
+
+        input:focus{
+            color: transparent;
+            background: transparent;
+            outline: none;
+        }
+
+    }
+
+    .showPaging {
+        visibility: hidden;
+    }
+
+    .gridScroll {
+        overflow-x: auto;
+        max-width: 100%; 
+    }
+
+    .checkCol {
+        max-width: 3vw !important;
+
+        .mat-checkbox {
+            margin: 0px !important;
+            top: 0px;
+        }
+    }
+
+    .iconType {
+        color: #8C909A;
+        font-size: 14px;
+    }
+
+    .noPadding {
+        padding: 0 !important;
+    }
+
+    .textValue {
+        color: #4e5365;
+    }
+
+    .active {
+        color: #1e96f4 !important;
+    }
+}
+
+
+

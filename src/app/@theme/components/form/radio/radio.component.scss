@@ -1,0 +1,120 @@
+@import '../../../themes.scss';
+
+@include nb-install-component() {
+    
+    .nex-radio-group {
+        text-align: center;
+        margin-top: 9px;
+        z-index: 0;
+    }
+
+    .radioGroup {
+        display: flex;
+        width: 100%;
+        height: 29px !important;
+        border: 1px solid #434561 !important;
+        border-radius: 3px !important;
+        margin-top: 9px;
+        text-align: left;
+
+        .labelBox {
+            height: 27px;
+    
+            margin: 0;
+            padding: 9px;
+    
+            font-size: 0.7rem;
+            white-space: nowrap;
+            line-height: 10px;
+    
+            border-right: 1px solid #434561 !important;
+        }
+
+        .inputbox {        
+            width: 100%;
+            height: 100%;
+            
+            margin: 0;
+            padding: 0 5px;
+            overflow: hidden;
+            background-color: nb-theme(background-input-color);
+            text-align: left;
+            display: flex;
+    
+            input {
+                margin: 0;
+                background: transparent;
+                border: none;
+                align-self: center;
+                color: nb-theme(input-color);
+            }
+
+            input[type=radio] {
+                display: none; 
+            }
+
+            label {
+                cursor: pointer;
+            }
+
+            input[type="radio"] + label:before {
+                border: 1px solid #5D5C5C;
+                content: "\00a0";
+                display: inline-block;
+                font: 16px/1em sans-serif;
+                height: 14px;
+                margin: 0 .25em 0 0;
+                padding:0;
+                vertical-align: middle;
+                width: 14px;
+                border-radius:50%;
+            }
+
+            input[type="radio"]:checked + label:before {
+                background: #2154a1 !important;
+                color: #FFF;
+                text-align: center;
+            }
+
+            input[type="radio"]:checked + label:after {
+                font-weight: bold;
+            }
+
+            textbox:focus, input:focus{
+                color: nb-theme(input-focus-color);
+                background: nb-theme(background-input-focus-color);
+                outline: none;
+            }
+        }
+    }
+
+    .minPadding {
+        padding: 5px 9px !important;
+    }
+
+    .inBox {
+        border: none !important;
+        height: 100% !important;
+        background-color: transparent !important;
+    }
+    
+    label {
+        margin: 0px 13px 0 4px !important;
+        font-family: roboto !important;
+        font-size: 0.7rem !important;
+        align-self: center;
+        line-height: normal;
+    }
+
+    .radioOptions {
+        padding: 0 !important;
+        height: 27px;
+        display: flex;
+    }
+
+    .disabled {
+        background-color: #202940 !important;
+        color: #a9abaE; 
+    }
+
+}

@@ -1,0 +1,83 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<nex-nivel-acesso-modal [title]="'Cadastro de Nivel de Acesso'" [nivelAcessoModal]="nivelAcessoModalService" (eventNivelAcessoSelect)="onNivelAcessoSelect($event)"></nex-nivel-acesso-modal>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_NivelAcesso' (eventCheck)="onListView_Change($event)" (eventFilter)="onFilter_Change($event)"></nex-listview>
+    </div>
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Nível de Acesso
+            </div>
+            <div id="nivelAcessoPanel"
+                 [nbSpinner]="showSpinner"
+                 nbSpinnerMessage="Aguarde..."
+                 nbSpinnerStatus="basic"
+                 nbSpinnerSize="giant"
+                 class="card-body">
+                <div class="panel">
+                    <nex-tabs-card [marginTop]="0" [tabsOptions]="tabNivel" [name]="'tabsNivel'" [fullWidth]="true">
+                        <nex-tab [tabComponent]="tabNivel.tabs[0]">
+                            <nex-form-group [name]="'nivelAcessoFormGroup'">
+                                <nex-input-label [text]="'Nome'" [input]="nomeNivel_Text"></nex-input-label>
+                                <nex-select-group [editable]="editable" [text]="'Restrição'" [options]="restricao_Option"></nex-select-group>
+                                <nex-input-multi-label [inputLeft]="inicial_Mult_Validade" [inputRight]="final_Mult_Validade"></nex-input-multi-label>
+                                <div class="texto-adm front">
+                                    <div class="div-interna-adm">
+                                        <p class="termoValidade">Uma vez configurada a validade inicial e final, o nível de acesso passará a ser válido somente dentro deste período, no entanto, esta validação só
+                                            se aplica ao concentrador e não será tratada se a placa estiver operando com a validação local.
+                                        </p>
+                                    </div>
+                                </div>
+                                <nex-textarea-label [name]="'observacao'" [height]="75" [label]="'Observação'" [textarea]="observacao_Text" [editable]="true"></nex-textarea-label>
+                                <nex-radio [text]="'Status'" [options]="estado_Options"  (eventChange)="onStatus_Change($event)"></nex-radio>
+                            </nex-form-group>
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabNivel.tabs[1]" class="alwaysEditable">
+                            <nex-box class="fullHeight" [boxPanel]="boxArea" [noPadding]="true" [showFooter]="true" [background]="'#192038'" (eventButtonClick)="onAreaNivel_Click($event)" >
+                                <nex-listview [params]='listView_AreaNivel' [showFilter]="false" [classHeader]="'minPadding'" [class]="'displayInBox alwaysEditable'" (eventCheck)="onListView_Change_Area($event)"></nex-listview>
+                            </nex-box>
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabNivel.tabs[2]">
+                            <nex-box [title]="'Faixa Horária de Expansão'" [titleAlign]="'left'">
+                                <nex-input-multi-label [inputLeft]="inicial_Mult_Hora" [inputRight]="final_Mult_Hora"></nex-input-multi-label>   
+                                <div class="texto-faixa-horaria" >
+                                    <p class="termoFaixaHorario">
+                                        Este controle tem como objetivo, expandir a faixa horária de acesso as áreas configuradas dentro de um período pré-determinado.
+                                    </p>
+                                    <p class="termoFaixaHorario">
+                                        É recomendado o uso deste recurso apenas em casos específicos, como por exemplo, na realização de horas extras em um determinado dia ou período.
+                                    </p>  
+                                </div>
+                            </nex-box>
+                            <nex-box [title]="'Validade da Faixa Horária de Expansão'" [titleAlign]="'left'">
+                                <nex-input-multi-label [inputLeft]="inicial_Mult_Data" [inputRight]="final_Mult_Data"></nex-input-multi-label>   
+                                <div class="texto-faixa-horaria" >
+                                    <p class="termoValidadeFaixaHorario">
+                                        Define-se aqui o período em que a faixa horária de expansão ficará disponivel neste nível de acesso.
+                                    </p>
+                                    <p class="termoValidadeFaixaHorario">
+                                        Uma vez definido a faixa horária de expansão, torna-se obrigatório definir o seu período de validade.
+                                    </p>  
+                                </div>
+                            </nex-box>
+                                <div class="texto-faixa-horaria">
+                                <p class="termoExpansao">
+                                    Este controle se aplica somente ao concetrador e não será tratado se a placa estiver com validação local.
+                                </p>
+                                </div>
+                        </nex-tab>
+                    </nex-tabs-card>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="modalForm noselect" id="modalForm" [class.voted]="abordagemModal.showModal">
+    <div class="card-form" class="card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{ abordagemModal.title }}
+        </div>
+        <div class="card-body">
+            <div class="panel">
+                <div *ngFor="let abordagem of abordagemModal.abordagem">
+                    <nex-textarea-label [color]="abordagem.color" [fontWeight]="'500'" [name]="abordagem.title" [label]="abordagem.title" [textarea]="{text: abordagem.message, disabled: true}"></nex-textarea-label>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="buttons">
+                    <button type="button" class="btn btn-dark bt-card orangeBorder" (click)="onButton_Click('OK')">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

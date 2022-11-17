@@ -1,0 +1,12 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+
+    .width_1{
+        width:80% ;
+    }
+
+    .width_2{
+        width:20% ;
+    }
+}

@@ -1,0 +1,10 @@
+<div [id]="name" [ngStyle]="{'marginTop.px': marginTop}" [ngClass]="{'tab-card': fullWidth == false, 'tab-card-full': fullWidth == true, 'maxHeight': multiTabs == true, 'mediumHeight': mediumHeight == true, 'largeHeight': largeHeight == true}">
+    <ul class="nav nav-tabs">
+        <li [id]="'tab-' + tab.title" *ngFor="let tab of tabsOptions?.tabs" (click)="tabsOptions.selectTab(tab)" [class.active]="tab.active">
+          <div>{{tab.title}}</div>
+        </li>
+    </ul>
+    <div class="tabs">
+      <ng-content style="min-width: 100%;"></ng-content>
+    </div>    
+</div> 

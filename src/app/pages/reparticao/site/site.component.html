@@ -1,0 +1,59 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<nex-erros-modal [errosModal]="errosModalService"></nex-erros-modal>
+<nex-pessoa-interna-modal [filter]="filterPessoaInterna"
+    [pessoaModal]="pessoaInternaModalService" (eventSelect)="pessoaInternaModalSelect($event)">
+</nex-pessoa-interna-modal>
+<div id="modulo" class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_Site' (eventCheck)="onListView_Change($event)"
+            (eventFilter)="onListView_Filter($event)"></nex-listview>
+    </div>
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Site
+            </div>
+            <div [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant"
+                class="card-body">
+                <div [id]="listView_Site_Vigilante.name" class="panel" style="height: 100%;">
+                    <div style="height: 100%;display: flex;flex-direction:column">
+                        <nex-input-label [text]="'Nome do Site'" [marginTop]="0" [input]="nomeSite_Text"></nex-input-label>
+                        <nex-textarea-label [name]="'observacao'" [height]="61" [label]="'Observação'" [textarea]="observacao_Text" [editable]="editable"></nex-textarea-label>
+                        <nex-tabs-card [tabsOptions]="tabsConfiguracao_Options" [name]="'tabSite'" [fullWidth]="true">
+                            <nex-tab [tabComponent]="tabsConfiguracao_Options.tabs[0]" [noPadding]="true"
+                                [tabScroll]="false" [maxWidth]="true">
+                                <nex-box [name]="'supervisor'" [showFooter]="true" [fullHeight]="true" [boxPanel]="boxButton" [noBorder]="true" [marginTop]="0"
+                                    [background]="'#192038'" (eventButtonClick)="onSupervisor_Button_Click($event)">
+                                    <nex-listview [editable]="editable" [noHeader]="true" [params]='listView_Site_Supervisor' [classHeader]="'minPadding'"
+                                        [class]="'displayInBox'" (eventCheck)="onlistViewTab_Change($event)">
+                                    </nex-listview>
+                                </nex-box>
+                            </nex-tab>
+                            <nex-tab [tabComponent]="tabsConfiguracao_Options.tabs[1]" [noPadding]="true"
+                                [tabScroll]="false" [maxWidth]="true">
+                                <nex-box [name]="'vigilante'" [showFooter]="true" [fullHeight]="true" [boxPanel]="boxButton" [noBorder]="true" [marginTop]="0"
+                                    [background]="'#192038'" (eventButtonClick)="onVigilante_Button_Click($event)">
+                                    <nex-listview [editable]="editable" [noHeader]="true" [params]='listView_Site_Vigilante' [classHeader]="'minPadding'"
+                                        [class]="'displayInBox'" (eventCheck)="onlistViewTab_Change($event)">
+                                    </nex-listview>
+                                </nex-box>
+                            </nex-tab>
+                        </nex-tabs-card>    
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button"
+                        class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button"
+                        class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button"
+                        class="btn btn-dark bt-card orangeBorder" (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>

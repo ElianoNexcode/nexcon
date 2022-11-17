@@ -1,0 +1,70 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<nex-erros-modal [errosModal]="errosModalService"></nex-erros-modal>
+<div class="modulo player" id="player" [class.voted]="actionbuttomService.flipped">
+    <div id="grid" class="grid front">
+        <nex-listview [params]="listView_NivelOperacao" (eventCheck)="onListView_Change($event)"></nex-listview>
+    </div>
+    <div id="form" class="formFull back">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                <div>
+                    Cadastro de Nível de Operação
+                </div>
+                <div>
+                    <nex-card-tabs [options]="cardTabs_Options" (eventClick)="onCardTabs_Click($event)"></nex-card-tabs>
+                </div>
+            </div>
+            <div  [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant" class="card-body" *ngIf="cardTabs_Options?.selectCard.id == 1">
+                <div class="panel">
+                    <div class="row">
+                        <div class="col-full">
+                            <nex-input-label  [text]="'Nome'" [input]="nomeOperador_Text" [labelMinWidth]="74" (eventChange)="onSaved_Condition()"></nex-input-label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-full">
+                            <nex-input-label [text]="'Observação'" [input]="observacao_Text" [labelMinWidth]="74" (eventChange)="onSaved_Condition()"></nex-input-label>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel maxNivel">
+                    <nex-menu [orientacao]="'horizontal'" (eventClick)="onMenuItem_Click($event)"  style="pointer-events: all !important;"></nex-menu>
+                    <div class="row maxRecursos">
+                        <div class="col">
+                            <nex-select-group [text]="'Recurso'" [showSelect]="true" [selectAll]="true" [selectAllVisible]="false" [options]="recurso_Options"  (eventChange)="onRecursoOptions_Change($event)" (eventSelect)="onRecursoOptions_Select($event)" style="pointer-events: all !important;"></nex-select-group>
+                        </div>
+                        <div class="col">
+                            <nex-select-group [text]="'Função'"   [showSelect]="true" [selectAll]="true" [selectAllVisible]="false" [options]="funcao_Options"   (eventChange)="onFuncaoOptions_Change($event)" (eventSelect)="onFuncaoOptions_Select($event)" style="pointer-events: all !important;"></nex-select-group>
+                        </div>
+                        <div class="col">
+                            <nex-select-group [text]="'Operação'" [showSelect]="true" [selectAll]="true" [options]="operacao_Options" (eventChange)="onOperacaoOptions_Change($event)"></nex-select-group>
+                        </div>  
+                    </div>
+                    <nex-select-group [options]="interface_Options" (eventChange)="onSaved_Condition()"></nex-select-group>    
+                </div>
+            </div>
+            <div [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant" class="card-body" *ngIf="cardTabs_Options?.selectCard.id == 2">
+                <div class="panel maxHeight">
+                    <nex-select-group [text]="'Site'" [selectAll]="true" [options]="site_Options" (eventChange)="onSaved_Condition()"></nex-select-group>
+                </div>
+            </div>
+            <div class="card-body" *ngIf="cardTabs_Options?.selectCard.id == 3">
+                <div class="panel maxHeight">
+                    <div class="row">
+                        <div class="col noPadding">
+                            <nex-select-group [text]="'Controles Avançados'" [selectAll]="true" [options]="classificacao_Options" (eventChange)="onSaved_Condition()"></nex-select-group>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onSave_Click()" >Salvar</button>        
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder" (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

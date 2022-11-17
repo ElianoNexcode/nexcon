@@ -1,0 +1,8 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+  
+    .card-footer{
+        overflow-y: hidden !important;
+    }
+}

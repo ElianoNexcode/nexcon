@@ -1,0 +1,63 @@
+@import "../../../themes.scss";
+
+@include nb-install-component() {
+    .btt-view {
+        min-height: 46px;
+        height: 59px;
+        max-width: 41px !important;
+        width: 164px !important;
+
+        padding: 0 4px !important;
+        margin: 0 auto !important;
+
+        display: -webkit-flex !important;
+        display: flex !important;
+        -webkit-align-items: center !important;
+        align-items: center !important;
+        -webkit-justify-content: center !important;
+        justify-content: center !important;
+
+        color: #CCCCCC;
+        border-left: nb-theme(border-left);
+
+        .row {
+            margin: 0 !important;
+            width: 100%;
+        }
+
+        .col-9 {
+            padding: 0 0 0 3px !important;
+            align-self: center;
+        }
+
+        .user {
+            margin: 2px 0 0 !important;
+            font-size: 0.6rem;
+            font-weight: 500;
+            line-height: 0.8rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .login {
+            margin: 0 !important;
+            font-size: 0.5rem;
+            line-height: 0.8rem;
+        }
+
+        .avatar {
+            max-width: 3vw;
+            text-align: -webkit-center;
+            padding: 0 !important;
+            align-self: center;
+
+            img {
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                filter: contrast(0);
+            }
+        }
+    }
+}

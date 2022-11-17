@@ -1,0 +1,30 @@
+<div class="modalForm noselect" id="modalForm" [class.voted]="areaControleVisitaModal.showModal">
+    <div class="card-form card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="panel">
+                <nex-form-group [name]="'ControleVisitaModal'">
+                    <div class="row">
+                        <div class="col">
+                            <nex-combobox [label]="'Grupo Pessoa'" [marginTop]="0" [options]="grupoPessoa_Option" (eventChange)="grupoPessoaChange()"></nex-combobox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-6">
+                            <nex-input-label [text]="'Quantidade'" [input]="quantidade_Text"></nex-input-label>
+                        </div>
+                    </div>                                    
+               </nex-form-group>
+            </div>
+        </div>
+        <div class="card-footer">
+            <nex-alert-card [name]="'cardSalvar'" [alertService]="alertService"></nex-alert-card>
+            <div class="card-footer-buttons">
+                <button type="button" class="btn btn-dark bt-card greenBorder" (click)="onAplicar_Click()">Aplicar</button>
+                <button type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

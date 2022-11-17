@@ -1,0 +1,30 @@
+<div class="container my-4">
+    <div class="row margin-less">
+        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-wrap="false" data-ride="carousel"  data-interval="false" style="width: 100%;">
+            <div class="col bt bt-tv btn-floating" href="#multi-item-example" data-slide="prev">
+                <img src="./assets/icons/left.png" />
+            </div>
+            <div class="col carousel-inner" role="listbox">
+                <div class="carousel-item" [ngClass]="{ active: i == 0 }" *ngFor="let grupo of notificacoesGrupos; let i = index">
+                    <div class="row">
+                        <div [ngClass]="'col-md-' + grupo.col" class="clearfix d-none d-md-block" *ngFor="let notificacao of grupo.notificacoes; let i = index">
+                            <div class="row item" [ngStyle]="{'border': '1px solid ' + notificacao.cor}">
+                                <div class="col avatar">
+                                    <img [src]="notificacao.imagem" />
+                                </div>
+                                <div class="col dados">
+                                    <p class="local">{{notificacao.local}}</p>
+                                    <p class="ocorrencia">{{notificacao.ocorrencia}}</p>
+                                    <P class="user">{{notificacao.data}}</P>
+                                </div>        
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <div class="col bt bt-tv btn-floating"  href="#multi-item-example" data-slide="next">
+                <img src="./assets/icons/right.png" />
+            </div>
+        </div>
+    </div>                
+</div>

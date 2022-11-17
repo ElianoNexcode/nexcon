@@ -1,0 +1,190 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo" id="viewer">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_Usuario' [showGrid]="(relatorioTipo != null)" [showFilter]="false" (eventCheck)="onListView_Change($event)"></nex-listview>
+    </div>    
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Emissão de Relatório
+            </div>
+            <div [nbSpinner]="showSpinner"
+                 nbSpinnerMessage="Aguarde..."
+                 nbSpinnerStatus="basic"
+                 nbSpinnerSize="giant"
+                 id="gestaoUsuario_Panel"
+                 class="card-body displayFlex">
+                <div class="panel fullWidth">
+                    <nex-tabs-card [fullWidth]="true" [tabsOptions]="tabsGestaoUsuario_Option" [name]="'tabsGestaoUsuario'">
+                        <nex-tab [noPadding]="true" [tabComponent]="tabsGestaoUsuario_Option.tabs[0]">
+                            <div [ngStyle]="{'display': (relatorioTipo == 1)? 'block': 'none'}">   <!-- Pessoa Interna -->
+                                <nex-form-group [name]="'filtroGestaoUsuario_PessoaInterna'" [minWidthFix]="106">
+                                    <div id="tabFiltroPessoaInterna" class="tabFiltro">
+                                        <nex-input-label [text]="'Nome'" [marginTop]="0" [input]="nome_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Grupo'" [marginTop]="0" [options]="grupo_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-input-label [text]="'Documento'" [marginTop]="0" [input]="documento_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'ID'" [marginTop]="0" [input]="id_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Cartão'" [marginTop]="0" [input]="cartao_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Setor'" [dynamic]="true" [marginTop]="0" [options]="setor_Options" [class]="'topJoinGrid'" (eventClick)="onSetor_Populate()" (eventChange)="onSetor_Click()"></nex-combobox>
+                                        <nex-combobox [label]="'Área'" [marginTop]="0" [options]="area_Options" [class]="'topJoinGrid'" (click)="onArea_Click()"></nex-combobox>
+                                        <nex-input-label [text]="'Localização'" [marginTop]="0" [input]="localizacao_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Centro de Custo'" [marginTop]="0" [options]="centroCusto_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-input-label [text]="'Supervisor'" [marginTop]="0" [input]="supervisor_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Empresa'" [marginTop]="0" [options]="empresa_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-input-label [text]="'Complemento 1'" [marginTop]="0" [input]="complemento1_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 2'" [marginTop]="0" [input]="complemento2_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 3'" [marginTop]="0" [input]="complemento3_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 4'" [marginTop]="0" [input]="complemento4_Text" [class]="'topJoinGrid'"></nex-input-label> 
+                                        <nex-input-label [text]="'Observação'" [marginTop]="0" [input]="observacao_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Abordagem'" [marginTop]="0" [options]="abordagem_Option" [class]="'topJoinGrid'"></nex-combobox>  
+                                        <nex-combobox [label]="'Status'" [marginTop]="0" [options]="status_Option" [class]="'topJoinGrid_Bottom'"></nex-combobox>    
+                                    </div>           
+                                </nex-form-group>
+                                <div>
+                                    <nex-select-group class="noHeight" [labelMinWidth]="50" [marginTop]="0" [horizontal]="true" [class]="'topJoin'" [options]="valorIdentico_Options"></nex-select-group>  
+                                </div>
+                            </div>
+                            <div [ngStyle]="{'display': (relatorioTipo == 2)? 'block': 'none'}">  <!-- Pessoa Externa -->
+                                <nex-form-group [name]="'filtroGestaoUsuario_PessoaExterna'" [minWidthFix]="106">
+                                    <div id="tabFiltroPessoaExterna" class="tabFiltro">
+                                        <nex-input-label [text]="'Nome'" [marginTop]="0" [input]="nome_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Grupo'" [marginTop]="0" [options]="grupo_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-input-label [text]="'Documento'" [marginTop]="0" [input]="documento_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Empresa'" [marginTop]="0" [input]="empresa_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 1'" [marginTop]="0" [input]="complemento1_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 2'" [marginTop]="0" [input]="complemento2_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 3'" [marginTop]="0" [input]="complemento3_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 4'" [marginTop]="0" [input]="complemento4_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Observação'" [marginTop]="0" [input]="observacao_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox    [label]="'Abordagem'" [marginTop]="0" [options]="abordagem_Option" [class]="'topJoinGrid'" ></nex-combobox>  
+                                        <nex-combobox [toUp]="true" [label]="'Status'" [marginTop]="0" [options]="status_Option" [class]="'topJoinGrid_Bottom'"></nex-combobox>
+                                    </div>
+                                </nex-form-group>
+                                <div>
+                                    <nex-select-group class="noHeight" [labelMinWidth]="50" [marginTop]="0" [horizontal]="true" [class]="'topJoin'" [options]="valorIdentico_Options"></nex-select-group>  
+                                </div>
+                            </div>
+                            <div [ngStyle]="{'display': (relatorioTipo == 4)? 'block': 'none'}">   <!-- Veiculo Interno -->
+                                <nex-form-group [name]="'filtroGestaoUsuario_VeiculoInterno'" [minWidthFix]="106">
+                                    <div id="tabFiltroVeiculoInterno" class="tabFiltro" >
+                                        <nex-input-label [text]="'Veículo ID'" [marginTop]="0" [input]="veiculoID_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Tipo'" [marginTop]="0" [options]="tipoVeiculo_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Modelo'" [marginTop]="0" [options]="modeloVeiculo_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Cor'" [marginTop]="0" [options]="corVeiculo_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Grupo'" [marginTop]="0" [options]="grupoVeiculo_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-input-label [text]="'Característica'" [marginTop]="0" [input]="caracteristicaVeiculo_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Tag'" [marginTop]="0" [input]="tagVeiculo_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Setor'" [marginTop]="0" [options]="setor_Options" (click)="onSetor_Click()" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Área'" [marginTop]="0" [options]="area_Options"  (click)="onArea_Click()" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-input-label [text]="'Localização'" [marginTop]="0" [input]="localizacao_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox    [label]="'Centro de Custo'" [marginTop]="0" [options]="centroCusto_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-input-label [text]="'Supervisor'" [marginTop]="0" [input]="supervisor_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Empresa'" [marginTop]="0" [options]="empresa_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-input-label [text]="'Complemento 1'" [marginTop]="0" [input]="complemento1_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 2'" [marginTop]="0" [input]="complemento2_Text" [class]="'topJoinGrid'" ></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 3'" [marginTop]="0" [input]="complemento3_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 4'" [marginTop]="0" [input]="complemento4_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Observação'" [marginTop]="0" [input]="observacao_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox    [label]="'Abordagem'" [marginTop]="0" [options]="abordagem_Option" [class]="'topJoinGrid'" ></nex-combobox>  
+                                        <nex-combobox [toUp]="true" [label]="'Status'" [marginTop]="0" [options]="status_Option" [class]="'topJoinGrid_Bottom'"></nex-combobox>
+                                    </div>   
+                                </nex-form-group>
+                                <div>
+                                    <nex-select-group class="noHeight" [labelMinWidth]="50" [marginTop]="0" [horizontal]="true" [class]="'topJoin'" [options]="valorIdentico_Options"></nex-select-group>  
+                                </div>
+                            </div>
+                            <div [ngStyle]="{'display': (relatorioTipo == 5)? 'block': 'none'}">   <!-- Veiculo Externo-->
+                                <nex-form-group [name]="'filtroGestaoUsuario_VeiculoExterno'" [minWidthFix]="106">
+                                    <div id="tabFiltroVeiculoExterno" class="tabFiltro">
+                                        <nex-input-label [text]="'Veículo ID'" [marginTop]="0" [input]="veiculoID_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Tipo'" [marginTop]="0" [options]="tipoVeiculo_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Modelo'" [marginTop]="0" [options]="modeloVeiculo_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Cor'" [marginTop]="0" [options]="corVeiculo_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Grupo'" [marginTop]="0" [options]="grupoVeiculo_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-input-label [text]="'Característica'" [marginTop]="0" [input]="caracteristicaVeiculo_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Empresa'" [marginTop]="0" [input]="empresa_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 1'" [marginTop]="0" [input]="complemento1_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 2'" [marginTop]="0" [input]="complemento2_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 3'" [marginTop]="0" [input]="complemento3_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 4'" [marginTop]="0" [input]="complemento4_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Observação'" [marginTop]="0" [input]="observacao_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox    [label]="'Abordagem'" [marginTop]="0" [options]="abordagem_Option" [class]="'topJoinGrid'"></nex-combobox>   
+                                        <nex-combobox [toUp]="true" [label]="'Status'" [marginTop]="0" [options]="status_Option" [class]="'topJoinGrid_Bottom'"></nex-combobox>
+                                    </div>
+                                </nex-form-group>
+                                <div>
+                                    <nex-select-group class="noHeight" [labelMinWidth]="50" [marginTop]="0" [horizontal]="true" [class]="'topJoin'" [options]="valorIdentico_Options"></nex-select-group>  
+                                </div>
+                            </div>
+                            <div [ngStyle]="{'display': (relatorioTipo == 6)? 'block': 'none'}">   <!-- Empresa-->
+                                <nex-form-group [name]="'filtroGestaoUsuario_Empresa'" [minWidthFix]="106">
+                                    <div id="tabFiltroEmpresa" class="tabFiltroEmpresa">
+                                        <nex-input-label [text]="'Nome'" [marginTop]="0" [input]="nome_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Grupo'" [marginTop]="0" [options]="grupoEmpresa_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-input-label [text]="'Complemento 1'" [marginTop]="0" [input]="complemento1_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-input-label [text]="'Complemento 2'" [marginTop]="0" [input]="complemento2_Text" [class]="'topJoinGrid_Bottom'"></nex-input-label>
+                                    </div>
+                                </nex-form-group>
+                                <div>
+                                    <nex-select-group class="noHeight" [labelMinWidth]="50" [marginTop]="0" [horizontal]="true" [class]="'topJoin'" [options]="valorIdentico_Options"></nex-select-group>  
+                                </div>
+                            </div>    
+                            <div [ngStyle]="{'display': (relatorioTipo == 7)? 'block': 'none'}">   <!-- Area-->
+                                <nex-form-group [name]="'filtroGestaoUsuario_Area'" [minWidthFix]="106">
+                                    <div id="tabFiltroArea" class="tabFiltroArea">
+                                        <nex-combobox [label]="'Tipo de Área'" [marginTop]="0" [options]="tipoArea_Option" [labelMinWidth]="85" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Setor'" [marginTop]="0" [options]="setor_Options" [labelMinWidth]="85" (click)="onSetor_Click()"  [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Área'" [marginTop]="0" [options]="area_Options" [labelMinWidth]="85" (click)="onArea_Click()"  [class]="'topJoinGrid_Bottom'"></nex-combobox>
+                                    </div>
+                                </nex-form-group>
+                            </div>
+                            <div [ngStyle]="{'display': (relatorioTipo == 8)? 'block': 'none'}">   <!-- Estacionamento-->
+                                <nex-form-group [name]="'filtroGestaoUsuario_Estacionamento'" [minWidthFix]="106">
+                                    <div id="tabFiltroEstacionamento" class="tabFiltroArea">
+                                        <nex-combobox [label]="'Estacionamento'" [marginTop]="0" [options]="estacionamento_Option" (eventClick)="onEstacionamento_Populate()" (eventChange)="onEstacionamento_Click()"[class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Garagem'" [marginTop]="0" [options]="garagem_Option" [class]="'topJoinGrid'" (click)="onGaragem_Click()"></nex-combobox>
+                                        <nex-combobox [label]="'Tipo de Garagem'" [marginTop]="0" [options]="tipoGaragem_Option"  [class]="'topJoinGrid_Bottom'"></nex-combobox>    
+                                    </div>
+                                </nex-form-group>
+                            </div>
+                            <div [ngStyle]="{'display': (relatorioTipo == 9)? 'block': 'none'}">   <!-- Nivel Acesso-->
+                                <nex-form-group [name]="'filtroGestaoUsuario_NivelAcesso'" [minWidthFix]="106">
+                                    <div id="tabFiltroNivelAcesso" class="tabFiltroArea">
+                                        <nex-input-label [text]="'Nível'" [marginTop]="0" [input]="nivel_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Restrito'" [marginTop]="0" [options]="restrito_Option" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-input-label [text]="'Observação'" [marginTop]="0" [input]="observacao_Text" [class]="'topJoinGrid'"></nex-input-label>
+                                        <nex-combobox [label]="'Status'" [marginTop]="0" [options]="status_Option"  [class]="'topJoinGrid_Bottom'"></nex-combobox>    
+                                    </div>
+                                </nex-form-group>
+                            </div>
+
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabsGestaoUsuario_Option.tabs[1]" >
+                            <nex-form-group [name]="'tempoGestaoUsuario'">
+                                <nex-combobox [label]="'Tempo'" [options]="periodo_Options" (eventChange)="onPeriodo_Change()"></nex-combobox>
+                                <nex-combobox [label]="'Dia'" [options]="dia_Option" (eventChange)="onPeriodo_Change()"></nex-combobox>
+                                <nex-combobox [label]="'Mês'" [options]="mes_Option" (eventChange)="onPeriodo_Change()"></nex-combobox>
+                                <nex-combobox [label]="'Ano'" [options]="ano_Option" (eventChange)="onPeriodo_Change()"></nex-combobox>
+                                <nex-input-label [text]="'Data Inicial'" [input]="dataInicial_Text"></nex-input-label>
+                                <nex-input-label [text]="'Data Final'" [input]="dataFinal_Text"></nex-input-label>
+                            </nex-form-group>
+                        </nex-tab>
+                    </nex-tabs-card>
+                     
+                    <nex-combobox [toUp]="true" [label]="'Ordenação'" [options]="ordenacao_Option"></nex-combobox> 
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onPrint_Click()">Imprimir</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>
+<button *ngIf="showReport == true" style="position: fixed;top: 96px;z-index: 9999;left: calc(100% - 300px);" type="button" class="btn btn-dark bt-card redBorder"  (click)="onReportClose_Click()">Fechar</button>
+

@@ -1,0 +1,27 @@
+<div class="modalForm noselect" id="modalForm" [class.voted]="errosModal.showModal">
+    <div class="card-form" class="card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{ errosModal.title }}
+        </div>
+        <div class="card-body">
+            <div class="panel">
+                {{ errosModal.message }}
+            </div>
+        </div>
+        <nb-accordion *ngIf="errosModal.log">
+            <nb-accordion-item>
+                <nb-accordion-item-header>
+                    Exibir detalhes do log
+                </nb-accordion-item-header>
+                <nb-accordion-item-body>
+                    {{ errosModal.log }}
+                </nb-accordion-item-body>
+            </nb-accordion-item>
+        </nb-accordion>    
+        <div class="card-footer">
+            <div class="buttons">
+                <button type="button" class="btn btn-dark bt-card orangeBorder" (click)="onButton_Click('OK')">OK</button>
+            </div>
+        </div>
+    </div>
+</div>

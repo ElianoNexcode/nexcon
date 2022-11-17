@@ -1,0 +1,60 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<nex-pessoa-interna-modal [title]="'Pesquisa Responsável'" [filter]="filterPessoaInterna" [pessoaModal]="pessoaModalService" (eventSelect)="onPessoaModalService_Select($event)"></nex-pessoa-interna-modal>
+<nex-veiculo-interno-modal [title]="'Pesquisa Veículo'" [filter]="filterVeiculoInterno" [veiculoModal]="veiculoModalService" (eventSelect)="onVeiculoModalService_Select($event)"></nex-veiculo-interno-modal>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_VagaEstacionamento' [showGrid]="filter != undefined" (eventCheck)="onListView_Change($event)" (eventFilter)="onFilter_Change($event)"></nex-listview>
+    </div>
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Vaga de Estacionamento
+            </div>
+            <div class="card-body">
+                <div class="panel">
+                    <nex-box [title]="'Vaga de Estacionamento'" [marginTop]="0" [titleAlign]="'left'">
+                        <nex-form-group [name]="'estacionamento'">
+                            <nex-input-label  [text]="'Vaga'" [input]="nomeEstacionamento_Text"></nex-input-label>
+                            <nex-combobox [label]="'Tipo'" [options]="tipo_Option" (eventChange)="onTipo_Change($event)"></nex-combobox>
+                            <nex-input-label  [text]="'Localização'" [input]="localizacao_Text"></nex-input-label>
+                        </nex-form-group>
+                    </nex-box>
+                    <nex-tabs-card [tabsOptions]="tabEstacionamento" [name]="'tabsOptions'" [fullWidth]="true">
+                        <nex-tab [tabComponent]="tabEstacionamento.tabs[0]">
+                            <nex-form-group [name]="'vinculo'">
+                                <nex-combobox [label]="'Site'" [options]="site_Option" (eventChange)="siteSelect($event)"></nex-combobox>
+                                <nex-combobox [label]="'Setor'"  [options]="setor_Option" (eventChange)="setorSelect($event)" ></nex-combobox>
+                                <nex-combobox [label]="'Área'"  [options]="area_Option"></nex-combobox>
+                                <nex-radio [text]="'Usuário'" [options]="tipoUsuario_Options" (eventChange)="onUsuarioTipo_Change()"></nex-radio>
+                                <nex-input-label [text]="usuarioVinculado" 
+                                                 [input]="pessoa_Text" 
+                                                 [findButton]="true" (onFindClick)="onUsuarioTipo_Click($event)" 
+                                                 [clearButton]="true" (onClearClick)="onUsuarioTipoClear_Click($event)" ></nex-input-label>
+                            </nex-form-group>
+                        </nex-tab> 
+                        <nex-tab [tabComponent]="tabEstacionamento.tabs[1]">
+                            <div class="row fullHeight">
+                                <div class="col">
+                                    <nex-textarea-label [fullHeight]="true" [name]="'observacao'" [noLabel]="true" [textarea]="observacao_Text" [editable]="editable"></nex-textarea-label>
+                                </div>
+                            </div>    
+                            <div class="row">
+                                <div class="col">
+                                    <nex-input-label  [text]="'Último Acesso'" [input]="ultimoAcesso_Text"></nex-input-label>
+                                </div>
+                            </div>    
+                        </nex-tab>
+                    </nex-tabs-card>
+                </div>
+            </div>
+            <div class="card-footer"> 
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder" (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="modalForm noselect" id="modalForm" [class.voted]="registroMaterialModal.showModal">
+    <div class="card-form card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="panel">
+                <nex-form-group [name]="'registroMaterial'">
+                   <nex-input-label [text]="'Material'" [input]="material_Text"></nex-input-label>
+                    <div class="row">
+                        <div class=" row width_1">
+                            <nex-input-label [text]="'Quantidade'" [input]="quantidade_Text"></nex-input-label>
+                        </div>
+                        <div class=" row width_2">
+                            <nex-input-label [text]="'Nota Fiscal'" [input]="notaFiscal_Text"></nex-input-label>
+                        </div>
+                    </div>
+                    <nex-textarea-label [name]="'observacao'" [label]="'Observação'" [height]="71" [textarea]="observacao_Text"></nex-textarea-label> 
+               </nex-form-group>
+            </div>
+        </div>
+        <div class="card-footer">
+            <nex-alert-card [name]="'cardSalvar'" [alertService]="alertService"></nex-alert-card>
+            <div class="buttons"  style="text-align: right;">
+                <button type="button" class="btn btn-dark bt-card greenBorder"  (click)="onOK_Click()">OK</button>
+                <button type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

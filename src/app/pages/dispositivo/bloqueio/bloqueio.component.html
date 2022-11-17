@@ -1,0 +1,55 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<nex-cameras-modal [title]="'Lista de Câmeras'" [camerasModal]="camerasModalService"  (eventSelectGroup)="onCameraSelectGroup($event)"></nex-cameras-modal>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_Bloqueio' [showGrid]="filter != undefined" (eventCheck)="onListView_Change($event)" (eventFilter)="onListView_Filter($event)"></nex-listview>
+    </div>    
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Bloqueio
+            </div>
+            <div class="card-body">
+                <div class="panel">
+                    <nex-tabs-card [tabsOptions]="tabBloqueio" [name]="'tabsBloqueio'" [marginTop]="0" [fullWidth]="true">
+                        <nex-tab [tabComponent]="tabBloqueio.tabs[0]">
+                            <nex-input-label [text]="'Nome'" [labelMinWidth]="60" [input]="nome_Text"></nex-input-label>
+                            <nex-combobox [label]="'Trânsito'" [labelMinWidth]="60" [options]="transito_Option"></nex-combobox>
+                            <nex-input-label  [text]="'Local'" [labelMinWidth]="60" [input]="local_Text"></nex-input-label>
+                            <nex-box [title]="'Elevador'" [titleAlign]="'left'">
+                                <nex-form-group [name]="'bloqueioDados'">
+                                    <nex-input-label  [text]="'Número do Terminal de Chamada'" [input]="elevadorTerminalNumero_Text"></nex-input-label>
+                                    <nex-input-label  [text]="'Sigla do Terminal de Chamada'" [input]="elevadorTerminalSigla_Text"></nex-input-label>
+                                </nex-form-group>
+                            </nex-box>
+                            <nex-textarea-label [name]="'observacao'" [label]="'Observação'" [height]="61" [textarea]="observacao_Text" [editable]="editable"></nex-textarea-label>        
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabBloqueio.tabs[1]">
+                            <nex-box [boxPanel]="boxCamera" 
+                                     [noPadding]="true" 
+                                     [showFooter]="true" 
+                                     [fullHeightMargin]="true"
+                                     [background]="'#192038'" 
+                                     (eventButtonClick)="onBoxCamera_Click($event)">
+                                     <nex-listview [params]='listView_Camera' 
+                                                   [showFilter]="false" 
+                                                   [editable]="editable"
+                                                   [classHeader]="'minPadding'" 
+                                                   [class]="'displayInBox'"></nex-listview>
+                            </nex-box>
+                        </nex-tab>
+                    </nex-tabs-card>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>

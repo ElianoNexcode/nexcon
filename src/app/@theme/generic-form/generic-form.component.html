@@ -1,0 +1,30 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_Pessoa' (eventCheck)="onListView_Change($event)" (eventFilter)="onFilter_Change($event)"></nex-listview>
+    </div>    
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Grupo de Pessoas
+            </div>
+            <div [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant" class="card-body">
+                <div class="panel">
+                    <nex-form-group [name]="'pessoaDados'">
+                        <nex-input-label  [text]="'Nome do Grupo'" [input]="nomeGrupo_Text"  (eventChange)="onSaved_Condition()"></nex-input-label>
+                        <nex-select-group [text]="'Classificação'" [options]="classificacao_Options" (eventChange)="onSaved_Condition()"></nex-select-group>
+                    </nex-form-group>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>

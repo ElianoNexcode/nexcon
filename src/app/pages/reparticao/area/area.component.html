@@ -1,0 +1,96 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<nex-area-interligacao-modal [title]="'Pesquisa Área'" [areaInterligacaoModal]="areaInterligacaoModalService" (eventSelect)="onAreaInterligadaSelect($event)"></nex-area-interligacao-modal>
+<nex-area-controle-visita-modal [title]="'Controle de Visita'" [areaControleVisitaModal]="areaControleVisitaModalService" (eventSelect)="onAreaVisitaSelect($event)"></nex-area-controle-visita-modal>
+<nex-area-acesso-modal [title]="'Pesquisa Nível de Acesso'" [areaAcessoModal]="areaAcessoModalService" (eventSelect)="onAreaAcessoSelect($event)"></nex-area-acesso-modal>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_Area' [showGrid]="filter != undefined" (eventCheck)="onListView_Change($event)" (eventFilter)="onFilter_Change($event)"></nex-listview>
+    </div>
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Área
+            </div>
+            <div [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant"
+                 class="card-body">
+                <div id="areaComponent_Panel" class="panel" style="height: 100%;">
+                    <nex-form-group name="formgroupArea">
+                        <nex-input-label [marginTop]="0" [text]="'Nome da Área'" [input]="nome_Text"></nex-input-label>
+                        <nex-combobox [label]="'Tipo'" [options]="tipo_Option"></nex-combobox>
+                        <nex-input-label [text]="'Localização'" [input]="localizacao_Text"></nex-input-label>
+                        <nex-textarea-label [name]="'observacao'" [label]="'Observação'" [textarea]="observacao_Text" [editable]="editable"></nex-textarea-label>
+                        <nex-tabs-card  [tabsOptions]="tabsArea_Options" [name]="'tabAreas'" [fullWidth]="true">
+                            <nex-tab [tabComponent]="tabsArea_Options.tabs[0]" [noPadding]="false" >
+                                <nex-combobox [label]="'Área Mãe'" [options]="areaMae_Option" [labelMinWidth]="67"></nex-combobox> 
+                                <div class="row">
+                                    <div class=" width_1" ><nex-input-label [labelMinWidth]="67" [text]="'Volume'" [input]="volume_Text"></nex-input-label></div>
+                                    <div class=" width_2" ><nex-input-label [text]="'Temporização'" [input]="temporizacao_Text"></nex-input-label></div>
+                                </div>
+                                <nex-input-multi-label [text]="'Idade'" [labelMinWidth]="67" [inputLeft]="idadeMin" [inputRight]="idadeMax"></nex-input-multi-label>
+                            </nex-tab>
+                            <nex-tab [tabComponent]="tabsArea_Options.tabs[1]" [noPadding]="true">
+                                <nex-box [fullHeightButton]="true"
+                                            [showFooter]="true" 
+                                            [boxPanel]="boxButton" 
+                                            [noBorder]="true" 
+                                            [marginTop]="0"
+                                            [noPadding]="true"
+                                            [background]="'#192038'"
+                                            (eventButtonClick)="onButtonInterligacao_Click($event)">
+                                    <nex-listview [params]='listView_AreaInterligada' 
+                                                  [classHeader]="'minPadding'" 
+                                                  [class]="'displayInBox'"
+                                                  [editable]="editable"
+                                                  [gridScroll]="true" 
+                                                  (eventCheck)="onListViewArea_Change($event)"></nex-listview>
+                                </nex-box>
+                            </nex-tab>
+                            <nex-tab [tabComponent]="tabsArea_Options.tabs[2]" [noPadding]="true">
+                                <nex-select-group [border]="'none'" [editable]="editable" [displayInTab]="true" [options]="controle_OptionsGroup" ></nex-select-group>
+                            </nex-tab>
+                            <nex-tab [tabComponent]="tabsArea_Options.tabs[3]" [noPadding]="true">
+                                <nex-box [fullHeightButton]="true"
+                                         [showFooter]="true" 
+                                         [boxPanel]="boxButton" 
+                                         [noBorder]="true" 
+                                         [marginTop]="0"
+                                         [background]="'#192038'"
+                                         (eventButtonClick)="onButtonVisita_Click($event)">
+                                    <nex-listview [params]='listView_AreaVisita' 
+                                                  [classHeader]="'minPadding'" 
+                                                  [class]="'displayInBox'"
+                                                  [editable]="editable"
+                                                  (eventCheck)="onListViewArea_Change($event)" ></nex-listview>   
+                                </nex-box>
+                            </nex-tab>
+                            <nex-tab [tabComponent]="tabsArea_Options.tabs[4]" [noPadding]="true">  
+                                <nex-box [fullHeightButton]="true" 
+                                         [showFooter]="true" 
+                                         [boxPanel]="boxButton" 
+                                         [noBorder]="true" 
+                                         [marginTop]="0"
+                                         [background]="'#192038'"
+                                         (eventButtonClick)="onButtonAcesso_Click($event)">
+                                    <nex-listview [params]='listView_AreaAcesso' 
+                                                  [classHeader]="'minPadding'" 
+                                                  [class]="'displayInBox'"
+                                                  [editable]="editable"
+                                                  (eventCheck)="onListViewArea_Change($event)"></nex-listview>   
+                                </nex-box>
+                            </nex-tab>
+                        </nex-tabs-card>
+                    </nex-form-group>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>

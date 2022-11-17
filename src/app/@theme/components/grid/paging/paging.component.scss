@@ -1,0 +1,60 @@
+@import '../../../themes.scss';
+
+@include nb-install-component() {
+
+    .pagesBox {
+        text-align: -webkit-center;
+
+        ul {
+            border: 1px solid #434561;
+            border-radius: 3px;
+            width: 147px;
+            justify-content: center;
+        }
+    }
+
+    .startEnd {
+        font-size: 1.3rem !important;
+        line-height: 1.1rem !important;
+    }
+
+    .beforeAfter {
+        font-size: 1.3rem !important;
+        line-height: 1.1rem !important;
+    }
+
+    .pageItem {
+        width: 29px;
+        max-height: 27px;
+
+        padding: 2px 0;
+
+        font-family: roboto !important;
+        font-size: 0.7rem;
+        color: nb-theme(color-60);
+
+        background-color: #1D2642;
+        border-left: 1px solid #434561;
+        text-align: center;
+
+        cursor: pointer;
+    }
+
+    .pageItem:first-child {
+        border: none;
+    }
+
+    .btn-link.active{
+        color: #3B86D1;
+    }
+    
+    .btn-link:hover {
+        text-decoration: none !important;
+        background-color: nb-theme(background-btt-hover) !important;
+    }
+
+    .disabled {
+        color: #454b50 !important;
+    }
+    
+}

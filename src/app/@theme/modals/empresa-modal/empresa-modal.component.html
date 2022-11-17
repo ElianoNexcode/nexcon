@@ -1,0 +1,39 @@
+<div class="modalForm noselect" id="modalForm" [class.voted]="empresaModal.showModal">
+    <div class="card-form" class="card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{ title }}
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12" style="padding: 0;" style="max-width: 100% ;padding: 0;padding-left: 0px !important;">
+                    <nex-box [noPadding]="true" 
+                             [marginTop]="0" 
+                             [fullHeight]="true"
+                             [background]="'#191e38'" 
+                             *ngIf="empresaModal.grid">
+                        <nex-listview [params]='listView_empresa' 
+                                      [classHeader]="'minPadding'" 
+                                      [class]="'displayInBoxScroll'"  
+                                      [maxWidth]="200" 
+                                      (eventCheck)="onlistviewEmpresa_Change($event)"></nex-listview>
+                    </nex-box>   
+                </div>
+            </div>
+            <div class="row">
+                <div class="w-100">
+                    <nex-combobox [options]="empresaModal.pesquisaEmpresa_Option" 
+                                  [type]="'find'" 
+                                  [labelMaxWidth]="128" 
+                                  (eventChange)="onFind_Click($event)" 
+                                  (eventFindClick)="onFind_Click($event)"></nex-combobox>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="buttons" style="text-align: right;">
+                <button type="button" class="btn btn-dark bt-card greenBorder" [disabled]="!empresaModal"  (click)="onOK_Click()">OK</button>
+                <button type="button" class="btn btn-dark bt-card redBorder"    (click)="onClose_Click()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

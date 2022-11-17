@@ -1,0 +1,13 @@
+@import "../../themes.scss";
+
+@include nb-install-component() {
+    .divider {
+        position: sticky;
+        min-height: 3px;
+        background-color: #52658C;
+        border-left: 1px solid #0F1429;
+        border-right: 1px solid #0F1429;
+
+        z-index: 1050;
+    }    
+}

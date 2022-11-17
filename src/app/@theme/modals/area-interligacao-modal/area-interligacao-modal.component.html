@@ -1,0 +1,29 @@
+<div class="modalForm noselect" id="modalForm" [class.voted]="areaInterligacaoModal.showModal">
+    <div class="card-form card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="panel" style="height: 100%">
+                <nex-combobox [label]="'Setor'" [options]="setor_Option" [marginTop]="0" (eventChange)="onSetor_Change()"></nex-combobox>
+                <nex-box [noPadding]="true"   
+                         [fullHeight]="true" 
+                         [background]="'#192038'"  >
+                    <nex-listview [params]='listView_Area' 
+                                  [gridScroll]="true" 
+                                  [showFilter]="false" 
+                                  [classHeader]="'minPadding'" 
+                                  [class]="'displayInBox'"
+                                  (eventCheck)="onlistviewArea_Change($event)"></nex-listview>
+                </nex-box>
+            </div>
+        </div>
+        <div class="card-footer">
+            <nex-alert-card [name]="'cardSalvar'" [alertService]="alertService"></nex-alert-card>
+            <div class="card-footer-buttons">
+                <button #btModalSalvar type="button" class="btn btn-dark bt-card greenBorder" (click)="onAplicar_Click()" disabled>Aplicar</button>
+                <button type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() { 
+
+    .dia-mes-feriado{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    
+}

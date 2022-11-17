@@ -1,1 +1,699 @@
+@import './app/@theme/themes';
+
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+};
+@import './app/@theme/themes';
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+    @include nb-theme-global()
+};
+
 /* You can add global styles to this file, and also import other style files */
+html {
+    overflow: hidden;
+}
+
+body {
+    background-color: #151a30;
+}
+
+@font-face {
+    font-family: 'roboto';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'FlexoBlack';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./assets/fonts/Durotype-Flexo-Black.otf');
+}
+
+@font-face {
+    font-family: 'FlexoDemi';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./assets/fonts/Durotype-Flexo-Demi.otf');
+}
+
+@font-face {
+    font-family: goodtimes;
+    src: url('./assets/fonts/goodtimes.ttf');
+}
+
+nex-header {
+    display: flex;
+    flex-direction: column;
+    max-height: 61px;
+}
+
+nex-divider {
+    display: flex;
+    flex-direction: column;
+}
+
+nex-menu, nex-treeview, nex-view, nex-shortcut {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+nex-listview {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.col-avatar-1 {
+    min-width: 108px;
+    padding: 0;
+}
+
+.col-avatar-11 {
+    max-width: calc(100% - 108px);
+    padding: 0;
+}
+
+.nex-radio-group {
+    text-align: center;;
+    margin-top: 9px;
+}
+
+label {
+    vertical-align: middle;
+    margin: 0px;
+    margin-left: 6px;
+    margin-right: 9px;
+    margin-bottom: 5px;
+    font-family: roboto !important;
+    font-size: 0.7rem !important;
+}
+
+.adjustLabelWidth {
+    .labelBox {
+        min-width: 65px !important;
+    }
+}
+
+.dropdown:hover {background-color: nb-theme(background-btt-hover) !important;} 
+.dropdown:hover .dropdown-menu {display: block;}
+
+.dropdown.fixo:hover {background-color: nb-theme(background-btt-hover) !important;} 
+.dropdown.fixo:hover  .dropdown-menu {display: none;}
+
+.dropdown.fixo:hover .comobo {background-color: transparent !important;} 
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+}
+
+.card-header {
+    display: flex;
+    padding: 0 14px !important;
+    align-items: center !important;
+
+    div {
+        width: 100%;
+        align-self: center;
+    }
+}
+
+.card-footer {
+    padding: 9px 14px 8px !important;
+}
+
+/* ComboBox Bootstrap : */
+.custom-select {
+    position: relative;
+    font-family: 'FontAwesome', Arial, Helvetica, sans-serif !important;
+    font-size: 0.55rem !important;
+    line-height: 0.8rem !important;
+    background-color: #192038 !important;
+    border: 1px solid #313452 !important;
+    color: #CCCCCC;
+    padding: 0 !important;
+}
+  
+.custom-select select {
+    display: none; 
+}
+
+.select-selected {
+    background-color: #212b43;;
+    border-radius: 1px !important;
+}
+
+.combo .custom-select {
+    height: 27px;
+    padding: 0 !important;
+    font-family: roboto !important;
+    background-color: #192038 !important;
+    border: none !important;
+    border-radius: 0 5px 5px 0;
+}
+
+.combo .select-selected {
+    height: 27px;
+
+    font-size: 0.7rem !important;
+    font-weight: 100;
+    color: #A9ABAE !important;
+    
+    cursor: pointer;
+
+    text-align: left !important;
+    overflow: hidden;
+    
+    border: none;
+    background: #191e38;
+}
+
+.combo .select-items div,.select-selected {
+    min-height: 20px;
+    color: #A9ABAE;
+    padding: 3px 16px 3px 6px !important;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    text-align: left !important;
+    font-size: 0.7rem !important;
+    font-weight: 100;
+    color: #A9ABAE !important;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.select-selected.disabled {
+    background-color: #222b45 !important;
+}
+  
+.gridInput {
+    border: 1px solid #434561 !important;
+    border-top: none !important;
+    border-radius: 0 !important;
+}
+
+.combo .select-items {
+    position: absolute;
+    top: 30px;
+    left: 0;
+
+    width: 100%;
+
+    background: #191e38;
+
+    font-size: 0.7rem !important;
+    font-weight: 100;
+    color: #A9ABAE !important;
+
+    border: 1px solid #111427;
+    border-radius: 1px !important;
+    box-shadow: 5px 5px 31px #141a30;
+
+    overflow-y: auto;
+
+    z-index: 199;
+}
+
+.select-selected:after {
+    content: "";
+    position: absolute;    
+    top: 11px;
+    right: 7px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-color: #616161 transparent transparent transparent;    
+}
+
+.select-selected.no-after:after {
+    border: none !important;
+}
+
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #616161 transparent;
+    top: 7px;
+}
+  
+.select-items div,.select-selected {
+    min-height: 27px;
+    color: #A9ABAE;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    text-align: left !important;
+    font-size: 0.7rem !important;
+    font-weight: 100;
+    color: #A9ABAE !important;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.select-items {
+    position: absolute;
+    background-color: #1a365e;
+    top: 30px;
+    border: 1px solid #111427;
+    border-radius: 1px !important;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    box-shadow: 5px 5px 31px #141a30;
+    width: 115px;
+}
+
+.select-hide {
+    visibility: hidden;
+}
+
+.select-items div:hover {
+    background-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+}
+
+.ordenacao {
+    background-color: #372940 !important;
+}
+
+nex-configuracao, nex-reparticao {
+    width: calc(100vw - 412px);
+}
+
+
+nex-tab > .pane {
+    padding-top: 9px !important;
+}
+
+nex-tabs-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+nex-box {
+    display: flex;
+    height: 100%;
+}
+
+nex-form-group > .grid > nex-combobox .comboBox {
+    margin-top: 0 !important;
+}
+
+nex-form-group > .grid > nex-input-multi-label .inputGroup {
+    margin-top: 0 !important;
+}
+
+nex-radio {
+    width: 100%;
+    overflow-wrap: normal;
+}
+
+nex-card-tabs {
+    width: 100%;
+    align-self: center;
+    text-align: end;
+    pointer-events: all;
+}
+
+nex-select-group {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: overlay;
+    pointer-events: all;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #222b45;
+    border-top: 1px solid #2d3441;
+    border-left: 1px solid #2d3441;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: #1e2742;
+    border-top: 1px solid #2d3441;
+    border-left: 1px solid #2d3441;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #323853 ;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #2154a1; 
+}
+
+.mat-checkbox {
+    margin-right: 10px; 
+    display: inline; 
+}
+
+.mat-checkbox .mat-checkbox-ripple {
+    left: calc(50% - 11px) !important;
+    top: calc(50% - 6px) !important;
+    height: 12px !important;
+    width: 2px !important;
+}
+
+.mat-checkbox .mat-ripple-element {
+    background-color: #192038;
+}
+
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent 
+.mat-ripple-element, .mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent 
+.mat-ripple-element {
+    opacity: 0;
+    border-radius: 0 !important;
+}
+
+.mat-checkbox.cdk-keyboard-focused
+.mat-checkbox-persistent-ripple {
+    background-color: red;
+    opacity: 0.4 !important;
+    border-radius: 0 !important;
+}
+
+.mat-ripple-element {
+    border-radius: none !important;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #0d54a1;
+}
+
+.mat-checkbox-frame {
+    border-color:#96989A;
+    border-width: 1px !important;
+}
+
+.mat-checkbox-label {
+    color:#96989A !important;
+    line-height: 11px !important;
+    font-size: 0.7rem !important;
+}
+
+.mat-checkbox-disabled .mat-checkbox-frame {
+    border-color:#4e5261 !important;
+    border-width: 1px !important;
+}
+
+.mat-checkbox-disabled .mat-checkbox-label {
+    color:#4e5261 !important;
+    line-height: 11px !important;
+    font-size: 0.7rem !important;
+}
+
+.mat-checkbox-inner-container {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+.mat-checkbox-layout {
+    margin-bottom: 0px;
+    margin-right: 5px;
+    margin-left: 0px;
+}
+
+.mat-checkbox-background, .mat-checkbox-frame {
+    border-radius: 3px;
+    border: 1px solid #9598A2
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #2154a1;
+}
+
+.no-active {pointer-events: none;}
+
+.enabled {
+    pointer-events: fill;
+}
+
+.disabled {
+    pointer-events: none; 
+    color: #7a7d86 !important;
+}
+
+.rowDisabled {
+    color: #575758 !important;
+}
+
+.loginLabel {
+    border-color: #184c7f !important;
+    margin-top: 13px !important;
+}
+
+.loginLabel .labelBox {
+    background: #184c7f !important;
+    color: white;
+}
+
+.loginLabel .inputbox {
+    background-color: #041b2e !important;
+}
+
+.inputInBox {
+    margin-top: 0 !important;
+    border: none !important;
+    max-height: 27px !important;
+    border-radius: 0 3px 3px 0 !important;
+}
+
+.displayInBox {
+    overflow: overlay;
+    height: 100%;
+    pointer-events: all;
+
+    .grid-row {
+        max-height: 24px !important;
+    }
+}
+
+.selectOneGrid {
+    border-top: none !important;
+    border-radius: 0 !important;
+    border-right: none !important;
+}
+
+.gridHeaderScroll {
+    position: sticky;
+    top: 0;
+    z-index: 101;
+}
+
+.displayInBoxScroll {
+    max-height: 270px;
+    .grid-row {
+        max-height: 27.5px !important;
+    }
+}    
+
+.disabled:hover {border-color: #343a40 !important}
+
+.ngx-spinner {
+    display: none !important;
+}
+
+.ngx-bar {
+    position: absolute !important;
+    top: 63px !important;
+}
+
+.logoPadding {
+    padding: 9px !important;
+}
+
+.dashBoardFloat {
+    position: absolute;
+    max-height: calc(100% - 144px);
+    box-shadow: -10px 10px 20px 7px #191e38;
+}
+
+.btn-dark.disabled, .btn-dark:disabled {
+    border-color: #343a40 !important;
+}
+
+.nb-theme-dark nb-spinner.status-basic {
+    background-color: #191e38 !important;
+    opacity: 0.5 !important;
+}
+
+.stiJsViewerMainPanel {
+    background-color: #ffff;
+}
+
+.stiJsViewerReportPanel {
+    margin-top: 31px !important;
+}
+
+.stiJsViewerToolBarTable {
+    margin-top: -2px !important;
+    background-color: #222b45;
+}
+
+.stiJsViewerClearAllStyles {
+    color: #CCCCCC;
+    font-size: 13px;
+    font-family: roboto;
+}
+
+.stiJsViewerParentMenu {
+    position: absolute;
+    z-index: 999;
+}
+
+.stiJsViewerStandartSmallButtonSelected {
+    background: #2154a1 !important;
+    border: 1px solid transparent !important;
+}
+
+.stiJsViewerMenu {
+    position: absolute;
+    padding: 9px;
+    font-size: 0.7rem;
+    border: 1px solid #151a30;
+    background: #1a365e;
+    cursor: default;
+    color: #202020;
+    box-shadow: 5px 5px 31px #141a30;    
+}
+
+.noBorder {
+    border: none !important;
+}
+
+.noBorderRight {
+    border-right:  none !important;
+    border-top-right-radius: 0px!important;
+    border-bottom-right-radius:  0px!important;
+
+}
+
+.noBorderLeft {
+    
+    border-top-left-radius: 0px!important;
+    border-bottom-left-radius: 0px!important;
+
+}
+
+.topJoin {
+    background-color: #212a43 !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-radius: 0px 0px 0px 0px !important;
+}
+
+.topJoinGrid {
+    border-bottom: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-radius: 0px 0px 0px 0px !important;
+    height: 28px !important;
+
+    :last-child {
+        border-right: none !important;
+        border-left: none !important;
+        border-radius: 0px 0px 0px 0px !important;
+    }
+}
+
+.topJoinGrid_Find {
+    border-bottom: none !important;
+    border-left: none !important;
+    border-radius: 0px 0px 0px 0px !important;
+    height: 28px !important;
+
+    :last-child {
+        border-right: none !important;
+        border-radius: 0px 0px 0px 0px !important;
+    }
+}
+
+.topJoinGrid_Bottom {
+    border-right: none !important;
+    border-left: none !important;
+    border-radius: 0px 0px 0px 0px !important;
+    height: 28px !important;
+
+    :last-child {
+        border-right: none !important;
+        border-left: none !important;
+        border-radius: 0px 0px 0px 0px !important;
+    }
+}
+
+
+.leftJoin {
+    background-color: #212a43 !important;
+    border-left: none !important;
+    border-radius: 0px 3px 3px 0px !important;
+}
+
+.rightJoin {
+    border-radius: 3px 0px 0px 3px !important;
+}
+
+.fontSize65 {
+    font-size: 0.65rem !important;
+}
+
+.optionsButtons {
+    width: 100%;
+    text-align: end;
+}
+
+.inputComboMinHeight {
+    height: 27px !important;
+}
+
+.editable {
+    content: "";
+}
+
+.editable.voted {
+    pointer-events: none !important;
+}
+
+.alwaysEditable {
+    pointer-events: all !important;
+}
+
+.listviewDarkBackground {
+    background-color: #192038;
+}
+
+.person {
+    background-image: url('src/assets/images/person.svg');
+}
+
+.carAvatar {
+    background-image: url('src/assets/images/carAvatar.svg');
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

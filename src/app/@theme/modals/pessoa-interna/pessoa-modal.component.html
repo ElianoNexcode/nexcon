@@ -1,0 +1,33 @@
+<div class="modalForm noselect" id="modalForm" [class.voted]="pessoaModal.showModal">
+    <div class="card-form" class="card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            Pesquisa de {{ pessoaModal.tipoPessoa || "" }}
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-1" style="max-width: 110px;padding: 0;">
+                    <nex-box [title]="'Foto'" [marginTop]="0" [minPadding]="true" [background]="'#191e38'" [fullHeight]="true">
+                        <nex-avatar [size]="'size-102'" [image]="pessoaImagem" [noMargin]="true" [noPadding]="true" [noBorder]="true"></nex-avatar>
+                    </nex-box>
+                </div>
+                <div class="col-11" style="padding: 0;" style="max-width: calc(100% - 110px);padding: 0;padding-left: 9px !important;">
+                    <nex-box [noPadding]="true" [marginTop]="0" [class]="'fullHeight'" [background]="'#191e38'" *ngIf="pessoaModal.grid">
+                        <nex-listview [params]='listView_pessoa' [classHeader]="'minPadding'" [class]="'displayInBox'" [gridVerticalScroll]="true" (eventCheck)="onlistviewPessoa_Change($event)"></nex-listview>
+                    </nex-box>   
+                </div>
+            </div>
+            <div class="row">
+                <div class="w-100">
+                    <nex-combobox [options]="pessoaModal.pesquisaPessoa_Option" [type]="'find'" [labelMaxWidth]="118" (eventChange)="onFind_Click($event)" (eventFindClick)="onFind_Click($event)"></nex-combobox>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <nex-alert-card [name]="'cardSalvar'" [alertService]="alertService"></nex-alert-card>
+            <div class="card-footer-buttons">
+                <button #btModalSalvar type="button" class="btn btn-dark bt-card greenBorder" disabled (click)="onSalvar_Click()">Aplicar</button>
+                <button type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

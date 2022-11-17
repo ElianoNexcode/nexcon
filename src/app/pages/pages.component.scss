@@ -1,0 +1,71 @@
+@import '../@theme/themes';
+
+@media only screen and (min-width : 1140px) {
+    .dashBoard {
+        display: block;
+    }
+
+    .mainPanelRouter {
+        min-width: calc(100% - 410px);
+        max-width: calc(100% - 410px);
+        height: 100%;
+    }
+
+    .lockModal {
+        min-width: calc(100% - 410px);
+        max-width: calc(100% - 410px);
+        height: 100%;    
+    }
+}
+
+
+@media only screen and (max-width : 1139px) {
+    .dashBoard {
+        display: none;
+    }
+
+    .mainPanelRouter {
+        min-width: calc(100% - 246px);
+        max-width: calc(100% - 246px);
+        height: 100%;
+    }
+
+    .lockModal {
+        min-width: calc(100% - 246px);
+        max-width: calc(100% - 246px);
+        height: 100%;
+    }
+}
+
+@include nb-install-component() {
+    nb-layout-column {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 0 !important;
+    }
+
+    .mainPanel {
+        display: flex;
+        flex-direction: row;
+        background-color: nb-theme(background-color);
+        border-style: solid;
+        border-color: nb-theme(external-border-color);
+        border-width: nb-theme(external-border-width);
+        height: 100% !important;
+        min-height: 555px;
+        max-height: calc(100vh - 142px);
+        min-width: 1020px;
+    } 
+
+    .lockModal {
+        background: #0e1121;
+        opacity: 0.4;
+        position: absolute;
+        top: 64px;
+        left: 207px;
+        height: 100%;
+        pointer-events: bounding-box;
+        z-index: -1;
+    }
+}

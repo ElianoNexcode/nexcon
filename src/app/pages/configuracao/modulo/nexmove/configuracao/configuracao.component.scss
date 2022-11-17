@@ -1,0 +1,15 @@
+@import '../../../../../@theme/styles/pages.scss';
+
+@include nb-install-component() { 
+
+    .div_Ingresso{
+        width: 45%;
+    }
+
+    .div_Ingresso_1{
+        width: 55%;
+       
+    }
+
+
+}

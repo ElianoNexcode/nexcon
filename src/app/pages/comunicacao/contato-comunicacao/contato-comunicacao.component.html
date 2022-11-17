@@ -1,0 +1,41 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]="listView_Contato" [showGrid]="filter != undefined"
+            (eventCheck)="onListView_Change($event)" (eventFilter)="onListView_Filter($event)"></nex-listview>
+    </div>
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Contato
+            </div>
+            <div [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant"
+                class="card-body">
+                <div class="panel">
+                    <nex-form-group [name]="'comunicacaoContatos'">
+                        <nex-input-label [text]="'Nome'" [input]="nomeContato_Text" [marginTop]="0"></nex-input-label>
+                        <nex-input-label [text]="'Tel.Fixo'" [input]="telefoneFixo_Text"></nex-input-label>
+                        <div class="col row">
+                            <div class="width_1"><nex-input-label [text]="'Tel.Móvel'" [class]="'rightJoin'" [input]="telefoneMovel_Text"></nex-input-label></div>
+                            <div class="width_2"><nex-select-group [labelMinWidth]="10" [class]="'leftJoin'" [editable]="editable" [horizontal]="true" [options]="whatsApp_Options"></nex-select-group></div>  
+                        </div>
+                        <nex-input-label [text]="'Email'" [input]="emailContato_Text"></nex-input-label>
+                        <nex-textarea-label [name]="'observacao'" [height]="61" [label]="'Observação'"[textarea]="observacao_Text" [editable]="true"></nex-textarea-label>
+                    </nex-form-group>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button"
+                        class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button"
+                        class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button"
+                        class="btn btn-dark bt-card orangeBorder" (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>

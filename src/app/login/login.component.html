@@ -1,0 +1,25 @@
+<nb-layout>
+    <nb-layout-column>
+        <nex-header class="noselect" [params]="aplicativo" [login]="true"></nex-header>
+        <nex-divider></nex-divider>
+        <nex-erros-modal [errosModal]="errorModalService" (eventClick)="onErrorModalService_Click($event)"></nex-erros-modal>
+        <div class="row mainPanel">
+            <div id="form" class="card">
+                <div class="card-header">
+                    <h3>Iniciar sessão:</h3>
+                </div>
+                <div class="card-body">
+                    <nex-form-group>
+                        <nex-input-label [placeholder]="'Login'" [icon]="'user'" [input]="usr_text" [class]="'loginLabel'"></nex-input-label>
+                        <nex-input-label [placeholder]="'Senha'" [icon]="'lock'" [input]="pwd_text" [class]="'loginLabel'"></nex-input-label>
+                    </nex-form-group>
+                </div>
+                <nex-alert-card [alertService]="alertService" [position]="'btLogin'" [shadow]="false"></nex-alert-card>
+                <div class="card-footer">
+                    <button id="btLogin" type="button" end class="btn btn-dark bt-card greenBorder" (click)="onLogin_Click()">Entrar</button>
+                </div>
+            </div>            
+        </div>
+        <nex-version class="noselect"></nex-version>    
+    </nb-layout-column>
+</nb-layout>

@@ -1,0 +1,13 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+
+    .habilitacao-categoria-validade div{
+        padding-right: 0px!important;
+        padding-left: 0px!important;
+    }
+
+    .card-header-left {
+        width: 65% !important;
+    }
+}

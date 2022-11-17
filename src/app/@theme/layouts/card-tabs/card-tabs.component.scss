@@ -1,0 +1,72 @@
+@import '../../themes.scss';
+
+@include keyframes(flash-informativa){
+    0%	{ box-shadow: none;}
+   50%	{ box-shadow: 0 0 9px 2px yellow;}
+  100%	{ box-shadow: none}
+}
+
+@include keyframes(flash-especial){
+    0%	{ box-shadow: none;}
+   50%	{ box-shadow: 0 0 9px 2px green;}
+  100%	{ box-shadow: none}
+}
+
+
+@include keyframes(flash-advertida){
+    0%	{ box-shadow: none;}
+   50%	{ box-shadow: 0 0 9px 2px orange;}
+  100%	{ box-shadow: none}
+}
+
+@include keyframes(flash-restritiva){
+    0%	{ box-shadow: none;}
+   50%	{ box-shadow: 0 0 9px 2px red;}
+  100%	{ box-shadow: none}
+}
+
+@include nb-install-component() {
+    .card-tabs {
+
+        .button {
+            font-family: roboto;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 4px 22px 2px;
+            border: 1px solid  #434561;
+            border-radius: 10px !important;
+            background-color: #1d2642;
+            color: #bdbfc1;
+            margin-right: 9px;
+        }
+
+        .select {
+            border: 1px solid #1f519b;
+        }
+
+        .informativa {
+            animation-name: flash-informativa;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        .especial {
+            animation-name: flash-especial;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        .advertida {
+            animation-name: flash-advertida;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        .restritiva {
+            animation-name: flash-restritiva;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+    }
+}

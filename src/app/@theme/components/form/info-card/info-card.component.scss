@@ -1,0 +1,83 @@
+@import '../../../themes.scss';
+
+@include nb-install-component() {
+    .button-round {
+        width: 25px;
+        height: 25px;
+
+        padding: 0;
+        float: right;
+
+        border: 1px solid #434561;
+        border-radius: 100%;
+
+        background-color: #1D2642;
+
+        font-weight: 500;
+        font-size: 1rem;
+        color: #A9ABAE !important;
+        text-decoration: none;
+        line-height: normal;
+    }
+
+    .button-round:hover .card-info {display: block;};
+
+    .card-header {
+        color: #d1d1d1;
+        padding: 9px 9px 2px 9px !important;
+    }
+
+    .card-header::after {
+        position: absolute;
+        color: #128725 !important;
+        top: 7px;
+        right: -6px !important;
+        border-top: .6em solid transparent !important;
+        border-right: 0 !important;
+        border-bottom: .6em solid transparent !important;
+        border-left: .6em solid !important;
+        content: "";
+    }
+
+    .card-body {
+        padding: 5px 9px 9px 9px;
+        color: #b9b8b8;
+        white-space: pre-wrap;
+
+        span {
+            white-space: normal;
+        }
+    }
+
+    .card-info {
+        position: absolute;
+        display: none;
+
+        right: 49px;
+        top: 29px;
+    
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+        width: calc(100% - 49px);
+    
+        border-radius: 5px;
+        border: 1px solid #151a30;
+    
+        box-shadow: 5px 5px 10px #0c0f1b;
+        background-color: #138b26;
+    
+        color: #c5c5c5;
+        text-align: justify;
+
+        font-family: Roboto !important;
+        font-size: 0.7rem !important;
+        line-height: normal;
+        align-content: center;
+        margin: -23px 0 0 -11px;
+    
+        cursor: pointer;
+        z-index: 99;
+
+    }
+}

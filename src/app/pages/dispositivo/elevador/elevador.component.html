@@ -1,0 +1,90 @@
+<nex-cameras-modal [title]="'Lista de Câmeras'" [camerasModal]="camerasModalService"
+    (eventSelectGroup)="onCameraSelectGroup($event)"></nex-cameras-modal>
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]="listView_Elevador" [showGrid]="filter != undefined"
+            (eventCheck)="onListView_Change($event)" (eventFilter)=onListView_Filter($event)></nex-listview>
+    </div>
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Elevador
+            </div>
+            <div id="elevadorPanel"
+                 [nbSpinner]="showSpinner" 
+                 nbSpinnerMessage="Aguarde..." 
+                 nbSpinnerStatus="basic" 
+                 nbSpinnerSize="giant"
+                 class="card-body">
+                <div class="panel displayFlex">
+                    <nex-tabs-card [fullWidth]="true" [marginTop]="0" [tabsOptions]="tabsConfiguracao_Option"
+                        [name]="'tabsConfiguracaoElevador'">
+                        <nex-tab [tabComponent]="tabsConfiguracao_Option.tabs[0]">
+                            <nex-form-group [name]="'elevadoresDados'">
+                                <nex-input-label [text]="'Nome'" [input]="nome_Text"></nex-input-label>
+                                <nex-input-label [text]="'Local'" [input]="local_Text"></nex-input-label>
+                            </nex-form-group>
+                            <nex-textarea-label [name]="'observacao'" [fullHeight]="true" [label]="'Observação'" [textarea]="observacao_Text" [editable]="editable">
+                            </nex-textarea-label>
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabsConfiguracao_Option.tabs[1]">
+
+                            <div class="parada">
+                                <div class="row paradaHeader border_bottom ">
+                                    <div class="background_2 header_1 width_1 border_Right">Botão</div>
+                                    <div class="background_2 border_Right width_2 header_Andar">Andar</div>
+                                    <div class="background_2 header_1 width_3">Restrito</div>
+                                </div>
+                                <div id="paradaTabItens" class="paradaBody">
+                                    <div class="row border_bottom editable" *ngFor="let paradaItem of parada" [class.voted]="!editable" >
+                                        <div class="background_1 width_1 header_1 border_Right">
+                                            {{paradaItem.botao}}
+                                        </div>
+                                        <div class="width_2 border_Right">
+                                            <nex-input-label [input]="paradaItem.andar"
+                                                             [marginTop]="0"
+                                                             [class]="'noBorder inputComboMinHeight'"
+                                                             (eventChange)="onParadaItemChange($event)"></nex-input-label>
+                                        </div>
+                                        <div class="width_3">
+                                            <nex-combobox [options]="paradaItem.restrito"
+                                                          [marginTop]="0"
+                                                          [class]="'noBorder inputComboMinHeight'"></nex-combobox>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabsConfiguracao_Option.tabs[2]">
+                            <nex-box [boxPanel]="boxCamera" 
+                                     [noPadding]="true" 
+                                     [showFooter]="true" 
+                                     [fullHeightMargin]="true"
+                                     [background]="'#192038'" 
+                                     (eventButtonClick)="onBoxCamera_Click($event)">
+                                <nex-listview [params]='listView_Camera' 
+                                              [editable]="editable"
+                                              [showFilter]="false" 
+                                              [classHeader]="'minPadding'" 
+                                              [class]="'displayInBox'"></nex-listview>
+                            </nex-box>
+                        </nex-tab>
+                    </nex-tabs-card>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button"
+                        class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button"
+                        class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button"
+                        class="btn btn-dark bt-card orangeBorder" (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>

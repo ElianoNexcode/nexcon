@@ -1,0 +1,177 @@
+<nex-recepcao-estacionamento-modal [title]="'Pesquisa Estacionamento'" [estacionamentoModal]="recepcaoEstacionamentoModalService" (eventSelectGroup)="onEstacionamentoSelectGroup($event)"></nex-recepcao-estacionamento-modal>
+<nex-recepcao-nivel-acesso-modal [title]="'Pesquisa Nível de Acesso'" [nivelAcessoModal]="recepcaoNivelAcessoModalService" (eventSelect)="onNivelAcessoSelect($event)"></nex-recepcao-nivel-acesso-modal>
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo player" id="player" [class.voted]="actionbuttomService.flipped">
+    <div id="grid" class="grid front">
+        <nex-listview [params]="listView_Recepcao" [showGrid]="filter != undefined" (eventCheck)="onListView_Change($event)" (eventFilter)="onListView_Filter($event)"></nex-listview>
+    </div>
+    <div id="form" class="formFull back">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Recepção
+            </div>
+            <div class="card-body" id="recepcaoComponent_Panel">
+                <div class="panel">
+                    <nex-form-group [name]="'recepcaoDados'" [display]="'grid'">
+                        <div class="row">
+                            <div class="col">
+                                <nex-input-label [text]="'Nome'" [marginTop]="0" [input]="nome_Text"></nex-input-label>
+                            </div>
+                            <div class="col">
+                                <nex-input-label [text]="'Localização'" [marginTop]="0" [input]="localizacao_Text"></nex-input-label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <nex-input-label [text]="'Telefone 1'" [input]="telefone1_Text"></nex-input-label>
+                                    </div>
+                                    <div class="col">
+                                        <nex-input-label [text]="'Telefone 2'" [input]="telefone2_Text"></nex-input-label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <nex-input-label [text]="'Email'" [input]="email_Text"></nex-input-label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-full">
+                                <nex-input-label [text]="'Observação'" [input]="observacao_Text"></nex-input-label>
+                            </div>
+                        </div>
+                    </nex-form-group>
+                </div>
+                <div class="panel">
+                    <div class="row">
+                        <div class="col col-6">
+                            <nex-tabs-card [fullWidth]="true" [marginTop]="0" [tabsOptions]="tabsConfiguracao_Option" [name]="'tabsConfiguracaoRecepcao'">
+                                <nex-tab [tabComponent]="tabsConfiguracao_Option.tabs[0]">
+                                    <nex-form-group [name]="'identificacao'">
+                                        <nex-combobox [label]="'Controle'"         [options]="controle_Option" (eventChange)="cbControle_onChanged($event)"></nex-combobox>
+                                        <nex-combobox [label]="'Iniciar Cadastro'" [options]="iniciarCadastro_Option" (eventChange)="cbIniciarCadastro_onChanged($event)"></nex-combobox>
+                                        <nex-combobox [label]="'Capturar Imagem'"  [options]="capturarImagem_Option"></nex-combobox>
+                                        <nex-combobox [label]="'Identificador'"    [options]="identificador_Option"></nex-combobox>
+                                        <nex-input-multi-label [text]="'Notificação'" [inputLeft]="NotificacaoMenor_Text" [inputRight]="NotificacaoMaior_Text" (eventChange)="onNotificacaoMenor_Change($event)"></nex-input-multi-label>
+                                    </nex-form-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsConfiguracao_Option.tabs[1]" [noPadding]="true">
+                                    <nex-select-group [displayInTab]="true" [editable]="editable" [border]="'none'" [options]="campos_Group"></nex-select-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsConfiguracao_Option.tabs[2]" [noPadding]="true">
+                                    <nex-select-group [displayInTab]="true" [editable]="editable" [border]="'none'" [options]="funcoes_Group"></nex-select-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsConfiguracao_Option.tabs[3]" [noPadding]="true">
+                                    <nex-box [boxPanel]="boxEstacionamento" 
+                                        [noBorder]="true" 
+                                        [noPadding]="true" 
+                                        [showFooter]="true" 
+                                        [marginTop]="0"                                      
+                                        [fullHeight]="true" 
+                                        [scrollBar]="true"
+                                        [background]="'#192038'" 
+                                        (eventButtonClick)="onRecepcaoEstacionamento_Click($event)">
+                                        <div id="estacionamentoItens" class="displayInBox">
+                                            <div class="border" *ngFor="let itemEstacionamento of estacionamentoSelectGroup">
+                                                {{ itemEstacionamento.nome}}
+                                            </div>    
+                                        </div>
+                                    </nex-box>
+                                </nex-tab>
+                            </nex-tabs-card>        
+                        </div>
+                        
+                        <div class="col col-6">
+                            <nex-tabs-card [fullWidth]="true" [marginTop]="0" [tabsOptions]="tabsPessoa_Option" [name]="'tabsPessoa'">
+                                <nex-tab [tabComponent]="tabsPessoa_Option.tabs[0]">
+                                    <nex-form-group [name]="'fgInterno'">
+                                        <nex-combobox [label]="'Documento'" [options]="documentoInterno_Option" (eventChange)="cbDocumentoInterno_onChanged($event)"></nex-combobox>
+                                        <nex-combobox [label]="'Grupo'"     [options]="grupoInterno_Option"></nex-combobox>
+                                        <nex-combobox [label]="'Motivo'"    [options]="motivoInterno_Option"></nex-combobox>
+                                        <nex-combobox [label]="'Crachá'"    [options]="crachaInterno_Option"></nex-combobox>
+                                        <div class="row">
+                                            <div class="col">
+                                                <nex-combobox [label]="'Autorização'" [class]="'fontSize65'" [options]="autorizacaoInterno_Option"></nex-combobox>
+                                            </div>
+                                            <div class="col row">
+                                                <div class="width_1"><nex-input-label [labelMinWidth]="57" [text]="'Ingresso'" [class]="'rightJoin'" [input]="ingressoInterno_Text"></nex-input-label></div>
+                                                <div class="width_2"><nex-select-group [editable]="editable" [labelMinWidth]="50" [horizontal]="true" [class]="'leftJoin'" [options]="ingressoInterno_Options" (eventChange)="onIgnorarControleInterno_Change()"></nex-select-group></div>  
+                                            </div>
+                                        </div>
+                                    </nex-form-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsPessoa_Option.tabs[1]">
+                                    <nex-form-group [name]="'fgPrestador'">
+                                        <nex-combobox [label]="'Documento'" [options]="documentoPrestador_Option"></nex-combobox>
+                                        <nex-combobox [label]="'Grupo'"     [options]="grupoPrestador_Option"></nex-combobox>
+                                        <nex-combobox [label]="'Motivo'"    [options]="motivoPrestador_Option"></nex-combobox>
+                                        <nex-combobox [label]="'Crachá'"    [options]="crachaPrestador_Option"></nex-combobox>
+                                        <div class="row">
+                                            <div class="col">
+                                                <nex-combobox [label]="'Autorização'" [options]="autorizacaoPrestador_Option"></nex-combobox>
+                                            </div>
+                                            <div class="col row">
+                                                <div class="width_1"><nex-input-label [labelMinWidth]="57" [text]="'Ingresso'" [class]="'rightJoin'" [input]="ingressoPrestador_Text"></nex-input-label></div>
+                                                <div class="width_2"><nex-select-group [editable]="editable" [labelMinWidth]="50" [horizontal]="true" [class]="'leftJoin'" [options]="ingressoPrestador_Options" (eventChange)="onIgnorarControlePrestador_Change()"></nex-select-group></div>  
+                                            </div>
+                                        </div>
+                                    </nex-form-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsPessoa_Option.tabs[2]">
+                                    <nex-form-group [name]="'fgVisitante'">
+                                        <nex-combobox [label]="'Documento'" [options]="documentoVisitante_Option"></nex-combobox>
+                                        <nex-combobox [label]="'Grupo'"     [options]="grupoVisitante_Option"></nex-combobox>
+                                        <nex-combobox [label]="'Motivo'"    [options]="motivoVisitante_Option"></nex-combobox>
+                                        <nex-combobox [label]="'Crachá'"    [options]="crachaVisitante_Option"></nex-combobox>
+                                        <div class="row">
+                                            <div class="col">
+                                                <nex-combobox [label]="'Autorização'" [options]="autorizacaoVisitante_Option"></nex-combobox>
+                                            </div>
+                                            <div class="col row">
+                                                <div class="width_1"><nex-input-label [labelMinWidth]="57" [text]="'Ingresso'" [class]="'rightJoin'" [input]="ingressoVisitante_Text"></nex-input-label></div>
+                                                <div class="width_2"><nex-select-group [editable]="editable" [labelMinWidth]="50" [horizontal]="true" [class]="'leftJoin'" [options]="ingressoVisitante_Options" (eventChange)="onIgnorarControleVisitante_Change()"></nex-select-group></div>  
+                                            </div>
+                                        </div>
+                                    </nex-form-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsPessoa_Option.tabs[3]" [noPadding]="true">
+                                    <nex-box [boxPanel]="boxNivelAcesso" 
+                                             [noBorder]="true" 
+                                             [noPadding]="true" 
+                                             [showFooter]="true" 
+                                             [marginTop]="0"                                      
+                                             [fullHeight]="true" 
+                                             [scrollBar]="true"
+                                             [background]="'#192038'" 
+                                             [scrollBar]="true"
+                                             (eventButtonClick)="onRecepcaoNivelAcesso_Click($event)">
+                                        <nex-listview [params]='listView_NivelAcesso'
+                                            [editable]="editable"
+                                            [noHeader]="true"
+                                            [showFilter]="false" 
+                                            [classHeader]="'minPadding'" 
+                                            [class]="'displayInBox'"
+                                            (eventCheck)="onListViewNivelAcesso_Change($event)" ></nex-listview>
+                                    </nex-box>
+                                </nex-tab>
+                            </nex-tabs-card>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <div style="display: flex;">
+                        <div class="optionsButtons">
+                            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onSave_Click()" >Salvar</button>
+                            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()">Cancelar</button>
+                            <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

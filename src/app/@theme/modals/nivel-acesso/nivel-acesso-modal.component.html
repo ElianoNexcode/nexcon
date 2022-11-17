@@ -1,0 +1,109 @@
+<nex-selecao-bloqueio-modal  [title]="'Seleção de Bloqueio'"  [selecaoModal]="selecaoBloqueioModalService" (eventSelectGroup)="onBloqueioSelectGroup($event)"></nex-selecao-bloqueio-modal>
+<nex-selecao-elevador-modal *ngIf="area_Option.itemSelected" [title]="'Seleção de Elevador'" [selecaoElevadorModal]="selecaoElevadorModalService" (eventSelectGroup)="onElevadorSelectGroup($event)"></nex-selecao-elevador-modal>
+<nex-selecao-faixa-horaria-modal *ngIf="selecaoFaixaHorariaModalService" [title]="'Seleção de Faixa Horária'" [selecaoFaixaHorariaModal]="selecaoFaixaHorariaModalService" (eventSelectGroup)="onFaixaHorariaSelectGroup($event)"></nex-selecao-faixa-horaria-modal>
+<div class="modalForm noselect" id="modalForm" [class.voted]="nivelAcessoModal.showModal">
+    <div class="card-form card editable" [class.voted]="!nivelAcessoModal.editable">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{title}}
+        </div>
+        <div class="card-body">
+        <div class="panel fullHeight">
+            <nex-tabs-card [marginTop]="0" [fullWidth]="true" [tabsOptions]="tabsNivelAcessoModal_Option" [name]="'tabsNivelAcessoModal'">
+                <nex-tab [tabComponent]="tabsNivelAcessoModal_Option.tabs[0]">
+                    <nex-form-group [name]="'nivelAcessoModal'">
+                        <nex-combobox [label]="'Site'" [options]="site_Option" (eventChange)="onSiteOption_Change()"></nex-combobox>
+                        <nex-combobox [label]="'Área'" [options]="area_Option" (eventChange)="onAreaOption_Change()"></nex-combobox>
+                    </nex-form-group>
+                    <nex-tabs-card [fullWidth]="true" [tabsOptions]="tabsSelecaoModal_Option" [name]="'tabsSelecaoModal'">
+                        <nex-tab [tabComponent]="tabsSelecaoModal_Option.tabs[0]" [tabComponentParent]="tabsNivelAcessoModal_Option.tabs[0]" [noPadding]="true">
+                            <nex-box [boxPanel]="boxArea_Bloqueio" 
+                                     [noBorder]="true" 
+                                     [noPadding]="true" 
+                                     [showFooter]="true" 
+                                     [marginTop]="0"                                      
+                                     [scrollBar]="true"
+                                     [background]="'#192038'" 
+                                     [scrollBar]="true"
+                                     (eventButtonClick)="onSelecaoBloqueio_Click($event)">
+                                <div id="nivelAcessoBloqueio" class="tablNivelAcessoArea noLocked">
+                                    <div class="grid border" *ngFor="let itemBloqueio of bloqueioSelectGroup"> 
+                                        {{ itemBloqueio.nome}}
+                                    </div>    
+                                </div>
+                                <nex-alert-card [name]="'cardAlertBloqueio'" [position]="'btCheckBloqueio'" [alertService]="alertServiceBloqueio"></nex-alert-card>
+                            </nex-box>
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabsSelecaoModal_Option.tabs[1]" [tabComponentParent]="tabsNivelAcessoModal_Option.tabs[0]" [noPadding]="true">
+                            <nex-box [boxPanel]="boxArea_Elevador" 
+                                     [noBorder]="true" 
+                                     [noPadding]="true" 
+                                     [showFooter]="true" 
+                                     [marginTop]="0" 
+                                     [background]="'#192038'" 
+                                     [scrollBar]="true"
+                                     (eventButtonClick)="onSelecaoElevador_Click($event)" >
+                                <div id="nivelAcessoElevador" class="tablNivelAcessoArea noLocked">
+                                    <div class="grid  border" *ngFor="let itemElevador of elevadorSelectGroup"> 
+                                        {{ itemElevador?.elevadorNome }}
+                                    </div>    
+                                </div>
+                                <nex-alert-card [name]="'cardAlertElevador'" [position]="'btCheckElevador'" [alertService]="alertServiceElevador"></nex-alert-card>
+                            </nex-box>  
+                        </nex-tab>
+                    </nex-tabs-card>
+                </nex-tab>
+                <nex-tab [tabComponent]="tabsNivelAcessoModal_Option.tabs[1]">
+                    <nex-tabs-card [fullWidth]="true" 
+                                   [tabsOptions]="tabsSelecaoFaixaHorariaModal_Option"
+                                   [name]="'tabsSelecaoFaixaHorarioModal'">
+                        <nex-tab [tabComponent]="tabsSelecaoFaixaHorariaModal_Option.tabs[0]"
+                                 [tabComponentParent]="tabsNivelAcessoModal_Option.tabs[1]"
+                                 [noPadding]="true">
+                            <nex-box [boxPanel]="boxFaixaHorariaEntrada" 
+                                     [noBorder]="true" 
+                                     [noPadding]="true" 
+                                     [showFooter]="true" 
+                                     [marginTop]="0" 
+                                     [background]="'#192038'"
+                                     [scrollBar]="true" 
+                                     (eventButtonClick)="onSelecaoFaixaHoraria_Click($event)" >
+                                <div id="nivelAcessoEntrada" class="tablNivelAcessoFaixaHoraria noLocked">
+                                    <div class="grid  border" *ngFor="let itemFaixa of faixaHorariaEntradaSelectGroup"> 
+                                        {{ itemFaixa.nome}}
+                                    </div>
+                                </div>
+                            </nex-box>
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabsSelecaoFaixaHorariaModal_Option.tabs[1]"
+                                 [tabComponentParent]="tabsNivelAcessoModal_Option.tabs[1]"
+                                 [noPadding]="true">
+                            <nex-box [boxPanel]="boxFaixaHorariaSaida" 
+                                     [noBorder]="true" 
+                                     [noPadding]="true" 
+                                     [showFooter]="true" 
+                                     [marginTop]="0" 
+                                     [background]="'#192038'"
+                                     [scrollBar]="true" 
+                                     (eventButtonClick)="onSelecaoFaixaHoraria_Click($event)" >
+                                <div id="nivelAcessoSaida" class="tablNivelAcessoFaixaHoraria noLocked">
+                                    <div class="grid  border" *ngFor="let itemFaixa of faixaHorariaSaidaSelectGroup"> 
+                                        {{ itemFaixa.nome}}
+                                    </div>
+                                </div>
+                            </nex-box>      
+                        </nex-tab>
+                    </nex-tabs-card>
+                </nex-tab>
+            </nex-tabs-card>
+        </div>
+        </div>
+        <div class="card-footer">
+            <nex-alert-card [name]="'cardAlertNivelAcesso'" [alertService]="alertService"></nex-alert-card>
+            <div class="card-footer-buttons noLocked">
+                <button *ngIf="nivelAcessoModal.editable" type="button" class="btn btn-dark bt-card greenBorder"(click)="onSave_Click()">OK</button>
+                <button *ngIf="nivelAcessoModal.editable" type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                <button *ngIf="!nivelAcessoModal.editable" type="button" class="btn btn-dark bt-card greenBorder"(click)="onClose_Click()">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

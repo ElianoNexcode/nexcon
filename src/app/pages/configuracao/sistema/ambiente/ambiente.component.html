@@ -1,0 +1,109 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_Ambiente' [showFilter]="false" (eventCheck)="onListView_Change($event)"></nex-listview>
+    </div>    
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Configuração de {{alias}}
+            </div>
+            <div  class="card-body" [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant">
+                <div class="panel" [ngClass]="{'fullHeight': (alias == 'Imagem')}" [ngSwitch]="alias">
+                    <div *ngSwitchCase="'Interface'">
+                        <nex-form-group [name]="'interfaceGroup'">
+                            <nex-box [title]="'Interface'" [titleAlign]="'left'" [marginTop]="0">
+                                    <nex-combobox [label]="'Padrão'" [options]="interfacePadrao_Option" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                    <nex-radio [text]="'Configuração'" [options]="interfaceConfiguracao_Options" (eventChange)="onSaved_Condition()"></nex-radio>
+                            </nex-box>
+                            <nex-box [title]="'Logotipo da Tela Principal'" [showFooter]="true" [titleAlign]="'left'" [boxPanel]="boxButton" (eventButtonClick)="onButton_Click($event)">
+                                <nex-image *ngIf="interfaceImagem" [src]= "interfaceImagem" [width]="120" [height]="50" [sizeText]="true" [border]="true"></nex-image>
+                            </nex-box>
+                        </nex-form-group>
+                    </div>
+                    <div *ngSwitchCase="'Login'">
+                        <nex-form-group [name]="'loginGroup'">
+                            <nex-box [title]="'Login'" [titleAlign]="'left'" [marginTop]="0">
+                                <nex-combobox [label]="'Minímo de Dígitos'" [options]="loginDigitos_Option" (eventChange)="onSaved_Condition()"></nex-combobox>
+                            </nex-box>
+                            <nex-box [title]="'Senha'" [titleAlign]="'left'">
+                                <nex-combobox [label]="'Minímo de Dígitos'" [options]="loginSenhaDigitos_Option" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                <nex-select-group [text]="'Incluir Caracter'" [options]="loginSenhaCaracter_Options" (eventChange)="onSaved_Condition()"></nex-select-group>
+                                <nex-input-label [text]="'Prazo de Renovação'" [input]="loginSenhaRenovacao_Text" [sufixo]="'dias'" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                <nex-input-label [text]="'Expirar se não utilizada'" [input]="loginSenhaExpiracao_Text" [sufixo]="'dias'" (eventChange)="onSaved_Condition()"></nex-input-label>
+                            </nex-box>
+                        </nex-form-group>
+                    </div>
+                    <div class="imagemPanel" *ngSwitchCase="'Imagem'">
+                        <nex-form-group [name]="'imagemGroup'">
+                            <nex-select-group [text]="'Salvar imagens no banco de dados'"  [options]="imagemDefinicao_Option" (eventChange)="onSaved_Condition()"></nex-select-group>   
+                        </nex-form-group>
+                        <div class="box">
+                            <nex-input-label [text]="'Diretório'" [input]="diretorio_Text" (eventChange)="onSaved_Condition()" [marginTop]="0"></nex-input-label>
+                            <div class="texto-adm front">
+                                <p class="title-adm">Atenção!</p>
+                                <p class="p_1">Além das imagens salvas em banco de dados, o Sistema utiliza de uma estrutura de diretório para armazenamento em arquivos criptografados.
+                                    Sendo assim, é necessário dar permissão total ao diretório configurado para que o Sistema possa executar 
+                                    suas operações, como: criar subdiretórios, salvar, ler e excluir arquivos.</p>
+                                <p class="p_2">É importante também definir um processo de backup deste diretório de imagens assim como o backup do banco de dados.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="'Identificador'">
+                        <div>
+                            <nex-box [title]="'Biometria'" [titleAlign]="'left'" [marginTop]="0">
+                                <nex-form-group [name]="'biometria'">
+                                    <nex-combobox [label]="'Facial'" [options]="biometriaFacial_Option" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                    <nex-combobox [label]="'Digital'" [options]="biometricaDigital_Option" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                </nex-form-group>
+                            </nex-box>
+                            <nex-form-group [name]="'qrcode'">
+                                <nex-box [title]="'QR Code'" [titleAlign]="'left'">
+                                    <div class="row">
+                                        <div class="width_1"><nex-combobox [label]="'Controle e Formato'" [options]="qrCodeFormato_Option" (eventChange)="onControle_Change()"></nex-combobox></div> 
+                                        <div class="width_2"><nex-combobox  [options]="qrcodeDistincao_Option" (eventChange)="onSaved_Condition()"></nex-combobox></div>
+                                    </div>
+                                </nex-box>
+                                <nex-box [title]="'Senha'" [titleAlign]="'left'">
+                                    <div class="row">
+                                        <div class="width_1"><nex-combobox [label]="'Controle e Formato'" [options]="acessoSenhaControle_Option" (eventChange)="onSaved_Condition()"></nex-combobox></div> 
+                                        <div class="width_2"><nex-combobox  [options]="acessoSenhaFormato_Option" (eventChange)="onSaved_Condition()"></nex-combobox></div>
+                                    </div>
+                                </nex-box>
+                                <nex-box [title]="'Pânico'" [titleAlign]="'left'">
+                                    <nex-select-group [text]="'Detectar Pânico'" [options]="acessoPanicoControle_Options" (eventChange)="onSaved_Condition()"></nex-select-group>
+                                </nex-box>
+                            </nex-form-group>
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="'Campos Complementares'">
+                        <nex-box [title]="'Campos complementares do cadastro de Pessoa'" [titleAlign]="'left'" [marginTop]="0" [marginTop]="0">
+                            <nex-form-group [name]="'complementoGroup'" >
+                                <nex-input-label [text]="'Complemento 1'" [input]="pessoaComplemento1_Text" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                <nex-input-label [text]="'Complemento 2'" [input]="pessoaComplemento2_Text" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                <nex-input-label [text]="'Complemento 3'" [input]="pessoaComplemento3_Text" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                <nex-input-label [text]="'Complemento 4'" [input]="pessoaComplemento4_Text" (eventChange)="onSaved_Condition()"></nex-input-label>
+                            </nex-form-group>
+                        </nex-box>
+                    </div>
+                    <div *ngSwitchCase="'Integração e Customização'">
+                        <nex-form-group [name]="'integracaoGroup'" >
+                            <nex-combobox [label]="'Integração'"    [options]="solucaoIntegrada_Option" (eventChange)="onSaved_Condition()" [marginTop]="0"></nex-combobox>
+                            <nex-input-label [text]="'Customização'" [input]="solucaoEspecifica_Text" (eventChange)="onSaved_Condition()"></nex-input-label>
+                        </nex-form-group>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder" (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <input id="fileselector" type="file" (change)="getImage_Change($event)" accept="image/png, image/jpeg" multiple="false" style="display:none" autocomplete="none" />
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>

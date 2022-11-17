@@ -1,0 +1,169 @@
+@import '../../../../../@theme/styles/pages.scss';
+
+@include nb-install-component() { 
+
+    .header_Nome {
+        width: 28%;
+        height: 27.5px !important;
+        font-size: 0.7rem;
+        padding: 6px;
+        border-right: 1px solid #434561; 
+    }
+
+    .header_Grupo {
+        width: 16.5%;
+        height: 27.5px !important;
+        font-size: 0.7rem;
+        padding: 6px; 
+        border-right: 1px solid #434561;   
+    }
+
+    .header_Area {
+        width: 16.5%;
+        height: 27.5px !important;
+        font-size: 0.7rem;
+        padding: 6px; 
+        border-right: 1px solid #434561;    
+    }
+
+    .header_Conexao {
+        height: 27.5px !important;
+        font-size: 0.7rem;
+        text-align: center;
+        padding: 6px; 
+        width: 9%;
+        text-align: center;
+        border-right: 1px solid #434561; 
+        text-decoration-color: #94979e;
+    }
+
+    .header_Concessao {
+        width: 8.5%;
+        height: 27.5px !important;
+        font-size: 0.7rem;
+        text-align: center; 
+        padding: 6px; 
+        border-right: 1px solid #434561;   
+    }
+
+    .header_Agendamento {
+        height: 27.5px !important;
+        font-size: 0.7rem;
+        text-align: center; 
+        padding: 6px; 
+        width: 12%;
+        text-align: center;
+        border-right: 1px solid #434561;      
+    }
+
+    .header_Autenticado {
+        width: 9%;
+        height: 27.5px !important;
+        font-size: 0.7rem;
+        text-align: center; 
+        padding: 6px; 
+            
+    }
+
+    .row_Nome {
+        width: 28%;
+        height: 27.5px;
+        font-size: 0.7rem;
+        padding: 6px;
+        border-right: 1px solid #434561; 
+        background-color: #1a233d;
+    }
+
+    .row_Grupo {
+        width: 16.5%;
+        height: 27.5px;
+        font-size: 0.7rem;
+        padding: 6px; 
+        border-right: 1px solid #434561;
+        background-color: #1a233d;   
+    }
+
+    .row_Area {
+        width: 16.5%;
+        height: 27.5px;
+        font-size: 0.7rem;
+        padding: 6px; 
+        border-right: 1px solid #434561;
+        background-color: #1a233d;    
+    }
+
+    .row_Conexao {
+        width: 9%;
+        height: 27.5px;
+        font-size: 0.7rem;
+        padding: 6px; 
+        text-align: center;
+        border-right: 1px solid #434561; 
+        background-color: #1a233d;   
+    }
+
+    .row_Concessao {
+        width: 8.5%;
+        height: 27.5px;
+        font-size: 0.7rem;
+        padding: 6px; 
+        border-right: 1px solid #434561;
+        background-color: #1a233d;   
+    }
+
+    .row_Agendamento {
+        width: 12%;
+        height: 27.5px;
+        font-size: 0.7rem;
+        text-align: center;
+        padding: 6px; 
+        border-right: 1px solid #434561; 
+        background-color: #1a233d;  
+    }
+
+    .row_Autenticado {
+        width: 9%;
+        height: 27.5px;
+        font-size: 0.7rem;
+        padding: 6px; 
+        background-color: #1a233d;    
+    }
+
+    .header{ 
+        border-left: 1px solid #434561;
+        border-top: 1px solid #434561;
+        border-right: 1px solid #434561;
+        border-top-left-radius: 2.5px;
+        border-top-right-radius: 2.5px;
+    }
+
+    .box{ 
+        height: 100%;
+        overflow-y: overlay;
+        max-height: calc(100vh - 400px);
+        border-left: 1px solid #434561;
+        border-bottom: 1px solid #434561;
+        border-right: 1px solid #434561;
+
+    }
+
+    .borderRow{
+        border-bottom: 1px solid #434561; 
+    }
+
+    .width_1{
+        width: 100%;
+        margin-bottom: 9px;
+    }
+
+    .margin_1{
+        margin-left: 8px;
+    }
+
+    .margin_2{
+        margin-left: 4px;
+    }
+    
+
+
+}

@@ -1,0 +1,119 @@
+@import '../../styles/pages.scss';
+
+@include nb-install-component() {
+
+    .modalForm {
+
+        visibility: hidden;
+
+        position: absolute;
+        top: -350px;
+        left: calc(50% - 420px);
+        width: 840px;
+        height: 455px;
+        
+        border: 1px solid #151a30;
+        border-top: none !important;
+        border-radius: 0 0 5px 5px;
+        z-index: 101;
+
+        animation: hideModal 0.3s;
+        animation-fill-mode: forwards;
+
+        .card {
+
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0px 22px 40px black;
+            background-color: #283352;
+            height: 100% !important;
+
+            .captureCol {
+                position: relative;
+                left: 9px;
+                max-width: 160px;
+            }
+
+            .videoCol {
+                position: relative;
+                left: 9px;
+                width: 482px;
+                height: 378px;
+                margin-left: 9px;
+                margin-right: 9px;
+                z-index: 102;
+            }
+        
+            .settingsCol {
+                position: relative;
+                left: 9px;
+                min-width: 156px;
+                max-width: 139px;
+            }
+
+            .configCol {
+                position: absolute;
+                top: -205px;
+                left: 509px;
+                width: 317px;
+            }        
+
+        }
+
+        .card-body {
+            display: flex;
+            padding: 9px 9px 20px 9px;
+        }    
+    
+    }
+
+    .modalForm.voted {
+        visibility: visible;
+        animation: showModal 0.3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
+
+    .fullModulo {
+        width: calc(100vw - 418px);
+        margin: 34px 6px 0 0;
+        height: 100%;
+    }
+
+    .pictureBox {
+        min-width: 150px;  max-width: 150px;
+        min-height: 150px; max-height: 150px;
+        background-color: #192038;
+        overflow: hidden;
+    }
+
+    .videoBox {
+        height: 340px;
+        width: 480px;
+        background-color: #201e1e;
+    }
+
+    .settingButton {
+        width: 126px !important;
+        background: #434561;
+    }
+
+    .square {
+        min-height: 160px;
+        min-width: 160px;
+        border: 2px solid #ff0000;
+        background-color: #283352;
+        opacity: 0.25;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        z-index: 102;
+        cursor: move;
+
+        visibility: hidden;
+    }
+
+    .square.voted {
+        visibility: visible;
+    }
+    
+}

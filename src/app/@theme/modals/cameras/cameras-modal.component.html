@@ -1,0 +1,26 @@
+<div class="modalForm noselect" id="modalForm" [class.voted]="camerasModal.showModal">
+    <div class="card-form" class="card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{ title }}
+        </div>
+        <div class="card-body">
+            <div class="panel">
+                <nex-box [noPadding]="true">
+                    <nex-listview [params]='listView_Cameras' 
+                                  [showFilter]="false"
+                                  [gridScroll]="false"
+                                  [gridVerticalScroll]="true"
+                                  [gridOptions]="true"
+                                  [classHeader]="'minPadding'"
+                                  [class]="'displayInBoxScroll'" ></nex-listview>
+                </nex-box>
+            </div>                
+        </div>
+        <div class="card-footer">
+            <div style="text-align: right;">
+                <button type="button" class="btn btn-dark bt-card greenBorder" (click)="onOK_Click()">OK</button>
+                <button type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click(true)">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

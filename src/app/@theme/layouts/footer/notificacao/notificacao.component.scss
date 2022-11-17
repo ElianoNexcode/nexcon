@@ -1,0 +1,122 @@
+@import '../../../themes.scss';
+
+@include nb-install-component() {
+    .container {
+        min-height: 48px;
+        height: 48px;
+        min-width: calc(100vw - 412px);
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        align-self: center;
+        color: #CCCCCC;
+        border-left: nb-theme(border-left);
+
+        .margin-less {
+            margin: 0 !important;
+        }
+
+        .bt-tv {
+            max-width: 29px !important;
+            min-height: 48px;
+            height: 48px;
+
+            padding: 0 !important;
+            margin: 0 !important;    
+
+            text-align: center !important;
+            color: #CCCCCC !important;
+
+            display: -webkit-flex; /* Safari */  
+            display: flex;
+            -webkit-align-items: center; /* Safari 7.0+ */
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+
+        .btn-floating {
+            img {
+                width: 0.5rem;
+                height: auto;
+            }
+        }
+
+        .btn-floating:first-child {
+            border-right: nb-theme(border-right);
+        }
+
+        .btn-floating:last-child {
+            border-left: nb-theme(border-right);
+        }
+
+        .btn-floating:hover {
+            background-color: nb-theme(background-btt-hover) !important;
+        }
+
+        .local {
+            margin: 0 !important;
+            font-size: 0.5rem;
+            line-height: 0.6rem;
+            font-weight: 600;    
+        }
+
+        .ocorrencia {
+            margin: 0 !important;
+            font-size: 0.5rem;
+            line-height: 0.7rem;
+        }
+
+        .user {
+            margin: 0 !important;
+            font-size: 0.5rem;
+            line-height: 0.7rem;
+        }
+
+        .carousel-inner {
+            overflow: hidden;
+            display: flex;
+            padding: 0 !important;
+        }
+
+        .carousel-item {
+            padding: 0 15px 0 15px; 
+        }
+
+        .avatar {
+            max-width: 52px;
+            padding: 0 !important;
+            text-align: center;
+
+            img {
+                border: 1px solid #D2D3D5;
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        .dados {
+            padding: 0 !important;
+            max-width: 9vw;
+            color: #D2D3D5;
+        }
+
+        .item {
+            min-height: 45px !important;
+            max-height: 45px !important;
+            align-items: center;
+            background-color: ng-theme(background-basic-color);
+        }
+
+        .d-md-block {
+            border: 1px solid #313452;
+        }
+    }
+
+    .carousel {
+        display: flex;
+    }
+}
+

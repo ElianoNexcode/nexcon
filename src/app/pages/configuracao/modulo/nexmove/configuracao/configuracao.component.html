@@ -1,0 +1,41 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)" ></nex-actionbuttom>
+<div class="modulo">
+   <div id="grid" class="grid">
+    <nex-listview [params]=" listView_Nexmove" [showFilter]="false" ></nex-listview> 
+   </div>
+   <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                 Configuração de Integração
+            </div>
+            <div class="card-body">
+                <div class="panel">
+                    <nex-box [title]="'Identificação e Acesso'" [titleAlign]="'left'">
+                        <nex-form-group>
+                        <nex-combobox [label]="'Identificação'" [options]="identificacao_Options" (eventChange)="onSaved_Condition()"></nex-combobox>
+                        <nex-select-group [text]="'Acesso'"[options]="acessoAutorizacao_Option" [horizontal]="true" (eventChange)="onAcesso_Change()"></nex-select-group>
+                        <div class="row">
+                            <div class="div_Ingresso"><nex-input-label [text]="'Ingresso'" [input]="acessoIngresso_Text" class="noBorderRight"></nex-input-label></div>
+                            <div class="div_Ingresso_1"><nex-select-group  [options]="acessoIngressoIndeterminado_Option" (eventChange)="onIndeterminado_Change()" class="noBorderLeft"></nex-select-group></div>
+                        </div>
+                        <nex-select-group [text]="'Acesso Saída'" [options]="acessoSaida_Option"></nex-select-group>
+                        </nex-form-group>
+                        <nex-combobox [label]="'Tempo de Validação de QR CODE dinâmico'" [options]="qrcodeValidacao_Options"></nex-combobox>
+                    </nex-box>
+                    <nex-form-group>
+                        <nex-select-group [text]="'Funções'" [options]="funcoes_Option"></nex-select-group>
+                        </nex-form-group>
+            </div>
+       </div>
+       <div class="card-footer">    
+        <nex-alert-card [alertService]="alertService"></nex-alert-card>     
+        <div class="buttons">
+            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()">Salvar</button>
+            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"   (click)="onClose_Click()">Cancelar</button>
+            <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"(click)="onClose_Click()">Fechar</button>
+        </div>
+    </div>
+    <div id="card-lock"></div>
+   </div>
+</div>
+

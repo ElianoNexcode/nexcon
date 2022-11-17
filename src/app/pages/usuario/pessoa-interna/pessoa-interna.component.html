@@ -1,0 +1,320 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<nex-pessoa-interna-modal [filter]="filterPessoaInterna" [pessoaModal]="pessoaModalService" (eventSelect)="pessoaModalSelect($event)"></nex-pessoa-interna-modal>
+<nex-veiculo-interno-modal [title]="'Pesquisa de Veículos Interno'" [filter]="filterVeiculoInterno" [veiculoModal]="pessoaVeiculoModalService" (eventSelect)="pessoaVeiculoModalSelect($event)"></nex-veiculo-interno-modal>
+<nex-usuario-nivel-acesso-modal [title]="'Pesquisa Nível de Acesso'" [nivelAcessoModal]="usuarioNivelAcessoModalService" (eventSelect)="usuarioNivelAcessoModalSelect($event)"></nex-usuario-nivel-acesso-modal>
+<nex-capture [captureModal]="captureModalService" [type]="'Pessoa'" [clearButton]="true" (onCapture)="onImage_Captured($event)"></nex-capture>
+<div class="modulo player" id="player" [class.voted]="actionbuttomService.flipped">
+    <div id="grid" class="grid front">
+        <nex-listview [params]="listView_PessoaInterna" [showGrid]="filter != undefined"  (eventCheck)="onListView_Change($event)" (eventFilter)="onListView_Filter($event)"></nex-listview>
+    </div>
+    <div id="form" class="formFull back">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                <div class="card-header-left">Cadastro de Pessoa Interna</div>
+                <nex-card-tabs [options]="cardTabs_Options" (eventClick)="onCardTabs_Click($event)"></nex-card-tabs>
+            </div>
+            <div [nbSpinner]="showSpinner"
+                 nbSpinnerMessage="Aguarde..."
+                 nbSpinnerStatus="basic"
+                 nbSpinnerSize="giant"
+                 class="card-body displayFlex"
+                 id="pessoaInternaComponent_Panel"
+                 *ngIf="cardTabs_Options?.selectCard.id == 1">
+                <div class="panel">
+                    <nex-form-group [name]="'pessoaInternaDados'">
+                        <div class="row">
+                            <div class="col-1 col-avatar-1">
+                                <nex-avatar [image]="pessoaImagem" [size]="'large'" [capture]="true" [marginTop]="0" (imageCapture)="onImageCapture_Click($event)"></nex-avatar>
+                            </div>   
+                            <div class="col-11 col-avatar-11">
+                                <div class="row">
+                                    <div class="col">
+                                        <nex-input-label [text]="'Nome'" [marginTop]="0" [input]="pessoaNome_Text"></nex-input-label>
+                                    </div>
+                                    <div class="col">
+                                        <nex-combobox [label]="'Grupo'" [marginTop]="0" [options]="pessoaGrupo_Option"></nex-combobox>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col">
+                                                <nex-input-label [text]="'Telefone Fixo'" [input]="pessoaTelefoneFixo_Text"></nex-input-label>
+                                            </div>
+                                            <div class="col">
+                                                <nex-input-label [text]="'Telefone Móvel'" [input]="pessoaTelefoneMovel_Text"></nex-input-label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <nex-input-label [text]="'Email'" [input]="pessoaEmail_Text"></nex-input-label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-full">
+                                        <nex-input-label [text]="'Observação'" [input]="pessoaObservacao_Text"></nex-input-label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nex-form-group>
+                </div>
+                <div class="panel fullHeight">
+                    <div class="row fullHeight">
+                        <div class="col col-6 displayFlex">
+                            <nex-tabs-card [fullWidth]="true" [marginTop]="0" [tabsOptions]="tabsConfiguracao_Option" [name]="'tabsConfiguracaoPessoa'" [largeHeight]="true">
+                                <nex-tab [tabComponent]="tabsConfiguracao_Option.tabs[0]">
+                                    <nex-form-group [name]="'pessoaInternaIdentificacao'">
+                                        <div class="row">
+                                            <div class="col">
+                                                <nex-input-label [labelMinWidth]="90" [text]="'ID'" [input]="identificacaoId_Text"></nex-input-label>
+                                            </div>
+                                            <div class="col">
+                                                <nex-combobox [options]="identificacaoDocTipo_Option" [inputLabel]="identificacaoDocNumero_Text" [type]="'doc'" (eventChange)="onTipoDoc_Change()"></nex-combobox>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <nex-input-label [labelMinWidth]="90" [text]="'Cognome'" [input]="identificacaoCognome_Text"></nex-input-label>
+                                            </div>
+                                            <div class="col">
+                                                <nex-input-label [text]="'Nascimento'" [input]="identificacaoNascimento_Text"></nex-input-label>
+                                            </div>
+                                        </div>
+                                        <div class="row habilitacao-categoria-validade">
+                                            <div class="col col-5">
+                                                <nex-input-label [text]="'Habilitação N°'" [input]="identificacaoHabilitacao_Text"></nex-input-label>
+                                            </div>
+                                            <div class="col col-3">
+                                                <nex-input-label [text]="'Categoria'" [labelMinWidth]="65" [input]="identificacaoCategoria_Text"></nex-input-label>
+                                            </div>
+                                            <div class="col col-4">
+                                                <nex-input-label [text]="'Validade'" [labelMinWidth]="60" [input]="identificacaoValidade_Text"></nex-input-label>
+                                            </div>
+                                        </div>
+                                        <nex-combobox [labelMinWidth]="90" [label]="'Cargo'" [dynamic]="true" [options]="identificacaoCargo_Option" [type]="'input'" (eventClick)="onCargoPopulate()"></nex-combobox>
+                                        <nex-input-label (onFindClick)="onSupervisorFind_Click()" [text]="'Supervisor'" [labelMinWidth]="90" [findButton]="true" [input]="identificacaoSupervisor_Text"></nex-input-label>
+                                    </nex-form-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsConfiguracao_Option.tabs[1]">
+                                    <nex-form-group [name]="'pessoaInternaReparticao'">
+                                        <nex-combobox [labelMinWidth]="125" [label]="'Site'" [dynamic]="true" [options]="reparticaoSite_Option" (eventChange)="onSetorPopulate($event)"></nex-combobox>
+                                        <nex-combobox [labelMinWidth]="125" [label]="'Setor'" [dynamic]="true" [options]="reparticaoSetor_Option" (eventChange)="onAreaPopulate($event)"></nex-combobox>
+                                        <nex-combobox [labelMinWidth]="125" [label]="'Área'" [dynamic]="true" [options]="reparticaoArea_Option"></nex-combobox>
+                                        <nex-combobox [labelMinWidth]="125" [label]="'Localização'" [dynamic]="true" [options]="reparticaoLocalizacao_Option" (eventClick)="onLocalizacaoPopulate()"></nex-combobox>
+                                        <nex-combobox [labelMinWidth]="125" [label]="'Entidade Externa'" [dynamic]="true" [options]="reparticaoEntidadeExterna_Option" (eventClick)="onEmpresaPopulate()"></nex-combobox>
+                                    </nex-form-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsConfiguracao_Option.tabs[2]">
+                                    <nex-form-group [name]="'pessoaInternaComplemento'">
+                                        <nex-input-label [text]="complementoLabel1" [input]="complemento1_Text"></nex-input-label>
+                                        <nex-input-label [text]="complementoLabel2" [input]="complemento2_Text"></nex-input-label>
+                                        <nex-input-label [text]="complementoLabel3" [input]="complemento3_Text"></nex-input-label>
+                                        <nex-input-label [text]="complementoLabel4" [input]="complemento4_Text"></nex-input-label>        
+                                        <nex-combobox [labelMinWidth]="123" [label]="'Centro de Custo'" [dynamic]="true" [options]="complementoCentroCusto_Option" [type]="'input'" (eventClick)="onCentroCustoPopulate()"></nex-combobox>
+                                    </nex-form-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsConfiguracao_Option.tabs[3]">
+                                    <nex-form-group [name]="'pessoaInternaEndereco'">
+                                        <nex-input-label [text]="'Logradouro'" [input]="enderecoLogradouro_Text"></nex-input-label>
+                                        <div class="row">
+                                            <div class="col col-4">
+                                                <nex-input-label [text]="'Número'" [input]="enderecoNumero_Text"></nex-input-label>
+                                            </div>
+                                            <div class="col col-8">
+                                                <nex-input-label [text]="'Complemento'" [input]="enderecoComplemento_Text"></nex-input-label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col col-8">
+                                                <nex-input-label [text]="'Bairro'" [input]="enderecoBairro_Text"></nex-input-label>
+                                            </div>
+                                            <div class="col col-4">
+                                                <nex-input-label [text]="'CEP'" [labelMinWidth]="40" [input]="enderecoCEP_Text"></nex-input-label>
+                                            </div>
+                                        </div>
+                                        <nex-input-label [text]="'Cidade'" [input]="enderecoCidade_Text"></nex-input-label>
+                                        <div class="row">
+                                            <div class="col col-8">
+                                                <nex-input-label [text]="'Estado'" [input]="enderecoEstado_Text"></nex-input-label>
+                                            </div>
+                                            <div class="col col-4">
+                                                <nex-input-label [text]="'País'" [labelMinWidth]="40" [input]="enderecoPais_Text"></nex-input-label>
+                                            </div>
+                                        </div>
+                                    </nex-form-group>
+                                </nex-tab>
+                            </nex-tabs-card>
+                        </div>
+                        <div class="col col-6 display-flex">
+                            <nex-tabs-card [tabsOptions]="tabsValidade_Option" [marginTop]="0" [name]="'tabsOptions'" [largeHeight]="true">
+                                <nex-tab [tabComponent]="tabsValidade_Option.tabs[0]">
+                                    <nex-form-group [name]="'pessoaInternaValidade'">
+                                        <nex-combobox [label]="'Status'" [options]="validadeEstado_Options"></nex-combobox>
+                                        <nex-input-multi-label [text]="'Contratação'" [inputLeft]="contratacaoInicio_Text" [inputRight]="contratacaoFim_Text"></nex-input-multi-label>
+                                        <nex-input-multi-label [text]="'Integração'" [inputLeft]="integracaoInicio_Text" [inputRight]="integracaoFim_Text"></nex-input-multi-label>
+                                        <nex-input-multi-label [text]="'Segurança'" [inputLeft]="segurancaInicio_Text" [inputRight]="segurancaFim_Text"></nex-input-multi-label>
+                                        <nex-input-multi-label [text]="'Exame Médico'" [inputLeft]="exameInicio_Text" [inputRight]="exameFim_Text"></nex-input-multi-label>
+                                    </nex-form-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsValidade_Option.tabs[1]">
+                                    <nex-form-group [name]="'pessoaInternaLicenca'">
+                                        <nex-input-multi-label [text]="'Férias'" [inputLeft]="feriasInicio_Text" [inputRight]="feriasFim_Text" ></nex-input-multi-label>
+                                        <nex-input-multi-label [text]="'Afastamento'" [inputLeft]="afastamentoInicio_Text" [inputRight]="afastamentoFim_Text" ></nex-input-multi-label>
+                                    </nex-form-group>
+                                </nex-tab>                              
+                                <nex-tab [tabScroll]="true" [tabComponent]="tabsValidade_Option.tabs[2]">
+                                   <nex-select-group [editable]="editable" [border]="'none'" [options]="visita_Options"></nex-select-group>
+                                </nex-tab>
+                            </nex-tabs-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" [ngStyle]="{'display': cardTabs_Options?.selectCard.id == 2? 'block': 'none'}">
+                <div class="panel fullHeight">
+                    <div class="row fullHeight">
+                        <div class="col col-6">
+                            <nex-box class="fullHeight"
+                                    [title]="'Veículo Vinculado'"
+                                    [marginTop]="0"
+                                    [boxPanel]="boxButton"
+                                    [noPadding]="true" 
+                                    [showFooter]="true" 
+                                    [fullHeight]="true"
+                                    [background]="'#192038'"
+                                    (eventButtonClick)="onButton_Click($event)" >
+                                <nex-listview [params]='listView_PessoaVeiculo'                                              
+                                              [classHeader]="'minPadding'" 
+                                              [class]="'displayInBox'" 
+                                              [editable]="editable"
+                                              [showFilter]="false" 
+                                              (eventCheck)="onlistViewPessoaVeiculo_Change($event)"></nex-listview>
+                            </nex-box>
+                        </div>
+                        <div class="col col-6">
+                            <nex-box class="fullHeight"
+                                    [title]="'Vaga de Estacionamento Vinculada'"
+                                    [marginTop]="0"
+                                    [noPadding]="true" 
+                                    [fullHeight]="true"
+                                    [background]="'#192038'">
+                                <nex-listview [params]='listView_VagaGaragem'
+                                    [showFilter]="false" 
+                                    [classHeader]="'minPadding'" 
+                                    [class]="'displayInBox'"></nex-listview>
+                            </nex-box>
+                        </div>    
+                    </div>
+                </div>
+            </div>           
+            <div class="card-body" [ngStyle]="{'display': cardTabs_Options?.selectCard.id == 3? 'block': 'none'}">
+                <div class="panel fullHeight">
+                    <div class="displayFlex fullHeight">
+                        <nex-box [marginTop]="0" [padding]="true" class="autoHeight">
+                            <div class="row">
+                                <div class="col row">
+                                    <div class="col">
+                                        <nex-input-label [text]="'Cartão Oficial'" [input]="cartaoOficial_Text" [marginTop]="0"></nex-input-label>
+                                    </div>
+                                    <div class="col">
+                                        <nex-input-label [text]="'Cartão Provisório'" [input]="cartaoProvisorio_Text" [marginTop]="0"></nex-input-label>
+                                    </div>    
+                                </div>
+                                <div class="col row">
+                                    <div class="col">
+                                        <nex-input-label [text]="'Senha'" [input]="senha_Text" [findIcon]="'refresh'" [marginTop]="0"></nex-input-label>
+                                    </div>
+                                    <div class="col">
+                                        <nex-input-label [text]="'Crédito de Acesso'" [input]="creditoAcesso_Text" [marginTop]="0"></nex-input-label>
+                                    </div>    
+                                </div>
+                            </div> 
+                        </nex-box>
+                        <nex-tabs-card [tabsOptions]="tabsNivelAcesso_Option" [name]="'tabAcessoVeiculo'" [largeHeight]="true">
+                            <nex-tab [tabComponent]="tabsNivelAcesso_Option.tabs[0]" [noPadding]="true" [tabScroll]="false" [maxWidth]="true" >
+                                <nex-box class="fullHeight"
+                                         [fullHeight]="true" 
+                                         [showFooter]="true" 
+                                         [boxPanel]="boxButton" 
+                                         [noBorder]="true" 
+                                         [marginTop]="0"
+                                         [background]="'#192038'"
+                                         (eventButtonClick)="onButton_Click($event)">
+                                    <nex-listview [params]='listView_NivelAcessoPermanente' 
+                                                  [showFilter]="false" 
+                                                  [classHeader]="'minPadding'" 
+                                                  [class]="'displayInBox'" 
+                                                  [editable]="editable"
+                                                  (eventCheck)="onListView_NivelAcessoPermanente_Change($event)"></nex-listview>   
+                                </nex-box>
+                            </nex-tab>
+                            <nex-tab [tabComponent]="tabsNivelAcesso_Option.tabs[1]" [noPadding]="true" [tabScroll]="false" [maxWidth]="true" >
+                                <nex-box class="fullHeight"
+                                         [fullHeight]="true" 
+                                         [showFooter]="true" 
+                                         [boxPanel]="boxButton" 
+                                         [noBorder]="true" 
+                                         [marginTop]="0"
+                                         [background]="'#192038'"
+                                         (eventButtonClick)="onButton_Click($event)">
+                                    <nex-listview [params]='listView_NivelAcessoRotativo' 
+                                                  [showFilter]="false" 
+                                                  [classHeader]="'minPadding'" 
+                                                  [class]="'displayInBox'" 
+                                                  [editable]="editable"
+                                                  (eventCheck)="onListView_NivelAcessoRotativo_Change($event)"></nex-listview>   
+                                </nex-box>
+                            </nex-tab>
+                            <nex-tab [tabScroll]="true" [tabComponent]="tabsNivelAcesso_Option.tabs[2]" [maxWidth]="true">
+                                <nex-select-group [editable]="editable" [border]="'none'" [options]="controle_Options" ></nex-select-group>
+                            </nex-tab>
+                        </nex-tabs-card>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" [ngStyle]="{'display': cardTabs_Options?.selectCard.id == 4? 'block': 'none'}">
+                <div class="panel" style="height: 100%;">
+                    <nex-box class="fullHeight"
+                             [fullHeight]="true"
+                             [showFooter]="true"
+                             [boxPanel]="boxButton"
+                             [marginTop]="0"
+                             [background]="'#192038'"
+                             (eventButtonClick)="onButton_Click($event)">
+                        <nex-listview [params]='listView_PessoaResponsavel'
+                                      [classHeader]="'minPadding'"
+                                      [class]="'displayInBox'"
+                                      [editable]="editable"
+                                      (eventCheck)="onlistViewPessoaResponsavel_Change($event)"></nex-listview>
+                    </nex-box>
+                </div>
+            </div>
+            <div class="card-body" *ngIf="cardTabs_Options?.selectCard.id == 5">
+                <div class="panel fullHeight">
+                    <div class="row abordagemRow">
+                        <nex-textarea-label [label]="'Informativa'" [name]="'txtAbordagemInformativa'" [textarea]="abordagemInformativa_Text" [editable]="editable" [fullHeight]="true" [marginTop]="0" [color]="'#30b833'" [fontWeight]="'500'"></nex-textarea-label>
+                    </div>
+                    <div class="row abordagemRow">
+                        <nex-textarea-label [label]="'Advertida'" [name]="'txtAbordagemAdvertida'" [textarea]="abordagemAdvertida_Text" [editable]="editable" [fullHeight]="true" [color]="'#ded77c'" [fontWeight]="'500'"></nex-textarea-label>
+                    </div>
+                    <div class="row abordagemRow">
+                        <nex-textarea-label [label]="'Restritiva'" [name]="'txtAbordagemRestritiva'" [textarea]="abordagemRestritiva_Text" [editable]="editable" [fullHeight]="true" [color]="'#e04350'" [fontWeight]="'500'"></nex-textarea-label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div style="padding: 0 !important; text-align: right;">
+                    <div style="display: flex;">
+                        <div class="optionsButtons">
+                            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onSave_Click()">Salvar</button>
+                            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()">Cancelar</button>
+                            <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

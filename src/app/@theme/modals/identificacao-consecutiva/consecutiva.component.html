@@ -1,0 +1,29 @@
+<div class="modalForm noselect" id="modalForm" [class.voted]="identificacaoConsecutivaModal.showModal">
+    <div class="card-form" class="card">
+        <div class="card-header" style="border-radius: 0 !important;">
+            {{ identificacaoConsecutivaModal.title }}
+        </div>
+        <div class="card-body">
+            <div class="panel">
+                <nex-box [title]="'Informação'" [marginTop]="0" [padding]="true" [titleAlign]="'Left'">
+                    {{ identificacaoConsecutivaModal.message }}
+                </nex-box>
+                <nex-box [title]="'Supervisor'" [titleAlign]="'Left'">
+                    <div class="row">
+                        <div class="col">
+                            <nex-input-label [text]="'Login'" [input]="txtSupervisor_Text" (eventChange)="onText_Change($event)"></nex-input-label>
+                        </div>
+                        <div class="col">
+                            <nex-input-label [text]="'Senha'" [input]="txtSupervisorPW_Text" (eventChange)="onText_Change($event)"></nex-input-label>
+                        </div>
+                    </div>
+                </nex-box>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="buttons">
+                <button type="button" class="btn btn-dark bt-card orangeBorder" (click)="onButton_Click('OK')">OK</button>
+            </div>
+        </div>
+    </div>
+</div>

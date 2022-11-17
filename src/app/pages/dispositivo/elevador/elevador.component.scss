@@ -1,0 +1,72 @@
+@import '../../../@theme/styles/pages.scss';
+
+.parada {
+    margin-top: 9px;
+    border: 1px solid #434561;
+    border-radius: 4px;
+}
+
+.paradaHeader {
+    flex-wrap: nowrap;
+}
+
+.paradaBody {
+    overflow-y: overlay;
+    pointer-events: all;
+    max-height: calc(100vh - 400px);
+}
+
+.border_bottom {
+    height: 27px;
+    border-bottom: 1px solid #434561;
+}
+
+.border_Right {
+    border-right: 1px solid #434561;
+}
+
+.width_1 {
+    width: 17%;
+}
+
+.width_2 {
+    width: 58%;
+}
+
+.width_3 {
+    width: calc(25% - 11px);
+}
+
+.header_1 {
+    height: 27px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 0.7rem;
+}
+
+.header_Andar {
+    padding-top: 5px;
+    padding-left: 7px;
+    font-size: 0.7rem;
+}
+
+.background_1 {
+    background-color: #202840;
+}
+
+.background_2 {
+    background-color: #222b45;
+}
+
+.botao_Andar_1 {
+    text-align: center;
+}
+
+.border {
+    border: 0 !important;
+    border-bottom: 1px solid #434561 !important;
+    padding: 6px 6px 6px 9px !important;
+
+    width: auto !important;
+    color: #8C909A;
+}

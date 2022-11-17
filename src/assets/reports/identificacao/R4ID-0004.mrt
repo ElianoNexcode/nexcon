@@ -1,0 +1,494 @@
+{
+  "ReportGuid": "5692dc4898cd250e697a8216f315bb1a",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "R4ID-0002-R4ID-0004-R4ID-0006-R4ID-0008 Grafico Barra Diario.mrt",
+  "ReportCreated": "/Date(1618180532000-0300)/",
+  "ReportChanged": "/Date(1622055250000-0300)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "Resources": {
+      "0": {
+        "Name": "R4ID-0001-R4ID-0008Grafico",
+        "Alias": "R4ID-0001-R4ID-0008Grafico",
+        "Type": "Json",
+        "Image": "iZ9WkusbkzxuObv2IZ/UPk4hMtJNrE2izmp9OpSeRBcV9lHYKfzNb40cPchUlJjLBqRuhmgtE1LiS/xnbxgRuBCXIDAiBAeSUV6HqsOSfuT9tzeA5P+nE0/Hg7dhUrgQp8m3C8yxOAjJzh6P2ba5vCiSez97m3BWQrdKgGbvs8wRrty17xO+QVs02JIBs4uM6wBcq/lE+ZzTYpPmAgr9NrNoef4pCZRjWjSuBOkwi6lmrERICfKQKFSTUYYKvNPhK5YkAc25nMBVeXI5qgq0sZuHAIedtzFPYe90LlNsrfFPIYmoSMHiwkQ6KWSmEZg47p9Koc11OSpkcseqFqnuktxs6pxu4fCDTZZ1ZhxdabgqdrOTH2bW3G4tyXt2hT8rq7EBDDEYvGciXtFZEJlAhdHywd0rkmhdjGRQm41IqWem7ThaVXUtjqZI3hYghAym/0DaOeaTbAcgzF077NrMDH/+D8kz5LxQPTs7wUgr1n2z24I1sKAiyV+djOT3rIwg2cZVa3ZnZ4jsVBA3Sz12Dg=="
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_gestaoRelatorioGrafico_nodes",
+        "Alias": "data_gestaoRelatorioGrafico_nodes",
+        "Columns": {
+          "0": {
+            "Name": "campo",
+            "Index": -1,
+            "NameInSource": "campo",
+            "Alias": "campo",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "diaHora",
+            "Index": -1,
+            "NameInSource": "diaHora",
+            "Alias": "diaHora",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "valor",
+            "Index": -1,
+            "NameInSource": "valor",
+            "Alias": "valor",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "JSON.data_gestaoRelatorioGrafico_nodes"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "header",
+        "Alias": "header",
+        "Columns": {
+          "0": {
+            "Name": "contador",
+            "Index": -1,
+            "NameInSource": "contador",
+            "Alias": "contador",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "logoAplicacao",
+            "Index": -1,
+            "NameInSource": "logoAplicacao",
+            "Alias": "logoAplicacao",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "logoOrganizacao",
+            "Index": -1,
+            "NameInSource": "logoOrganizacao",
+            "Alias": "logoOrganizacao",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "organizacao",
+            "Index": -1,
+            "NameInSource": "organizacao",
+            "Alias": "organizacao",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "periodo",
+            "Index": -1,
+            "NameInSource": "periodo",
+            "Alias": "periodo",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "subtitulo",
+            "Index": -1,
+            "NameInSource": "subtitulo",
+            "Alias": "subtitulo",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "titulo",
+            "Index": -1,
+            "NameInSource": "titulo",
+            "Alias": "titulo",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.header"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "JSON",
+        "Alias": "JSON",
+        "PathData": "resource://R4ID-0001-R4ID-0008Grafico"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Relatório_de_Identificacao_R1ID_0001",
+      "Guid": "a040926935fa3f2242ac54a98973e977",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiPageHeaderBand",
+          "Name": "PageHeaderBand1",
+          "PrintOn": "OnlyFirstPage",
+          "ClientRectangle": "0,0.4,27.7,2.64",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "5be8cfc4f60cf48905ad8c221ce554a0",
+              "ClientRectangle": "3.2,0.38,21.4,0.81",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.titulo}"
+              },
+              "HorAlignment": "Center",
+              "Font": ";18;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "b5dbbcb4c9542479b0f4e50c439d06ec",
+              "CanGrow": true,
+              "ClientRectangle": "0.24,1.47,27.28,1.06",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.subtitulo}"
+              },
+              "HorAlignment": "Center",
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiImage",
+              "Name": "Image1",
+              "ClientRectangle": "0,0,3,1.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Stretch": true,
+              "DataColumn": "header.logoAplicacao",
+              "ImageBytes": ""
+            },
+            "3": {
+              "Ident": "StiImage",
+              "Name": "Image2",
+              "Guid": "c434b9ebd0ac2c88ea9ec60c0af90990",
+              "ClientRectangle": "24.7,0,3,1.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Stretch": true,
+              "DataColumn": "header.logoOrganizacao",
+              "ImageBytes": ""
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiPageFooterBand",
+          "Name": "PageFooterBand1",
+          "ClientRectangle": "0,18.44,27.7,0.56",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "Top;;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "43f8ce914896b1fd063601178dac35cb",
+              "ClientRectangle": "0.02,0.08,11.17,0.47",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.organizacao}"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "0f378e832997bf0e8bd9ddb18fc64140",
+              "ClientRectangle": "18.19,0.09,8.24,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Total de Registros:"
+              },
+              "HorAlignment": "Right",
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "d6eff8ed9188cba46f01ecb3e46876aa",
+              "ClientRectangle": "26.48,0.09,1.16,0.38",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sum(DataBand1,data_gestaoRelatorioGrafico_nodes.valor)}"
+              },
+              "HorAlignment": "Right",
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Totals"
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiChart",
+          "Name": "Chart1",
+          "ClientRectangle": "0.21,5.45,27.2,12.47",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:255,255,255",
+          "Series": {
+            "0": {
+              "Ident": "StiClusteredColumnSeries",
+              "ShowShadow": false,
+              "SeriesLabels": {
+                "Ident": "StiOutsideAxisLabels",
+                "MarkerSize": {
+                  "Width": 8,
+                  "Height": 6
+                },
+                "ValueTypeSeparator": "-",
+                "LegendValueType": "ValueArgument",
+                "LabelColor": "90,90,90",
+                "BorderColor": "140,140,140",
+                "Brush": "solid:255,255,255"
+              },
+              "ValueDataColumn": "data_gestaoRelatorioGrafico_nodes.valor",
+              "ArgumentDataColumn": "data_gestaoRelatorioGrafico_nodes.diaHora",
+              "AutoSeriesKeyDataColumn": "data_gestaoRelatorioGrafico_nodes.campo",
+              "Title": {
+                "Value": "Series 1"
+              },
+              "BorderColor": "255,255,255",
+              "Brush": "solid:91,155,213",
+              "BrushNegative": "solid:Firebrick"
+            }
+          },
+          "Area": {
+            "Ident": "StiClusteredColumnArea",
+            "BorderColor": "171,172,173",
+            "Brush": "solid:255,255,255",
+            "InterlacingHor": {
+              "InterlacedBrush": "solid:10,155,155,155",
+              "Area": true
+            },
+            "InterlacingVert": {
+              "InterlacedBrush": "solid:10,155,155,155",
+              "Area": true
+            },
+            "GridLinesHor": {
+              "Color": "100,105,105,105",
+              "MinorColor": "100,105,105,105",
+              "Area": true
+            },
+            "GridLinesHorRight": {
+              "Visible": false,
+              "Area": true
+            },
+            "GridLinesVert": {
+              "Color": "100,105,105,105",
+              "MinorColor": "100,105,105,105",
+              "Visible": false,
+              "Area": true
+            },
+            "YAxis": {
+              "Ident": "StiYLeftAxis",
+              "LogarithmicScale": true,
+              "Labels": {
+                "Placement": "AutoRotation",
+                "Color": "140,140,140"
+              },
+              "LineColor": "140,140,140",
+              "Title": {
+                "AllowApplyStyle": false,
+                "Font": ";8;;",
+                "Text": "Quantidade",
+                "Color": "140,140,140",
+                "Direction": "BottomToTop"
+              }
+            },
+            "YRightAxis": {
+              "Ident": "StiYRightAxis",
+              "Labels": {
+                "Color": "140,140,140",
+                "TextAlignment": "Left"
+              },
+              "LineColor": "140,140,140",
+              "Title": {
+                "Color": "140,140,140",
+                "Direction": "TopToBottom"
+              }
+            },
+            "XAxis": {
+              "Ident": "StiXBottomAxis",
+              "LogarithmicScale": true,
+              "Labels": {
+                "Placement": "AutoRotation",
+                "Color": "140,140,140"
+              },
+              "LineColor": "140,140,140",
+              "Title": {
+                "AllowApplyStyle": false,
+                "Font": ";8;;",
+                "Text": "Horas do Dia",
+                "Color": "140,140,140"
+              },
+              "ShowEdgeValues": true
+            },
+            "XTopAxis": {
+              "Ident": "StiXTopAxis",
+              "Labels": {
+                "Color": "140,140,140"
+              },
+              "LineColor": "140,140,140",
+              "Title": {
+                "Color": "140,140,140"
+              }
+            }
+          },
+          "Table": {
+            "GridLineColor": "105,105,105",
+            "Header": {
+              "Brush": "solid:White"
+            },
+            "DataCells": {
+              "TextColor": "140,140,140"
+            }
+          },
+          "SeriesLabels": {
+            "Ident": "StiCenterAxisLabels",
+            "MarkerSize": {
+              "Width": 8,
+              "Height": 6
+            },
+            "ValueTypeSeparator": "-",
+            "LabelColor": "90,90,90",
+            "BorderColor": "140,140,140",
+            "Brush": "solid:255,255,255"
+          },
+          "Legend": {
+            "ShowShadow": false,
+            "BorderColor": "105,105,105",
+            "Brush": "solid:255,255,255",
+            "TitleColor": "105,105,105",
+            "LabelsColor": "140,140,140",
+            "MarkerSize": {
+              "Width": 10,
+              "Height": 10
+            },
+            "Size": "0,0"
+          },
+          "Title": {
+            "Brush": "solid:140,140,140"
+          },
+          "Style": {
+            "Ident": "StiStyle23"
+          }
+        },
+        "3": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand1",
+          "ClientRectangle": "0,3.84,27.7,0.58",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "Top;;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "5fb8f1a0a8d1dd7db1e0908bd51ea63b",
+              "ClientRectangle": "15.6,0.11,12.08,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.periodo}"
+              },
+              "HorAlignment": "Right",
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "4": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,5.22,27.7,0.09",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "DataSourceName": "data_gestaoRelatorioGrafico_nodes"
+        }
+      },
+      "PaperSize": "A4",
+      "Orientation": "Landscape",
+      "PageWidth": 29.7,
+      "PageHeight": 21,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

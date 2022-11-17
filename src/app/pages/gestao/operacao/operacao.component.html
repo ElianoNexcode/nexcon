@@ -1,0 +1,62 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo" id="viewer">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_Operacao' [showGrid]="(operacaoId != null)" [showFilter]="false" (eventCheck)="onListView_Change($event)"></nex-listview>
+    </div>    
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Emissão de Relatório
+            </div>
+            <div [nbSpinner]="showSpinner" 
+                 nbSpinnerMessage="Aguarde..." 
+                 nbSpinnerStatus="basic" 
+                 nbSpinnerSize="giant"
+                 id="gestaoOperacao_Panel" 
+                 class="card-body">
+                <div class="panel fullWidth">
+                    <nex-tabs-card [fullWidth]="true" [tabsOptions]="tabsGestaoOperacao_Option" [name]="'tabsGestaoIdentificacao'">
+                        <nex-tab [noPadding]="true" [tabComponent]="tabsGestaoOperacao_Option.tabs[0]">
+                            <div >
+                                <nex-form-group [name]="'filtroGestaoOperacao'" [minWidthFix]="106">
+                                    <div id="tabFiltroOperacao" class="tabFiltroOperacao">
+                                        <nex-combobox [label]="'Operador'" [marginTop]="0" [options]="operador_Option" [labelMinWidth]="70" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Sistema'" [marginTop]="0" [options]="sistema_Option" [labelMinWidth]="70" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Evento'" [marginTop]="0" [options]="evento_Option" [labelMinWidth]="70" (eventChange)="onEventoOption_Change()" [class]="'topJoinGrid'"></nex-combobox>
+                                        <nex-combobox [label]="'Operação'" [marginTop]="0" [options]="operacao_Option" [labelMinWidth]="70" [class]="'topJoinGrid_Bottom'"></nex-combobox>
+                                    </div> 
+                                </nex-form-group>
+                                <div>
+                                    <nex-select-group class="noHeight" [labelMinWidth]="50" [marginTop]="0" [horizontal]="true" [class]="'topJoin'" [options]="valorIdentico_Options"></nex-select-group>  
+                                </div>
+                            </div>
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabsGestaoOperacao_Option.tabs[1]">
+                            <nex-form-group [name]="'periodoGestaoOperacao'">
+                                <nex-combobox [label]="'Tempo'" [options]="tempo_Options" (eventChange)="onPeriodo_Change()"></nex-combobox>
+                                <nex-combobox [label]="'Dia'" [options]="dia_Option" (eventChange)="onPeriodo_Change()"></nex-combobox>
+                                <nex-combobox [label]="'Mês'" [options]="mes_Option" (eventChange)="onPeriodo_Change()"></nex-combobox>
+                                <nex-combobox [label]="'Ano'" [options]="ano_Option" (eventChange)="onPeriodo_Change()"></nex-combobox>
+                                <nex-input-label [text]="'Data Inicial'" [input]="dataInicial_Text"></nex-input-label>
+                                <nex-input-label [text]="'Data Final'" [input]="dataFinal_Text"></nex-input-label>
+                                <nex-input-label [text]="'Hora Inicial'" [input]="horaInicial_Text"></nex-input-label>
+                                <nex-input-label [text]="'Hora Final'" [input]="horaFinal_Text"></nex-input-label>          
+                            </nex-form-group>
+                        </nex-tab>
+                    </nex-tabs-card> 
+                    <nex-combobox [toUp]="true" [label]="'Ordenação'"  [options]="ordenacao_Option"></nex-combobox> 
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onPrint_Click()">Imprimir</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>
+<button *ngIf="showReport == true" style="position: fixed;top: 96px;z-index: 9999;left: calc(100% - 300px);" type="button" class="btn btn-dark bt-card redBorder"  (click)="onReportClose_Click()">Fechar</button>

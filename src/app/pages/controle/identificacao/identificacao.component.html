@@ -1,0 +1,275 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<nex-pessoa-interna-modal [filter]="filterPessoaInterna" [pessoaModal]="pessoaModalService" (eventSelect)="pessoaModalSelect($event)"></nex-pessoa-interna-modal>
+<nex-pessoa-externa-modal [filter]="filterPessoaExterna" [pessoaModal]="pessoaExternaModalService" (eventSelect)="pessoaExternaModalSelect($event)"></nex-pessoa-externa-modal>
+<nex-capture [captureModal]="captureModalService" (onCapture)="onPessoaImage_Capture($event)"></nex-capture>
+<nex-erros-modal [errosModal]="errosModalService" (eventClick)="onError_Click($event)"></nex-erros-modal>
+<nex-abordagem-modal [abordagemModal]="abordagemModalService" (eventClick)="onError_Click($event)"></nex-abordagem-modal>
+<nex-consecutiva-modal [identificacaoConsecutivaModal]="identificacaoConsecutivaModalService"></nex-consecutiva-modal>
+<nex-registro-material-modal [title]="'Registro de Material'" [registroMaterialModal]="registroMaterialModalService" (eventSelect)="onRegistroMaterialSelect($event)" ></nex-registro-material-modal>
+<!-- <nex-complemento-pessoa></nex-complemento-pessoa> -->
+<div class="modulo player" id="player" [class.voted]="actionbuttomService.flipped">
+    <div id="grid" class="grid front">
+        <nex-listview [params]="listView_Identificacao" [showGrid]="(periodoId != null)" (eventCheck)="onListView_Change($event)" (eventFilter)="onListView_Filter($event)"></nex-listview>        
+    </div>
+    <div id="form" class="formFull back">
+        <div id="card-form" class="card">
+            <div class="card-header" id="cardHeader">
+                Identificação
+                <nex-card-tabs [options]="cardTabs_Options" (eventClick)="onCardTabs_Click($event)"></nex-card-tabs>
+            </div>
+
+            <div [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant" class="card-body" style="display: grid;" *ngIf="cardTabs_Options?.selectCard.id == 1">
+                <div class="panel" style="display: grid;">
+                    <nex-form-group [name]="'dadosVisita'" style="align-self: center;">
+                        <div class="row">
+                            <div class="col col-5">
+                                <div class="row">
+                                    <div class="col col-6">
+                                        <nex-combobox [label]="'Registro'" [options]="registroVisita_Option" [marginTop]="4" (eventChange)="onRegistroVisita_Change($event)"></nex-combobox>
+                                    </div>
+                                    <div class="col col-6">
+                                        <nex-combobox [label]="'Processo'" [options]="processoVisita_Option" [marginTop]="4" (eventChange)="onRegistroVisita_Change($event)"></nex-combobox>
+                                    </div>
+                                </div>        
+                            </div>
+                            <div class="col col-7">
+                                <div class="row">
+                                    <div class="col col-10" style="min-width: calc(100% - 59px);">
+                                        <div class="row">
+                                            <div class="col col-6">
+                                                <nex-combobox [label]="'Recepção'" [options]="identificacaoRecepcao_Option" [marginTop]="4" (eventChange)="onIdentificacaoRecepcao_Change($event)"></nex-combobox>
+                                            </div>
+                                            <div class="col col-6">
+                                                <nex-combobox [label]="'Estação'" [options]="estacao_Option" [marginTop]="4" ></nex-combobox>
+                                            </div>        
+                                        </div>
+                                    </div>
+                                    <div class="col col-1" style="max-width: 27px;">
+                                        <nex-mini-button [type]="'camera'" [disabled]="cameraButtonDisabled" [smallButton]="true" [marginTop]="4" (eventClick)="onCapture_Click($event)"></nex-mini-button>
+                                    </div>
+                                    <div class="col col-1" style="max-width: 32px;">
+                                        <nex-mini-button [type]="'calendar'" [disabled]="agendaButtonDisabled" [smallButton]="true" [marginTop]="4" ></nex-mini-button>
+                                    </div>
+                                </div>        
+                            </div>
+                        </div>
+                    </nex-form-group>
+                </div>
+                <div class="panel" style="display: grid;">
+                    <div class="row no-gutters" style="align-items: center;">
+                        <div class="col-1" style="min-width: 110px;">
+                            <nex-avatar [size]="'large'" [image]="pessoaImagem" [noPadding]="true" [imgBorder]="true"></nex-avatar>
+                        </div>
+                        <div class="col-11" style="max-width: calc(100% - 110px);">
+                            <div class="row">
+                                <div class="col col-4">
+                                    <nex-combobox [options]="pessoaDocTipo_Option" 
+                                                  [inputLabel]="pessoaDocNumero_Text"
+                                                  [labelMaxWidth]="64" 
+                                                  [type]="'doc'" 
+                                                  [showIcon]="true" 
+                                                  (eventFocusOut)="onPessoaDocNumero_FocusOut()" 
+                                                  (eventKeyEnter)="onPessoaDocNumero_FocusOut()" 
+                                                  (eventChange)="onPessoaDocNumero_Change()" 
+                                                  (eventMouseOut)="onPessoaDocNumero_FocusOut()"></nex-combobox>
+                                </div>
+                                <div class="col col-8">
+                                    <nex-input-label [text]="'Nome'" 
+                                                     [input]="pessoaNome_Text" 
+                                                     [labelMinWidth]="88" 
+                                                     [findButton]="true" 
+                                                     (onFindClick)="onPessoaNome_FindClick()" 
+                                                     (onKeyEnter)="onPessoaNome_KeyEnter()" 
+                                                     (eventFocusOut)="onPessoaNome_FocusOut()" 
+                                                     (eventChange)="onSaved_Condition()"></nex-input-label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-4">
+                                    <nex-combobox [label]="'Grupo'" [options]="pessoaGrupo_Option" [labelMinWidth]="64" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                </div>
+                                <div class="col col-8">
+                                    <nex-input-label [text]="'Complemento'" [input]="pessoaComplemento_Text" [labelMinWidth]="88" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-4">
+                                    <nex-combobox [label]="pessoaEmpresaLabel" [options]="pessoaEmpresa_Option" [labelMinWidth]="64" [type]="'input'" [onlyComplete]="false" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                </div>
+                                <div class="col col-4">
+                                    <nex-input-label [text]="'E-mail'" [input]="pessoaEmail_Text" [labelMinWidth]="88" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                </div>
+                                <div class="col col-4">
+                                    <div class="row">
+                                        <div class="col col-10" style="min-width: calc(100% - 27px);">
+                                            <nex-input-label [text]="'Telefone'" [input]="pessoaTelefone_Text" [labelMinWidth]="62" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                        </div>
+                                        <div class="col col-2" style="max-width: 27px;">
+                                            <nex-mini-button [type]="'insert'" [disabled]="agendaButtonDisabled" [smallButton]="true" [marginTop]="9" (eventClick)="onModal_Click()"></nex-mini-button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel" style="display: grid;">
+                    <div class="row" style="align-items: center;">
+                        <div class="col col-5">
+                            <div class="row">
+                                <div class="col col-6">
+                                    <nex-combobox [label]="'Veiculo'" [options]="pessoaVeiculo_Option" [type]="'input'" [marginTop]="4" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                </div>
+                                <div class="col col-6">
+                                    <nex-combobox [label]="'Placa'" [options]="pessoaVeiculoIdentificacao_Option" [type]="'input'" [marginTop]="4" (eventChange)="onPessoaVeiculoIdentificacao_Change($event)"></nex-combobox>
+                                </div>        
+                            </div>
+                        </div>
+                        <div class="col col-7">
+                            <div class="row">
+                                <div class="col col-11" style="min-width: calc(100% - 27px);">
+                                    <div class="row">
+                                        <div class="col col-6" style="min-width: calc(100% - 226px);">
+                                            <nex-combobox [label]="'Modelo'" [options]="pessoaVeiculoModelo_Option" [labelMinWidth]="88" [marginTop]="4" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                        </div>
+                                        <div class="col col-6" style="max-width: 226px;">
+                                            <nex-combobox [label]="'Cor'" [options]="pessoaVeiculoCor_Option" [labelMinWidth]="63" [marginTop]="4" (eventChange)="onSaved_Condition()"></nex-combobox>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <div class="col col-1" style="max-width: 27px;">
+                                    <nex-mini-button [type]="'insert'" [disabled]="agendaButtonDisabled" [smallButton]="true" [marginTop]="4" (eventClick)="onModal_Click()"></nex-mini-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel" style="display: grid;">
+                    <div class="row no-gutters" style="align-items: center;">
+                        <div class="col-1" style="max-width: 65px;min-width: 65px;">
+                            <nex-avatar [size]="'small'" [image]="visitadoImagem" [marginTop]="4"></nex-avatar>
+                        </div>
+                        <div class="col-11" style="min-width: calc(100% - 65px);">
+                            <nex-form-group [name]="'dadosVisitado'">
+                                <div class="row">
+                                    <div class="col col-8">
+                                        <nex-input-label [text]="'Visitado'" [input]="visitadoNome_Text" [findButton]="true" [placeholder]="'Informe a pessoa visitada...'" [marginTop]="4" (eventFocusOut)="onVisitado_FocusOut()" (onFindClick)="onVisitado_FindClick()" (eventChange)="onVisitado_Change()" (onKeyEnter)="onVisitado_KeyEnter()"></nex-input-label>
+                                    </div>
+                                    <div class="col col-4">
+                                        <nex-input-label [text]="'Grupo'" [input]="visitadoGrupo_Text"  [labelMinWidth]="82" [marginTop]="4"></nex-input-label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-8">
+                                        <div class="row">
+                                            <div class="col col-6">
+                                                <nex-input-label [text]="'Setor'" [input]="visitadoSetor_Text" [marginTop]="4"></nex-input-label>
+                                            </div>
+                                            <div class="col col-6">
+                                                <nex-input-label [text]="'Localização'" [input]="visitadoLocalizacao_Text" [marginTop]="4"></nex-input-label>
+                                            </div>        
+                                        </div>                                        
+                                    </div>
+                                    <div class="col col-4">
+                                        <nex-input-label [text]="'Telefone'" [input]="visitadoTelefone_Text" [labelMinWidth]="82" [marginTop]="4"></nex-input-label>
+                                    </div>
+                                </div>
+                            </nex-form-group>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel" style="display: grid;">
+                    <nex-form-group [name]="'dadosVisita'" style="align-self: center;">
+                        <div class="row">
+                            <div class="col col-4">                                
+                                <nex-combobox [label]="'Motivo'" [labelMinWidth]="77.3" [options]="identificacaoMotivo_Option" [marginTop]="4" (eventChange)="onIdentificacaoMotivo_Change($event)"></nex-combobox>
+                            </div>
+                            <div class="col col-8">
+                                <div class="row">
+                                    <div class="col col-11" style="min-width: calc(100% - 27px);">
+                                        <div class="row">            
+                                            <div class="col col-3">
+                                                <nex-input-label [text]="'ID'" [input]="identificacaoID_Text" [marginTop]="4" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                            </div>
+                                            <div class="col col-5" style="width: calc(50% - 95px);">
+                                                <div class="row">
+                                                    <div class="col col-9" style="padding: 0 !important">
+                                                        <nex-input-label [text]="'Val.Inicial'" [input]="acessoValidadeInicial_Text" [marginTop]="4" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                                    </div>
+                                                    <div class="col col-3" style="padding: 0 !important;">
+                                                        <nex-input-label [input]="acessoValidadeHoraInicial_Text" [marginTop]="4" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                            <div class="col col-4" style="width: calc(50% - 95px);">
+                                                <div class="row">
+                                                    <div class="col col-9" style="padding: 0 !important">
+                                                        <nex-input-label [text]="'Val.Final'" [input]="acessoValidadeFinal_Text" [marginTop]="4" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                                    </div>
+                                                    <div class="col col-3" style="padding: 0 !important;">
+                                                        <nex-input-label [input]="acessoValidadeHoraFinal_Text" [marginTop]="4" (eventChange)="onSaved_Condition()"></nex-input-label>
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-1" style="max-width: 27px;">
+                                        <nex-mini-button [type]="'insert'" [disabled]="agendaButtonDisabled" [smallButton]="true" [marginTop]="4" ></nex-mini-button>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="w-100">
+                                <nex-input-label [text]="'Observação'" [input]="identificacaoObservacao_Text"></nex-input-label>
+                            </div>
+                        </div>
+                    </nex-form-group>
+                </div>
+            </div>
+            <div class="card-body" [ngStyle]="{'display': cardTabs_Options?.selectCard.id == 2? 'block': 'none'}">
+                <div class="panel" style="height: 100%;">
+                    <nex-box class="fullHeight"
+                            [boxPanel]="boxButton"
+                             [noPadding]="true" 
+                             [showFooter]="true" 
+                             [fullHeightMargin]="true"
+                             [background]="'#192038'"
+                             (eventButtonClick)="onButton_Click($event)">
+                        <nex-listview [params]='listView_IdentificacaoMaterial'
+                                      [showFilter]="false" 
+                                      [classHeader]="'minPadding'" 
+                                      [class]="'displayInBoxScroll'"></nex-listview>
+                    </nex-box>
+                </div>
+            </div>
+
+            <div class="card-body" id="cardBody" *ngIf="cardTabs_Options?.selectCard.id == 4">
+                <div class="panel">
+                    <div class="row">
+                        <nex-textarea-label [color]="'#30b833'" [fontWeight]="'500'" [name]="'txtAbordagemInformativa'" [label]="'Informativa'" [textarea]="abordagemInformativa_Text" (eventChange)="onSaved_Condition()"></nex-textarea-label>
+                        <nex-textarea-label [color]="'#ded77c'" [fontWeight]="'500'" [name]="'txtAbordagemAdvertida'" [label]="'Advertida'" [textarea]="abordagemAdvertida_Text"></nex-textarea-label>
+                        <nex-textarea-label [color]="'#e04350'" [fontWeight]="'500'" [name]="'txtAbordagemRestritiva'" [label]="'Restritiva'" [textarea]="abordagemRestritiva_Text"></nex-textarea-label>
+                    </div>
+                    <nex-box [title]="'Status'" [titleAlign]="'left'"  [noPadding]="true">
+                        <nex-radio [options]="estado_Options"  [inputClass]="'minPadding'" (eventChange)="onSaved_Condition()"></nex-radio>
+                    </nex-box>
+                </div>
+            </div>
+
+            <div class="card-footer" id="cardFooter">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <div style="display: flex;">
+                        <div class="optionsButtons">
+                            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onSave_Click()"  [ngClass]="{'disabled': cardTabs_Options?.selectCard.id == 4}">Salvar</button>
+                            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()" [ngClass]="{'disabled': cardTabs_Options?.selectCard.id == 4}">Cancelar</button>
+                            <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()" [ngClass]="{'disabled': cardTabs_Options?.selectCard.id == 4}">Fechar</button>        
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

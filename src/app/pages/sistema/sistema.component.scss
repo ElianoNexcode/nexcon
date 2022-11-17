@@ -1,0 +1,68 @@
+@import '../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+    .card-body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #1a233d !important;
+    }
+
+    .card {
+        margin: 6px 6px 0 0px !important;
+        overflow: hidden;
+    }
+
+    .title-informativo{
+        font-size: 25px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .texto{
+        display: flex;
+        justify-content: center;
+    }
+
+    .texto-informativo{
+        font-size: 14px;
+        text-align: center;
+        line-height: 20px !important;
+    }
+
+    .logo-informativo{
+        display: flex;
+        justify-content: center;
+    }
+
+    .autor{
+        display: flex;
+        justify-content: center;
+    }
+
+    .autor-informativo{
+        font-size: 16px;
+        font-style: italic;
+    }
+    .autor-informativo b{
+        font-style: normal !important;
+    }
+
+    .licenca-rede-globo span{
+        font-size: 15px;
+        text-align: center;
+        display: grid;
+    } 
+    .divisao{
+        line-height: 20px !important;
+        margin-bottom: 5px;
+        font-size: 20px !important;
+    }   
+    span{
+        line-height: 30px;
+    }
+
+}

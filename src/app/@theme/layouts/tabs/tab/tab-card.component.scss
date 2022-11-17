@@ -1,0 +1,36 @@
+@import '../../../themes.scss';
+@import '../../../styles/pages.scss';
+
+@include nb-install-component() {
+    .pane {
+        position: relative;
+        visibility: hidden;
+
+        width: calc(100%);
+
+        padding: 0 9px 9px 9px !important;
+        border-radius: 0 0 3px 3px;
+    }
+
+    .noPadding {
+        padding: 0 !important;
+    }
+
+    .maxWidth {
+        width: calc(100%);
+    }
+
+    .tabScroll {
+        padding: 9px 0px 9px 9px !important;
+    }
+
+    .grid {
+        display: grid;
+    }
+
+    .block {
+        display: block;
+    }
+
+}
+

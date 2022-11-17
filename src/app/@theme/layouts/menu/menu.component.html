@@ -1,0 +1,31 @@
+<div class="menu" id="menu" [ngClass]="{'menuHorizontal': orientacao == 'horizontal'}">
+    <div *ngIf="orientacao == 'vertical'">
+        <div class="btn top-title dropdown fixo" onclick="menuClick()">
+            <img src="./assets/icons/menu.png" style="width: 1.1rem;height: auto;" />
+            <div class="dropdown-menu menuInfo" id="dropdownMenu">
+                <div class="dropdown-item btt-mmenu" *ngFor="let itens of menuService.menu; let i = index" [ngClass]="{'disabled': (itens.enable == false), 'hidden': ((itens.visible != true) || (submenuFilter(itens.submenu).length == 0))}">
+                    <img *ngIf="itens?.icon.file != null" src="./assets/icons/{{itens.icon.file}}" [ngStyle]="{'width': itens.icon.width}" [style.marginLeft.px]="itens.icon.width == '15px'? 13: 11" [style.marginRight.px]="itens.icon.width == '15px'? 13: 11" />                            
+                    {{ itens.menu }}
+                    <div class="dropdown-submenu" [ngStyle]="{'top.px': (i > 9 && height <= heightHD)? ((i + 1) * 50) - (itens.submenu.length * 33): submenuTop(itens.id)}">
+                        <a [id]="subitens.id" class="dropdown-item" [routerLink]="subitens.link" (click)="setTreeview(subitens.treeview, itens.alias, itens.id)" *ngFor="let subitens of submenuFilter(itens.submenu)">
+                            {{ subitens.text }}
+                        </a>
+                    </div>                            
+                </div>
+            </div>
+        </div>
+        <div [id]="itens.id" (mouseenter)="menuItemEnter(itens.id)" (mouseleave)="menuItemLeave(itens.id)" class="btn btt-menu dropdown" *ngFor="let itens of menuService.menu; let i = index" [ngClass]="{'active': i == 0, 'hidden': ((itens.visible != true) || (submenuFilter(itens.submenu).length == 0))}">
+            <img *ngIf="itens?.icon.file != null" src="./assets/icons/{{itens.icon.file}}" [ngStyle]="{'width': itens.icon.width}" style="height: auto;" />
+            <div class="dropdown-menu" id="{{itens.alias}}" [style.marginTop.px]="(i > 9 && height <= heightHD)? ((itens.submenu.length * 33)) * -1: 2">
+                <a class="dropdown-item" [routerLink]="subitens.link" (click)="setTreeview(subitens.treeview, itens.alias, itens.id)" *ngFor="let subitens of submenuFilter(itens.submenu)">
+                    {{subitens.text}}
+                </a>
+            </div>
+        </div>    
+    </div>
+    <div *ngIf="orientacao == 'horizontal'" class="itemHorizontal">
+        <div class="btn btt-menu dropdown" (click)="onMenuItem_Click(i)" *ngFor="let itens of menuService.menu; let i = index" [ngClass]="{'active': i == menuSelect, 'hidden': (itens.visible != true)}">
+            <img [id]="itens.id" src="./assets/icons/{{itens.icon.file}}" [ngStyle]="{'width': itens.icon.width}" style="height: auto;" />
+        </div>  
+    </div>
+</div>

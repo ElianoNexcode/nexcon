@@ -1,0 +1,50 @@
+@import '../../../../@theme/styles/pages.scss';
+
+@include nb-install-component() { 
+    .texto-adm {
+        height: calc(100% - 9px);
+        width: 100%;
+        border: 1px solid #434561;
+        background: #222b45;
+        padding: 14px;
+        margin-top: 9px;
+        font-family: roboto;
+        font-size: 0.7rem !important;
+        line-height: normal;
+        white-space: normal !important;
+        overflow: overlay;
+
+        .title-adm {
+            text-align: center;
+        }
+    
+        .div-interna-adm {
+            width: 100%;
+            min-width: 230px;
+            padding-left: 19px;
+            padding-right: 19px;
+
+            p {
+                font-family: roboto;
+                font-size: 0.7rem !important;
+                line-height: normal;
+                color: #A9ABAE;
+            }
+        }
+        
+        .div-changePass {
+            padding: 14px 20px;
+            min-width: 262px;
+        }
+    }
+
+    .changePass {
+        margin-top: 9px;
+        text-align: end;
+        min-height: 9px;
+    }
+
+    .card-body{
+        height: 50px;
+    }
+}

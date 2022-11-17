@@ -1,0 +1,38 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_Feriado' (eventCheck)="onListView_Change($event)" (eventFilter)="onFilter_Change($event)"></nex-listview>
+    </div>
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Cadastro de Feriado
+            </div>
+            <div class="card-body">
+                <div class="panel">
+                    <nex-form-group [name]="'feriadoDados'">
+                        <nex-input-label [text]="'Nome'" [marginTop]="0" [input]="nome_Text"></nex-input-label>
+                        <div class="row">
+                            <div class="col col-5 dia-mes-feriado">
+                                <nex-combobox [label]="'Dia'" [options]="dia_Option"></nex-combobox>
+                            </div>
+                            <div class="col col-7 dia-mes-feriado">
+                                <nex-combobox [label]="'Mês'" [options]="mes_Option" (eventChange)="onMesOption_Change()"></nex-combobox>
+                            </div>
+                        </div>
+                         <nex-textarea-label [name]="'observacao'" [height]="61" [label]="'Observação'" [textarea]="observacao_Text" [editable]="true"></nex-textarea-label>
+                    </nex-form-group>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>

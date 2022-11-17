@@ -1,0 +1,59 @@
+@import '../../../themes.scss';
+
+@include nb-install-component() {
+
+    .miniButton {
+        width: 18px;
+        height: 18px;
+        margin: 0 0 0 6px;
+        padding: 2px !important;
+
+        color: #a9abae;
+
+        background-color: #1d2643 !important;
+        border: 1px solid #343a40;
+        border-radius: 3px;
+        text-align: center;
+        align-content: flex-end;
+        cursor: pointer;
+
+        font-size: 0.7rem;
+        line-height: normal !important;
+    }
+
+    .smallButton {
+        width: 27px !important;
+        height: 27px !important;
+        margin: 0;
+        border-color: #434561 !important;
+    }
+
+    .mediumButton{
+        width: 17px !important;
+        height: 27px !important;
+        margin:0;
+        border-color: #434561 !important;
+    }
+
+    .svgImg { 
+        margin-top: -9px;
+    }
+
+    .noMargin {
+        margin: 0 !important
+    }
+
+    .disabled {
+        button {
+            background-color: #202940 !important;
+            color: #3d4559 !important;    
+        }
+    }
+
+
+    .noBorder {
+        border: none !important;
+        border-radius: 0px;
+    }
+}
+

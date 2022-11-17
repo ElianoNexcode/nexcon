@@ -1,0 +1,41 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<nex-senha-modal [title]="'Configuração de Senha'" [senhaModal]="senhaModal" (onChangePassword)="onChangePassSave_Click($event)"></nex-senha-modal>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_Administrador' [showFilter]="false" (eventCheck)="onListView_Change($event)"></nex-listview>
+    </div>    
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Configuração do Administrador
+            </div>
+            <div [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant" class="card-body">
+                <div class="panel fullHeight">
+                    <nex-form-group name="loginPanel">
+                        <nex-input-label [text]="'Login'" [input]="administradorLogin_Text" [marginTop]="0"></nex-input-label>
+                        <nex-input-label [text]="'Senha'" [actionButton]="true" [input]="senha_Text" (onFindClick)="onSenha_FindClick()"></nex-input-label>    
+                    </nex-form-group>
+                    <div class="texto-adm">
+                        <div class="div-interna-adm">
+                            <p class="title-adm">Login de Administrador</p>
+                            <p>O Administrador terá acesso a todos os recursos do Sistema, sem nenhuma restrição.</p>
+                            <p style="padding-right: 8px;">Somente o Administrador terá acesso a esta tela do Sistema.</p>
+                            <p>Recomendamos criar um nível de operação chamado Administrador com todos os privilégios de acesso ao sistema caso seja necessário o cadastramento de outros Administradores.</p>
+                           
+                            <p style="padding-right: 8px;">Cuide para que nenhuma pessoa indevida saiba a senha de Administrador do Sistema.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder" (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>

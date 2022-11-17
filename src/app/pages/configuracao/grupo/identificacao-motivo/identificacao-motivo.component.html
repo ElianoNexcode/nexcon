@@ -1,0 +1,50 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_Identificacao' (eventCheck)="onListView_Change($event)"
+            (eventFilter)="onFilter_Change($event)"></nex-listview>
+    </div>
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                <div>
+                    Cadastro de Motivo de Identificação
+                </div>
+                <nex-info-card *ngIf="actionbuttomService.editable != 'no'">
+                    <ul>
+                        <li>O tempo para o primeiro acesso é configurado em minutos. O tempo máximo permitido é de 1440
+                            minutos (24 horas).</li>
+                        <li style="margin-top: 5px">O tempo de permanência também é configurado em minutos, porém, o
+                            tempo máximo permitido é 7200 minutos (120 horas).</li>
+                    </ul>
+                </nex-info-card>
+            </div>
+            <div [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant"
+                class="card-body">
+                <div class="panel">
+                    <nex-input-label [text]="'Motivo'" [input]="motivo_Text" [marginTop]="0"></nex-input-label>
+                    <nex-select-group [text]="'Classificação'" [options]="classificacao_Options"></nex-select-group>
+                    <nex-form-group [name]="'recepcaoDados'">
+                        <nex-input-label [text]="'Tempo do Primeiro Acesso'" [input]="tempoPrimeiroAcesso_Text"
+                            [sufixo]="'minutos'"></nex-input-label>
+                        <nex-input-label [text]="'Tempo de Permanência'" [input]="tempoPermanencia_Text"
+                            [sufixo]="'minutos'"></nex-input-label>
+                    </nex-form-group>
+                    <nex-select-group [text]="'Classificação por Aplicativo'"
+                    [options]="classificacaoAplicativo_Options"></nex-select-group>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button"
+                        class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button"
+                        class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button"
+                        class="btn btn-dark bt-card orangeBorder" (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

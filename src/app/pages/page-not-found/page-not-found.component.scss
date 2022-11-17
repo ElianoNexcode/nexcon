@@ -1,0 +1,21 @@
+@import '../../@theme/styles/pages.scss';
+
+@include nb-install-component {
+    .topButtons {
+        width: calc(100vw - 412px);
+        min-height: 29px !important;
+
+        padding: 0 !important;
+
+        border-bottom: nb-theme(border-bottom) !important;
+        border-left: nb-theme(border-left) !important;
+        background-color: nb-theme(background-top-title-color);
+
+        font-family: roboto;
+        font-size: 0.7rem !important;
+        line-height: 1rem !important;
+        color: #CCCCCC !important;    
+        text-align: left !important;
+    }
+
+}

@@ -1,0 +1,2124 @@
+{
+  "ReportGuid": "333bd8b83a379e98a8d9202191e26e7d",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "R3ID-0001-R3ID-0004 - Diario.mrt",
+  "ReportCreated": "/Date(1618180532000-0300)/",
+  "ReportChanged": "/Date(1622055177000-0300)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "Resources": {
+      "0": {
+        "Name": "R3ID-0001-R3ID-0004-Diario",
+        "Alias": "R3ID-0001-R3ID-0004-Diario",
+        "Type": "Json",
+        "Image": "RosJtKLpywOiBUyXVEr8Sfz0YV6V36gk7lDHDIb+AxvMQk6ZRCmEOyk4O70U+lOY9+r5RbglDgh1vu/iAesnCAR1lcTYn3WassxBu+6MaoB+YlNxwLELfiTuft8phO70Yzg8RGQEUNts773qGisKdrlQ5yyIVuQUEv93GGb+wGlWOblEemTgv75EniAD5hMjDiHcLl2FgM79BHZGYnGUXDdUNKLzGMKoD53icDeSlTspaJ09E94dQa8rkg1uLz8guHq3alhzLbCFg1rXXjhCFf7z4k7HOuQjHNVokqKDCZnUZxA3sstlz7fFZbBAWFg1KkIIoYnujwYev0MEewAiSQfkpkCmgyYVYH+EZfrYXBIfLIgPv0eDHQCha01ims/Dr1EkJV3wPZF1hgx2yV6EhKixA7Ay/6ePa5pQc2duxQGVS0H2eaax+uT9zjWqb1cYhUZE5NWL3hXfZdbhIu1EMNpgzkD6sFfufQ3gV99KbmW6pO/Zgbjek00Lx2pGLD9zgZFGQTM+BqOUaIQaEFtZa8unl5F8MKoSlX9RdAqj6d2cWVzhs2q50QwkAFkV6de7tbl4Rrisq71tAy9jo1aGdSa4m4tVtbxC41JSyAHO5Yg+sAkyW994IOu4KYadcIa5HFPOf8ujJTR0vfJmwlTX3e5pFcpLH0bZq7iqUT6WFkMvaEbsEptxJOaPc0Ez"
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "data_gestaoRelatorioConsolidado_nodes",
+        "Alias": "data_gestaoRelatorioConsolidado_nodes",
+        "Columns": {
+          "0": {
+            "Name": "campo",
+            "Index": -1,
+            "NameInSource": "campo",
+            "Alias": "campo",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "campo1",
+            "Index": -1,
+            "NameInSource": "campo1",
+            "Alias": "campo1",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "campo10",
+            "Index": -1,
+            "NameInSource": "campo10",
+            "Alias": "campo10",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "campo11",
+            "Index": -1,
+            "NameInSource": "campo11",
+            "Alias": "campo11",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "campo12",
+            "Index": -1,
+            "NameInSource": "campo12",
+            "Alias": "campo12",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "campo13",
+            "Index": -1,
+            "NameInSource": "campo13",
+            "Alias": "campo13",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "campo14",
+            "Index": -1,
+            "NameInSource": "campo14",
+            "Alias": "campo14",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "campo15",
+            "Index": -1,
+            "NameInSource": "campo15",
+            "Alias": "campo15",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "campo16",
+            "Index": -1,
+            "NameInSource": "campo16",
+            "Alias": "campo16",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "campo17",
+            "Index": -1,
+            "NameInSource": "campo17",
+            "Alias": "campo17",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "campo18",
+            "Index": -1,
+            "NameInSource": "campo18",
+            "Alias": "campo18",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "campo19",
+            "Index": -1,
+            "NameInSource": "campo19",
+            "Alias": "campo19",
+            "Type": "System.Decimal"
+          },
+          "12": {
+            "Name": "campo2",
+            "Index": -1,
+            "NameInSource": "campo2",
+            "Alias": "campo2",
+            "Type": "System.Decimal"
+          },
+          "13": {
+            "Name": "campo20",
+            "Index": -1,
+            "NameInSource": "campo20",
+            "Alias": "campo20",
+            "Type": "System.Decimal"
+          },
+          "14": {
+            "Name": "campo21",
+            "Index": -1,
+            "NameInSource": "campo21",
+            "Alias": "campo21",
+            "Type": "System.Decimal"
+          },
+          "15": {
+            "Name": "campo22",
+            "Index": -1,
+            "NameInSource": "campo22",
+            "Alias": "campo22",
+            "Type": "System.Decimal"
+          },
+          "16": {
+            "Name": "campo23",
+            "Index": -1,
+            "NameInSource": "campo23",
+            "Alias": "campo23",
+            "Type": "System.Decimal"
+          },
+          "17": {
+            "Name": "campo24",
+            "Index": -1,
+            "NameInSource": "campo24",
+            "Alias": "campo24",
+            "Type": "System.Decimal"
+          },
+          "18": {
+            "Name": "campo3",
+            "Index": -1,
+            "NameInSource": "campo3",
+            "Alias": "campo3",
+            "Type": "System.Decimal"
+          },
+          "19": {
+            "Name": "campo4",
+            "Index": -1,
+            "NameInSource": "campo4",
+            "Alias": "campo4",
+            "Type": "System.Decimal"
+          },
+          "20": {
+            "Name": "campo5",
+            "Index": -1,
+            "NameInSource": "campo5",
+            "Alias": "campo5",
+            "Type": "System.Decimal"
+          },
+          "21": {
+            "Name": "campo6",
+            "Index": -1,
+            "NameInSource": "campo6",
+            "Alias": "campo6",
+            "Type": "System.Decimal"
+          },
+          "22": {
+            "Name": "campo7",
+            "Index": -1,
+            "NameInSource": "campo7",
+            "Alias": "campo7",
+            "Type": "System.Decimal"
+          },
+          "23": {
+            "Name": "campo8",
+            "Index": -1,
+            "NameInSource": "campo8",
+            "Alias": "campo8",
+            "Type": "System.Decimal"
+          },
+          "24": {
+            "Name": "campo9",
+            "Index": -1,
+            "NameInSource": "campo9",
+            "Alias": "campo9",
+            "Type": "System.Decimal"
+          },
+          "25": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.data_gestaoRelatorioConsolidado_nodes"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "header",
+        "Alias": "header",
+        "Columns": {
+          "0": {
+            "Name": "agrupamento",
+            "Index": -1,
+            "NameInSource": "agrupamento",
+            "Alias": "agrupamento",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "contador",
+            "Index": -1,
+            "NameInSource": "contador",
+            "Alias": "contador",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "logoAplicacao",
+            "Index": -1,
+            "NameInSource": "logoAplicacao",
+            "Alias": "logoAplicacao",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "logoOrganizacao",
+            "Index": -1,
+            "NameInSource": "logoOrganizacao",
+            "Alias": "logoOrganizacao",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "organizacao",
+            "Index": -1,
+            "NameInSource": "organizacao",
+            "Alias": "organizacao",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "periodo",
+            "Index": -1,
+            "NameInSource": "periodo",
+            "Alias": "periodo",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "subtitulo",
+            "Index": -1,
+            "NameInSource": "subtitulo",
+            "Alias": "subtitulo",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "titulo",
+            "Index": -1,
+            "NameInSource": "titulo",
+            "Alias": "titulo",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "JSON.header"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "JSON",
+        "Alias": "JSON",
+        "PathData": "resource://R3ID-0001-R3ID-0004-Diario"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Relatório_de_Identificacao_R1ID_0001",
+      "Guid": "a040926935fa3f2242ac54a98973e977",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiPageHeaderBand",
+          "Name": "PageHeaderBand1",
+          "PrintOn": "OnlyFirstPage",
+          "ClientRectangle": "0,0.4,27.7,2.64",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "5be8cfc4f60cf48905ad8c221ce554a0",
+              "ClientRectangle": "3.2,0.38,21.4,0.81",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.titulo}"
+              },
+              "HorAlignment": "Center",
+              "Font": ";18;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "b5dbbcb4c9542479b0f4e50c439d06ec",
+              "CanGrow": true,
+              "ClientRectangle": "0.24,1.47,27.28,1.06",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.subtitulo}"
+              },
+              "HorAlignment": "Center",
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiImage",
+              "Name": "Image1",
+              "ClientRectangle": "0,0,3,1.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Stretch": true,
+              "DataColumn": "header.logoAplicacao",
+              "ImageBytes": ""
+            },
+            "3": {
+              "Ident": "StiImage",
+              "Name": "Image2",
+              "Guid": "c434b9ebd0ac2c88ea9ec60c0af90990",
+              "ClientRectangle": "24.7,0,3,1.5",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Stretch": true,
+              "DataColumn": "header.logoOrganizacao",
+              "ImageBytes": ""
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiPageFooterBand",
+          "Name": "PageFooterBand1",
+          "ClientRectangle": "0,18.44,27.7,0.56",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "Top;;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "43f8ce914896b1fd063601178dac35cb",
+              "ClientRectangle": "0.02,0.08,11.17,0.47",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.organizacao}"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "0f378e832997bf0e8bd9ddb18fc64140",
+              "ClientRectangle": "18.2,0.08,9.5,0.47",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Total de registros: {Sum(data_gestaoRelatorioConsolidado_nodes.campo1+ data_gestaoRelatorioConsolidado_nodes.campo2+data_gestaoRelatorioConsolidado_nodes.campo3+data_gestaoRelatorioConsolidado_nodes.campo4+data_gestaoRelatorioConsolidado_nodes.campo5+data_gestaoRelatorioConsolidado_nodes.campo6+data_gestaoRelatorioConsolidado_nodes.campo7+data_gestaoRelatorioConsolidado_nodes.campo8+data_gestaoRelatorioConsolidado_nodes.campo9+data_gestaoRelatorioConsolidado_nodes.campo10+data_gestaoRelatorioConsolidado_nodes.campo11+data_gestaoRelatorioConsolidado_nodes.campo12+data_gestaoRelatorioConsolidado_nodes.campo13+data_gestaoRelatorioConsolidado_nodes.campo14+data_gestaoRelatorioConsolidado_nodes.campo15+data_gestaoRelatorioConsolidado_nodes.campo16+data_gestaoRelatorioConsolidado_nodes.campo17+data_gestaoRelatorioConsolidado_nodes.campo18+data_gestaoRelatorioConsolidado_nodes.campo19+data_gestaoRelatorioConsolidado_nodes.campo20+data_gestaoRelatorioConsolidado_nodes.campo21+data_gestaoRelatorioConsolidado_nodes.campo22+data_gestaoRelatorioConsolidado_nodes.campo23+data_gestaoRelatorioConsolidado_nodes.campo24)}"
+              },
+              "HorAlignment": "Right",
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand1",
+          "ClientRectangle": "0,3.84,27.7,0.58",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "Top;;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "5fb8f1a0a8d1dd7db1e0908bd51ea63b",
+              "ClientRectangle": "15.6,0.11,12.08,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{header.periodo}"
+              },
+              "HorAlignment": "Right",
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "3": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,5.22,27.7,5.31",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiTable",
+              "Name": "Table1",
+              "ClientRectangle": "0,0.4,27.7,4.8",
+              "Interaction": {
+                "Ident": "StiBandInteraction"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "Components": {
+                "0": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell1",
+                  "ClientRectangle": "0,-0.01,4.6,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 0
+                },
+                "1": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell2",
+                  "ClientRectangle": "4.6,-0.01,1.78,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 1
+                },
+                "2": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell3",
+                  "ClientRectangle": "6.38,-0.01,1.83,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 2
+                },
+                "3": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell4",
+                  "ClientRectangle": "8.2,-0.01,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 3
+                },
+                "4": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell5",
+                  "ClientRectangle": "10.01,-0.01,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 4
+                },
+                "5": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell6",
+                  "ClientRectangle": "11.81,-0.01,1.78,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 25
+                },
+                "6": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell7",
+                  "ClientRectangle": "13.59,-0.01,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 26
+                },
+                "7": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell8",
+                  "ClientRectangle": "15.39,-0.01,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 27
+                },
+                "8": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell9",
+                  "ClientRectangle": "17.2,-0.01,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 28
+                },
+                "9": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell10",
+                  "ClientRectangle": "19,-0.01,1.78,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 29
+                },
+                "10": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell11",
+                  "ClientRectangle": "20.78,-0.01,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 30
+                },
+                "11": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell12",
+                  "ClientRectangle": "22.58,-0.01,1.63,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 31
+                },
+                "12": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell13",
+                  "ClientRectangle": "24.21,-0.01,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 33,
+                  "ID": 32
+                },
+                "13": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell14",
+                  "ClientRectangle": "0,0,27.66,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "JoinCells": {
+                    "0": "0",
+                    "1": "1",
+                    "2": "2",
+                    "3": "3",
+                    "4": "4",
+                    "5": "25",
+                    "6": "26",
+                    "7": "27",
+                    "8": "28",
+                    "9": "29",
+                    "10": "30",
+                    "11": "31",
+                    "12": "32",
+                    "13": "33"
+                  },
+                  "ParentJoin": 33,
+                  "Join": true,
+                  "ID": 33,
+                  "JoinWidth": 14,
+                  "JoinHeight": 1
+                },
+                "14": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell15",
+                  "Guid": "9f640186cede04bcdf1144f5dcda3b0e",
+                  "ClientRectangle": "0,0.81,4.6,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{header.agrupamento}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:216,216,216",
+                  "TextBrush": "solid:Black",
+                  "Type": "DataColumn",
+                  "ID": 5
+                },
+                "15": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell16",
+                  "ClientRectangle": "4.6,0.81,1.78,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 6
+                },
+                "16": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell17",
+                  "ClientRectangle": "6.38,0.81,1.83,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 7
+                },
+                "17": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell18",
+                  "ClientRectangle": "8.2,0.81,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 8
+                },
+                "18": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell19",
+                  "ClientRectangle": "10.01,0.81,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 9
+                },
+                "19": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell20",
+                  "ClientRectangle": "11.81,0.81,1.78,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 34
+                },
+                "20": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell21",
+                  "ClientRectangle": "13.59,0.81,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 35
+                },
+                "21": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell22",
+                  "ClientRectangle": "15.39,0.81,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 36
+                },
+                "22": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell23",
+                  "ClientRectangle": "17.2,0.81,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 37
+                },
+                "23": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell24",
+                  "ClientRectangle": "19,0.81,1.78,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 38
+                },
+                "24": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell25",
+                  "ClientRectangle": "20.78,0.81,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 39
+                },
+                "25": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell26",
+                  "ClientRectangle": "22.58,0.81,1.63,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 40
+                },
+                "26": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell27",
+                  "ClientRectangle": "24.21,0.81,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 42,
+                  "ID": 41
+                },
+                "27": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell28",
+                  "Guid": "b0abf3618a1254e5deaf06e4dce2b5f1",
+                  "ClientRectangle": "4.6,0.81,23.06,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Horas do Dia"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:216,216,216",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "JoinCells": {
+                    "0": "6",
+                    "1": "7",
+                    "2": "8",
+                    "3": "9",
+                    "4": "34",
+                    "5": "35",
+                    "6": "36",
+                    "7": "37",
+                    "8": "38",
+                    "9": "39",
+                    "10": "40",
+                    "11": "41",
+                    "12": "42"
+                  },
+                  "ParentJoin": 42,
+                  "Join": true,
+                  "ID": 42,
+                  "JoinWidth": 13,
+                  "JoinHeight": 1
+                },
+                "28": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell29",
+                  "ClientRectangle": "0,1.59,4.6,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 70,
+                  "ID": 10
+                },
+                "29": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell30",
+                  "Guid": "e68a6cb03f911262f72ec0f566606c05",
+                  "ClientRectangle": "4.6,1.59,1.78,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "00:00-00:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 11
+                },
+                "30": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell31",
+                  "Guid": "05ea3593018524aa881ac4232c3cc80c",
+                  "ClientRectangle": "6.38,1.59,1.83,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "01:00-01:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 12
+                },
+                "31": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell32",
+                  "Guid": "d3ac69d66f1f93b11101c5f5495d7133",
+                  "ClientRectangle": "8.2,1.59,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "02:00-02:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 13
+                },
+                "32": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell33",
+                  "Guid": "79c63ddfaab67dc2a084a7ce829b38de",
+                  "ClientRectangle": "10.01,1.59,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "03:00-03:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 14
+                },
+                "33": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell34",
+                  "Guid": "ef5a838dc425588af498117227d02e58",
+                  "ClientRectangle": "11.81,1.59,1.78,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "04:00-04:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 43
+                },
+                "34": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell35",
+                  "Guid": "e1c7eb99724c9c2437a717f483850dca",
+                  "ClientRectangle": "13.59,1.59,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "05:00-05:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 44
+                },
+                "35": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell36",
+                  "Guid": "bb229df58a41199f184d0d1042a09c24",
+                  "ClientRectangle": "15.39,1.59,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "06:00-06:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 45
+                },
+                "36": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell37",
+                  "Guid": "c8fe3926e0f767c557a2e7cd5469707f",
+                  "ClientRectangle": "17.2,1.59,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "07:00-07:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 46
+                },
+                "37": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell38",
+                  "Guid": "cef11ed29fcbbe3701b81d2180490c5b",
+                  "ClientRectangle": "19,1.59,1.78,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "08:00-08:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 47
+                },
+                "38": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell39",
+                  "Guid": "faa550d7678986beac28c801d0bd0e0f",
+                  "ClientRectangle": "20.78,1.59,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "09:00-09:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 48
+                },
+                "39": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell40",
+                  "Guid": "ddc93e78fea9a5dde09a7c0a9677396c",
+                  "ClientRectangle": "22.58,1.59,1.63,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "10:00-10:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 49
+                },
+                "40": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell41",
+                  "Guid": "7d7bae4f5bbe073b24b000d674e11caa",
+                  "ClientRectangle": "24.21,1.59,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "11:00-11:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 50
+                },
+                "41": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell42",
+                  "ClientRectangle": "26.01,1.61,1.64,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 60,
+                  "ID": 51
+                },
+                "42": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell43",
+                  "ClientRectangle": "0,2.41,4.6,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 70,
+                  "ID": 15
+                },
+                "43": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell44",
+                  "Guid": "db723812515bd53b2cbac7d15c70051d",
+                  "ClientRectangle": "4.6,2.41,1.78,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo1}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 16
+                },
+                "44": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell45",
+                  "Guid": "a89d2b1c7a1326f3a70f9d6e8dc2ff23",
+                  "ClientRectangle": "6.38,2.41,1.83,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo2}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 17
+                },
+                "45": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell46",
+                  "Guid": "d0175ad902735b5a0ae3674d88bbf6b0",
+                  "ClientRectangle": "8.2,2.41,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo3}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 18
+                },
+                "46": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell47",
+                  "Guid": "13e8ab10121d2249feb4003500c76cc1",
+                  "ClientRectangle": "10.01,2.41,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo4}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 19
+                },
+                "47": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell48",
+                  "Guid": "e252c1e8d5754108a67b8c5165b64e36",
+                  "ClientRectangle": "11.81,2.41,1.78,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo5}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 52
+                },
+                "48": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell49",
+                  "Guid": "51016e28f0b849c982962f9df3962048",
+                  "ClientRectangle": "13.59,2.41,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo6}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 53
+                },
+                "49": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell50",
+                  "Guid": "0ba58058ae8e939846a17635f703a7fb",
+                  "ClientRectangle": "15.39,2.41,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo7}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 54
+                },
+                "50": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell51",
+                  "Guid": "0efabe4f538960ebfc6e0dfa192ff1d6",
+                  "ClientRectangle": "17.2,2.41,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo8}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 55
+                },
+                "51": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell52",
+                  "Guid": "b87e8354c2eb0588ba3ae6f88cb6dbac",
+                  "ClientRectangle": "19,2.41,1.78,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo9}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "DataColumn",
+                  "ID": 56
+                },
+                "52": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell53",
+                  "Guid": "39f0e4eba967b83b3be7991f1a2350ca",
+                  "ClientRectangle": "20.78,2.41,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo10}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "DataColumn",
+                  "ID": 57
+                },
+                "53": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell54",
+                  "Guid": "4164b9389fd5fdf4b1195d5795632ad8",
+                  "ClientRectangle": "22.58,2.41,1.63,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo11}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "DataColumn",
+                  "ID": 58
+                },
+                "54": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell55",
+                  "Guid": "b57ba566912a7706f2f7a1eb8d3c5699",
+                  "ClientRectangle": "24.21,2.41,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo12}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "DataColumn",
+                  "ID": 59
+                },
+                "55": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell56",
+                  "Guid": "67143e0faf6a1762cf5b4b308662cd4a",
+                  "ClientRectangle": "26.01,1.61,1.65,1.61",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Total"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "JoinCells": {
+                    "0": "51",
+                    "1": "60"
+                  },
+                  "ParentJoin": 60,
+                  "Join": true,
+                  "ID": 60,
+                  "JoinWidth": 1,
+                  "JoinHeight": 2
+                },
+                "56": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell57",
+                  "ClientRectangle": "0,3.19,4.6,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 70,
+                  "ID": 20
+                },
+                "57": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell58",
+                  "Guid": "716c7104b617c04d52fa92b1b0c1683f",
+                  "ClientRectangle": "4.6,3.19,1.78,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "12:00-12:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 21
+                },
+                "58": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell59",
+                  "Guid": "01a8d5502386d7a8f48d5b7a9bdc0033",
+                  "ClientRectangle": "6.38,3.19,1.83,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "13:00-13:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 22
+                },
+                "59": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell60",
+                  "Guid": "b4dd80a004cd38d2b004f468fdd2ed7a",
+                  "ClientRectangle": "8.2,3.19,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "14:00-14:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 23
+                },
+                "60": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell61",
+                  "Guid": "0047468bc25351e0bea40a7b35614720",
+                  "ClientRectangle": "10.01,3.19,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "15:00-15:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 24
+                },
+                "61": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell62",
+                  "Guid": "b6ae290fe29454e151b31acd86cf6476",
+                  "ClientRectangle": "11.81,3.19,1.78,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "16:00-16:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 61
+                },
+                "62": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell63",
+                  "Guid": "29aa9783a1e87e010f27ef2177b1d5c5",
+                  "ClientRectangle": "13.59,3.19,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "17:00-17:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 62
+                },
+                "63": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell64",
+                  "Guid": "63b3e019e614c89d3cfb0b8d6aa3f896",
+                  "ClientRectangle": "15.39,3.19,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "18:00-18:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 63
+                },
+                "64": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell65",
+                  "Guid": "8be0aea8a739cf7f9bb3ef0d13d771ef",
+                  "ClientRectangle": "17.2,3.19,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "19:00-19:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 64
+                },
+                "65": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell66",
+                  "Guid": "d76f63979702bb4b23a798419f92486d",
+                  "ClientRectangle": "19,3.19,1.78,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "20:00-20:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 65
+                },
+                "66": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell67",
+                  "Guid": "2ae62449c06cf71922187f802d1f4b13",
+                  "ClientRectangle": "20.78,3.19,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "21:00-21:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 66
+                },
+                "67": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell68",
+                  "Guid": "0c47d050b30b1767093259bbeac0a8dc",
+                  "ClientRectangle": "22.58,3.19,1.63,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "22:00-22:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 67
+                },
+                "68": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell69",
+                  "Guid": "bb307c527b7f0dee1a3109f9c38e14d3",
+                  "ClientRectangle": "24.21,3.19,1.8,0.81",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "23:00-23:59"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:242,242,242",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 68
+                },
+                "69": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell70",
+                  "ClientRectangle": "26.01,3.2,1.64,0.8",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Enabled": false,
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ParentJoin": 83,
+                  "ID": 69
+                },
+                "70": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell71",
+                  "Guid": "eead30bdec8b376af21749a783b82f02",
+                  "ClientRectangle": "0,1.59,4.6,3.2",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Conditions": {
+                    "0": {
+                      "Ident": "StiCondition",
+                      "Column": "data_gestaoRelatorioConsolidado_nodes.campo",
+                      "TextColor": "0,0,0",
+                      "CanAssignExpression": true,
+                      "AssignExpression": "\"INDETERMINADO\"",
+                      "BorderSides": "All"
+                    }
+                  },
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "DataColumn",
+                  "JoinCells": {
+                    "0": "10",
+                    "1": "15",
+                    "2": "20",
+                    "3": "70"
+                  },
+                  "ParentJoin": 70,
+                  "Join": true,
+                  "ID": 70,
+                  "JoinWidth": 1,
+                  "JoinHeight": 4
+                },
+                "71": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell72",
+                  "Guid": "54e3674d964b2d051a282bd8840bd343",
+                  "ClientRectangle": "4.6,4.01,1.78,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo13}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 71
+                },
+                "72": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell73",
+                  "Guid": "f370f2e11b08fb92b0f0135a127ee4d9",
+                  "ClientRectangle": "6.38,4.01,1.83,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo14}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 72
+                },
+                "73": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell74",
+                  "Guid": "fd9edbf2cdf805e83bcfaafc4b2a1942",
+                  "ClientRectangle": "8.2,4.01,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo15}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "ID": 73
+                },
+                "74": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell75",
+                  "Guid": "c7758dfcf6efebc6f87a70e9096a9e8a",
+                  "ClientRectangle": "10.01,4.01,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo16}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 74
+                },
+                "75": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell76",
+                  "Guid": "390944fd5e81b1b854a60711b8224e55",
+                  "ClientRectangle": "11.81,4.01,1.78,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo17}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 75
+                },
+                "76": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell77",
+                  "Guid": "e980249c56bbc82d60fd87cf1c1a9e64",
+                  "ClientRectangle": "13.59,4.01,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo18}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 76
+                },
+                "77": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell78",
+                  "Guid": "6895ce619330292b8ddb964c10eca007",
+                  "ClientRectangle": "15.39,4.01,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo19}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 77
+                },
+                "78": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell79",
+                  "Guid": "bc3a7054e7e4a433a9a3f92f53fcb278",
+                  "ClientRectangle": "17.2,4.01,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo20}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 78
+                },
+                "79": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell80",
+                  "Guid": "dc3fa67932fba170d72f31e5ee344b73",
+                  "ClientRectangle": "19,4.01,1.78,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo21}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 79
+                },
+                "80": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell81",
+                  "Guid": "7a5abe0a2e046a1c7f04243951ed7509",
+                  "ClientRectangle": "20.78,4.01,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo22}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 80
+                },
+                "81": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell82",
+                  "Guid": "46f211e44e5f7da2dc053501eccca6ae",
+                  "ClientRectangle": "22.58,4.01,1.63,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo23}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 81
+                },
+                "82": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell83",
+                  "Guid": "36d9703c2a558b4f4a1870c617a6db63",
+                  "ClientRectangle": "24.21,4.01,1.8,0.79",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo24}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "ID": 82
+                },
+                "83": {
+                  "Ident": "StiTableCell",
+                  "Name": "Table1_Cell84",
+                  "Guid": "08c7e333d5bd07817f56e9ff3bf2b513",
+                  "ClientRectangle": "26.01,3.2,1.65,1.6",
+                  "Restrictions": "AllowMove, AllowSelect, AllowChange",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{data_gestaoRelatorioConsolidado_nodes.campo1+ data_gestaoRelatorioConsolidado_nodes.campo2+data_gestaoRelatorioConsolidado_nodes.campo3+data_gestaoRelatorioConsolidado_nodes.campo4+data_gestaoRelatorioConsolidado_nodes.campo5+data_gestaoRelatorioConsolidado_nodes.campo6+data_gestaoRelatorioConsolidado_nodes.campo7+data_gestaoRelatorioConsolidado_nodes.campo8+data_gestaoRelatorioConsolidado_nodes.campo9+data_gestaoRelatorioConsolidado_nodes.campo10+data_gestaoRelatorioConsolidado_nodes.campo11+data_gestaoRelatorioConsolidado_nodes.campo12+data_gestaoRelatorioConsolidado_nodes.campo13+data_gestaoRelatorioConsolidado_nodes.campo14+data_gestaoRelatorioConsolidado_nodes.campo15+data_gestaoRelatorioConsolidado_nodes.campo16+data_gestaoRelatorioConsolidado_nodes.campo17+data_gestaoRelatorioConsolidado_nodes.campo18+data_gestaoRelatorioConsolidado_nodes.campo19+data_gestaoRelatorioConsolidado_nodes.campo20+data_gestaoRelatorioConsolidado_nodes.campo21+data_gestaoRelatorioConsolidado_nodes.campo22+data_gestaoRelatorioConsolidado_nodes.campo23+data_gestaoRelatorioConsolidado_nodes.campo24}"
+                  },
+                  "HorAlignment": "Center",
+                  "VertAlignment": "Center",
+                  "Font": ";;Bold;",
+                  "Border": "All;105,105,105;;;;;;solid:105,105,105",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Totals",
+                  "JoinCells": {
+                    "0": "69",
+                    "1": "83"
+                  },
+                  "ParentJoin": 83,
+                  "Join": true,
+                  "ID": 83,
+                  "JoinWidth": 1,
+                  "JoinHeight": 2
+                }
+              },
+              "MinHeight": 1.2000000000000002,
+              "DataSourceName": "data_gestaoRelatorioConsolidado_nodes",
+              "RowCount": 6,
+              "ColumnCount": 14,
+              "NumberID": 84
+            }
+          },
+          "DataSourceName": "data_gestaoRelatorioConsolidado_nodes"
+        }
+      },
+      "PaperSize": "A4",
+      "Orientation": "Landscape",
+      "PageWidth": 29.7,
+      "PageHeight": 21,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

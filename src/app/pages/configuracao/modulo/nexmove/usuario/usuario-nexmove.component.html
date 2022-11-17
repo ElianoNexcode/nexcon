@@ -1,0 +1,66 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo player" id="player" [class.voted]="actionbuttomService.flipped">
+    <div id="grid" class="grid front">
+        <nex-listview [params]="listView_UsuarioNexmove" [showFilter]="false" ></nex-listview>
+    </div>
+    <div id="form" class="formFull back">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Configuração de Usuários do Nexmove
+            </div>
+            <div class="card-body">
+                <div class="panel">
+                    <div class="row">
+                        <div class="width_1 row"> 
+                            <div class="col">
+                                <nex-input-label [text]="'Site'" [input]="site_Text" [labelMinWidth]="50"></nex-input-label>
+                            </div>
+                            <div class="col margin_2">
+                                <nex-combobox [label]="'Grupo'" [options]="grupo_Options" (eventChange)="onGrupo_Change()"></nex-combobox>
+                            </div>
+                            <div class="col margin_1">
+                                <nex-combobox [label]="'Área'" [options]="area_Options" [labelMinWidth]="50" (eventChange)="onArea_Change()" ></nex-combobox>
+                            </div>
+                            <div class="col margin_2" style="max-width: 31.5px;">
+                                <nex-mini-button [type]="'search'"  [smallButton]="true" [marginTop]="9" (eventClick)="onUsuarioSearch_Click()"></nex-mini-button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <div class="row borderRow">
+                            <div class="header_Nome">Nome</div>
+                            <div class="header_Grupo">Grupo</div>
+                            <div class="header_Area">Área</div>
+                            <div class="header_Concessao">Concessão</div>
+                            <div class="header_Conexao"><mat-checkbox>Conexão</mat-checkbox></div>
+                            <div class="header_Agendamento"><mat-checkbox>Agendamento</mat-checkbox></div>
+                            <div class="header_Autenticado">Autenticado</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="row borderRow" *ngFor="let usuarioPessoaInterna of usuarioInterno">
+                            <div class="row_Nome">{{ usuarioPessoaInterna.nome}}</div>
+                            <div class="row_Grupo">{{ usuarioPessoaInterna.grupo}}</div>
+                            <div class="row_Area">{{ usuarioPessoaInterna.area}}</div>
+                            <div class="row_Concessao"></div>
+                            <div class="row_Conexao"><mat-checkbox></mat-checkbox></div>
+                            <div class="row_Agendamento"><mat-checkbox></mat-checkbox></div>
+                            <div class="row_Autenticado"></div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="card-footer">
+                <div style="padding: 0 !important; text-align: right;">
+                    <div >
+                        <div class="optionsButtons">
+                            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder">Salvar</button>
+                            <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                            <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"(click)="onClose_Click()">Fechar</button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

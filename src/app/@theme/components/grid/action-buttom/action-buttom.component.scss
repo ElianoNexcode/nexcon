@@ -1,0 +1,91 @@
+@import '../../../themes.scss';
+
+@include nb-install-component() {
+    .top-buttons {
+        width: 100%;
+        min-height: 29px !important;
+
+        padding: 0 !important;
+
+        border-bottom: nb-theme(border-bottom) !important;
+        border-left: nb-theme(border-left) !important;
+        background-color: nb-theme(background-top-title-color);
+
+        font-family: roboto;
+        font-size: 0.7rem !important;
+        line-height: 1rem;
+        color: #CCCCCC !important;    
+        text-align: left !important;
+    }
+
+    .nav {
+        min-height: 27px;
+        max-width: 100%;
+    }
+
+    .row {
+        width: 100%;
+        margin:0 !important;
+        padding:0 !important;
+    }
+    
+    .btn {
+        max-width: 95px !important;
+
+        border-radius: 0;
+        line-height: 1rem !important;
+        text-align: center !important;
+    }
+
+    .btn-link {
+        width: 100%;
+
+        margin: 0 auto !important;
+
+        font-family: roboto !important;
+        font-size: 0.7rem !important;
+        line-height: 1rem;
+        color: #CCCCCC !important;
+        border: none;
+        border-right: nb-theme(border-right);
+
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center !important;
+        align-items: center !important;
+        -webkit-justify-content: center !important;
+        justify-content: center !important;
+
+    }
+    
+    .btn-link.active{
+        background-color: #222b45;
+    }
+    
+    .btn-link:hover {
+        text-decoration: none !important;
+        background-color: nb-theme(background-btt-hover) !important;
+    }
+    
+    .btn-link.active:hover {
+        text-decoration: none !important;
+        background-color: nb-theme(background-btt-hover) !important;
+    }
+
+    .disabled {
+        color: #7a7d86 !important;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .col-3 {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .actived {
+        background-color: #0d54a1 !important;
+    }
+}

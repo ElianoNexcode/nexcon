@@ -1,0 +1,124 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/dark';
+@import '~@nebular/theme/styles/themes/default';
+
+$nb-themes: nb-register-theme((
+
+    color-basic-100:	#ffffff,
+    color-basic-200:	#f7f9fc,
+    color-basic-300:	#edf1f7,
+    color-basic-400:	#e4e9f2,
+    color-basic-500:	#c5cee0,
+    color-basic-600:	#8f9bb3,
+    color-basic-700:	#2e3a59,
+    color-basic-800:	#222b45,
+    color-basic-900:	#192038,
+    color-basic-1000:	#151a30,
+    color-basic-1100:	#101426,
+    
+    color-20: #D2D3D5,
+    color-30: #BDBFC1,
+    color-40: #A9ABAE,
+    color-50: #96989A,
+    color-60: #848688,
+
+    gradiente-50: -webkit-linear-gradient(nb-theme(color-basic-200) 50%, nb-theme(color-basic-500) 50%),
+
+    border: 1px solid nb-theme(color-basic-1000),
+    border-thin: 1px solid nb-theme(color-basic-1000),
+
+    border-top: 1px solid nb-theme(color-basic-1000),
+    border-right: 1px solid nb-theme(color-basic-1000),
+    border-left: 1px solid nb-theme(color-basic-1000),
+    border-bottom: 1px solid nb-theme(color-basic-1000),
+    border-bottom-thin: 1px solid nb-theme(color-basic-1000),
+
+    external-border-width: 1px 1px 0 1px,
+    external-border-color: color-basic-1000,
+
+    background-color: color-basic-1000,
+    background-basic-color: color-basic-800,
+
+    background-header-color: color-basic-800,
+    background-top-title-color: color-basic-800,
+    background-menu-color: color-basic-800,
+    background-submenu-color: #1a365e,
+    background-treeview-color: color-basic-800,
+    background-card-color: color-basic-800,
+    background-view-color: color-basic-800,
+    background-shortcut-color: color-basic-800,
+    background-footer-color: color-basic-800,
+    background-version-color: color-basic-800,
+
+    background-btt-hover:  #1a365e,
+
+    background-grid-color: #192038,
+    border-grid-color: #434561,
+
+    input-color: #A9ABAE,
+    input-focus-color: #4AC8F4,
+    background-input-color: #191f38, 
+    background-input-focus-color: #193a63,    
+
+
+), dark, dark);
+
+$nb-themes: nb-register-theme((
+
+    color-basic-100: white,
+    color-basic-200: #eefafc,
+    color-basic-300: #e8f5fa,
+    color-basic-400: #d6e6f2,
+    color-basic-500: #c7dbeb,
+    color-basic-600: #a9c0db,
+    color-basic-700: #4f969e,
+    color-basic-800: #336a77,
+    color-basic-900: #295c66,
+    color-basic-1000: #244555,
+    color-basic-1100: #121a2b,
+
+    color-20: #D2D3D5,
+    color-30: #BDBFC1,
+    color-40: #A9ABAE,
+    color-50: #96989A,
+    color-60: #848688,
+
+    gradiente-50: -webkit-linear-gradient(#fefefe 50%, #bdbfc1 50%),
+
+    border: 1px solid #d3d4d6,
+    border-thin: 1px solid #d3d4d6,
+    
+    border-top: 1px solid #d3d4d6,
+    border-right: 1px solid #d3d4d6,
+    border-left: 1px solid #d3d4d6,
+    border-bottom: 1px solid #d3d4d6,
+    border-bottom-thin: 1px solid #d3d4d6,
+
+    external-border-width: 1px 1px 0 1px,
+    external-border-color: color-basic-300,
+
+    background-color: #edf1f7,
+    background-basic-color: color-basic-100,
+
+    background-header-color: #6b838a,
+    background-top-title-color: #889fac,
+    background-menu-color: #ebebeb,
+    background-submenu-color: color-basic-1100,
+    background-treeview-color: #f6f6f5,
+    background-card-color: #ffffff,
+    background-view-color: #f6f6f5,
+    background-shortcut-color: #ebebeb,
+    background-footer-color: #ebebeb,
+    background-version-color: #6b838a,
+
+    background-btt-hover:  #1a365e,
+
+    background-grid-color: #eefafc,
+    border-grid-color: #a9c0db,
+
+    input-color: #A9ABAE,
+    input-focus-color: #4AC8F4,
+    background-input-color: #191f38,
+    background-input-focus-color: #193a63,
+
+), default, default);

@@ -1,0 +1,70 @@
+@import '../../themes.scss';
+
+@include nb-install-component() {
+    .shortcut {
+        height: 100%;
+        max-width: 41px !important;
+        min-width: 41px !important;
+
+        padding: 0 !important;
+        border-left: nb-theme(border-left);
+        background-color: nb-theme(background-shortcut-color);
+
+        .top-title {
+            width: 100%;
+            min-height: 29px;
+
+            padding: 0 !important;
+            margin: 0 auto !important;
+
+            border: 0;
+            background-color: nb-theme(background-top-title-color);
+            border-radius: 0 !important;
+            border-bottom: nb-theme(border-bottom);
+
+            color: #CCCCCC !important;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center !important;
+            align-items: center !important;
+            -webkit-justify-content: center !important;
+            justify-content: center !important;
+        }
+
+        .bt {
+            min-width: 100%;
+            min-height: 5vh !important;
+            max-height: 7vh !important;
+            height: 7vh !important;
+
+            padding: 0 !important;
+            margin: 0 auto !important;
+
+            border-bottom: nb-theme(border-bottom);
+            color: #CCCCCC;    
+        
+            display: -webkit-flex; /* Safari */  
+            display: flex;
+            -webkit-align-items: center; /* Safari 7.0+ */
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+
+            img {
+                height: auto;
+            }
+        }
+
+        .btn.btn-icon {
+            border: 0 !important;
+            padding: 1px 6px !important;
+            background-color: transparent !important;
+            color: #CCCCCC !important;
+        }
+
+        .no-margin {
+            margin: 0 !important;
+        }
+    }
+}
+

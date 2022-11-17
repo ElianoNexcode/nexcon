@@ -1,0 +1,139 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+    
+    .title-leitor{
+        font-family: roboto !important;
+        font-size: 0.7rem !important;
+        line-height: 10px !important;
+        background-clip: border-box;
+        border: 1px solid rgb(67 69 97);
+        border-radius: .25rem;
+        color: #A9ABAE;
+        height: 27px;
+        background-color: #191f38;
+        margin: 0;
+        padding: 9px;
+        border-right: 1px solid #434561 !important;
+        border-radius: 0 0 0 0;
+    }
+
+    .title-controle{
+        font-family: roboto !important;
+        font-size: 0.7rem !important;
+        line-height: 10px !important;
+        background-clip: border-box;
+        border: 1px solid rgb(67 69 97);
+        border-radius: .25rem;
+        color: #A9ABAE;
+        background-color: #191f38;
+        height: 27px;
+        margin: 0;
+        padding: 9px;
+        border-right: 1px solid #434561 !important;
+        border-radius: 0 5px 0 0;
+    }
+    .row-conexao-body{
+        margin-top: 0px;
+        border: 1px solid #434561;
+        border-radius: 0px 0px 4px 4px;
+        padding-top: 0;
+        display: block;
+        border-top: none;
+        height: 264px;
+
+        
+    }
+
+    .row-conexao-header{
+        margin-top: 10px;
+        border: 1px solid #434561;
+        border-radius: 4px 4px 0px 0px;
+        padding-top: 0;
+        border-bottom: none;
+        
+
+        
+    }
+
+    .row-conexao_2{
+        margin-top: 10px;
+        border: 1px solid #434561;
+        border-radius: 4px;
+        padding-top: 0;
+        padding-bottom: 151px;
+        
+    }
+
+    .title-ed{
+        font-family: roboto !important;
+        font-size: 0.7rem !important;
+        line-height: 10px !important;
+        background-clip: border-box;
+        border: 1px solid rgb(67 69 97);
+        border-radius: .25rem;
+        color: #A9ABAE;
+        height: 27px;
+        background-color: #191f38;
+        margin: 0;
+        padding: 9px;
+        border-right: 1px solid #434561 !important;
+        border-radius: 0 0 0 0;
+    }
+
+    .row-ed{
+        margin-top: 10px;
+        border: 1px solid #434561;
+        border-radius: 4px;
+        padding-top: 0;
+        padding-bottom: 143px;
+    }
+
+ 
+    .div_Leitor_ED{
+        width: 25% ;
+        height: 28px;
+        padding-left: 7px;
+        padding-top: 4px;
+        border-bottom: 1px solid #434561;
+        border-right: 1px solid #434561;
+        background-color: #222b45;
+
+    }
+
+    .div_Controle{
+        width: calc(75% - 17px);
+        height: 28px;
+        padding-left: 7px;
+        padding-top: 4px;
+        border-bottom: 1px solid #434561;
+        border-right: 1px solid #434561;
+        background-color: #202840
+    }
+
+    .div_Botao{
+        width: 17px;
+        border-bottom: 1px solid #434561;
+    }
+
+    .header_Leitor{
+        border-bottom: 1px solid #434561;
+        border-right: 1px solid #434561;
+        background-color: #1d2642;
+        padding-top: 5px;
+        padding-left: 7px;
+        font-size: 0.7rem;
+        height: 28px;
+    }
+
+    .header_Controle{
+        border-bottom: 1px solid #434561;
+        background-color: #1d2642;
+        padding-top: 5px;
+        padding-left: 7px;
+        font-size: 0.7rem;
+        height: 28px;
+    }
+    
+
+}

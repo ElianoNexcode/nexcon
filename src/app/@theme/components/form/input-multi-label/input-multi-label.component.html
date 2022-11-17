@@ -1,0 +1,43 @@
+<div [id]="inputLeft.name + '-box'" class="inputGroup" [ngStyle]="{'display': (display == true)? 'flex': 'none'}">
+    <div class="labelBox" *ngIf="text" [ngStyle]="{'min-width.px': labelMinWidth}">
+        {{text}}
+    </div>
+    <div class="labelIn left" *ngIf="inputLeft.label">
+        {{inputLeft.label}}
+    </div>
+    <div class="inputbox" [ngStyle]="{'min-width.px': inputLeft.minWidth}">
+        <input #inputMaskLeft [id]="inputLeft.name" 
+               [maxlength]="inputLeft.maxLength" 
+               [case]="customMaskLeft?.case" 
+               [mask]="customMaskLeft?.mask" 
+               [regex]="inputLeft.regex"
+               [(ngModel)]="inputLeft.text" 
+               (ngModelChange)="onChangedLeft()"
+               [ngClass]="{'disable': inputLeft.disabled, 'error': inputLeft.validated == false}"
+               [ngStyle]="{'text-align': inputLeft.textAlign}"
+               autocomplete="none"
+               autocomplete="off"
+               type="text"
+               [type]="inputLeft.type"
+               autocomplete="none" />
+    </div>
+    <div class="labelIn">
+        {{inputRight.label}}
+    </div>
+    <div class="inputbox">
+        <input  #inputMaskRight [id]="inputRight.name" 
+               [maxlength]="inputRight.maxLength" 
+               [case]="customMaskRight?.case" 
+               [mask]="customMaskRight?.mask" 
+               [regex]="inputRight.regex"
+               [(ngModel)]="inputRight.text" 
+               [ngClass]="{'disable': inputRight.disabled, 'error': inputRight.validated == false}"
+               [ngStyle]="{'text-align': inputRight.textAlign}"
+               (ngModelChange)="onChangedRight()" 
+               autocomplete="none"
+               autocomplete="off"
+               type="text"
+               [type]="inputRight.type"
+               autocomplete="none" />
+    </div>    
+</div>

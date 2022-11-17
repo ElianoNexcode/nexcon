@@ -1,0 +1,54 @@
+@import "../../themes.scss";
+
+@include nb-install-component() {
+    .bottomPanel {
+        min-height: 49px !important;
+        height: 49px !important;
+
+        border-top: nb-theme(border-top);
+        border-left: nb-theme(border-left);
+        border-right: nb-theme(border-right);
+
+        background-color: nb-theme(background-footer-color);
+    }
+
+    .btt-icon, .btt-inative {
+        max-width: 41px !important;
+        height: 47px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+
+        border-left: nb-theme(border-left);
+        color: nb-color(color-20) !important;
+
+        cursor: pointer;
+    }
+
+    .btt-icon:hover {
+        background-color: nb-theme(background-btt-hover) !important;
+    }
+
+    .btt-icon:first-child {
+        border-left: none !important;
+    }
+
+    .active {
+        background-color: #0d54a1;
+    }
+
+    .loginBox {
+        min-width: 164px;
+        border-left: nb-theme(border-left);
+    }
+}
+
+
+

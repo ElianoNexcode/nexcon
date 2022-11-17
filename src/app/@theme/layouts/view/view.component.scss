@@ -1,0 +1,38 @@
+@import '../../themes.scss';
+
+@include nb-install-component() {
+    .view {
+        max-width: 164px !important;
+        min-width: 164px !important;
+        padding: 0 !important;
+        background-color: nb-theme(background-view-color);
+        border-left: nb-theme(border-left);
+        height: 100%;
+
+        .top-title {
+            min-height: 29px !important;
+
+            padding: 0 !important;
+            width: 100%;
+
+            margin: 0 auto !important;
+            background-color: nb-theme(background-top-title-color);
+
+            font-family: roboto;
+            line-height: 1rem !important;
+            font-size: 0.7rem !important;
+
+            border: none;
+            border-radius: 0 !important;
+            border-bottom: nb-theme(border-bottom);
+            color: #CCCCCC !important;    
+            display: -webkit-flex !important;
+            display: flex !important;
+            -webkit-align-items: center !important;
+            align-items: center !important;
+            -webkit-justify-content: center !important;
+            justify-content: center !important;
+        }
+    }
+    
+}

@@ -1,0 +1,63 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo" id="viewer">
+    <div id="grid" class="grid">
+        <nex-listview [params]='listView_Acesso' [showGrid]="(listaId != null)" [showFilter]="false" (eventCheck)="onListView_Change($event)"></nex-listview>
+    </div>    
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Emissão de Relatório
+            </div>
+            <div [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant" class="card-body">
+                <div class="panel fullWidth">
+                    <nex-tabs-card [fullWidth]="true" [tabsOptions]="tabsGestaoAcesso_Option" [name]="'tabsGestaoAcesso'">
+                        <nex-tab [noPadding]="true" [tabComponent]="tabsGestaoAcesso_Option.tabs[0]">
+                            <div class="tabFiltro">
+                                <nex-form-group [name]="'filtroGestaoAcesso'">
+                                    <nex-input-label [text]="'Nome'" [marginTop]="0" [input]="nome_Text"></nex-input-label>
+                                    <nex-combobox [label]="'Grupo'" [marginTop]="0" [options]="grupo_Option"></nex-combobox>
+                                    <nex-input-label [text]="'Documento'" [marginTop]="0" [input]="documento_Text"></nex-input-label>
+                                    <nex-input-label [text]="'Matrícula'" [marginTop]="0" [input]="matricula_Text"></nex-input-label>
+                                    <nex-input-label [text]="'Contrato'" [marginTop]="0" [input]="contrato_Text"></nex-input-label>
+                                    <nex-input-label [text]="'Cargo'" [marginTop]="0" [input]="cargo_Text"></nex-input-label>
+                                    <nex-input-label [text]="'Central'" [marginTop]="0" [input]="central_Text"></nex-input-label>
+                                    <nex-input-label [text]="'Localização'" [marginTop]="0" [input]="localizacao_Text"></nex-input-label>
+                                    <nex-input-label [text]="'Unidade'" [marginTop]="0" [input]="unidade_Text"></nex-input-label>
+                                    <nex-input-label [text]="'Cartão'" [marginTop]="0" [input]="cartao_Text"></nex-input-label>
+                                    <nex-input-label [text]="'Site Code'" [marginTop]="0" [input]="siteCode_Text"></nex-input-label>
+                                    <nex-combobox [toUp]="true" [type]="'input'" [label]="'Bloqueio'" [dynamic]="true" [marginTop]="0" [options]="bloqueio_Option" (eventClick)="onBloqueio_Click()"></nex-combobox>
+                                    <nex-combobox [toUp]="true" [type]="'input'" [label]="'Área Entrada'" [dynamic]="true" [marginTop]="0" [options]="areaEntrada_Option" (eventClick)="onAreaOption_Click(1)"></nex-combobox>
+                                    <nex-combobox [toUp]="true" [type]="'input'" [label]="'Área Saída'" [dynamic]="true" [marginTop]="0" [options]="areaSaida_Option" (eventClick)="onAreaOption_Click(2)"></nex-combobox>
+                               </nex-form-group>
+                            </div>
+                        </nex-tab>
+                        <nex-tab [tabComponent]="tabsGestaoAcesso_Option.tabs[1]">
+                            <nex-form-group [name]="'periodoGestaoAcesso'">
+                                <nex-radio [options]="periodo_Options" [marginTop]="true" [background]="'#222b45'" (eventChange)="onPeriodo_Change()"></nex-radio>
+                                <nex-combobox [label]="'Dia'" [options]="dia_Option" (eventChange)="onPeriodo_Change()"></nex-combobox>
+                                <nex-combobox [label]="'Mês'" [options]="mes_Option" (eventChange)="onPeriodo_Change()"></nex-combobox>
+                                <nex-combobox [label]="'Ano'" [options]="ano_Option" (eventChange)="onPeriodo_Change()"></nex-combobox>
+                                <nex-input-label [text]="'Data Inicial'" [input]="dataInicial_Text"></nex-input-label>
+                                <nex-input-label [text]="'Data Final'" [input]="dataFinal_Text"></nex-input-label>
+                                <nex-input-label [text]="'Hora Inicial'" [input]="horaInicial_Text"></nex-input-label>
+                                <nex-input-label [text]="'Hora Final'" [input]="horaFinal_Text"></nex-input-label>          
+                            </nex-form-group>
+                        </nex-tab>
+                    </nex-tabs-card> 
+                    <nex-combobox [toUp]="true" [label]="'Ordenação'" [options]="ordenacao_Option"></nex-combobox> 
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card greenBorder"   (click)="onPrint_Click()">Imprimir</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button" class="btn btn-dark bt-card redBorder"     (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button" class="btn btn-dark bt-card orangeBorder"  (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>
+<button *ngIf="showReport == true" style="position: fixed;top: 96px;z-index: 9999;left: calc(100% - 300px);" type="button" class="btn btn-dark bt-card redBorder"  (click)="onReportClose_Click()">Fechar</button>
+

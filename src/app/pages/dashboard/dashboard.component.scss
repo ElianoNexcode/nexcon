@@ -1,0 +1,21 @@
+@import '../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+    .card {
+        margin: 6px 6px 0 0px !important;
+        overflow: hidden;
+    }
+
+    .card-body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-header {
+        color: #CCCCCC;
+        text-transform: capitalize;
+        padding: 9px 12px !important;
+    }
+
+}

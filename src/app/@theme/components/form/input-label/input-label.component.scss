@@ -1,0 +1,142 @@
+@import '../../../themes.scss';
+
+@include nb-install-component() {
+    .inputGroup {
+        display: flex;
+
+        width: 100%;
+        height: 29px;
+        border: 1px solid #434561;
+        border-radius: 3px;
+        margin-top: 9px;
+
+        overflow-x: hidden;
+        overflow-y: hidden;
+
+        .labelBox {
+            height: 27px;
+            background-color: #222b45 !important;
+
+            margin: 0;
+            padding: 9px;
+
+            font-size: 0.7rem;
+            white-space: nowrap;
+            line-height: 10px;
+
+            border-right: 1px solid #434561;
+        }
+
+        .sufixo {
+            height: 27px;
+
+            margin: 0;
+            padding: 9px;
+
+            font-size: 0.7rem;
+            white-space: nowrap;
+            line-height: 10px;
+
+            cursor: pointer;
+
+            border-left: 1px solid #434561;
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+
+            margin: 0;
+            padding: 2px 6px;
+
+            text-align: center;
+            border-left: 1px solid #434561;
+            background-color: #1D2642;
+            border-radius: 0 5px 5px 0;
+
+            cursor: pointer;
+            font-size: 12pt;
+        }
+
+        .icon_2 {
+            display: flex;
+            align-items: center;
+            
+            margin: 0;
+            padding: 2px 6px;
+
+            text-align: center;
+            border-left: 1px solid #434561;
+            background-color: #1D2642;
+            border-radius: 0 5px 5px 0;
+
+            cursor: pointer;
+        }
+
+        .inputbox {
+
+            width: 100%;
+            margin: 0;
+            background-color: nb-theme(background-input-color);
+
+            input {
+                width: 100%;
+                height: 100%;
+                
+                margin: 0;
+                padding: 6px 5px 5px;
+                background: transparent;
+                line-height: 1rem;
+                border: none;
+                font-size: 0.7rem;
+                color: nb-theme(input-color);
+            }
+
+            textbox:focus,
+            input:focus {
+                color: nb-theme(input-focus-color);
+                background: nb-theme(background-input-focus-color);
+                outline: none;
+            }
+
+            :first-child {
+                border-radius: 0;
+            }
+
+            :last-child {
+                border-radius: 0 3px 3px 0;
+            }
+        }
+
+    }
+
+    .error {
+        background-color: #3f1a32 !important;
+    }
+
+    ::selection {
+        color: yellow;
+        background: transparent;
+    }
+
+    .time {
+
+        // .labelBox {
+        //     width: 100%;
+        // }
+
+        .inputbox {
+            width: 100%;
+
+            // input {
+            //     text-align: center;
+            // }
+        }
+    }
+
+    .disabled {
+        background-color: #202840 !important;
+        color: #a9abaE;
+    }
+
+}

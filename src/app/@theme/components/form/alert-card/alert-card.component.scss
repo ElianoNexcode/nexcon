@@ -1,0 +1,78 @@
+
+.card-info {
+    position: absolute;
+    bottom: 50px;
+    left: calc(100% - 257px);
+    min-height: 100px;
+    width: 220px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #192038;
+    text-align: justify;
+    line-height: normal;
+    align-content: center;
+    margin: -23px 0 0 -11px;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.card-header {
+    color: #ffffff;
+    text-align: center;
+    font-family: Roboto !important;
+    font-size: 10px;
+    text-shadow: 1px 1px 1px black;
+    padding: 7px 9px 6px 9px !important;
+}
+
+.card-header::after {
+    position: absolute;
+    color: #721f33;
+    bottom: -16px;
+    left: 107px !important;
+    border-top: 0.8em solid!important;
+    border-right: 0.8em solid transparent !important;
+    border-bottom: 0.8em solid transparent !important;
+    border-left: 0.8em solid transparent !important;
+    content: "";
+}
+
+.card-body {
+    font-family: Roboto !important;
+    font-size: 0.7rem;
+    font-weight: 500px;
+    padding: 9px;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px black;
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+.inf {
+    background-color: #203988!important;
+
+    .card-header::after {
+        color: transparent !important;
+    }
+}
+
+.adv {
+    background-color: #77753e !important;
+
+    .card-header::after {
+        color: #77753e !important;
+    }
+}
+
+.err {
+    background-color: #762738 !important;
+
+    .card-header::after {
+        color: #762738 !important;
+    }
+}
+
+.noShadow {
+    box-shadow: none !important;
+}
+
+

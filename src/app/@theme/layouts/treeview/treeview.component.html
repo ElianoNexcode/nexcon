@@ -1,0 +1,94 @@
+<div class="player" id="player" [class.voted]="treeviewService.flipped" id="treeview">
+    <div class="col treeview front">
+        <div class="dropright" *ngIf="treeviewService.treeview.length > 1">
+            <div class="noselect btn top-title dropdown-toggle dropdown-toggle-split-flip" [routerLink]="treeviewService?.treeview[1]?.link" (click)="flipIt()">
+                {{treeviewService.treeview[0].text}}
+            </div>    
+        </div>
+        <div *ngIf="treeviewService.treeview?.length == 1">
+            <div class="btn top-title">
+                {{treeviewService.treeview[0].text}}
+            </div>
+        </div>
+
+        <div class="div-top" [ngStyle]="{'visibility': (treeviewService.treeview.length > 0 && treeviewService.treeview[0].child !== '')? 'visible' :'hidden'}">
+            <nex-combobox *ngIf="treeviewService.treeview[0].child == 'site'" [options]="cbSites" [type]="'no-label'" (eventChange)="cbSites_Change($event)"></nex-combobox>
+            <nex-combobox *ngIf="treeviewService.treeview[0].child == 'organizacao'" [options]="cbOrganizacao" [type]="'no-label'" (eventChange)="cbOrganizacao_Change($event)"></nex-combobox>
+        </div>
+        
+        <div class="container">
+            <ul class="nav tv-itens" id="accordion">
+                <div class="itens" *ngFor="let itens of treeviewService.treeview[0].item"  id="accordion2">    
+                    <li *ngIf="itens.adminAccess != true || (itens.adminAccess == true && treeviewService.operador.nome == 'ADMINISTRADOR MASTER')" 
+                        [id]="'tview-' + itens.id"
+                        class="btn btn-link leftPad" 
+                        [routerLink]="itens.link" 
+                        [state]="{filtro: itens.filtro}" 
+                        [ngClass]="{'dropdown-toggle dropdown-toggle-split': (itens.subitem?.length > 0), 'disabled': itens.disabled}" 
+                        (click)="selectTreeview(itens.id, treeviewService.treeview[0].item, 0, (itens.subitem?.length > 0))" 
+                        data-toggle="collapse" 
+                        [attr.data-target]="'#nav-' + itens.id" 
+                        aria-expanded="true" 
+                        aria-controls="collapseConjunto">
+                        <img src="./assets/icons/{{itens.icon}}" />
+                        <span class="item-label" [ngClass]="{'condensed': (itens.text?.length > 18)}">{{itens.text}}</span>
+                    </li>        
+                    <ul *ngIf="itens.subitem" class="nav collapse multi-collapse" id="nav-{{itens.id}}" data-parent="#accordion">
+                        <div class="itens" *ngFor="let subitem of itens.subitem">
+                            <li [id]="'tview-' + subitem.id"
+                                class="btn btn-link leftPad2x"
+                                [routerLink]="subitem.link"
+                                [state]="{filtro: subitem.filtro}"
+                                [ngClass]="{'condensed': (subitem.text?.length > 18),'dropdown-toggle dropdown-toggle-split': (subitem.modulos), 'disabled': itens.disabledv}"
+                                (click)="selectTreeview(subitem.id, itens.subitem, itens.id, subitem.modulos?.length > 0)"
+                                data-toggle="collapse"
+                                [attr.data-target]="'#navSub-' + subitem.id" 
+                                aria-expanded="true" 
+                                aria-controls="collapseConjunto">
+                                <img src="./assets/icons/{{subitem.icon}}" />
+                                {{subitem.text}}
+                            </li>
+                            <ul *ngIf="subitem.modulos" class="nav collapse multi-collapse" id="navSub-{{subitem.id}}" data-parent="#accordion2">
+                                <li [id]="'tview-' + modulo.id"  class="btn btn-link leftPad4x" *ngFor="let modulo of subitem.modulos" (click)="selectTreeview(modulo.id, subitem.modulos, subitem.id, false)" [ngClass]="{'condensed': (modulo.text?.length > 18)}" [routerLink]="modulo.link" [state]="{filtro: modulo.filtro}">
+                                    <img src="./assets/icons/{{modulo.icon}}" />
+                                    {{modulo.text}}
+                                </li>
+                            </ul>    
+                        </div>
+                    </ul>
+                </div>
+                <div *ngIf="treeviewService.treeview[0].item" class="endTreeView"></div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col treeview back" *ngIf="treeviewService.treeview?.length > 1">
+        <div class="dropleft">
+            <div class="btn top-title dropleft dropdown-toggle dropdown-toggle-split" [routerLink]="treeviewService?.treeview[0]?.link" (click)="flipIt()">
+                {{treeviewService.treeview[1]?.text}}
+            </div>    
+        </div>
+        <div class="div-top">
+            <nex-combobox *ngIf="treeviewService.treeview[1]?.child == 'site'" [options]="cbSites" [type]="'no-label'" (eventChange)="cbSites_Change($event)"></nex-combobox>
+            <nex-combobox *ngIf="treeviewService.treeview[1]?.child == 'organizacao'" [options]="cbOrganizacao" [type]="'no-label'" (eventChange)="cbOrganizacao_Change($event)"></nex-combobox>
+        </div>
+
+        <div class="container">
+            <ul class="nav tv-itens" id="accordion-back">
+                <div class="itens" *ngFor="let itensBk of treeviewService.treeview[1].item">
+                    <li [id]="'tview-' + itensBk.id" class="btn btn-link leftPad" [routerLink]="itensBk.link" [ngClass]="{'dropdown-toggle dropdown-toggle-split': (itensBk.subitem)}" (click)="selectTreeview(itensBk.id, treeviewService.treeview[1].item, 0, (itensBk.subitem?.length > 0))" data-toggle="collapse" [attr.data-target]="'#nav-' + itensBk.id" aria-expanded="true" aria-controls="collapseConjunto">
+                        <img src="./assets/icons/{{itensBk.icon}}" />
+                        <span class="item-label" [ngClass]="{'condensed': (itensBk.text?.length > 18)}">{{itensBk.text}}</span>
+                    </li>     
+                    <ul *ngIf="itensBk.subitem" class="nav collapse multi-collapse" id="nav-{{itensBk.id}}" data-parent="#accordion-back">
+                        <li class="btn btn-link leftPad2x" *ngFor="let subitem of itensBk.subitem" [id]="'tview-' + subitem.id" (click)="selectTreeview(subitem.id, itensBk.subitem, itensBk.id, (subitem.modulo?.length > 0))" [ngClass]="{'condensed': (subitem.text?.length > 18)}" [routerLink]="subitem.link">
+                            <img src="./assets/icons/{{subitem.icon}}" />
+                            <span>{{subitem.text}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="div-end"></div>
+            </ul>
+        </div>
+    </div>    
+</div>

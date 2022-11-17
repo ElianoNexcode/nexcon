@@ -1,0 +1,106 @@
+@import '../../themes.scss';
+
+@include nb-install-component() {
+    
+    .tab-card {
+        width: 100%;
+        border: 1px solid #434561 !important;
+        border-radius: 3px !important;
+        display: flex;
+        flex-direction: column;
+                
+        ul {
+            flex-wrap: nowrap;
+            overflow: hidden;
+            border-bottom: 1px solid #434561 !important;
+        }
+
+        li {
+            min-width: 110px;
+
+            padding: 6px;
+            text-align: center;
+
+            color: #a5a7ab;
+            font-family: roboto;
+            font-size: 0.7rem;
+            line-height: normal;
+
+            background: #1d2642;
+            border-right: 1px solid #434561;
+        }
+
+        li:first-child {
+            border-radius: 3px 0 0 0;
+        }
+
+    }
+
+    .tab-card-full {
+
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        
+        border: 1px solid #434561 !important;
+        border-radius: 3px !important;
+        margin-top: 9px;
+        
+        ul {
+            flex-wrap: nowrap;
+            overflow: hidden;
+            border-bottom: 1px solid #434561 !important;
+        }
+
+        li {
+            width: 100%;
+
+            padding: 7px;
+            text-align: center;
+
+            color: #a5a7ab;
+            font-family: roboto;
+            font-size: 0.7rem;
+            line-height: normal;
+
+            background: #1d2642;
+            border-right: 1px solid #434561;
+        }
+
+        li:first-child {
+            border-radius: 3px 0 0 0;
+        }
+
+        li:last-child {
+            border-right: none;
+        }
+    }
+
+    .maxHeight {
+        height: calc(100% - 9px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mediumHeight{
+        height: calc(50vh - 200px);
+    }
+
+    .largeHeight{
+        height: 100% !important
+    }
+    
+    .active {
+        background-color: #0d54a1 !important;
+    }
+
+    .nav-tabs {
+       pointer-events: all !important; 
+    }
+
+    .tabs {
+        display: flex;
+        height: 100%;
+    }
+}

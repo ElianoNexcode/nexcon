@@ -1,0 +1,46 @@
+@import '../../../themes.scss';
+
+@include nb-install-component() {
+
+    .card-footer-question {
+        margin: -0.48rem -12px !important;
+        padding: 0.60rem 12px !important;
+
+        background-color: #492539;
+        
+        font-family: Roboto;
+        
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .bt-card {
+        min-width: 93px !important;
+    
+        margin-right: 18px;
+        line-height: normal;
+        text-align: center !important;
+    
+        border-radius: 3px !important;
+        background-color: #401e31;
+        
+        color: #BDBFC1 !important;
+        font-size: 0.7rem !important;
+    }
+ 
+    .redBorder2:hover {border: 1px solid #ed3237 !important};
+
+    .greenBorder2:hover {border: 1px solid #00d68f};
+
+    .col {
+        font-size: 13px;
+        padding: 0;
+    }
+
+    .card-footer-buttons {
+        text-align: end;
+    }
+}
+
+

@@ -1,0 +1,207 @@
+<nex-actionbuttom id="buttons" (eventClick)="onActionButtom_Click($event)"></nex-actionbuttom>
+<div class="modulo">
+    <div id="grid" class="grid">
+        <nex-listview [params]="listView_Software" [showFilter]="false" (eventCheck)="onListView_Change($event)">
+        </nex-listview>
+    </div>
+    <div id="form" class="form">
+        <div id="card-form" class="card">
+            <div class="card-header">
+                Configuração do Nexcode {{ alias }}
+            </div>
+            <div id="softwarePanel" [nbSpinner]="showSpinner" nbSpinnerMessage="Aguarde..." nbSpinnerStatus="basic" nbSpinnerSize="giant"
+                class="card-body">
+                <div class="panel" [ngSwitch]="alias">
+                    <div class="displayFlex fullHeight" *ngSwitchCase="'Controls'">
+                        <nex-form-group [name]="'controlsGroup'">
+                            <nex-input-label [text]="'IP (IN)'" [input]="ip_Text" [marginTop]="0"></nex-input-label>
+                            <nex-input-label [text]="'Porta TCP'" [input]="portaTCP_Text"></nex-input-label>
+                            <nex-input-label [text]="'IP (OUT)'" [input]="ipExt_Text"></nex-input-label>
+                        </nex-form-group>
+                    </div>
+                    <div *ngSwitchCase="'Registry'">
+                        <nex-form-group [name]="'registryGroup'">
+                            <nex-input-label [text]="'IP'" [input]="ip_Text" [marginTop]="0"></nex-input-label>
+                            <nex-input-label [text]="'Porta TCP'" [input]="portaTCP_Text"></nex-input-label>
+                        </nex-form-group>
+                    </div>
+                    <div *ngSwitchCase="'Notification'">
+                        <nex-form-group [name]="'notificationGroup'">
+                            <nex-input-label [text]="'IP'" [input]="ip_Text" [marginTop]="0"></nex-input-label>
+                            <nex-input-multi-label [text]="'Porta TCP'" [inputLeft]="portaTCP_Mult"
+                                [inputRight]="portaUDP_Mult"></nex-input-multi-label>
+                        </nex-form-group>
+                    </div>
+                    <div class="displayFlex fullHeight" *ngSwitchCase="'Utility'">
+                        <div class="displayFlex fullHeight">
+                            <nex-form-group [name]="'utilityGroup'">
+                                <nex-input-label [text]="'IP'" [input]="ip_Text" [marginTop]="0"></nex-input-label>
+                                <nex-input-label [text]="'Porta TCP'" [input]="portaTCP_Text"></nex-input-label>
+                            </nex-form-group>
+                            <nex-tabs-card [tabsOptions]="tabsSoftware_Option" [name]="'tabsSoftware'"
+                                [fullWidth]="true">
+                                <nex-tab [tabComponent]="tabsSoftware_Option.tabs[0]">
+                                    <nex-form-group [name]="'identificacao'">
+                                        <nex-combobox [label]="'Geração'" [options]="backupGeracao_Option"
+                                            (eventChange)="onBackupGeracao_Change()"></nex-combobox>
+                                        <nex-input-label [text]="'Local'" [input]="backupLocal_Text">
+                                        </nex-input-label>
+                                        <div class="row">
+                                            <div class="col-6 hora-ret">
+                                                <nex-input-label [text]="'Hora'" [input]="backupHora_Text">
+                                                </nex-input-label>
+                                            </div>
+                                            <div class="col-6 ret-hora">
+                                                <nex-combobox [label]="'Retenção'" [options]="BackupRetencao_Option">
+                                                </nex-combobox>
+                                            </div>
+                                        </div>
+                                    </nex-form-group>
+                                </nex-tab>
+                                <nex-tab [tabComponent]="tabsSoftware_Option.tabs[1]">
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-8 hora-ret">
+                                                <nex-combobox [label]="'Geração'" [options]="limpezaGeracao_Option"
+                                                    (eventChange)="onLimpezaGeracao_Change()"></nex-combobox>
+                                            </div>
+                                            <div class="col-4 ret-hora">
+                                                <nex-input-label [labelMinWidth]="50" [text]="'Hora'"
+                                                    [input]="limpezaHora_Text"></nex-input-label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="row eventoRetecaoRow">
+                                            <div class="col-8 evento-utility">
+                                                <div class="title-evento">Evento</div>
+                                            </div>
+                                            <div class="col-4 retencao-utility">
+                                                <div class="title-retencao">Retenção (dias)</div>
+                                            </div>
+                                        </div>
+                                        <div id="itensEventoRetencao" class="row itensEventoRetencaoRow">
+                                            <div class="col-8 evento-utility evento-utility.item">
+                                                <nex-select-group [horizontal]="true"
+                                                                  [marginTop]="0"
+                                                                  [options]="eventoAgenda_Options"
+                                                                  [editable]="editable"
+                                                                  [class]="'selectOneGrid'"
+                                                                  (eventChange)="onRetencao_Change(1)">
+                                                </nex-select-group>
+                                                <nex-select-group [horizontal]="true"
+                                                                  [marginTop]="0"
+                                                                  [options]="eventoIdentificacao_Options"
+                                                                  [editable]="editable"
+                                                                  [class]="'selectOneGrid'"
+                                                                  (eventChange)="onRetencao_Change(2)">
+                                                </nex-select-group>
+                                                <nex-select-group [horizontal]="true"
+                                                                  [marginTop]="0"
+                                                                  [options]="eventoAlarme_Options"
+                                                                  [editable]="editable"
+                                                                  [class]="'selectOneGrid'"
+                                                                  (eventChange)="onRetencao_Change(3)">
+                                                </nex-select-group>
+                                                <nex-select-group [horizontal]="true"
+                                                                  [marginTop]="0"
+                                                                  [options]="eventoAcesso_Options"
+                                                                  [editable]="editable"
+                                                                  [class]="'selectOneGrid'"
+                                                                  (eventChange)="onRetencao_Change(4)">
+                                                </nex-select-group>
+                                                <nex-select-group [horizontal]="true"
+                                                                  [marginTop]="0"
+                                                                  [options]="eventoEmail_Options"
+                                                                  [editable]="editable"
+                                                                  [class]="'selectOneGrid'"
+                                                                  (eventChange)="onRetencao_Change(5)">
+                                                </nex-select-group>
+                                                <nex-select-group [horizontal]="true"
+                                                                  [marginTop]="0"
+                                                                  [options]="eventoLogOperacao_Options"
+                                                                  [editable]="editable"
+                                                                  [class]="'selectOneGrid'"
+                                                                  (eventChange)="onRetencao_Change(6)">
+                                                </nex-select-group>
+                                                <nex-select-group [horizontal]="true"
+                                                                  [marginTop]="0"
+                                                                  [options]="eventoLogSistema_Options"
+                                                                  [editable]="editable"
+                                                                  [class]="'selectOneGrid'"
+                                                                  (eventChange)="onRetencao_Change(7)">
+                                                </nex-select-group>
+                                            </div>
+                                            <div class="col-4 retencao-utility retencao-utility.item editable" [class.voted]="!editable">
+                                                <nex-input-label [marginTop]="0"
+                                                                 [class]="'gridInput'" 
+                                                                 [input]="retencaoAgenda_Text">
+                                                </nex-input-label>
+                                                <nex-input-label [marginTop]="0"
+                                                                 [class]="'gridInput'"
+                                                                 [input]="retencaoIdentificacao_Text">
+                                                </nex-input-label>
+                                                <nex-input-label [marginTop]="0"
+                                                                 [class]="'gridInput'"
+                                                                 [input]="retencaoAlarme_Text">
+                                                </nex-input-label>
+                                                <nex-input-label [marginTop]="0"
+                                                                 [class]="'gridInput'"
+                                                                 [input]="retencaoAcesso_Text">
+                                                </nex-input-label>
+                                                <nex-input-label [marginTop]="0"
+                                                                 [class]="'gridInput'"
+                                                                 [input]="retencaoEmail_Text">
+                                                </nex-input-label>
+                                                <nex-input-label [marginTop]="0"
+                                                                 [class]="'gridInput'"
+                                                                 [input]="retencaoLogOperacao_Text">
+                                                </nex-input-label>
+                                                <nex-input-label [marginTop]="0" 
+                                                                 [class]="'gridInput'"
+                                                                 [input]="retencaoLogSistema_Text">
+                                                </nex-input-label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </nex-tab>
+                            </nex-tabs-card>
+                            <nex-radio [text]="'Status'" [options]="estado_Option"></nex-radio>
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="'Mobile'">
+                        <nex-form-group [name]="'mobileGroup'">
+                            <nex-input-label [text]="'IP'" [input]="ip_Text" [marginTop]="0"></nex-input-label>
+                            <nex-input-multi-label [text]="'Porta TCP'" [inputLeft]="portaTCP_Mult"
+                                [inputRight]="portaUDP_Mult"></nex-input-multi-label>
+                            <nex-radio [text]="'Status'" [options]="estado_Option"></nex-radio>
+                        </nex-form-group>
+                    </div>
+                    <div *ngSwitchCase="'Integration'">
+                        <nex-form-group [name]="'integrationGroup'">
+                            <nex-input-label [text]="'IP'" [input]="ip_Text" [marginTop]="0"></nex-input-label>
+                            <nex-input-label [text]="'Porta TCP'" [input]="portaTCP_Text"></nex-input-label>
+                            <nex-input-label [text]="'Login'" [input]="login_Text"></nex-input-label>
+                            <nex-input-label [text]="'Senha'" [input]="senha_Text"></nex-input-label>
+                            <nex-radio [text]="'Status'" [options]="estado_Option"></nex-radio>
+                        </nex-form-group>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <nex-alert-card [alertService]="alertService"></nex-alert-card>
+                <div class="buttons">
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button"
+                        class="btn btn-dark bt-card greenBorder" (click)="onSave_Click()">Salvar</button>
+                    <button *ngIf="actionbuttomService.editable != 'no'" type="button"
+                        class="btn btn-dark bt-card redBorder" (click)="onClose_Click()">Cancelar</button>
+                    <button *ngIf="actionbuttomService.editable == 'no'" type="button"
+                        class="btn btn-dark bt-card orangeBorder" (click)="onClose_Click()">Fechar</button>
+                </div>
+            </div>
+            <input id="fileselector" type="file" (change)="getFolder_Change($event)" accept="" webkitdirectory="true"
+                directory="true" multiple="true" style="display:none" autocomplete="none" />
+            <div id="card-lock"></div>
+        </div>
+    </div>
+</div>

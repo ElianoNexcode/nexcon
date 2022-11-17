@@ -1,0 +1,52 @@
+@import '../../../@theme/styles/pages.scss';
+
+@include nb-install-component() {
+    .card-body{
+        display: flex;
+        background-color: #222b45 !important;
+    }
+
+    .card {
+        margin: 6px 6px 0 0px !important;
+        overflow: hidden;
+    }
+
+    .panel {
+        padding: 9px;
+        margin: 0;
+        border-top: 1px solid #434561;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            font-size: 0.7rem;
+        }
+    }
+
+    .colunm_Left {
+        width: 11%;
+        font-size: 13px; 
+        padding: 4.4px 6px;
+        border-right: 1px solid #434561; 
+    }
+
+    .colunm_Right {
+        width: 89%;
+        font-size: 13px; 
+        padding: 4.4px 6px; 
+        background-color: #1a233d;    
+    }
+
+    .box{
+        width: 100%;
+        border-left: 1px solid #434561;
+        border-top: 1px solid #434561;
+        border-right: 1px solid #434561;
+    }
+
+    .borderRow{
+        border-bottom: 1px solid #434561; 
+    }
+
+}

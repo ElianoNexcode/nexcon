@@ -1,0 +1,20 @@
+<ng-container>
+    <div class="box" [ngStyle]="{'margin-top.px': marginTop, 'background': background }" [ngClass]="{'fullHeight': fullHeight, 'fullHeightMargin': fullHeightMargin, 'fullHeightButton': fullHeightButton, 'middleHeightMargin': middleHeightMargin, 'noBorder': noBorder == true}">
+        <div class="header" *ngIf="title" [style.textAlign]="titleAlign">
+            <div class="row">
+                <div class="col">
+                    {{title}}
+                </div>    
+                <div class="col" *ngIf="checkButton" style="text-align: end;">
+                    <nex-mini-button [id]="boxPanel.buttons[0].name" [type]="boxPanel.buttons[0].type" [disabled]="boxPanel.buttons[0].disabled" (eventClick)="onButtonClick($event)"></nex-mini-button>
+                </div>
+            </div>        
+        </div>
+        <div [id]="'box_' + name"  class="body" [ngClass]="{'noPadding': !title || noPadding == true, 'minPadding': minPadding == true, 'padding': padding == true, 'scrollbar': scrollBar == true}">
+            <ng-content></ng-content>
+        </div>
+        <div class="footer" *ngIf="showFooter == true">
+            <nex-mini-button *ngFor="let button of boxPanel?.buttons" [id]="button.name" [type]="button.type" [disabled]="button.disabled" (eventClick)="onButtonClick($event)"></nex-mini-button>
+        </div>
+    </div>    
+</ng-container>

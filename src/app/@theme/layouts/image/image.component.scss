@@ -1,0 +1,27 @@
+@import "../../themes.scss";
+
+@include nb-install-component() {
+    .image {
+        padding: 16px 16px 0px;
+        text-align: center;
+
+        .src {
+            align-self: center;
+        }
+
+        .border{
+            border: 1px solid #434561!important;
+        }
+
+        .sizeText{
+            color: #A9ABAE;
+        }
+
+        span{
+            display: flex;
+            justify-content: center;
+            margin-top: 7px;
+            font-size: 9px;
+        }
+    }
+}
