@@ -33,7 +33,7 @@ export interface SetorConfig {
 }
 
 export interface OrganizacaoConfig {
-    organizacaoNome: string
+    organizacaoNome?: string
     organizacaoLogo?: string
 }
 
@@ -46,7 +46,7 @@ export interface ConfiguracaoConfig {
 }
 
 export interface PlataformaConfig {
-    logo: string
+    logo: string | null
 }
 
 export interface UserConfig {
@@ -57,20 +57,20 @@ export interface UserConfig {
 
 export interface SistemaConfig {
     id: number;
-    softwareLicenca: string
-    softwareLicencaNumero: string
-    softwareLicencaRegistro: string
-    softwareLicencaVersao: number
-    softwareLicencaEdicao: string
-    softwareLicencaVolume: string
-    softwareLicencaRelease: string
-    solucaoEspecifica: string
-    solucaoIntegrada: number
-    loginDigitos: string
-    loginSenhaDigitos: string
-    loginSenhaCaracter: number
-    loginSenhaRenovacao: number
-    loginSenhaExpiracao: number
+    softwareLicenca?: string
+    softwareLicencaNumero?: string
+    softwareLicencaRegistro?: string
+    softwareLicencaVersao?: number
+    softwareLicencaEdicao?: string
+    softwareLicencaVolume?: string
+    softwareLicencaRelease?: string
+    solucaoEspecifica?: string
+    solucaoIntegrada?: number
+    loginDigitos?: string
+    loginSenhaDigitos?: string
+    loginSenhaCaracter?: number
+    loginSenhaRenovacao?: number
+    loginSenhaExpiracao?: number
 }
 
 export enum Versao {
@@ -86,96 +86,106 @@ export enum Versao {
 export class ConfigStorage {
 
     config: Config = {};
-    tokenDecode: Token;
-    siteIdFilter: any;
+    tokenDecode?: Token;
+    siteIdFilter?: any;
 
     constructor() {
-        const config = JSON.parse(window.localStorage.getItem("nexcon"));
+        const nexcon: string = window.localStorage.getItem("nexcon") || '';
+        const config = JSON.parse(nexcon);
         if(config != null) {
             this.config = config;
         }
     }
 
-    organizacaoBehavior: BehaviorSubject<OrganizacaoConfig> = new BehaviorSubject(null);
-    siteBehavior: BehaviorSubject<SiteConfig> = new BehaviorSubject(null);
-    plataformaBehavior: BehaviorSubject<PlataformaConfig> = new BehaviorSubject(null);
-    sistemaBehavior: BehaviorSubject<SistemaConfig> = new BehaviorSubject(null);
-    configuracaoBehavior: BehaviorSubject<ConfiguracaoConfig> = new BehaviorSubject(null);
+    organizacaoBehavior?: BehaviorSubject<OrganizacaoConfig | undefined>;
+    siteBehavior?: BehaviorSubject<SiteConfig | undefined>;
+    plataformaBehavior?: BehaviorSubject<PlataformaConfig | undefined>;
+    sistemaBehavior?: BehaviorSubject<SistemaConfig | undefined>;
+    configuracaoBehavior?: BehaviorSubject<ConfiguracaoConfig | undefined>;
 
     getConfig<T>(key: string): T {
-        const config = JSON.parse(window.localStorage.getItem("nexcon"));
+        type objectKey = keyof typeof this.config;
+        const configKey: objectKey = key as objectKey;
+
+        const nexcon: string = window.localStorage.getItem("nexcon") || '';
+        const config = JSON.parse(nexcon);
         if(config != null) {
             this.config = config;
         }
-        return this.config[key] || {};
+        return this.config[configKey] as T;
     }
 
     setSites(siteIdFilter: any) {
         this.siteIdFilter = siteIdFilter;
     }
 
-    setConfig<T>(config: T, key?: string) {
-        this.config[key] = { ... config };
+    setConfig<T>(config: T, key: string) {
+
+        type objectKey = keyof typeof this.config;
+        const configKey: objectKey = key as objectKey;
+  
+        this.config = {[key]: {... config}};
         window.localStorage.setItem("nexcon", JSON.stringify(this.config));
+
         switch (key) {
             case "site":
-                this.siteBehavior?.next(this.config[key]);
+                this.siteBehavior?.next(this.config[configKey] as SiteConfig);
                 break;
 
             case "organizacao":
-                this.organizacaoBehavior?.next(this.config[key]);
+                this.organizacaoBehavior?.next(this.config[configKey] as OrganizacaoConfig);
                 break;
 
             case "plataforma":
-                this.plataformaBehavior?.next(this.config[key]);
+                this.plataformaBehavior?.next(this.config[configKey] as PlataformaConfig);
                 break;
 
             case "sistema":
-                this.sistemaBehavior?.next(this.config[key]);
+                this.sistemaBehavior?.next(this.config[configKey] as SistemaConfig);
                 break;
 
             case "configuracao":
-                this.configuracaoBehavior?.next(this.config[key]);
+                this.configuracaoBehavior?.next(this.config[configKey] as ConfiguracaoConfig);
                 break;
         }
     }
 
-    organizacaoSubject(): BehaviorSubject<OrganizacaoConfig> {
+    organizacaoSubject(): BehaviorSubject<OrganizacaoConfig | undefined> {
         if(!this.organizacaoBehavior || this.organizacaoBehavior.closed) {
             this.organizacaoBehavior = new BehaviorSubject(this.config["organizacao"]);
         }        
         return this.organizacaoBehavior;
     }
 
-    siteSubject(): BehaviorSubject<SiteConfig> {
-        if(!this.siteBehavior || this.sistemaBehavior.closed) {
+    siteSubject(): BehaviorSubject<SiteConfig | undefined> {
+        if(!this.siteBehavior || this.siteBehavior.closed) {
             this.siteBehavior = new BehaviorSubject(this.config["site"]);
         }
         return this.siteBehavior;
     }
 
-    plataformaSubject(): BehaviorSubject<PlataformaConfig> {
+    plataformaSubject(): BehaviorSubject<PlataformaConfig | undefined> {
         if(!this.plataformaBehavior || this.plataformaBehavior.closed) {
             this.plataformaBehavior = new BehaviorSubject(this.config["plataforma"]);
         }
         return this.plataformaBehavior;
     }
 
-    sistemaSubject(): BehaviorSubject<SistemaConfig> {
+    sistemaSubject(): BehaviorSubject<SistemaConfig | undefined> {
         if(!this.sistemaBehavior || this.sistemaBehavior.closed) {
             this.sistemaBehavior = new BehaviorSubject(this.config["sistema"]);
         } 
         return this.sistemaBehavior;
     }
 
-    configuracaoSubject(): BehaviorSubject<ConfiguracaoConfig> {
+    configuracaoSubject(): BehaviorSubject<ConfiguracaoConfig | undefined> {
         if(!this.configuracaoBehavior || this.configuracaoBehavior.closed) {
             this.configuracaoBehavior = new BehaviorSubject(this.config["configuracao"]);
         }        
         return this.configuracaoBehavior;
     }
 
-    converteImagemArray(_buffer) {
+    converteImagemArray(_buffer: any) {
         if (_buffer != null) {
             _buffer = _buffer.substr(_buffer.indexOf(",") + 1);
             if (_buffer && _buffer != null) {
@@ -190,7 +200,7 @@ export class ConfigStorage {
         }
     }
 
-    converteImagemBase64(imagem: Array<number>): string {
+    converteImagemBase64(imagem: Array<number> | null): string | null {
         var i = 0;
         let byteNumbers = "";
         if (imagem != null) {

@@ -43,7 +43,7 @@ export interface AmbienteSistema {
 }
 
 export interface AmbienteSistemaSchema extends SchemaInterface {
-    nodes: AmbienteSistema
+    nodes: AmbienteSistema[]
 }
 
 export interface read_AmbienteSistema { sistemaConfiguracao: AmbienteSistemaSchema }

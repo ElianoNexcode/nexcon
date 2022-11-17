@@ -20,12 +20,12 @@ export class AlertCardComponent implements AfterViewInit {
 
     width: number = window.innerWidth;
 
-    @Input() alertService: AlertServiceComponent;
+    @Input() alertService!: AlertServiceComponent;
     @Input() name: string = "card-message";
-    @Input() position: string;
+    @Input() position?: string;
     @Input() shadow: boolean = true;
 
-    left: number;
+    left?: number;
 
     ngAfterViewInit() {
         this.alertService.name = this.name

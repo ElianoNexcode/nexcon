@@ -40,7 +40,8 @@ export class AppComponent {
         .then(()=> this.router.navigate(["./"]));
 
       this.ambienteService.readAmbienteSistema()
-        .subscribe(async ({ sistemaConfiguracao }: read_AmbienteSistema) => {
+      .subscribe({
+        next: ({sistemaConfiguracao}: read_AmbienteSistema) => {
           const node: AmbienteSistema = sistemaConfiguracao.nodes[0];
           const sistema: SistemaConfig = {
             id: node.id,
@@ -61,41 +62,42 @@ export class AppComponent {
           };
           
           const plataforma: PlataformaConfig = {
-            logo: this.configService.converteImagemBase64(node.interfaceImagem)
+            logo: this.configService.converteImagemBase64(node.interfaceImagem || null)
           }
 
           this.configService.setConfig(sistema, "sistema");
           this.configService.setConfig(plataforma, "plataforma");
-
-        }, (error: any) => {
+        },
+        error: (error: any) => {
           console.log("%cFalha na obtenção dos dados de configuração", "color: orangered");
           console.log("%c   Log do erro:", "color: yellow");
           console.log("%c   " + error, "color: cyan");
-        })      
+        }
+      })
     }, 700);
   }
 
   imgFileLoad(path: string) {
     this.convertDataUrl(path)
-        .then((img: string) => {
+        .then((img: any) => {
             sessionStorage.setItem("logoApp", img);
         })
   }
 
-  convertDataUrl(url) {
-    return new Promise ((resolve, reject) => {
+  convertDataUrl(url: string) {
+    return new Promise ((resolve) => {
         var xhr = new XMLHttpRequest();
         xhr.onload = function() {
             var reader = new FileReader();
             reader.onloadend = function() {
                 resolve(reader.result);
             }
-            reader.readAsDataURL(xhr.response);
+            reader.readAsDataURL(xhr.response);            
         };
         xhr.open('GET', url);
         xhr.responseType = 'blob';
         xhr.send();
-    })
+    });
   }
 
 }

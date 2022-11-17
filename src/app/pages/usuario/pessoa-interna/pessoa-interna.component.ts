@@ -118,8 +118,8 @@ export class PessoaInternaComponent implements OnInit, AfterViewInit ,OnDestroy 
 
   boxButton: BoxPanel = new BoxPanel();
 
-  id: number;
-  pessoaImagem: Array<number>;
+  id?: number;
+  pessoaImagem?: Array<number>;
   pessoaNome_Text: InputLabel = new InputLabel();
   pessoaGrupo_Option: ComboOptions = new ComboOptions();
   pessoaTelefoneFixo_Text: InputLabel = new InputLabel();
@@ -184,9 +184,9 @@ export class PessoaInternaComponent implements OnInit, AfterViewInit ,OnDestroy 
   listView_PessoaVeiculo: ListViewGrid = new ListViewGrid();
   listView_VagaGaragem: ListViewGrid = new ListViewGrid();
 
-  idVeiculo: number;
+  idVeiculo?: number;
   pessoaVeiculoModalService: VeiculoInternoModalService = new VeiculoInternoModalService();
-  filterVeiculoInterno: FilterVeiculoModal;
+  filterVeiculoInterno?: FilterVeiculoModal;
 
   cartaoOficial_Text: InputLabel = new InputLabel();
   cartaoProvisorio_Text: InputLabel = new InputLabel();
@@ -194,38 +194,38 @@ export class PessoaInternaComponent implements OnInit, AfterViewInit ,OnDestroy 
   senha_Text: InputLabel = new InputLabel();
 
   listView_NivelAcessoPermanente: ListViewGrid = new ListViewGrid();  
-  idNivelAcessoPermanente: number;
+  idNivelAcessoPermanente?: number;
   listView_NivelAcessoRotativo: ListViewGrid = new ListViewGrid();
-  idNivelAcessoRotativo: number;
+  idNivelAcessoRotativo?: number;
   controle_Options: OptionsGroup = new OptionsGroup();
 
   usuarioNivelAcessoModalService: UsuarioNivelAcessoModalService = new UsuarioNivelAcessoModalService();
 
   listView_PessoaResponsavel: ListViewGrid = new ListViewGrid();
   pessoaModalService: PessoaInternaModalService = new PessoaInternaModalService();
-  idResponsavel: number;
+  idResponsavel?: number;
 
   abordagemInformativa_Text: TextareaLabel = new TextareaLabel();
   abordagemAdvertida_Text: TextareaLabel = new TextareaLabel();
   abordagemRestritiva_Text: TextareaLabel = new TextareaLabel();
 
-  pessoaInterna: PessoaInternaUsuario;
+  pessoaInterna?: PessoaInternaUsuario;
   dateOperator: DateOperator = new DateOperator();
   showSpinner: boolean = false;
   order_by: PessoaInternaUsuarioSort = { nome: SortOperationKind.ASC };
-  filter: PessoaInternaUsuarioFilter;
-  filterGrid: PessoaInternaUsuarioFilter;
-  filterPessoaInterna: FilterPessoaModal;
-  supervisorId: number;
+  filter?: PessoaInternaUsuarioFilter;
+  filterGrid?: PessoaInternaUsuarioFilter;
+  filterPessoaInterna?: FilterPessoaModal;
+  supervisorId?: number;
 
   cardTabs_Options: CardTabsOptions = new CardTabsOptions();
   
-  estado: number;
+  estado?: number;
 
-  nivelOperacaoService: NivelOperacaoService = new NivelOperacaoService(null);
+  nivelOperacaoService: NivelOperacaoService | null = new NivelOperacaoService(null);
 
   textMaskChar: string = "***************************************";
-  pessoaInternaAbordagem: Abordagem;
+  pessoaInternaAbordagem?: Abordagem;
 
   settings: BehaviorSubject<any>;
   treeviewItem: BehaviorSubject<any>;
@@ -236,7 +236,7 @@ export class PessoaInternaComponent implements OnInit, AfterViewInit ,OnDestroy 
 
   alertService: AlertServiceComponent = new AlertServiceComponent();
 
-  editable: boolean;
+  editable?: boolean;
 
   constructor(
     public actionbuttomService: ActionButtomService,

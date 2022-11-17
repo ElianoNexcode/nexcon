@@ -13,8 +13,6 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 
-import { Ng9PasswordStrengthBarModule } from 'ng9-password-strength-bar';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GenericAPI } from './@core/api/generic-api';
@@ -33,7 +31,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-export function getToken(): string {
+export function getToken(): string | null {
   return sessionStorage.getItem('token');
 }
 
@@ -61,8 +59,7 @@ export function getToken(): string {
 
     NbThemeModule.forRoot({ name: 'dark' }),
     ThemeModule.forRoot(),
-    GraphQLModule,
-    Ng9PasswordStrengthBarModule,
+    GraphQLModule
   ],
 
   declarations: [AppComponent],  

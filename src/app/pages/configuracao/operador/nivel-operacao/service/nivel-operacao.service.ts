@@ -20,14 +20,14 @@ import { Token } from 'src/app/@core/storage/config/config';
 @Injectable()
 export class NivelOperacaoService extends NivelOperacaoData {
 
-    rights: string;
+    rights?: string;
     tokenDecode: Token;
 
     constructor(private graphQL: GenericGraphQL) {
         super();
 
         this.rights = "0".repeat(105);
-        const token: string = window.sessionStorage.getItem("token");
+        const token: string | undefined = window.sessionStorage.getItem("token");
         this.tokenDecode = jwt_decode(token);
 
         this.rights = this.tokenDecode.operadorNivelPrivilegio;
@@ -64,7 +64,7 @@ export class NivelOperacaoService extends NivelOperacaoData {
     }
 
     getOperadorNome(): Operador {
-        return {id: parseInt(this.tokenDecode.operadorId), nome: this.tokenDecode.operadorNome};
+        return {id: parseInt(this.tokenDecode.operadorId || "0"), nome: this.tokenDecode.operadorNome || ''};
     }
 
     getPrivilegios(): string {

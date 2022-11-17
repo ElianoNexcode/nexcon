@@ -21,21 +21,25 @@ interface configStruc {
 })
 export class GraphQLModule {
 
-  urlSettings: String;
+  urlSettings!: String;
 
   constructor(private apollo: Apollo,
               private httpLink: HttpLink,
               private httpClient: HttpClient) {
-    this.httpClient.get("./assets/config.json", httpOptions)
-      .subscribe((config: configStruc) => {
-        const urlSettings = config.protocol + "://" + 
-                            config.address + ((config.port)? ":" + config.port: "") + 
-                            ((config.path)? "/" + config.path: "") + "/";
-        this.apollo.create({
-          link: this.httpLink.create({uri: urlSettings, withCredentials: false}),
-          cache: new InMemoryCache(),
-        });
-      });            
+
+    this.httpClient.get<configStruc>("./assets/config.json", httpOptions)
+      .subscribe({
+        next: (config: configStruc) => {
+          const urlSettings = config.protocol + "://" + 
+                              config.address + ((config.port)? ":" + config.port: "") + 
+                              ((config.path)? "/" + config.path: "") + "/";
+          this.apollo.create({
+            link: this.httpLink.create({uri: urlSettings, withCredentials: false}),
+            cache: new InMemoryCache(),
+          });
+        },
+        error: (error: any) => {console.log(error)}
+      });
   }
 
 }

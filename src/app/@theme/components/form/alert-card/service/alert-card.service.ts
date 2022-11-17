@@ -6,21 +6,21 @@ import { Injectable } from '@angular/core';
 export class AlertServiceComponent {
 
     msgType: string = "inf";
-    msgTitle: string;
-    alert: {title: string, message: string } = {title: null, message: null};
-    name: string;
-    width: number;
-    position: string;
+    msgTitle?: string;
+    alert: {title: string | null, message: string | null} = {title: null, message: null};
+    name!: string;
+    width?: number;
+    position?: string;
 
     clickOut = () => this.clickout(event);
 
     show(type: string, message: string, reasons: Array<any>){
         if(this.position) {
-            const button: HTMLElement = document.getElementById(this.position);
+            const button: HTMLElement = document.getElementById(this.position) as HTMLElement;
             const top: number = button.offsetTop;
             const left: number = button.offsetLeft;
 
-            const alertCard: HTMLElement = document.getElementById(this.name);
+            const alertCard: HTMLElement = document.getElementById(this.name) as HTMLLIElement;
             alertCard.style.left = (left - 95) + 'px';
             alertCard.style.bottom = (top - alertCard.clientHeight) + 'px';
         }
