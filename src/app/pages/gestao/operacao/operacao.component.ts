@@ -558,11 +558,11 @@ export class GestaoOperacaoComponent implements OnDestroy , AfterViewInit {
           options.toolbar.showAboutButton = false;
 
           options.appearance.backgroundColor = Stimulsoft.System.Drawing.Color.white;
-          options.appearance.pageBorderColor = "#151930"; 
+          options.appearance.pageBorderColor = Stimulsoft.System.Drawing.Color.fromName("#151930");
           options.appearance.showPageShadow = false;                              
-          options.toolbar.backgroundColor = "#222b45";          
-          options.toolbar.borderColor = "#222b45";          
-          options.toolbar.fontColor = "#d2d3d5";
+          options.toolbar.backgroundColor = Stimulsoft.System.Drawing.Color.fromName("#222b45");
+          options.toolbar.borderColor = Stimulsoft.System.Drawing.Color.fromName("#222b45");
+          options.toolbar.fontColor = Stimulsoft.System.Drawing.Color.fromName("#d2d3d5");
           options.toolbar.fontFamily = "Roboto";
 
 

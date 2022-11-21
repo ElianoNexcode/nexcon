@@ -12,7 +12,6 @@ import {
 import { Options, ComboOptions, Item } from './service/combobox.service';
 import { delay } from 'rxjs/operators';
 
-import * as $ from 'jquery';
 import { InputLabel } from '../input-label/service/input-label.service';
 
 @Component({
@@ -22,23 +21,23 @@ import { InputLabel } from '../input-label/service/input-label.service';
 })
 export class ComboboxComponent implements AfterViewInit, OnChanges {
 
-  @Input() options: ComboOptions;
+  @Input() options!: ComboOptions;
   @Input() display: boolean = true;
-  @Input() type: string;
-  @Input() class: string;
-  @Input() label: string;
-  @Input() textFilter: string;
+  @Input() type!: string;
+  @Input() class?: string;
+  @Input() label?: string;
+  @Input() textFilter?: string;
   @Input() readonly: boolean = false;
   @Input() onlyComplete: boolean = false;
   @Input() showIcon: boolean = false;
   @Input() findIcon: string = "find";
-  @Input() labelMaxWidth: number;
-  @Input() labelMinWidth: number;
+  @Input() labelMaxWidth?: number;
+  @Input() labelMinWidth?: number;
   @Input() marginTop: number = 9;
   @Input() placeholder: string = "";
   @Input() toUp: boolean = false;
   @Input() dynamic: boolean = false;
-  @Input() inputLabel: InputLabel;
+  @Input() inputLabel?: InputLabel;
 
   @Output() public eventClick = new EventEmitter();
   @Output() public eventChange = new EventEmitter<any>();
@@ -48,16 +47,16 @@ export class ComboboxComponent implements AfterViewInit, OnChanges {
   @Output() public eventMouseOut = new EventEmitter();
   @Output() public inputChange = new EventEmitter();
 
-  @ViewChild("inputRef") inputEl: ElementRef<HTMLInputElement>;
-  @ViewChild("completeRef") completeEl: ElementRef<HTMLElement>;
+  @ViewChild("inputRef") inputEl!: ElementRef<HTMLInputElement>;
+  @ViewChild("completeRef") completeEl!: ElementRef<HTMLElement>;
 
   zeroElement: Options = { text: "", value: "", id: 0 };
   optionsVisible: boolean = false;
   clickInOut: boolean = false;
 
-  itemSelected: Item = null;
+  itemSelected: Item | null = null;
   indexOfOption: number = 0;
-  itemSelectID: number = null;
+  itemSelectID: number | null = null;
 
   clickOut = () => this.clickout(event);
 
@@ -80,7 +79,7 @@ export class ComboboxComponent implements AfterViewInit, OnChanges {
 
   onOptions_Click() {
     if (this.toUp) {
-      const comboItens: HTMLElement = document.getElementById("itens_" + this.options.name);
+      const comboItens: HTMLElement = document.getElementById("itens_" + this.options.name) as HTMLElement;
       const comboItensHeight: number = comboItens.offsetHeight;
       comboItens.style.top = ((comboItensHeight + 3) * -1).toString() + "px";
     }
@@ -101,8 +100,8 @@ export class ComboboxComponent implements AfterViewInit, OnChanges {
       const optionFilter: ComboOptions = this.options;
       const id: number = optionFilter.itens[index].id;
 
-      if(id != this.options.itemSelected.id && this.type == "doc") {        
-        this.options.itemSelected.value = this.inputLabel.text;
+      if(this.options.itemSelected && (id != this.options.itemSelected?.id && this.type == "doc")) {
+        this.options.itemSelected.value = this.inputLabel?.text;
       }
 
       this.options.select(id);
@@ -152,7 +151,7 @@ export class ComboboxComponent implements AfterViewInit, OnChanges {
           if (this.completeEl) this.completeEl.nativeElement.innerText = this.inputEl.nativeElement.value;
           this.optionsVisible = false;
         } else {
-          if (this.completeEl && this.completeEl.nativeElement.innerText?.length > 0) {
+          if (this.options.itemSelected && (this.completeEl && this.completeEl.nativeElement.innerText?.length > 0)) {
             this.options.itemSelected.text = this.completeEl.nativeElement.innerText;
             //this.inputEl.nativeElement.value = this.completeEl.nativeElement.innerText;
           }            
@@ -161,7 +160,7 @@ export class ComboboxComponent implements AfterViewInit, OnChanges {
 
       case "Escape":
         this.optionsVisible = false;
-        this.indexOfOption = null;
+        this.indexOfOption = 0;
         this.itemSelectID = null;
         if (this.type == "input") {
           this.inputEl.nativeElement.readOnly = false;
@@ -180,10 +179,9 @@ export class ComboboxComponent implements AfterViewInit, OnChanges {
 
     };
 
-    if(this.type == 'input') {
-      const index: number = this.options.itens.findIndex(item => item.text == this.itemSelected.text);
+    if(this.type == 'input' && this.options.itemSelected) {
+      const index: number = this.options.itens.findIndex(item => item.text == this.itemSelected?.text);
       if(index >= 0) {
-        console.log(index, this.options.itens[index])
         this.options.itemSelected.id = this.options.itens[index].id;
       } else {
         this.options.itemSelected.id = 0;
@@ -210,7 +208,7 @@ export class ComboboxComponent implements AfterViewInit, OnChanges {
     }
 
     if (find === true) {
-      const comboItens: HTMLElement = document.getElementById("itens_" + this.options.name);
+      const comboItens: HTMLElement = document.getElementById("itens_" + this.options.name) as HTMLElement;
       comboItens.scroll(0, 20 * pos);
       if (this.completeEl) this.completeEl.nativeElement.innerText = name;
     } else {
@@ -223,8 +221,10 @@ export class ComboboxComponent implements AfterViewInit, OnChanges {
   }
 
   onTextInput_Change(event: any) {
-    this.options.itemSelected.value = this.inputLabel.text;
-    this.inputChange.emit(this.options.itemSelected);
+    if(this.options.itemSelected) {
+      this.options.itemSelected.value = this.inputLabel?.text;
+      this.inputChange.emit(this.options.itemSelected);  
+    }
   }
 
   onTextInput_Keyup(event: KeyboardEvent) {
@@ -243,7 +243,6 @@ export class ComboboxComponent implements AfterViewInit, OnChanges {
   onFocusOut(event: any) {
     event.preventDefault();
 
-    console.log(this.options.itemSelected.text, this.completeEl?.nativeElement.innerText);
     //this.options.itemSelected.text = this.inputEl.nativeElement.innerHTML;
 
     if (this.optionsVisible && this.itemSelectID != null) {

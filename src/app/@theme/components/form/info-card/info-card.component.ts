@@ -18,10 +18,12 @@ import { Component } from '@angular/core';
 export class InfoCardComponent {
     
     onMouseOver(event: any) {
-        document.getElementById("cardInfomessage").style.display = "block";
+        const cardInfoMessage: HTMLElement = document.getElementById("cardInfomessage") as HTMLElement;
+        cardInfoMessage.style.display = "block";
     }
 
     onMouseLeave(event: any) {
-        document.getElementById("cardInfomessage").style.display = "none";
+        const cardInfoMessage: HTMLElement = document.getElementById("cardInfomessage") as HTMLElement;
+        cardInfoMessage.style.display = "none";
     }
 }

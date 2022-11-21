@@ -12,7 +12,7 @@ import { SortOperationKind } from 'src/app/@core/api/generic-graphql';
 import { AlertServiceComponent } from 'src/app/@theme/components/form/alert-card/service/alert-card.service';
 import { read_VeiculoModeloGrupo, VeiculoModeloGrupo, VeiculoModeloGrupoData, VeiculoModeloGrupoSort } from 'src/app/@core/data/grupo-veiculo-modelo';
 import { read_VeiculoGrupo, VeiculoGrupo, VeiculoGrupoData, VeiculoGrupoFilter, VeiculoGrupoSort } from 'src/app/@core/data/grupo-veiculo';
-import { PessoaExternaUsuario } from 'src/app/@core/data/usuario-pessoa-externa';
+import { PessoaExternaUsuario, PessoaExternaUsuarioFilter } from 'src/app/@core/data/usuario-pessoa-externa';
 import { PessoaExternaModalService } from 'src/app/@theme/modals/pessoa-externa/service/pessoa-modal.service';
 import {
   create_VeiculoExternoUsuario,
@@ -85,7 +85,7 @@ export class VeiculoExternoComponent implements AfterViewInit {
   cardTabs_Options: CardTabsOptions = new CardTabsOptions();
 
   pessoaCondutorModalService: PessoaExternaModalService = new PessoaExternaModalService();
-  filterPessoaExterna: FilterPessoaModal;
+  filterPessoaExterna: PessoaExternaUsuarioFilter;
 
   order_by: VeiculoExternoUsuarioSort = { placa: SortOperationKind.ASC };
   filter: VeiculoExternoUsuarioFilter;

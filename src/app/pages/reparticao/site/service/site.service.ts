@@ -15,8 +15,8 @@ import { ConfigStorage } from 'src/app/@core/storage/config/config';
 @Injectable()
 export class SiteService extends SiteData {
 
-    orderBy: SiteSort;
-    where: SiteFilter;
+    override orderBy: SiteSort;
+    override where: SiteFilter;
 
     constructor(private graphQL: GenericGraphQL,
                 private configStorage: ConfigStorage) {

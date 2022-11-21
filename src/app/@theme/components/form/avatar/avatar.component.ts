@@ -12,7 +12,7 @@ import { AvatarService } from './service/avatar.service';
 })
 export class AvatarComponent implements AfterViewInit, OnChanges {
 
-    @Input() size: string;
+    @Input() size?: string;
     @Input() image: any = null;
     @Input() name: string = 'imgAvatar';
     @Input() noMargin: boolean = false;
@@ -26,7 +26,7 @@ export class AvatarComponent implements AfterViewInit, OnChanges {
 
     @Output() imageCapture: EventEmitter<boolean> = new EventEmitter();
 
-    imageBase64: string = null;
+    imageBase64!: string | null;
     
     constructor( private config: ConfigStorage ) { 
 
@@ -39,8 +39,8 @@ export class AvatarComponent implements AfterViewInit, OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(Array.isArray(changes.image?.currentValue)) {
-            this.image = changes.image?.currentValue;
+        if(Array.isArray(changes['image']?.currentValue)) {
+            this.image = changes['image']?.currentValue;
             this.imageBase64 = this.config.converteImagemBase64(this.image);
         } else {
             this.imageBase64 = null;

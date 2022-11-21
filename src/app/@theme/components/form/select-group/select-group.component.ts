@@ -38,8 +38,8 @@ export class SelectGroupComponent implements OnChanges {
     constructor() { }
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.options) {
-            this.options = changes.options.currentValue as OptionsGroup;
+        if(changes['options']) {
+            this.options = changes['options'].currentValue as OptionsGroup;
         }
     }
     

@@ -125,7 +125,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body" [ngStyle]="{'display': cardTabs_Options?.selectCard.id == 2? 'block': 'none'}">
+            <div class="card-body" [ngStyle]="{'display': cardTabs_Options.selectCard.id == 2? 'block': 'none'}">
                 <div class="panel fullHeight">
                     <div class="row fullHeight">
                         <div class="col col-6">
@@ -161,7 +161,7 @@
                     </div>
                 </div>
             </div>           
-            <div class="card-body" [ngStyle]="{'display': cardTabs_Options?.selectCard.id == 3? 'block': 'none'}">
+            <div class="card-body" [ngStyle]="{'display': cardTabs_Options.selectCard.id == 3? 'block': 'none'}">
                 <div class="panel fullHeight">
                     <div class="displayFlex fullHeight">
                         <nex-box [marginTop]="0" [padding]="true" class="autoHeight">
@@ -208,7 +208,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body" *ngIf="cardTabs_Options?.selectCard.id == 4">
+            <div class="card-body" *ngIf="cardTabs_Options.selectCard.id == 4">
                 <div class="panel fullHeight">
                     <div class="row abordagemRow">
                         <nex-textarea-label [label]="'Informativa'" [name]="'txtAbordagemInformativa'" [textarea]="abordagemInformativa_Text" [editable]="editable" [fullHeight]="true" [marginTop]="0" [color]="'#30b833'" [fontWeight]="'500'"></nex-textarea-label>

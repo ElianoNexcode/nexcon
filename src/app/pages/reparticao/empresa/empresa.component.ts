@@ -232,7 +232,7 @@ export class EmpresaReparticaoComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.router.events
-      .pipe(filter((event: RouterEvent) => event instanceof NavigationEnd))
+      .pipe(filter((event) => event instanceof NavigationEnd))
         .subscribe(() => {
 
           this.update_Grid(null, {select: "Nome", field: "nome", value: ""});

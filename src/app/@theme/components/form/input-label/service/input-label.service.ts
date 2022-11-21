@@ -11,26 +11,28 @@ export interface Input {
 })
 export class InputLabel {
 
-  name: string;
-  text: string = "";
-  textMasked: string = "";
+  name!: string;
+  text?: string = "";
+  textMasked?: string = "";
   textAlign: string = "left";
-  rules: string;  
+  rules!: string;  
   regex: string | "noFilter" | "email" | "numeric" | undefined;
-  type: string;
-  minLength: number;
-  maxLength: number;
+  type?: string;
+  minLength: number = 0;
+  maxLength?: number;
   disabled: boolean = false;
   findButtonDisabled: boolean = false;
   actionButtonDisabled: boolean = false;
   readOnly: boolean = false;
-  validated: boolean = true;
-  formated: string;
+  validated?: boolean = true;
+  formated?: string;
 
   dateOperador: DateOperator = new DateOperator();
 
-  ruleBehavior: BehaviorSubject<string>;
-  activeRules: string;
+  ruleBehavior?: BehaviorSubject<string | undefined>;
+  activeRules?: string;
+
+  rulesSubject?: string;
 
   clear(enable: boolean = false) {
     this.text = "";
@@ -42,12 +44,12 @@ export class InputLabel {
 
   setRule(rule: string) {
     setTimeout(() => {
-      this.ruleBehavior.next(rule);
+      this.ruleBehavior?.next(rule);
     }, 300);      
   }
 
-  ruleSubject(): BehaviorSubject<string> {
-    if(!this.ruleBehavior) this.ruleBehavior = new BehaviorSubject(null);
+  ruleSubject(): BehaviorSubject<string | undefined> {
+    if(!this.ruleBehavior) this.ruleBehavior = new BehaviorSubject(this.rulesSubject);
     return this.ruleBehavior;
   }
 
@@ -196,7 +198,7 @@ export class InputLabel {
 
         this.textMasked = this.textMasked.replace(/[^0-9\.\-]+/g, "");
 
-        const length: number = this.text.length;
+        const length: number = this.text?.length || 0; 
         if(length == 11) {
             let cpf = this.text;
             if ((cpf == '00000000000') || 
@@ -219,9 +221,8 @@ export class InputLabel {
                 let resto: number = 0;
                 let digito1: number = 0;
                 let digito2: number = 0;
-                let cpfAux: string = '';
+                let cpfAux: string = cpf?.substring(0, 9) || '';
                 let seqErro: boolean = true;
-                cpfAux = cpf.substring(0, 9);
                 for (let i: number = 0; i < 9; i++) {
                     caracter = cpfAux.charAt(i);
                     if (numeros.search(caracter) == -1) {
@@ -254,7 +255,6 @@ export class InputLabel {
                 if (cpf == cpfAux && seqErro == true) {
                     this.validated = true;
                 }
-
             }
         }
 

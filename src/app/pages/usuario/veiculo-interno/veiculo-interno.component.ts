@@ -8,7 +8,7 @@ import { BoxPanel } from 'src/app/@theme/layouts';
 import { Buttons, CardTabsOptions } from 'src/app/@theme/layouts/card-tabs/service/cart-tabs.service';
 import { TabsService } from 'src/app/@theme/layouts/tabs/service/tabs.service';
 import { FilterPessoaModal, PessoaInternaModalService } from 'src/app/@theme/modals/pessoa-interna/service/pessoa-modal.service';
-import { PessoaInternaUsuario, } from 'src/app/@core/data/usuario-pessoa-interna';
+import { PessoaInternaUsuario, PessoaInternaUsuarioFilter, } from 'src/app/@core/data/usuario-pessoa-interna';
 import { OptionsGroup } from 'src/app/@theme/components/form/select-group/service/select-group.service';
 import {
   create_VeiculoInternoUsuario,
@@ -173,7 +173,7 @@ export class VeiculoInternoComponent implements AfterViewInit, OnDestroy {
   pessoaModalService: PessoaInternaModalService = new PessoaInternaModalService();
   usuarioNivelAcessoModalService: UsuarioNivelAcessoModalService = new UsuarioNivelAcessoModalService();
 
-  filterPessoaInterna!: FilterPessoaModal;
+  filterPessoaInterna!: PessoaInternaUsuarioFilter;
 
   showSpinner: boolean = false;
   alertService: AlertServiceComponent = new AlertServiceComponent();
@@ -184,8 +184,8 @@ export class VeiculoInternoComponent implements AfterViewInit, OnDestroy {
   condutores: VeiculoInternoCondutor[] = [];
 
   order_by: VeiculoInternoUsuarioSort = { placa: SortOperationKind.ASC };
-  filter!: VeiculoInternoUsuarioFilter;
-  filterGrid!: VeiculoInternoUsuarioFilter;
+  filter!: VeiculoInternoUsuarioFilter | undefined;
+  filterGrid!: VeiculoInternoUsuarioFilter | undefined;
 
   settings: BehaviorSubject<any>;
   treeviewItem: BehaviorSubject<any>;
@@ -315,7 +315,7 @@ export class VeiculoInternoComponent implements AfterViewInit, OnDestroy {
       .subscribe(({ grupoVeiculo }: read_VeiculoGrupo) => {
         const nodes: VeiculoGrupo[] = grupoVeiculo.nodes;
         nodes.forEach((node: VeiculoGrupo) => {
-          this.grupoVeiculo_Options.add(node.veiculoGrupo, node.veiculoGrupo, node.id)
+          this.grupoVeiculo_Options.add(node.veiculoGrupo || '', node.veiculoGrupo || '', node.id || 0)
         });
       });
 
@@ -481,16 +481,16 @@ export class VeiculoInternoComponent implements AfterViewInit, OnDestroy {
           this.filter = { areaId: { eq: this.areaId } };
 
           const AreaFilter: AreaReparticaoFilter = { id: { eq: this.areaId} };
-          this.areaReparticaoService.readAreaReparticao(null, AreaFilter)
+          this.areaReparticaoService.readAreaReparticao(undefined, AreaFilter)
             .subscribe(({reparticaoArea}: read_AreaReparticao) => {
               const areaReparticao: AreaReparticao = reparticaoArea.nodes[0];
-              this.setorId = areaReparticao?.setorId;
+              this.setorId = areaReparticao?.setorId || 0;
 
               this.onSitePopulate({id: this.siteId});
               
             });
 
-          this.update_Grid(null, { select: "nome", field: "nome", value: "" });
+          this.update_Grid(undefined, { select: "nome", field: "nome", value: "" });
           this.actionbuttomService.top_action_buttons.forEach(topButton => {
             topButton.visibled = true;
           });
@@ -541,21 +541,21 @@ export class VeiculoInternoComponent implements AfterViewInit, OnDestroy {
         this.id = this.veiculoInterno.id;
         this.tipoVeiculo_Options.select(this.veiculoInterno.tipo as number);
         this.idVeiculo_Text.text = this.veiculoInterno.placa;
-        this.modeloVeiculo_Options.select(this.veiculoInterno.modeloId);
-        this.corVeiculo_Options.selectbyValue(this.veiculoInterno.cor.toLocaleLowerCase());
-        this.grupoVeiculo_Options.select(this.veiculoInterno.grupoId);
+        this.modeloVeiculo_Options.select(this.veiculoInterno?.modeloId as number);
+        this.corVeiculo_Options.selectbyValue(this.veiculoInterno?.cor?.toLocaleLowerCase() as string);
+        this.grupoVeiculo_Options.select(this.veiculoInterno.grupoId as number);
         this.caracteristicaVeiculo_Text.text = this.veiculoInterno.caracteristica;
         this.observacaoVeiculo_Text.text = this.veiculoInterno.observacao;
 
-        this.pesoVeiculo_Text.text = this.veiculoInterno.peso.toString();        
-        this.licenciamentoVeiculo_Text.setTextWithMask(this.veiculoInterno.licenciamento);
-        this.combustivelVeiculo_Options.selectbyText(this.veiculoInterno.combustivel);
+        this.pesoVeiculo_Text.text = this.veiculoInterno?.peso?.toString();        
+        this.licenciamentoVeiculo_Text.setTextWithMask(this.veiculoInterno.licenciamento as string);
+        this.combustivelVeiculo_Options.selectbyText(this.veiculoInterno.combustivel as string);
         if (this.veiculoInterno.supervisorId == 0) {
           this.supervisorId = 0;
           this.supervisor_Text.clear();
         } else {
-          this.supervisorId = this.veiculoInterno.supervisorId;
-          this.supervisor_Text.text = this.veiculoInterno.supervisor.nome;
+          this.supervisorId = this.veiculoInterno.supervisorId || 0;
+          this.supervisor_Text.text = this.veiculoInterno.supervisor?.nome;
         }
 
         this.onSitePopulate({id: this.siteId});
@@ -573,21 +573,21 @@ export class VeiculoInternoComponent implements AfterViewInit, OnDestroy {
         this.onCentroCustoPopulate(this.veiculoInterno.centroCusto?.id);
 
         this.validadeEstado_Options.select(this.veiculoInterno.status ? 1 : 0);
-        this.contratoInicio_Text.setTextWithMask(this.veiculoInterno.validadeCadastroInicio);
-        this.contratoFim_Text.setTextWithMask(this.veiculoInterno.validadeCadastroFim);
+        this.contratoInicio_Text.setTextWithMask(this.veiculoInterno.validadeCadastroInicio as string);
+        this.contratoFim_Text.setTextWithMask(this.veiculoInterno.validadeCadastroFim as string);
 
-        this.tagOficial_Text.text = this.veiculoInterno.acessoCartao.toString();
-        this.creditoAcesso_Text.text = this.veiculoInterno.acessoCredito.toString();
-        const condutores = this.veiculoInterno.condutores.map(veiculoCondutor => {
+        this.tagOficial_Text.text = this.veiculoInterno.acessoCartao?.toString();
+        this.creditoAcesso_Text.text = this.veiculoInterno.acessoCredito?.toString();
+        const condutores: any = this.veiculoInterno.condutores?.map(veiculoCondutor => {
           return {
             id: veiculoCondutor.pessoaId,
             nome: veiculoCondutor.pessoaInterna?.nome,
             area: veiculoCondutor.pessoaInterna?.area?.nome
           }
         });
-        this.listView_VeiculoCondutor.gridUpdate(condutores);      
+        this.listView_VeiculoCondutor.gridUpdate<any>(condutores);
 
-        const vagasVinculadas = this.veiculoInterno.garagens.map(vaga => {
+        const vagasVinculadas: any = this.veiculoInterno.garagens?.map(vaga => {
           return {
             id: vaga.id,
             garagem: vaga.garagem,
@@ -595,7 +595,7 @@ export class VeiculoInternoComponent implements AfterViewInit, OnDestroy {
             site: vaga.estacionamento?.setor?.site?.nome
           }
         });
-        this.listView_VeiculoVagaVinculada.gridUpdate(vagasVinculadas);
+        this.listView_VeiculoVagaVinculada.gridUpdate<any>(vagasVinculadas);
 
         const nivelAcessoPermanente = this.veiculoInterno?.niveisAcessoPermanente?.map(nivel => {
           return {

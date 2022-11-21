@@ -7,31 +7,31 @@ import { ConfigStorage } from 'src/app/@core/storage/config/config';
 })
 export class AvatarService {
 
-    @Input() size: string;
+    @Input() size?: string;
     @Input() noMargin: boolean = false;
     @Input() noBorder: boolean = false;
     @Input() round: boolean = false;
 
-    imageBehavior: BehaviorSubject<string>;
-
+    imageBehavior?: BehaviorSubject<string | undefined>;
     config: ConfigStorage = new ConfigStorage();
+    image?: string;
 
     getAvatarArray() {
-        const image: Array<number> = this.config.converteImagemArray(this.imageSubject().value)
+        const image: Array<number> = this.config.converteImagemArray(this.imageSubject().value) || [];
         return image;
     }
 
     getAvatarBase64() {
-        const image: string = this.imageSubject().value;
+        const image: string | null = this.imageSubject().value || null;
         return image;
     }
 
     setImage(image: string) {
-        this.imageBehavior.next(image);
+        this.imageBehavior?.next(image);
     }
 
-    imageSubject() {
-        if(!this.imageBehavior) this.imageBehavior = new BehaviorSubject(null);
+    imageSubject(): BehaviorSubject<string | undefined> {
+        if(!this.imageBehavior) this.imageBehavior = new BehaviorSubject(this.image);
         return this.imageBehavior;
     }
 

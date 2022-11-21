@@ -70,14 +70,14 @@ export class ComboOptions {
         this.itensComplete = Object.assign([], this.itens);
     }
 
-    public addRange<Param>(range: Param[], param: Param = { id: "id", value: "value", text: "text", select: "select", autoId: false}) {
+    public addRange<Param>(range: Param[], param = { id: "id", value: "value", text: "text", select: "select", autoId: false}) {
         var index: number = 0;
         range.forEach(item => {
-            this.add(item[keyof Oparam.text], item[param.value], (param.autoId == true) ? index : item[param.id], item[param.select] || false)
+            this.add(item[param.text], item[param.value], (param.autoId == true) ? index : item[param.id], item[param.select] || false)
         })
     }
 
-    public disable(id: number| null, clear: boolean = false) {
+    public disable(id?: number| null, clear: boolean = false) {
         if (id != null) {
             const index = this.itens.findIndex((itn: Options) => itn.id == id);
             if (index >= 0) {

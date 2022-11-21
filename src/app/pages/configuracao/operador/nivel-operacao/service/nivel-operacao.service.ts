@@ -27,7 +27,7 @@ export class NivelOperacaoService extends NivelOperacaoData {
         super();
 
         this.rights = "0".repeat(105);
-        const token: string | undefined = window.sessionStorage.getItem("token");
+        const token: string | null = window.sessionStorage.getItem("token");
         this.tokenDecode = jwt_decode(token);
 
         this.rights = this.tokenDecode.operadorNivelPrivilegio;

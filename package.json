@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -23,10 +23,14 @@
     "@apollo/client": "^3.7.1",
     "@nebular/eva-icons": "^9.1.0-rc.6",
     "@nebular/theme": "^9.1.0-rc.4",
+    "@ngx-loading-bar/core": "^6.0.2",
+    "@ngx-loading-bar/router": "^6.0.2",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "apollo-angular": "^4.1.1",
+    "jquery": "^3.6.1",
     "jwt-decode": "^3.1.2",
+    "ng9-password-strength-bar": "^1.1.0",
     "ngx-mask": "^14.2.4",
     "react-password-strength-bar": "^0.4.1",
     "rxjs": "~7.5.0",

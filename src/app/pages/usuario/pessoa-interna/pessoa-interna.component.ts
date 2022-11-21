@@ -89,7 +89,7 @@ import { TreeviewService } from 'src/app/@theme/layouts/treeview/service/treevie
 import { BehaviorSubject } from 'rxjs';
 import { CaptureModalService } from 'src/app/@theme/modals/capture/service/capture-modal.service';
 import { FilterVeiculoModal, VeiculoInternoModalService } from 'src/app/@theme/modals/veiculo-interno/service/veiculo-interno-modal.service';
-import { VeiculoInternoUsuario } from 'src/app/@core/data/usuario-veiculo-interno';
+import { VeiculoInternoUsuario, VeiculoInternoUsuarioFilter } from 'src/app/@core/data/usuario-veiculo-interno';
 import { UsuarioNivelAcessoModalService } from 'src/app/@theme/modals/usuario-nivel-acesso/service/usuario-nivel-acesso-modal.service';
 import { VeiculoModeloGrupo } from 'src/app/@core/data/grupo-veiculo-modelo';
 
@@ -186,7 +186,7 @@ export class PessoaInternaComponent implements OnInit, AfterViewInit ,OnDestroy 
 
   idVeiculo?: number;
   pessoaVeiculoModalService: VeiculoInternoModalService = new VeiculoInternoModalService();
-  filterVeiculoInterno?: FilterVeiculoModal;
+  filterVeiculoInterno?: VeiculoInternoUsuarioFilter;
 
   cartaoOficial_Text: InputLabel = new InputLabel();
   cartaoProvisorio_Text: InputLabel = new InputLabel();
@@ -215,7 +215,7 @@ export class PessoaInternaComponent implements OnInit, AfterViewInit ,OnDestroy 
   order_by: PessoaInternaUsuarioSort = { nome: SortOperationKind.ASC };
   filter?: PessoaInternaUsuarioFilter;
   filterGrid?: PessoaInternaUsuarioFilter;
-  filterPessoaInterna?: FilterPessoaModal;
+  filterPessoaInterna?: PessoaInternaUsuarioFilter;
   supervisorId?: number;
 
   cardTabs_Options: CardTabsOptions = new CardTabsOptions();

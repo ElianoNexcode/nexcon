@@ -23,7 +23,7 @@ import { VeiculoExternoUsuarioService } from './veiculo-externo/service/veiculo-
     FormsModule,
     ReactiveFormsModule, 
     ThemeModule,
-    //NbSpinnerModule
+    NbSpinnerModule
   ],
 
   declarations: [

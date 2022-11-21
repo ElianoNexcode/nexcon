@@ -40,7 +40,6 @@ import { TreeView } from 'src/app/@theme/layouts/treeview/service/treeview';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { read_SetorReparticao, SetorReparticao, SetorReparticaoData, SetorReparticaoFilter, SetorReparticaoSort } from 'src/app/@core/data/reparticao-setor';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { VeiculoInternoUsuario, VeiculoInternoUsuarioFilter } from 'src/app/@core/data/usuario-veiculo-interno';
 import { VeiculoInternoModalService } from 'src/app/@theme/modals/veiculo-interno/service/veiculo-interno-modal.service';
 
@@ -217,7 +216,7 @@ export class EstacionamentoVagaComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.router.events
-      .pipe(filter((event: RouterEvent) => event instanceof NavigationEnd))
+      .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
         this.update_Grid(null, { select: "Nome", field: "nomeEstacionamento", value: "" });
       });

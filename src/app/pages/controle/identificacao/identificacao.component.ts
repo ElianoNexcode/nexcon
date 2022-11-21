@@ -1513,7 +1513,7 @@ export class IdentificacaoComponent implements OnDestroy {
                   this.pessoaNome_Text.disable();
 
                   this.pessoaPopulate()
-                    .then((abordagemRestritiva: Boolean) => {
+                    .then((abordagemRestritiva) => {
                       if (abordagemRestritiva == true) {
 
                         this.errosModalService.show("Identificação de " + this.registroVisita_Option.itemSelected.text,

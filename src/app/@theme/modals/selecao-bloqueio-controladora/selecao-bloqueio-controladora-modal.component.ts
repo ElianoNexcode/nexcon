@@ -69,7 +69,7 @@ import { SelecaoBloqueioControladoraModalService } from "./service/selecao-bloqu
             .subscribe(( { reparticaoArea}: read_AreaReparticao) => {   
                 const nodes : AreaReparticao[] = reparticaoArea.nodes;  
                 this.area_Options.clear();
-                this.area_Options.add("","") 
+                this.area_Options.add("","", 0);
                 nodes.forEach((node:AreaReparticao) =>{       
                     this.area_Options.add(node.nome,node.nome,node.id);      
                 }) 

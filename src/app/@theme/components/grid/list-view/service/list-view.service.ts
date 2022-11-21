@@ -54,46 +54,48 @@ export interface ListViewData {
 })
 export class ListViewGrid {
 
-    public name: string;
-    public title: string;
+    public name!: string;
+    public title?: string;
     public gridOnly: boolean = false;
     public noPaging: boolean = false;
     public noBorder: boolean = false;
-    public noGridLine: boolean;
-    public entity: string;
-    public colorEntity: string;
-    public colorField: string;
+    public noGridLine?: boolean;
+    public entity?: string;
+    public colorEntity?: string;
+    public colorField?: string;
     public colorEnum: any;
-    public status: string;
+    public status?: string;
     public grid: Grid[] = [];
-    public maxHeight: number;
+    public maxHeight?: number;
 
-    dataGridBehavior: BehaviorSubject<any>;
-    gridSelectSubject: BehaviorSubject<number>;
+    dataGridBehavior!: BehaviorSubject<any>;
+    gridSelectSubject!: BehaviorSubject<number | undefined>;
     
-    dataPages: any[] = [];        // Array de paginação do grid
-    protected dataSource: any[];    // Array dos dados recebidos
+    dataPages: any[] = [];           // Array de paginação do grid
+    protected dataSource: any[] = [];    // Array dos dados recebidos
     
-    filter: Filter;
+    filter?: Filter;
 
-    pagingService: PagingService;
+    pagingService!: PagingService;
 
-    errorMessage: string;
-    showSpinner: boolean;
+    errorMessage?: string | null;
+    showSpinner?: boolean;
 
-    filterInit: Filter;
+    filterInit?: Filter;
     find: any;
     identificador: string = "id"
 
     filterSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
+    selectObject?: number;
 
     dataSubject(): BehaviorSubject<any> {
         if(!this.dataGridBehavior) this.dataGridBehavior = new BehaviorSubject(null);        
         return this.dataGridBehavior;
     }
 
-    selectSubject(): BehaviorSubject<number> {
-        if(!this.gridSelectSubject) this.gridSelectSubject = new BehaviorSubject(null);
+    selectSubject(): BehaviorSubject<number | undefined> {
+        if(!this.gridSelectSubject) this.gridSelectSubject = new BehaviorSubject(this.selectObject);
         return this.gridSelectSubject;
     }
 
@@ -118,35 +120,37 @@ export class ListViewGrid {
         this.gridSelectSubject?.next(index);
     }
 
-    getHeader(header: string): Grid {
+    getHeader(header: string): Grid | undefined {
         const index = this.grid.findIndex(grd => grd.header == header);
         if(index >= 0) {
             return this.grid[index];
         }
-        return undefined;
+        return;
     }
 
     gridCheck(id: number, index: number) {
-        const gridIndex = this.dataGridBehavior.value.findIndex(grid => grid.id == id)
+        const gridIndex = this.dataGridBehavior.value.findIndex((grid: any) => grid.id == id)
         if(gridIndex >= 0) {
             this.dataGridBehavior.value.checked[index] = true;
         }
     }
 
-    getFilter(option: Item): object {
-        const field: Grid = this.getHeader(option.text);
-        let filter: object;
+    getFilter(option: Item): object | null {
+        const field: Grid = this.getHeader(option.text as string) as Grid;
+        let filter: object | null;
+        type objectKey = keyof typeof filter;
         if(field) {
             filter = {};
             if(!field.enum) {
-                filter[field.field + "_contains"] = option.value;
+                const filterKey: objectKey = (field.field + "_contains") as objectKey;
+                filter = {[filterKey]: option.value};
             } else {
-                if(option.value == "SIM" || option.value == "NÃO") {
-                    filter[field.field] = field.enum[option.value] == 1? true: false;
+                const filterKey: objectKey = (field.field) as objectKey;
+                if(option.value == "SIM" || option.value == "NÃO") {                    
+                    filter = {[filterKey]: field.enum[option.value] == 1? true: false};
                 } else {
-                    filter[field.field] = field.enum[option.value];
-                }
-                
+                    filter = {[filterKey]: field.enum[option.value as string]};
+                }                
             }
         } else {
           filter = null;
@@ -168,14 +172,14 @@ export class ListViewGrid {
     flashAdd(id: number) {
         let rowFlash: HTMLElement;        
         setTimeout(() => {        
-            rowFlash = document.getElementById(this.name + "_" + id.toString());
+            rowFlash = document.getElementById(this.name + "_" + id.toString()) as HTMLElement;
             rowFlash.classList.add("flash");
         }, 500);
     }
 
     flashDel(id: number) {
         let rowFlash: HTMLElement;
-        rowFlash = document.getElementById(this.name + "_" + id.toString());
+        rowFlash = document.getElementById(this.name + "_" + id.toString()) as HTMLElement;
         rowFlash.classList.add("flashDel");
     }
 
@@ -186,7 +190,8 @@ export class ListViewGrid {
             let findRow: number;
             let rowPosition: number;
     
-            let height: number = (document.getElementById("lv_" + this.name).clientHeight - 51);
+            const listviewName: HTMLElement = document.getElementById("lv_" + this.name) as HTMLElement;
+            let height: number = (listviewName.clientHeight - 51);
             let gridLines:number = (height / 32) >> 0;
     
             findRow = (this.dataSource.findIndex(ds => ds[find.field] == find.value) / gridLines) + 1;
@@ -214,7 +219,7 @@ export class ListViewGrid {
                 rowPosition = Math.round((findRow - pagePosition) * gridLines) + 1;
                 
                 this.dataPopulate(pagePosition);
-                this.flashAdd(this.dataPages[pagePosition - 1][rowPosition - 1][identificador]);    
+                this.flashAdd(this.dataPages[pagePosition - 1][rowPosition - 1][identificador as string]);    
             }    
     
         } else {
@@ -235,13 +240,15 @@ export class ListViewGrid {
     }
 
     getGridLines(): number {
-        let height: number = (document.getElementById("lv_" + this.name)?.clientHeight - 51);
+        const listviewName = document.getElementById("lv_" + this.name) as HTMLElement
+        let height: number = listviewName.clientHeight - 51;
         let gridLines: number = (height / 32) >> 0;
         return gridLines;
     }
 
     dataPopulate(pagePosition?: number) {
-        let height: number = (document.getElementById("lv_" + this.name)?.clientHeight - 51);
+        const listviewName = document.getElementById("lv_" + this.name) as HTMLElement
+        let height: number = listviewName.clientHeight - 51;
         let gridLines: number = 0;
 
         if(this.noPaging) {
@@ -301,16 +308,19 @@ export class ListViewGrid {
         if(!filter?.select || find) {
             this.dataLoad(gridData, find, identificador);    
         } else {
-            this.dataLoad(gridData.filter((data:T) => {
-                if(typeof(data[this.filter.field]) == "boolean" && this.filter.value.length > 0) {
+            this.dataLoad(gridData.filter((data: T) => {
+                type objectKey = keyof typeof data;
+                const dataKey: objectKey = this.filter?.field as objectKey;
+
+                if(typeof(data[dataKey]) == "boolean" && (this.filter?.value && this.filter.value.length > 0)) {
                     if("SIMNÃO".indexOf(this.filter.value) >= 0) {
-                        return data[this.filter.field] == (this.filter.value == "SIM"? true: false);
+                        return data[dataKey] == (this.filter.value == "SIM"? true: false);
                     }                            
                 } else {
-                    if(this.filter.value == undefined || this.filter.value == "") {
+                    if(this.filter?.value == undefined || this.filter.value == "") {
                         return data;
                     } else {
-                        return data[this.filter.field].indexOf(this.filter.value) >= 0;
+                        return (data[dataKey] as string).indexOf(this.filter.value) >= 0;
                     }
                 };                        
             }), null, identificador);

@@ -68,8 +68,8 @@ export class PagesComponent implements AfterViewInit {
     }
 
     onResize() {
-        const modelo: HTMLElement = document.getElementById('mainPanelRouter');
-        const classModal: HTMLElement = document.getElementById('classModal');
+        const modelo: HTMLElement = document.getElementById('mainPanelRouter') as HTMLElement;
+        const classModal: HTMLElement = document.getElementById('classModal') as HTMLElement;
 
         classModal.style.height = modelo.clientHeight + 'px';
         classModal.style.width = modelo.clientWidth + 'px';

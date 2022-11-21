@@ -35,7 +35,7 @@ import { ErrosModalService } from 'src/app/@theme/modals/erros/service/erros-mod
 import { ConfigStorage } from 'src/app/@core/storage/config/config';
 import { NivelOperacaoService } from '../../configuracao/operador/nivel-operacao/service/nivel-operacao.service';
 import { Abordagem } from 'src/app/@core/data/usuario-pessoa-interna';
-import { VeiculoExternoUsuario } from 'src/app/@core/data/usuario-veiculo-externo';
+import { VeiculoExternoUsuario, VeiculoExternoUsuarioFilter } from 'src/app/@core/data/usuario-veiculo-externo';
 import { FilterVeiculoModal } from 'src/app/@theme/modals/veiculo-interno/service/veiculo-interno-modal.service';
 import { VeiculoExternoModalService } from 'src/app/@theme/modals/veiculo-externo/service/veiculo-externo-modal.service';
 import { BoxPanel } from 'src/app/@theme/layouts';
@@ -121,7 +121,7 @@ export class PessoaExternaComponent implements AfterViewInit, OnInit {
   filter: PessoaExternaUsuarioFilter;
 
   pessoaVeiculoModalService: VeiculoExternoModalService = new VeiculoExternoModalService();
-  filterVeiculoExterno: FilterVeiculoModal;
+  filterVeiculoExterno: VeiculoExternoUsuarioFilter;
 
   listView_PessoaExterna: ListViewGrid = new ListViewGrid();
   listView_PessoaVeiculo: ListViewGrid = new ListViewGrid();

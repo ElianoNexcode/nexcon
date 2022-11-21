@@ -53,7 +53,7 @@ export class ListViewComponent implements OnDestroy, OnInit, OnChanges, AfterVie
   ngOnInit() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes.editable?.currentValue == undefined) {
+    if(changes['editable']?.currentValue == undefined) {
       this.editable = true;
     }
   }

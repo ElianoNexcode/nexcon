@@ -7,14 +7,14 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
   }
 })
 export class UpperCaseInputDirective {
-  @Input() case: string;
+  @Input() case!: string;
   @Input() regex: string | "noFilter" | "email" | "numeric" | undefined;
 
   lastValue: string = "";
 
   constructor(public ref: ElementRef) { }
 
-  @HostListener('input', ['$event']) onInput($event) 
+  @HostListener('input', ['$event']) onInput($event: any) 
   {
     var start = $event.target.selectionStart;
     var end = $event.target.selectionEnd;

@@ -18,7 +18,7 @@
                     <nex-tabs-card [fullWidth]="true" [tabsOptions]="tabsGestaoSistema_Option" [name]="'tabsGestaoSistema'">
                         <nex-tab [noPadding]="true" [tabComponent]="tabsGestaoSistema_Option.tabs[0]">
                             <div>
-                                <nex-form-group [name]="'filtroGestaoSistema'" minWidthFix="106">
+                                <nex-form-group [name]="'filtroGestaoSistema'" [minWidthFix]="106">
                                     <div  id="tabFiltroSistema" class="tabFiltroSistemas">
                                         <nex-combobox [label]="'Sistema'" [marginTop]="0" [options]="sistema_Option" [labelMinWidth]="70" [class]="'topJoinGrid'"></nex-combobox>
                                         <nex-combobox [label]="'Evento'" [marginTop]="0" [options]="evento_Option" [labelMinWidth]="70" (eventChange)="onEventoOption_Change()" [class]="'topJoinGrid'"></nex-combobox>

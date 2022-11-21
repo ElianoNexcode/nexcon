@@ -33,25 +33,25 @@ const customMasks = [
             <div class="labelBox" *ngIf="icon">
                 <i class='fa fa-{{icon}}' style='font-size: 15px;margin-top: -4px'></i>
             </div>
-            <div class="inputbox" [ngClass]="{'disabled': input?.disabled == true}"
+            <div class="inputbox" [ngClass]="{'disabled': input.disabled == true}"
                                   [ngStyle]="{'min-width.px': 'calc(100% - 137px)'}">
-                <input #inputMask [id]="input?.name" 
+                <input #inputMask [id]="input.name || null"
                        [placeholder]="placeholder"
-                       [maxlength]="input?.maxLength" 
+                       [maxlength]="input.maxLength || null" 
                        [case]="customMask?.case" 
                        [mask]="customMask?.mask" 
-                       [regex]="input?.regex"
+                       [regex]="input.regex || undefined"
                        [(ngModel)]="input.text" 
                        (ngModelChange)="onChanged()"
-                       [type]="input?.type"
+                       [type]="input.type"
                        (keyup.enter)="onKeyEnter_Press($event)"
                        (keydown)="onFocusOut($event)"
                        (focusout)="onMouseOut()"
                        autocomplete="off"
-                       [ngClass]="{'disable': input?.disabled, 'error': input?.validated == false}"
-                       [ngStyle]="{'text-align': input?.textAlign}"
-                       [readonly]="input?.readOnly"
-                       [disabled]="input?.disabled" />
+                       [ngClass]="{'disable': input.disabled, 'error': input.validated == false}"
+                       [ngStyle]="{'text-align': input.textAlign}"
+                       [readonly]="input.readOnly"
+                       [disabled]="input.disabled" />
             </div>
             <div *ngIf="findButton" class="icon" [ngClass]="{'disabled': input?.findButtonDisabled == true}" (click)="onFind_Click()">
                 <svg class="bi bi-search" width="13px" height="13px" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -81,22 +81,22 @@ const customMasks = [
 })
 export class InputLabelComponent implements OnInit, AfterViewInit, OnDestroy {
 
-    @ViewChild('inputMask') inputEl: ElementRef;
+    @ViewChild('inputMask') inputEl!: ElementRef;
 
-    @Input() input: InputLabel;
+    @Input() input!: InputLabel;
 
-    @Input() text: string;
-    @Input() sufixo: string;
+    @Input() text!: string;
+    @Input() sufixo?: string;
     @Input() display: boolean = true;
-    @Input() findButton: boolean;
-    @Input() clearButton: Boolean;
+    @Input() findButton?: boolean;
+    @Input() clearButton?: Boolean;
     @Input() marginTop: number = 9;
-    @Input() icon: string;
+    @Input() icon?: string;
     @Input() placeholder: string = "";
-    @Input() class: string;
-    @Input() classInput: string;
-    @Input() labelMinWidth: number;
-    @Input() actionButton: boolean;
+    @Input() class?: string;
+    @Input() classInput?: string;
+    @Input() labelMinWidth?: number;
+    @Input() actionButton?: boolean;
     @Input() findIcon: string = "";
 
     @Output() eventChange = new EventEmitter<any>();
@@ -110,7 +110,7 @@ export class InputLabelComponent implements OnInit, AfterViewInit, OnDestroy {
     dateOperador = new DateOperator();
 
     customMask: any;
-    ruleSubscription: Subscription;
+    ruleSubscription?: Subscription;
 
     public onlyNumbers = { '0': { pattern: new RegExp('\[0-9\]') } };
 
@@ -120,28 +120,31 @@ export class InputLabelComponent implements OnInit, AfterViewInit, OnDestroy {
             this.customMask.mask = this.customMask.mask + "{" + this.input?.maxLength + "}";
         }
 
-        this.ruleSubscription = this.input?.ruleSubject()?.subscribe((rule: string) => {
-            if(rule != null) {
-                this.input.activeRules = rule;
-                this.customMask = customMasks.find(msk => msk.maskName == rule);
-            }
+        this.ruleSubscription = this.input?.ruleSubject()?.subscribe({
+            next: (rule: string | undefined) => {
+                if(rule != null) {
+                    this.input.activeRules = rule;
+                    this.customMask = customMasks.find(msk => msk.maskName == rule);
+                }
+            },
+            error: () => {console.log('error')}
         });
-
     }
 
     ngAfterViewInit() {
         if(!this.input.activeRules) this.input.activeRules = this.input.rules;
         if (this.input?.rules == "time") {
-            document.getElementById(this.input?.name + '-box').classList.add("time");
+            const inputBox: HTMLElement = document.getElementById(this.input?.name + '-box') as HTMLElement;
+            inputBox.classList.add("time");
         }
     };
     
     onChanged() {
         if (this.input) {
-            if(this.input.text.length == 0) {
+            if(this.input.text?.length == 0) {
                 this.input.textMasked = this.input.text
             } else {
-                this.input.textMasked = (this.input.textMasked == null || this.input.textMasked.length <= this.input.maxLength) ?
+                this.input.textMasked = (this.input.textMasked == null || this.input.textMasked.length <= (this.input.maxLength || 0)) ?
                 this.inputEl.nativeElement.value :
                 this.input.textMasked;
             }
@@ -149,42 +152,42 @@ export class InputLabelComponent implements OnInit, AfterViewInit, OnDestroy {
             switch (this.input.activeRules) {
                 case "date":
                     this.input.validated = false;
-                    const dateFormated: DateFormated = this.dateOperador.formatDate(this.input.textMasked, null, this.input.maxLength);
+                    const dateFormated: DateFormated = this.dateOperador.formatDate(this.input.textMasked || '', false, this.input.maxLength);
                     this.input.validated = dateFormated.dateValided;
                     this.input.formated = dateFormated.dateFormated;
                     break;
 
                 case "time":
                     this.input.validated = false;
-                    const timeFormated: DateFormated = this.dateOperador.formatTime(this.input.textMasked);
+                    const timeFormated: DateFormated = this.dateOperador.formatTime(this.input.textMasked || '');
                     this.input.validated = timeFormated.dateValided;
                     this.input.formated = timeFormated.timeFormated;
                     break;
 
                 case "timefull":
                     this.input.validated = false;
-                    const timeFormatedFull: DateFormated = this.dateOperador.formatTime(this.input.textMasked, true);
+                    const timeFormatedFull: DateFormated = this.dateOperador.formatTime(this.input.textMasked || '', true);
                     this.input.validated = timeFormatedFull.dateValided;
                     this.input.formated = timeFormatedFull.timeFormated;
                     break;
 
                 case "telfixo":
                     this.input.maxLength = 14;
-                    this.input.validated = (this.input.textMasked.length == (this.input.minLength | 0) || 
-                                            this.input.textMasked.length == this.input.maxLength);
+                    this.input.validated = (this.input.textMasked?.length == (this.input.minLength | 0) || 
+                                            this.input.textMasked?.length == this.input.maxLength);
                     break;
 
                 case "telmovel":
                     this.input.maxLength = 15;
-                    this.input.validated = (this.input.textMasked.length == (this.input.minLength | 0) || 
-                                            this.input.textMasked.length == this.input.maxLength);
+                    this.input.validated = (this.input.textMasked?.length == (this.input.minLength | 0) || 
+                                            this.input.textMasked?.length == this.input.maxLength);
                     break;
 
                 case "email":
                     this.input.validated = false;
 
-                    const arroba: number = this.input.text.indexOf("@");
-                    const length: number = this.input.text.length;
+                    const arroba: number = this.input.text?.indexOf("@") || -1;
+                    const length: number = this.input.text?.length || 0;
 
                     if (this.input.text != null && this.input.text != "") {
                         if (length >= 6 && arroba >= 0 && arroba <= (length - 3)) {
@@ -207,7 +210,7 @@ export class InputLabelComponent implements OnInit, AfterViewInit, OnDestroy {
 
                         this.input.textMasked = this.input.textMasked.replace(/[^0-9\.\-]+/g, "");
 
-                        const length: number = this.input.text.length;
+                        const length: number = this.input.text?.length || 0;
                         if (length == 11) {
                             let cpf = this.input.text;
                             if ((cpf == '00000000000') ||
@@ -230,9 +233,8 @@ export class InputLabelComponent implements OnInit, AfterViewInit, OnDestroy {
                                 let resto: number = 0;
                                 let digito1: number = 0;
                                 let digito2: number = 0;
-                                let cpfAux: string = '';
+                                let cpfAux: string = cpf?.substring(0, 9) || '';
                                 let seqErro: boolean = true;
-                                cpfAux = cpf.substring(0, 9);
                                 for (let i: number = 0; i < 9; i++) {
                                     caracter = cpfAux.charAt(i);
                                     if (numeros.search(caracter) == -1) {
@@ -305,7 +307,7 @@ export class InputLabelComponent implements OnInit, AfterViewInit, OnDestroy {
                     break;
 
                 default:
-                    this.input.validated = (!this.input.minLength || (this.input.text.length >= this.input.minLength));
+                    this.input.validated = (this.input.text && (!this.input.minLength || (this.input.text.length >= this.input.minLength))) || false;
                     break;
             }
 
@@ -322,7 +324,7 @@ export class InputLabelComponent implements OnInit, AfterViewInit, OnDestroy {
         this.onClearClick.emit();
     }
 
-    onKeyEnter_Press(event: KeyboardEvent) {
+    onKeyEnter_Press(event: KeyboardEvent | any) {
         event.preventDefault()
         this.onKeyEnter.emit();
     }

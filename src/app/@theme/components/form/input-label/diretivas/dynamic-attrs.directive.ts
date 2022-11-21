@@ -4,7 +4,7 @@ import { Directive, Input, ElementRef, Renderer2, SimpleChanges, SimpleChange } 
 })
 export class DynamicAttrsDirective {
   @Input('dynAttr')
-  public attrs: string;
+  public attrs!: string;
 
   constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
 
@@ -16,7 +16,7 @@ export class DynamicAttrsDirective {
     })
   }
 
-  private _extractAttrs(attrs): any[] {
+  private _extractAttrs(attrs: string): any[] {
     return attrs.split(" ").map(attr => ({
       key: attr.split('=')[0],
       val: (attr.split('=')[1] || '').replace(/[\'\"]/g, "")
