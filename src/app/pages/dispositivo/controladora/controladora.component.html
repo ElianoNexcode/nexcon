@@ -50,7 +50,7 @@
                                     <div class="row col-12" *ngFor="let Item of tipoLeitores">
                                         <div class="div_Leitor_ED">{{Item.leitor}}</div>
                                         <div class="div_Controle"></div>
-                                        <div class="div_Botao"><nex-mini-button [noBorder]= "true" [type]="'insert'"  [mediumButton]="true" (eventClick)="onLeitor_Click(Item.id)"></nex-mini-button></div>
+                                        <div class="div_Botao"><nex-mini-button [noBorder]= "true" [type]="'insert'"  [mediumButton]="true" (eventClick)="onLeitor_Click(Item?.id)"></nex-mini-button></div>
                                     </div>
                                 </div>   
                         </nex-tab>

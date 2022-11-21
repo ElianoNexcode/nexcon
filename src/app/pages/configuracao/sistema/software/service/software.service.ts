@@ -44,7 +44,7 @@ export class SoftwareService extends SoftwareData {
                 return "disable";        
             } else if ((observacao && observacao.length > 0)) {
                 return "fail"
-            } else if ((this.utcDataAtual - utcDataCheck >  this.inativeTime)) {
+            } else if ((this.utcDataAtual || 0 - utcDataCheck) >  this.inativeTime) {
                 return "inative";
             } else {
                 return "active"

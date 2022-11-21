@@ -479,11 +479,12 @@ export class NivelOperacaoComponent {
       })
   }
 
-  operationSelectAll(itens: Operation[]): number {
+  operationSelectAll(itens: Operation[]): number  {
     const itemCheked: Operation[] = itens.filter((item: Operation) => item.checked == true);
     if(itemCheked.length == 0) return 0;
     if(itemCheked.length == itens.length) return 1;
     if(itemCheked.length != itens.length) return -1;
+    return -1;
   }
 
   onClose_Click(hideForm: boolean = true) {

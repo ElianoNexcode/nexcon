@@ -3,8 +3,6 @@ import { GenericGraphQL } from '../../../../../@core/api/generic-graphql';
 import { ServidorSistemaSchema } from './servidor.schema';
 import { ServidorSistema,ServidorData, Servidor, read_ServidorSistema, update_ServidorEmail} from '../../../../../@core/data/sistema-servidor';
 import { of as ObservableOf } from 'rxjs'
-import { variable } from '@angular/compiler/src/output/output_ast';
-
 
 interface checkStatus {
     utcDataAtual?: Number
@@ -13,15 +11,13 @@ interface checkStatus {
            status: any
 }
 
-
-
 @Injectable()
 export class ServidorService extends ServidorData {
 
 checkStatus: checkStatus = { 
     status: function() {
                 let utcDataCheck = Date.parse(this.dtDataCkeck.toString());
-                return ((this.utcDataAtual - utcDataCheck > 
+                return ((this.utcDataAtual as number - utcDataCheck > 
                          this.inativeTime)? "inative": "ative");
                 }
             }
@@ -30,8 +26,6 @@ checkStatus: checkStatus = {
     constructor(private graphQL: GenericGraphQL) {
         super();
     }
-
-
 
    getServidor(){
           const servidores: Servidor[] = [

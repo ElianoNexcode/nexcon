@@ -33,8 +33,6 @@ import { SelecaoBloqueioControladoraModalService } from 'src/app/@theme/modals/s
 
 import { DispositivoStatus, StatusColor, TipoBloqueio } from 'src/app/@core/enum';
 
-import { Site } from 'src/app/@core/data/reparticao-site';
-
 @Component({ selector: 'nex-controladora-dispositivo',
              templateUrl: './controladora.component.html',
              styleUrls: ['./controladora.component.scss'] })
@@ -44,7 +42,7 @@ export class ControladoraDispositivoComponent implements OnInit, OnDestroy {
   id: number = 0;
   configLeitor: string;
   leitores: any[] = [];
-  tipoLeitores: {leitor: string, tipo: number, propriedades?: ControladoraDispositivoLeitor }[];
+  tipoLeitores: {id?: number, leitor: string, tipo: number, propriedades?: ControladoraDispositivoLeitor }[];
   ip_Text: InputLabel = new InputLabel();
   nome_Text: InputLabel = new InputLabel();
   rele_Text: InputLabel = new InputLabel();
@@ -258,7 +256,7 @@ export class ControladoraDispositivoComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.router.events
-    .pipe(filter((event: RouterEvent) => event instanceof NavigationEnd))
+    .pipe(filter((event) => event instanceof NavigationEnd))
     .subscribe(() => {
       this.update_Grid();
     });

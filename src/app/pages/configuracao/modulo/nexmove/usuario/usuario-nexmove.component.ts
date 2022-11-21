@@ -27,7 +27,7 @@ export class UsuarioNexmoveComponent {
   listView_UsuarioNexmove: ListViewGrid = new ListViewGrid();
   savedCondition: boolean = false;
   filterPessoa: PessoaInternaUsuarioFilter;
-  usuarioInterno: {}[]=[];
+  usuarioInterno: {nome?: string, grupo?: string, area?: string}[]=[];
 
   settings: BehaviorSubject<any>;
  

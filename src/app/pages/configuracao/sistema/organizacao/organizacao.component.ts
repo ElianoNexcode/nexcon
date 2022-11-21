@@ -194,8 +194,8 @@ export class OrganizacaoComponent {
 
   imgFileLoad(path: string) {
     this.convertDataUrl(path)
-      .then((img: string) => {
-        this.organizacaoImagem = img;
+      .then((img) => {
+        this.organizacaoImagem = img as string;
       })
   }
 

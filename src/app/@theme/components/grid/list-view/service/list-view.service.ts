@@ -125,7 +125,7 @@ export class ListViewGrid {
         if(index >= 0) {
             return this.grid[index];
         }
-        return;
+        return null;
     }
 
     gridCheck(id: number, index: number) {
@@ -322,7 +322,8 @@ export class ListViewGrid {
                     } else {
                         return (data[dataKey] as string).indexOf(this.filter.value) >= 0;
                     }
-                };                        
+                };
+                return null;
             }), null, identificador);
         }
     }

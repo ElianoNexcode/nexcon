@@ -210,7 +210,7 @@ export class AmbienteComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.router.events
-            .pipe(filter((event: RouterEvent) => event instanceof NavigationEnd))
+            .pipe(filter((event) => event instanceof NavigationEnd))
             .subscribe(() => {
                 this.update_Grid();
             });
@@ -527,9 +527,9 @@ export class AmbienteComponent implements OnInit, OnDestroy {
 
     imgFileLoad(path: string) {
         this.convertDataUrl(path)
-            .then((img: string) => {
-                this.plataforma = { logo: img };
-                this.interfaceImagem = img;
+            .then((img) => {
+                this.plataforma = { logo: img as string };
+                this.interfaceImagem = img as string;
             })
     }
 
